@@ -27,6 +27,9 @@
     "globalScope": "All tasks",
     "scopeToggle": "Show all tasks",
     "scopeToggleMission": "Scope to mission",
+    "scopeAll": "All tasks",
+    "scopeMissingFallback": "(mission not in list)",
+    "scopeUntitledMission": "(untitled mission)",
     "detail": {
       "title": "Operative dossier",
       "currentTask": "Current task",

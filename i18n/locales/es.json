@@ -27,6 +27,9 @@
     "globalScope": "Todas las tareas",
     "scopeToggle": "Ver todas las tareas",
     "scopeToggleMission": "Limitar a la misión",
+    "scopeAll": "Todas las tareas",
+    "scopeMissingFallback": "(misión fuera de la lista)",
+    "scopeUntitledMission": "(misión sin título)",
     "detail": {
       "title": "Expediente del operativo",
       "currentTask": "Tarea actual",

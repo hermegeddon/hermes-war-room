@@ -130,11 +130,6 @@ async function handleSend() {
   }
 }
 
-async function handleArchive() {
-  await stream.archive()
-  toast.add({ title: t('mission.archived'), color: 'primary', icon: 'i-lucide-check' })
-}
-
 const transcriptRef = ref<HTMLElement | null>(null)
 watch(() => stream.messages.value.length, () => {
   nextTick(() => {
@@ -183,18 +178,10 @@ const hasMission = computed(() => stream.mission.value !== null)
         />
         {{ t('mission.title') }}
       </div>
-      <div class="mission-actions">
-        <UButton
-          v-if="hasMission"
-          icon="i-lucide-archive"
-          size="xs"
-          variant="ghost"
-          color="neutral"
-          @click="handleArchive"
-        >
-          {{ t('mission.newMission') }}
-        </UButton>
-      </div>
+      <!-- "Nueva misión" lives in the page header now, next to the
+           mission scope selector. Keeping the slot here in case we want to
+           bring action buttons back into the MissionPanel later. -->
+      <div class="mission-actions" />
     </header>
 
     <div

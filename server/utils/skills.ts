@@ -103,6 +103,16 @@ export function getDisabledSkills(profileDir: string): string[] {
   }
 }
 
+/* Skills that Hermes itself requires for the kanban gateway to launch a
+   profile as a worker. The gateway invokes `hermes -p <slug> --skills
+   kanban-worker chat ...` when a task is dispatched, and Hermes refuses
+   the `--skills` flag if the named skill has been disabled in the
+   profile's config.yaml — so disabling kanban-worker (even by accident,
+   via a preset that doesn't list it) means that profile can never claim
+   a kanban task. We strip these from any disabled list before writing,
+   regardless of what the UI says. */
+const PROTECTED_SKILLS = new Set(['kanban-worker'])
+
 export function setDisabledSkills(profileDir: string, disabled: string[]): void {
   const cfgPath = profileConfigPath(profileDir)
   /* `hermes profile create` without --clone leaves the profile directory
@@ -112,7 +122,7 @@ export function setDisabledSkills(profileDir: string, disabled: string[]): void 
   const raw = existsSync(cfgPath) ? readFileSync(cfgPath, 'utf8') : ''
   const doc = parseYamlDocument(raw)
 
-  const sorted = [...new Set(disabled)].sort()
+  const sorted = [...new Set(disabled.filter(s => !PROTECTED_SKILLS.has(s)))].sort()
 
   // Ensure `skills:` mapping exists, then set `disabled` to the new list.
   if (!doc.has('skills')) {

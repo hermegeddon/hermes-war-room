@@ -502,20 +502,25 @@ const agentsHint = computed(() => {
                 <span class="section-rule-line" />
               </div>
 
+              <!-- Mirror Hire's two-row layout for the elements that exist in
+                   both modals. Hire row 1 = slug + cloneFrom; Retrain has no
+                   cloneFrom, so slug sits alone full-width. Hire row 2 =
+                   provider + model; Retrain matches it 1:1. -->
+              <UFormField
+                :label="t('rename.label')"
+                :help="profile?.isDefault ? t('rename.blockedDefault') : t('rename.help')"
+                :error="!slugValid ? t('rename.invalid') : undefined"
+              >
+                <UInput
+                  v-model="slug"
+                  :disabled="loading || profile?.isDefault"
+                  spellcheck="false"
+                  autocomplete="off"
+                  class="w-full font-mono"
+                />
+              </UFormField>
+
               <div class="field-row field-row--two">
-                <UFormField
-                  :label="t('rename.label')"
-                  :help="profile?.isDefault ? t('rename.blockedDefault') : t('rename.help')"
-                  :error="!slugValid ? t('rename.invalid') : undefined"
-                >
-                  <UInput
-                    v-model="slug"
-                    :disabled="loading || profile?.isDefault"
-                    spellcheck="false"
-                    autocomplete="off"
-                    class="w-full font-mono"
-                  />
-                </UFormField>
                 <UFormField :label="t('profileConfig.provider')">
                   <USelectMenu
                     v-model="provider"
@@ -529,82 +534,79 @@ const agentsHint = computed(() => {
                     :ui="{ base: 'font-mono text-xs' }"
                   />
                 </UFormField>
+                <UFormField :label="t('profileConfig.model')">
+                  <USelectMenu
+                    v-model="model"
+                    :items="modelMenuItems"
+                    value-key="value"
+                    :placeholder="t('profileConfig.providerPlaceholder')"
+                    :search-input="{ placeholder: t('profileConfig.modelSearch') }"
+                    :create-item="modelCatalogLoaded ? 'always' : false"
+                    :disabled="loading"
+                    class="w-full"
+                    :ui="{
+                      base: 'font-mono text-xs',
+                      item: 'gap-2',
+                      itemLabel: 'font-mono text-xs'
+                    }"
+                  >
+                    <template #item="{ item }">
+                      <span class="model-row">
+                        <span class="model-row-id">{{ (item as ModelMenuItem).value }}</span>
+                        <span
+                          v-if="(item as ModelMenuItem).recommended"
+                          class="model-badge model-badge--rec"
+                        >{{ t('profileConfig.modelRecommended') }}</span>
+                        <span
+                          v-else-if="(item as ModelMenuItem).free"
+                          class="model-badge model-badge--free"
+                        >{{ t('profileConfig.modelFree') }}</span>
+                        <span class="model-row-provider">{{ (item as ModelMenuItem).provider }}</span>
+                      </span>
+                    </template>
+                  </USelectMenu>
+                </UFormField>
               </div>
 
-              <UFormField :label="t('profileConfig.model')">
-                <USelectMenu
-                  v-model="model"
-                  :items="modelMenuItems"
-                  value-key="value"
-                  :placeholder="t('profileConfig.providerPlaceholder')"
-                  :search-input="{ placeholder: t('profileConfig.modelSearch') }"
-                  :create-item="modelCatalogLoaded ? 'always' : false"
-                  :disabled="loading"
-                  class="w-full"
-                  :ui="{
-                    base: 'font-mono text-xs',
-                    item: 'gap-2',
-                    itemLabel: 'font-mono text-xs'
-                  }"
-                >
-                  <template #item="{ item }">
-                    <span class="model-row">
-                      <span class="model-row-id">{{ (item as ModelMenuItem).value }}</span>
-                      <span
-                        v-if="(item as ModelMenuItem).recommended"
-                        class="model-badge model-badge--rec"
-                      >{{ t('profileConfig.modelRecommended') }}</span>
-                      <span
-                        v-else-if="(item as ModelMenuItem).free"
-                        class="model-badge model-badge--free"
-                      >{{ t('profileConfig.modelFree') }}</span>
-                      <span class="model-row-provider">{{ (item as ModelMenuItem).provider }}</span>
-                    </span>
-                  </template>
-                </USelectMenu>
-              </UFormField>
-            </section>
-          </div>
+              <CapabilityCard
+                :label="t('tools.title')"
+                icon="i-lucide-wrench"
+                :items="enabledToolLabels"
+                :total="tools.length"
+                :empty-text="t('tools.empty')"
+                :manage-label="t('common.manage')"
+                :disabled="loading"
+                @manage="toolsModalOpen = true"
+              />
 
-          <CapabilityCard
-            :label="t('tools.title')"
-            icon="i-lucide-wrench"
-            :items="enabledToolLabels"
-            :total="tools.length"
-            :empty-text="t('tools.empty')"
-            :manage-label="t('common.manage')"
-            :disabled="loading"
-            @manage="toolsModalOpen = true"
-          />
+              <CapabilityCard
+                :label="t('skills.title')"
+                icon="i-lucide-sparkles"
+                :items="enabledSkillLabels"
+                :total="skills.length"
+                mono
+                :empty-text="t('skills.empty')"
+                :manage-label="t('common.manage')"
+                :disabled="loading"
+                @manage="skillsModalOpen = true"
+              />
 
-          <CapabilityCard
-            :label="t('skills.title')"
-            icon="i-lucide-sparkles"
-            :items="enabledSkillLabels"
-            :total="skills.length"
-            mono
-            :empty-text="t('skills.empty')"
-            :manage-label="t('common.manage')"
-            :disabled="loading"
-            @manage="skillsModalOpen = true"
-          />
+              <CapabilityCard
+                v-if="profile"
+                :label="t('mcp.title')"
+                icon="i-lucide-plug"
+                :items="mcpServerLabels"
+                mono
+                :empty-text="t('mcp.empty')"
+                :manage-label="t('common.manage')"
+                :disabled="loading"
+                @manage="mcpModalOpen = true"
+              />
 
-          <CapabilityCard
-            v-if="profile"
-            :label="t('mcp.title')"
-            icon="i-lucide-plug"
-            :items="mcpServerLabels"
-            mono
-            :empty-text="t('mcp.empty')"
-            :manage-label="t('common.manage')"
-            :disabled="loading"
-            @manage="mcpModalOpen = true"
-          />
-
-          <UFormField
-            :label="t('profileConfig.allowlist')"
-            :help="t('profileConfig.allowlistHint')"
-          >
+              <UFormField
+                :label="t('profileConfig.allowlist')"
+                :help="t('profileConfig.allowlistHint')"
+              >
             <div class="space-y-2">
               <div
                 v-if="!allowlist.length"
@@ -654,6 +656,8 @@ const agentsHint = computed(() => {
               </div>
             </div>
           </UFormField>
+            </section>
+          </div>
         </div>
 
         <!-- Footer with stamp. -->

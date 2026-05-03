@@ -11,26 +11,73 @@ const activeProfiles = computed(() => (profiles.value ?? []).filter(p => p.activ
    mission's id so the kanban poll can scope the floor to its tasks. */
 const missionStream = useMissionStream()
 
-/* When this is true (default), the floor only shows tasks tied to the active
-   mission via `mission_watched_tasks`. Toggle off to see every task across
-   every mission (the global view). Persisted to localStorage so the choice
-   sticks across reloads. */
-const scopeToMission = useState<boolean>('warroom.scopeToMission', () => {
-  if (import.meta.client) {
-    const v = localStorage.getItem('warroom.scopeToMission')
-    if (v !== null) return v === '1'
+/* List of currently open (non-archived) missions, fed into the scope dropdown
+   below the title. Polls every 10 s so newly-created missions appear without a
+   manual refresh; light query, scoped to status=open. */
+interface OpenMission {
+  id: string
+  title: string | null
+  orchestratorSlug: string
+  lastMessageAt: string
+}
+const openMissions = ref<OpenMission[]>([])
+async function refreshOpenMissions() {
+  try {
+    const res = await $fetch<{ missions: OpenMission[] }>(
+      '/api/missions?status=open&pageSize=50'
+    )
+    openMissions.value = res.missions
+  } catch {
+    /* network blips are fine — keep the previous list */
   }
-  return true
+}
+let missionsTimer: ReturnType<typeof setInterval> | null = null
+onMounted(() => {
+  refreshOpenMissions()
+  missionsTimer = setInterval(refreshOpenMissions, 10000)
 })
-watch(scopeToMission, (v) => {
-  if (import.meta.client) localStorage.setItem('warroom.scopeToMission', v ? '1' : '0')
+onBeforeUnmount(() => {
+  if (missionsTimer) clearInterval(missionsTimer)
 })
 
-const activeMissionId = computed(() =>
-  scopeToMission.value ? (missionStream.mission.value?.id ?? null) : null
-)
+/* The floor scopes itself to whichever mission id is selected here. `null` =
+   show every kanban task across every mission (global view). Persisted to
+   localStorage so reloads remember the user's choice. The default tries to
+   stick to the active mission of the home's orchestrator if known. */
+const SENTINEL_ALL = '__all__'
+const scopeMissionId = useState<string | null>('warroom.scopeMissionId', () => {
+  if (import.meta.client) {
+    const v = localStorage.getItem('warroom.scopeMissionId')
+    if (v === SENTINEL_ALL) return null
+    if (typeof v === 'string' && v.length > 0) return v
+  }
+  // Resolved to active mission below once it loads.
+  return null
+})
+watch(scopeMissionId, (v) => {
+  if (import.meta.client) {
+    localStorage.setItem('warroom.scopeMissionId', v ?? SENTINEL_ALL)
+  }
+})
 
-const { tasks, taskByAssignee, dispatcherStale } = useKanbanTasks(activeMissionId)
+/* If the user hasn't picked a mission yet (cold start) and the home's
+   orchestrator gets an active mission, default-scope to it. Once the user
+   picks anything (including "Todas"), we don't override their choice. */
+const userPicked = ref(false)
+watch(scopeMissionId, () => {
+  userPicked.value = true
+})
+watch(() => missionStream.mission.value?.id, (id) => {
+  if (!userPicked.value && id && scopeMissionId.value === null) {
+    scopeMissionId.value = id
+    /* Re-arm the "user hasn't picked" guard since this was an auto-default. */
+    nextTick(() => {
+      userPicked.value = false
+    })
+  }
+})
+
+const { tasks, taskByAssignee, dispatcherStale } = useKanbanTasks(scopeMissionId)
 
 const { usage: tokenUsage } = useTokenUsage()
 
@@ -84,12 +131,109 @@ const clock = computed(() => {
   const s = String(d.getUTCSeconds()).padStart(2, '0')
   return `${h}:${m}:${s} UTC`
 })
+
+/* Items for the scope dropdown: "Todas" sentinel at the top, then each open
+   mission. We use SENTINEL_ALL as the value for "all" because USelectMenu
+   v-model can't distinguish `null` from "no selection". */
+const scopeItems = computed(() => {
+  const items: { label: string, value: string, mission?: OpenMission }[] = [
+    { label: t('warRoom.scopeAll'), value: SENTINEL_ALL }
+  ]
+  for (const m of openMissions.value) {
+    const title = m.title?.trim()
+      ? m.title.length > 56 ? m.title.slice(0, 56) + '…' : m.title
+      : `(sin título)`
+    items.push({ label: `${title} · ${m.orchestratorSlug}`, value: m.id, mission: m })
+  }
+  return items
+})
+
+/* The current scope's display label — "Todas" or the selected mission's
+   title. Used by the dropdown trigger and the screen-reader label. */
+const toast = useToast()
+/* "Nueva misión" archives the current mission and clears the panel — same
+   behavior as the equivalent button inside MissionPanel, mirrored up here so
+   it sits next to the page title. */
+async function onNewMission() {
+  if (!missionStream.mission.value) return
+  try {
+    await missionStream.archive()
+    toast.add({ title: t('mission.archived'), color: 'primary', icon: 'i-lucide-check' })
+    /* Clear the scope selector since the previous mission's id is now stale. */
+    scopeMissionId.value = null
+    userPicked.value = false
+    refreshOpenMissions()
+  } catch (e) {
+    toast.add({
+      title: t('mission.failure'),
+      description: (e as Error).message,
+      color: 'error'
+    })
+  }
+}
+
+const scopeLabel = computed(() => {
+  if (!scopeMissionId.value) return t('warRoom.scopeAll')
+  const found = openMissions.value.find(m => m.id === scopeMissionId.value)
+  if (!found) return t('warRoom.scopeMissingFallback')
+  const title = found.title?.trim() || t('warRoom.scopeUntitledMission')
+  return title.length > 32 ? title.slice(0, 32) + '…' : title
+})
 </script>
 
 <template>
   <div class="page page--war-room">
     <PageHeader :title="t('warRoom.title')">
       <template #actions>
+        <USelectMenu
+          :model-value="scopeMissionId ?? SENTINEL_ALL"
+          :items="scopeItems"
+          value-key="value"
+          :search-input="false"
+          :ui="{
+            base: 'strip-scope-trigger',
+            content: 'min-w-[260px]',
+            item: 'gap-2'
+          }"
+          @update:model-value="(v: string) => scopeMissionId = v === SENTINEL_ALL ? null : v"
+        >
+          <template #default>
+            <button
+              type="button"
+              class="strip-scope"
+              :class="{ 'strip-scope--mission': !!scopeMissionId, 'strip-scope--global': !scopeMissionId }"
+            >
+              <UIcon
+                :name="scopeMissionId ? 'i-lucide-target' : 'i-lucide-globe'"
+                class="size-3"
+              />
+              <span class="strip-scope-label">{{ scopeLabel }}</span>
+              <UIcon
+                name="i-lucide-chevron-down"
+                class="size-3 strip-scope-chevron"
+              />
+            </button>
+          </template>
+          <template #item="{ item }">
+            <span class="scope-row">
+              <UIcon
+                :name="item.value === SENTINEL_ALL ? 'i-lucide-globe' : 'i-lucide-target'"
+                class="size-3 scope-row-icon"
+              />
+              <span class="scope-row-label">{{ item.label }}</span>
+            </span>
+          </template>
+        </USelectMenu>
+        <UButton
+          v-if="missionStream.mission.value"
+          icon="i-lucide-archive"
+          size="sm"
+          variant="ghost"
+          color="neutral"
+          @click="onNewMission"
+        >
+          {{ t('mission.newMission') }}
+        </UButton>
         <UButton
           icon="i-lucide-refresh-cw"
           variant="ghost"
@@ -133,20 +277,6 @@ const clock = computed(() => {
           <span class="strip-meta">
             {{ t('warRoom.operativesCount', { count: activeProfiles.length }, activeProfiles.length) }}
           </span>
-          <button
-            v-if="missionStream.mission.value"
-            type="button"
-            class="strip-scope"
-            :class="{ 'strip-scope--mission': scopeToMission, 'strip-scope--global': !scopeToMission }"
-            :title="scopeToMission ? t('warRoom.scopeToggle') : t('warRoom.scopeToggleMission')"
-            @click="scopeToMission = !scopeToMission"
-          >
-            <UIcon
-              :name="scopeToMission ? 'i-lucide-target' : 'i-lucide-globe'"
-              class="size-3"
-            />
-            {{ scopeToMission ? t('warRoom.missionScope') : t('warRoom.globalScope') }}
-          </button>
           <ClientOnly>
             <span class="strip-clock">{{ clock }}</span>
             <template #fallback>
@@ -324,9 +454,9 @@ const clock = computed(() => {
   letter-spacing: 0.18em;
 }
 
-/* Scope toggle. Mission-scoped is the default and reads "calmly engaged"
-   (amber); global is loud (hot red) so the user always knows when they're
-   looking at unfiltered task soup. */
+/* Scope dropdown trigger. Looks like the old pill; click → menu of open
+   missions plus the "Todas" sentinel. Amber when scoped to a mission
+   (calmly engaged), hot red when global (unfiltered task soup). */
 .strip-scope {
   display: inline-flex;
   align-items: center;
@@ -340,6 +470,18 @@ const clock = computed(() => {
   text-transform: uppercase;
   cursor: pointer;
   transition: background 0.12s ease, border-color 0.12s ease;
+  max-width: 260px;
+  background: transparent;
+}
+.strip-scope-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+.strip-scope-chevron {
+  margin-left: 2px;
+  opacity: 0.6;
 }
 .strip-scope--mission {
   background: rgba(243, 169, 59, 0.12);
@@ -356,6 +498,32 @@ const clock = computed(() => {
 }
 .strip-scope--global:hover {
   background: rgba(200, 66, 31, 0.22);
+}
+/* Hide USelectMenu's default chrome (caret etc.) — our custom slot owns the
+   visual. The trigger element is a contents-only wrapper so .strip-scope
+   stays the visible button. */
+:deep(.strip-scope-trigger) {
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Each row inside the dropdown menu. */
+.scope-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+}
+.scope-row-icon { flex-shrink: 0; opacity: 0.7; }
+.scope-row-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
 }
 
 .floor-grid {
