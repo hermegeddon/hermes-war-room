@@ -40,7 +40,9 @@ const page = ref(1)
 const PAGE_SIZE = 25
 
 // Reset to page 1 whenever the filter switches.
-watch(filter, () => { page.value = 1 })
+watch(filter, () => {
+  page.value = 1
+})
 
 const url = computed(() => {
   const qs = new URLSearchParams({ page: String(page.value), pageSize: String(PAGE_SIZE) })
@@ -156,7 +158,10 @@ function accent(slug: string): string {
         class="archive-alert"
       />
 
-      <ul v-if="list?.missions?.length" class="mission-list">
+      <ul
+        v-if="list?.missions?.length"
+        class="mission-list"
+      >
         <li
           v-for="m in list.missions"
           :key="m.id"
@@ -212,7 +217,10 @@ function accent(slug: string): string {
           :disabled="page <= 1"
           @click="goPrev"
         >
-          <UIcon name="i-lucide-chevron-left" class="pager-glyph" />
+          <UIcon
+            name="i-lucide-chevron-left"
+            class="pager-glyph"
+          />
           {{ t('warRoom.history.prev') }}
         </button>
         <span class="pager-status">
@@ -225,7 +233,10 @@ function accent(slug: string): string {
           @click="goNext"
         >
           {{ t('warRoom.history.next') }}
-          <UIcon name="i-lucide-chevron-right" class="pager-glyph" />
+          <UIcon
+            name="i-lucide-chevron-right"
+            class="pager-glyph"
+          />
         </button>
       </nav>
     </div>
@@ -237,7 +248,10 @@ function accent(slug: string): string {
       @update:open="(v: boolean) => (slideOpen = v)"
     >
       <template #content>
-        <div v-if="detail" class="mdetail">
+        <div
+          v-if="detail"
+          class="mdetail"
+        >
           <header
             class="mdetail-header"
             :style="{ '--accent': accent(detail.mission.orchestratorSlug) }"
@@ -264,7 +278,10 @@ function accent(slug: string): string {
             />
           </header>
 
-          <ul v-if="detail.messages.length" class="thread">
+          <ul
+            v-if="detail.messages.length"
+            class="thread"
+          >
             <li
               v-for="msg in detail.messages"
               :key="msg.id"
@@ -280,11 +297,17 @@ function accent(slug: string): string {
               </p>
             </li>
           </ul>
-          <p v-else class="thread-empty">
+          <p
+            v-else
+            class="thread-empty"
+          >
             {{ t('warRoom.history.empty') }}
           </p>
         </div>
-        <div v-else-if="detailStatus === 'pending'" class="mdetail-loading">
+        <div
+          v-else-if="detailStatus === 'pending'"
+          class="mdetail-loading"
+        >
           …
         </div>
       </template>

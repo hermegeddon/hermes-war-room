@@ -264,23 +264,23 @@ function shortTimeFromSec(unixSec: number | null): string {
             class="subtask-list"
           >
             <li
-              v-for="t in delegatedTasks"
-              :key="t.id"
+              v-for="sub in delegatedTasks"
+              :key="sub.id"
               class="subtask"
             >
               <UBadge
-                :color="statusColor(t.status)"
+                :color="statusColor(sub.status)"
                 variant="subtle"
                 size="xs"
               >
-                {{ t.status }}
+                {{ sub.status }}
               </UBadge>
               <div class="subtask-body">
                 <p class="subtask-title">
-                  {{ t.title }}
+                  {{ sub.title }}
                 </p>
                 <p class="subtask-meta">
-                  {{ t.assignee ?? '—' }} · {{ t.id }}
+                  {{ sub.assignee ?? '—' }} · {{ sub.id }}
                 </p>
               </div>
             </li>

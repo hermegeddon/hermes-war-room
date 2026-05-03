@@ -408,7 +408,9 @@ const agentsHint = computed(() => {
         <header class="dossier-head">
           <span class="dossier-cmark dossier-cmark--tl" />
           <span class="dossier-cmark dossier-cmark--tr" />
-          <div class="dossier-head-stencil">Operative File · Retrain</div>
+          <div class="dossier-head-stencil">
+            Operative File · Retrain
+          </div>
           <h2 class="dossier-title">
             {{ t('retrain.title', { name: displayName }) }}
           </h2>
@@ -430,103 +432,103 @@ const agentsHint = computed(() => {
 
         <!-- Scrollable body region — head + foot stay pinned, this scrolls. -->
         <div class="dossier-scroll">
-        <!-- Two-column body. -->
-        <div class="dossier-grid">
-          <!-- LEFT: identity & rules. -->
-          <section class="dossier-col">
-            <div class="section-rule">
-              <UIcon
-                name="i-lucide-id-card"
-                class="size-3.5"
-              />
-              <span class="section-rule-label">{{ t('retrain.identitySection') }}</span>
-              <span class="section-rule-line" />
-            </div>
+          <!-- Two-column body. -->
+          <div class="dossier-grid">
+            <!-- LEFT: identity & rules. -->
+            <section class="dossier-col">
+              <div class="section-rule">
+                <UIcon
+                  name="i-lucide-id-card"
+                  class="size-3.5"
+                />
+                <span class="section-rule-label">{{ t('retrain.identitySection') }}</span>
+                <span class="section-rule-line" />
+              </div>
 
-            <UFormField
-              :label="t('soul.title')"
-              :help="t('soul.hint')"
-            >
-              <UTextarea
-                v-model="soul"
-                :placeholder="t('soul.placeholder')"
-                :rows="14"
-                :disabled="loading"
-                autoresize
-                spellcheck="false"
-                class="w-full prose-textarea"
-              />
-            </UFormField>
-
-            <UFormField
-              :label="t('agents.title')"
-              :help="agentsHint"
-            >
-              <template
-                v-if="agentsSource === 'global'"
-                #description
-              >
-                <UBadge
-                  color="warning"
-                  variant="subtle"
-                  size="sm"
-                >
-                  {{ t('agents.inheriting') }}
-                </UBadge>
-              </template>
-              <UTextarea
-                v-model="agents"
-                :placeholder="t('agents.placeholder')"
-                :rows="14"
-                :disabled="loading"
-                autoresize
-                spellcheck="false"
-                class="w-full prose-textarea"
-              />
-            </UFormField>
-          </section>
-
-          <!-- RIGHT: capabilities. -->
-          <section class="dossier-col">
-            <div class="section-rule">
-              <UIcon
-                name="i-lucide-wrench"
-                class="size-3.5"
-              />
-              <span class="section-rule-label">{{ t('retrain.capabilitiesSection') }}</span>
-              <span class="section-rule-line" />
-            </div>
-
-            <div class="field-row field-row--two">
               <UFormField
-                :label="t('rename.label')"
-                :help="profile?.isDefault ? t('rename.blockedDefault') : t('rename.help')"
-                :error="!slugValid ? t('rename.invalid') : undefined"
+                :label="t('soul.title')"
+                :help="t('soul.hint')"
               >
-                <UInput
-                  v-model="slug"
-                  :disabled="loading || profile?.isDefault"
-                  spellcheck="false"
-                  autocomplete="off"
-                  class="w-full font-mono"
-                />
-              </UFormField>
-              <UFormField :label="t('profileConfig.provider')">
-                <USelectMenu
-                  v-model="provider"
-                  :items="providerMenuItems"
-                  value-key="value"
-                  :placeholder="t('profileConfig.providerPlaceholder')"
-                  :search-input="{ placeholder: t('profileConfig.providerPlaceholder') }"
-                  create-item="always"
+                <UTextarea
+                  v-model="soul"
+                  :placeholder="t('soul.placeholder')"
+                  :rows="14"
                   :disabled="loading"
-                  class="w-full"
-                  :ui="{ base: 'font-mono text-xs' }"
+                  autoresize
+                  spellcheck="false"
+                  class="w-full prose-textarea"
                 />
               </UFormField>
-            </div>
 
-            <UFormField :label="t('profileConfig.model')">
+              <UFormField
+                :label="t('agents.title')"
+                :help="agentsHint"
+              >
+                <template
+                  v-if="agentsSource === 'global'"
+                  #description
+                >
+                  <UBadge
+                    color="warning"
+                    variant="subtle"
+                    size="sm"
+                  >
+                    {{ t('agents.inheriting') }}
+                  </UBadge>
+                </template>
+                <UTextarea
+                  v-model="agents"
+                  :placeholder="t('agents.placeholder')"
+                  :rows="14"
+                  :disabled="loading"
+                  autoresize
+                  spellcheck="false"
+                  class="w-full prose-textarea"
+                />
+              </UFormField>
+            </section>
+
+            <!-- RIGHT: capabilities. -->
+            <section class="dossier-col">
+              <div class="section-rule">
+                <UIcon
+                  name="i-lucide-wrench"
+                  class="size-3.5"
+                />
+                <span class="section-rule-label">{{ t('retrain.capabilitiesSection') }}</span>
+                <span class="section-rule-line" />
+              </div>
+
+              <div class="field-row field-row--two">
+                <UFormField
+                  :label="t('rename.label')"
+                  :help="profile?.isDefault ? t('rename.blockedDefault') : t('rename.help')"
+                  :error="!slugValid ? t('rename.invalid') : undefined"
+                >
+                  <UInput
+                    v-model="slug"
+                    :disabled="loading || profile?.isDefault"
+                    spellcheck="false"
+                    autocomplete="off"
+                    class="w-full font-mono"
+                  />
+                </UFormField>
+                <UFormField :label="t('profileConfig.provider')">
+                  <USelectMenu
+                    v-model="provider"
+                    :items="providerMenuItems"
+                    value-key="value"
+                    :placeholder="t('profileConfig.providerPlaceholder')"
+                    :search-input="{ placeholder: t('profileConfig.providerPlaceholder') }"
+                    create-item="always"
+                    :disabled="loading"
+                    class="w-full"
+                    :ui="{ base: 'font-mono text-xs' }"
+                  />
+                </UFormField>
+              </div>
+
+              <UFormField :label="t('profileConfig.model')">
                 <USelectMenu
                   v-model="model"
                   :items="modelMenuItems"
@@ -557,98 +559,97 @@ const agentsHint = computed(() => {
                   </template>
                 </USelectMenu>
               </UFormField>
-            </div>
+            </section>
+          </div>
 
-            <CapabilityCard
-              :label="t('tools.title')"
-              icon="i-lucide-wrench"
-              :items="enabledToolLabels"
-              :total="tools.length"
-              :empty-text="t('tools.empty')"
-              :manage-label="t('common.manage')"
-              :disabled="loading"
-              @manage="toolsModalOpen = true"
-            />
+          <CapabilityCard
+            :label="t('tools.title')"
+            icon="i-lucide-wrench"
+            :items="enabledToolLabels"
+            :total="tools.length"
+            :empty-text="t('tools.empty')"
+            :manage-label="t('common.manage')"
+            :disabled="loading"
+            @manage="toolsModalOpen = true"
+          />
 
-            <CapabilityCard
-              :label="t('skills.title')"
-              icon="i-lucide-sparkles"
-              :items="enabledSkillLabels"
-              :total="skills.length"
-              mono
-              :empty-text="t('skills.empty')"
-              :manage-label="t('common.manage')"
-              :disabled="loading"
-              @manage="skillsModalOpen = true"
-            />
+          <CapabilityCard
+            :label="t('skills.title')"
+            icon="i-lucide-sparkles"
+            :items="enabledSkillLabels"
+            :total="skills.length"
+            mono
+            :empty-text="t('skills.empty')"
+            :manage-label="t('common.manage')"
+            :disabled="loading"
+            @manage="skillsModalOpen = true"
+          />
 
-            <CapabilityCard
-              v-if="profile"
-              :label="t('mcp.title')"
-              icon="i-lucide-plug"
-              :items="mcpServerLabels"
-              mono
-              :empty-text="t('mcp.empty')"
-              :manage-label="t('common.manage')"
-              :disabled="loading"
-              @manage="mcpModalOpen = true"
-            />
+          <CapabilityCard
+            v-if="profile"
+            :label="t('mcp.title')"
+            icon="i-lucide-plug"
+            :items="mcpServerLabels"
+            mono
+            :empty-text="t('mcp.empty')"
+            :manage-label="t('common.manage')"
+            :disabled="loading"
+            @manage="mcpModalOpen = true"
+          />
 
-            <UFormField
-              :label="t('profileConfig.allowlist')"
-              :help="t('profileConfig.allowlistHint')"
-            >
-              <div class="space-y-2">
-                <div
-                  v-if="!allowlist.length"
-                  class="allowlist-empty"
-                >
-                  {{ t('profileConfig.allowlistEmpty') }}
-                </div>
-                <div
-                  v-else
-                  class="flex flex-wrap gap-1.5"
-                >
-                  <UBadge
-                    v-for="entry in allowlist"
-                    :key="entry"
-                    color="warning"
-                    variant="subtle"
-                    size="sm"
-                    class="allowlist-chip"
-                  >
-                    <span class="font-mono">{{ entry }}</span>
-                    <button
-                      type="button"
-                      class="allowlist-chip-x"
-                      :aria-label="t('profileConfig.allowlistRemove', { entry })"
-                      @click="removeAllowlistEntry(entry)"
-                    >
-                      <UIcon
-                        name="i-lucide-x"
-                        class="size-3"
-                      />
-                    </button>
-                  </UBadge>
-                </div>
-                <div
-                  v-if="allowlist.length"
-                  class="flex justify-end"
-                >
-                  <UButton
-                    size="xs"
-                    variant="ghost"
-                    color="neutral"
-                    icon="i-lucide-trash-2"
-                    @click="clearAllowlist"
-                  >
-                    {{ t('profileConfig.allowlistClear') }}
-                  </UButton>
-                </div>
+          <UFormField
+            :label="t('profileConfig.allowlist')"
+            :help="t('profileConfig.allowlistHint')"
+          >
+            <div class="space-y-2">
+              <div
+                v-if="!allowlist.length"
+                class="allowlist-empty"
+              >
+                {{ t('profileConfig.allowlistEmpty') }}
               </div>
-            </UFormField>
-          </section>
-        </div>
+              <div
+                v-else
+                class="flex flex-wrap gap-1.5"
+              >
+                <UBadge
+                  v-for="entry in allowlist"
+                  :key="entry"
+                  color="warning"
+                  variant="subtle"
+                  size="sm"
+                  class="allowlist-chip"
+                >
+                  <span class="font-mono">{{ entry }}</span>
+                  <button
+                    type="button"
+                    class="allowlist-chip-x"
+                    :aria-label="t('profileConfig.allowlistRemove', { entry })"
+                    @click="removeAllowlistEntry(entry)"
+                  >
+                    <UIcon
+                      name="i-lucide-x"
+                      class="size-3"
+                    />
+                  </button>
+                </UBadge>
+              </div>
+              <div
+                v-if="allowlist.length"
+                class="flex justify-end"
+              >
+                <UButton
+                  size="xs"
+                  variant="ghost"
+                  color="neutral"
+                  icon="i-lucide-trash-2"
+                  @click="clearAllowlist"
+                >
+                  {{ t('profileConfig.allowlistClear') }}
+                </UButton>
+              </div>
+            </div>
+          </UFormField>
         </div>
 
         <!-- Footer with stamp. -->

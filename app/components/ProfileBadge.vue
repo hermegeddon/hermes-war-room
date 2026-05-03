@@ -115,7 +115,10 @@ const bars = computed(() => {
   let h = hash(props.profile.slug)
   const out: number[] = []
   for (let i = 0; i < 38; i++) {
-    h ^= h << 13; h ^= h >>> 17; h ^= h << 5; h >>>= 0
+    h ^= h << 13
+    h ^= h >>> 17
+    h ^= h << 5
+    h >>>= 0
     out.push((h % 3) + 1)
   }
   return out

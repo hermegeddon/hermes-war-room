@@ -219,7 +219,10 @@ const hasMission = computed(() => stream.mission.value !== null)
         :class="{ 'is-active': tab === 'chat' }"
         @click="tab = 'chat'"
       >
-        <UIcon name="i-lucide-message-square" class="mission-tab-glyph" />
+        <UIcon
+          name="i-lucide-message-square"
+          class="mission-tab-glyph"
+        />
         {{ t('mission.tabs.chat') }}
       </button>
       <button
@@ -228,7 +231,10 @@ const hasMission = computed(() => stream.mission.value !== null)
         :class="{ 'is-active': tab === 'board' }"
         @click="tab = 'board'"
       >
-        <UIcon name="i-lucide-kanban-square" class="mission-tab-glyph" />
+        <UIcon
+          name="i-lucide-kanban-square"
+          class="mission-tab-glyph"
+        />
         {{ t('mission.tabs.board') }}
         <span
           v-if="tasks.length"

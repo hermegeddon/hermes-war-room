@@ -11,11 +11,10 @@
  */
 
 import { getKanbanDb, type KanbanTask } from './kanban'
-import { getMission, appendMessage } from './mission'
+import { getMission, appendMessage, updateMessage } from './mission'
 import { withMissionLock } from './mission-lock'
 import { startPrompt } from './orchestrator-acp'
 import { emit } from './mission-bus'
-import { updateMessage } from './mission'
 import { startFlight, endFlight } from './mission-flight'
 import { useDb } from './db'
 
@@ -322,9 +321,17 @@ function checkAll(): void {
               worker_pid, started_at, claim_expires, last_heartbeat_at, created_at
        FROM tasks WHERE id IN (${placeholders})`
     ).all(...ids as never[]) as unknown as Array<{
-      id: string, title: string, body: string | null, assignee: string | null, status: string,
-      priority: number, worker_pid: number | null, started_at: number | null,
-      claim_expires: number | null, last_heartbeat_at: number | null, created_at: number
+      id: string
+      title: string
+      body: string | null
+      assignee: string | null
+      status: string
+      priority: number
+      worker_pid: number | null
+      started_at: number | null
+      claim_expires: number | null
+      last_heartbeat_at: number | null
+      created_at: number
     }>
 
     const justCompleted: KanbanTask[] = []

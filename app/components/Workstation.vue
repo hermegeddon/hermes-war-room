@@ -6,6 +6,8 @@ import type { TokenUsage } from '~/composables/useTokenUsage'
 import { compactNumber } from '~/composables/useTokenUsage'
 import { buildAvatarUrl, pickActiveGesture, randomActiveGesture, type Gesture } from '~/utils/avatar'
 
+defineOptions({ name: 'OperativeWorkstation' })
+
 const { t, te } = useI18n()
 
 const props = defineProps<{
@@ -240,7 +242,7 @@ const tokenChip = computed(() => {
     @keydown.enter.prevent="emit('select', profile)"
     @keydown.space.prevent="emit('select', profile)"
   >
-<!-- Comic-style thought bubble above the head. Surfaces (in order of
+    <!-- Comic-style thought bubble above the head. Surfaces (in order of
          priority): live tool/thought step → kanban task title → "thinking"
          placeholder. Hidden when truly idle. Token chip (when there's
          usage data) sits inside the bubble as a second line. -->

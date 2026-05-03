@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import type { NavigationMenuItem } from '@nuxt/ui'
-
 const route = useRoute()
 const { t, locale, locales, setLocale } = useI18n()
 
@@ -31,8 +29,8 @@ interface TopTab {
 }
 
 const tabs = computed<TopTab[]>(() => [
-  { to: '/',         icon: 'i-lucide-radar',        label: t('nav.warRoom') },
-  { to: '/team',     icon: 'i-lucide-users-round',  label: t('nav.team') },
+  { to: '/', icon: 'i-lucide-radar', label: t('nav.warRoom') },
+  { to: '/team', icon: 'i-lucide-users-round', label: t('nav.team') },
   { to: '/missions', icon: 'i-lucide-folder-clock', label: t('nav.missions') }
 ])
 
@@ -53,9 +51,15 @@ function isActive(to: string): boolean {
   <UApp>
     <div class="hwr-shell">
       <header class="hwr-topbar">
-        <NuxtLink to="/" class="hwr-brand">
+        <NuxtLink
+          to="/"
+          class="hwr-brand"
+        >
           <span class="hwr-brand-mark">
-            <UIcon name="i-lucide-radio-tower" class="size-4" />
+            <UIcon
+              name="i-lucide-radio-tower"
+              class="size-4"
+            />
             <span class="hwr-brand-pulse" />
           </span>
           <span class="hwr-brand-name">
@@ -64,7 +68,10 @@ function isActive(to: string): boolean {
           </span>
         </NuxtLink>
 
-        <nav class="hwr-tabs" aria-label="Primary">
+        <nav
+          class="hwr-tabs"
+          aria-label="Primary"
+        >
           <NuxtLink
             v-for="tab in tabs"
             :key="tab.to"
@@ -72,7 +79,10 @@ function isActive(to: string): boolean {
             class="hwr-tab"
             :class="{ 'is-active': isActive(tab.to) }"
           >
-            <UIcon :name="tab.icon" class="hwr-tab-icon" />
+            <UIcon
+              :name="tab.icon"
+              class="hwr-tab-icon"
+            />
             <span>{{ tab.label }}</span>
           </NuxtLink>
         </nav>

@@ -369,7 +369,9 @@ async function submit() {
         <header class="dossier-head">
           <span class="dossier-cmark dossier-cmark--tl" />
           <span class="dossier-cmark dossier-cmark--tr" />
-          <div class="dossier-head-stencil">Operative File</div>
+          <div class="dossier-head-stencil">
+            Operative File
+          </div>
           <h2 class="dossier-title">
             {{ t('hire.title') }}
           </h2>
@@ -391,206 +393,206 @@ async function submit() {
 
         <!-- Scrollable body region — head + foot stay pinned, this scrolls. -->
         <div class="dossier-scroll">
-        <!-- Preset gallery: cards with icon + title + tagline. -->
-        <section class="dossier-presets">
-          <div class="section-rule">
-            <span class="section-rule-label">{{ t('hire.presetSection') }}</span>
-            <span class="section-rule-line" />
-          </div>
-          <p class="section-hint">
-            {{ t('hire.presetHint') }}
-          </p>
-          <ul
-            class="preset-grid"
-            role="radiogroup"
-            :aria-label="t('hire.presetSection')"
-          >
-            <li
-              v-for="p in presets"
-              :key="p.id"
-            >
-              <button
-                type="button"
-                class="preset-card"
-                :class="{ 'is-active': selectedPresetId === p.id }"
-                :style="{ '--preset-accent': '#' + p.accent }"
-                role="radio"
-                :aria-checked="selectedPresetId === p.id"
-                @click="applyPreset(p.id)"
-              >
-                <span class="preset-card-stripe" />
-                <span class="preset-card-icon">
-                  <UIcon
-                    :name="p.iconName"
-                    class="size-4"
-                  />
-                </span>
-                <span class="preset-card-text">
-                  <span class="preset-card-title">{{ presetTitle(p.id) }}</span>
-                  <span class="preset-card-tagline">{{ presetTagline(p.id) }}</span>
-                </span>
-              </button>
-            </li>
-          </ul>
-        </section>
-
-        <!-- Two-column intake: briefing on the left, capabilities on the right. -->
-        <div class="dossier-grid">
-          <section class="dossier-col">
+          <!-- Preset gallery: cards with icon + title + tagline. -->
+          <section class="dossier-presets">
             <div class="section-rule">
-              <UIcon
-                name="i-lucide-id-card"
-                class="size-3.5"
-              />
-              <span class="section-rule-label">{{ t('hire.briefingSection') }}</span>
+              <span class="section-rule-label">{{ t('hire.presetSection') }}</span>
               <span class="section-rule-line" />
             </div>
-
-            <UFormField
-              :label="t('soul.title')"
-              :help="t('soul.hint')"
-            >
-              <UTextarea
-                :model-value="soul"
-                :placeholder="t('soul.placeholder')"
-                :loading="soulLoading"
-                :rows="12"
-                autoresize
-                spellcheck="false"
-                class="w-full prose-textarea"
-                @update:model-value="(v: string | number) => onSoulInput(String(v))"
-              />
-            </UFormField>
-
-            <UFormField
-              :label="t('agents.title')"
-              :help="t('agents.hintProfile')"
-            >
-              <UTextarea
-                :model-value="agents"
-                :placeholder="t('agents.placeholder')"
-                :rows="10"
-                autoresize
-                spellcheck="false"
-                class="w-full prose-textarea"
-                @update:model-value="(v: string | number) => onAgentsInput(String(v))"
-              />
-            </UFormField>
-          </section>
-
-          <section class="dossier-col">
-            <div class="section-rule">
-              <UIcon
-                name="i-lucide-wrench"
-                class="size-3.5"
-              />
-              <span class="section-rule-label">{{ t('hire.capabilitiesSection') }}</span>
-              <span class="section-rule-line" />
-            </div>
-
-            <div class="field-row field-row--two">
-              <UFormField
-                :label="t('hire.nameLabel')"
-                :help="t('hire.nameHint')"
-                required
-              >
-                <UInput
-                  v-model="name"
-                  :placeholder="t('hire.namePlaceholder')"
-                  autocomplete="off"
-                  spellcheck="false"
-                  autofocus
-                  class="w-full font-mono"
-                  @keyup.enter="submit"
-                />
-              </UFormField>
-
-              <UFormField
-                :label="t('hire.cloneLabel')"
-                :help="t('hire.cloneHint')"
-              >
-                <USelectMenu
-                  v-model="cloneFrom"
-                  :items="cloneOptions"
-                  value-key="value"
-                  class="w-full"
-                />
-              </UFormField>
-            </div>
-
-            <div class="field-row field-row--two">
-              <UFormField :label="t('profileConfig.provider')">
-                <USelectMenu
-                  v-model="provider"
-                  :items="providerMenuItems"
-                  value-key="value"
-                  :placeholder="t('profileConfig.providerPlaceholder')"
-                  :search-input="{ placeholder: t('profileConfig.providerPlaceholder') }"
-                  create-item="always"
-                  class="w-full"
-                  :ui="{ base: 'font-mono text-xs' }"
-                />
-              </UFormField>
-              <UFormField :label="t('profileConfig.model')">
-                <USelectMenu
-                  v-model="model"
-                  :items="modelMenuItems"
-                  value-key="value"
-                  :search-input="{ placeholder: t('profileConfig.modelSearch') }"
-                  :create-item="catalogLoaded ? 'always' : false"
-                  class="w-full"
-                  :ui="{ base: 'font-mono text-xs', item: 'gap-2', itemLabel: 'font-mono text-xs' }"
-                >
-                  <template #item="{ item }">
-                    <span class="model-row">
-                      <span class="model-row-id">{{ (item as ModelMenuItem).value }}</span>
-                      <span
-                        v-if="(item as ModelMenuItem).recommended"
-                        class="model-badge model-badge--rec"
-                      >{{ t('profileConfig.modelRecommended') }}</span>
-                      <span
-                        v-else-if="(item as ModelMenuItem).free"
-                        class="model-badge model-badge--free"
-                      >{{ t('profileConfig.modelFree') }}</span>
-                      <span class="model-row-provider">{{ (item as ModelMenuItem).provider }}</span>
-                    </span>
-                  </template>
-                </USelectMenu>
-              </UFormField>
-            </div>
-
-            <CapabilityCard
-              :label="t('tools.title')"
-              icon="i-lucide-wrench"
-              :items="enabledToolLabels"
-              :total="tools.length"
-              :empty-text="t('tools.empty')"
-              :manage-label="t('common.manage')"
-              :disabled="toolsLoading"
-              @manage="toolsModalOpen = true"
-            />
-
-            <CapabilityCard
-              :label="t('skills.title')"
-              icon="i-lucide-sparkles"
-              :items="enabledSkillLabels"
-              :total="skills.length"
-              mono
-              :empty-text="t('skills.empty')"
-              :manage-label="t('common.manage')"
-              :disabled="skillsLoading"
-              @manage="skillsModalOpen = true"
-            />
-
-            <p class="dossier-note">
-              <UIcon
-                name="i-lucide-info"
-                class="size-3.5"
-              />
-              {{ t('hire.noteAfterCreate') }}
+            <p class="section-hint">
+              {{ t('hire.presetHint') }}
             </p>
+            <ul
+              class="preset-grid"
+              role="radiogroup"
+              :aria-label="t('hire.presetSection')"
+            >
+              <li
+                v-for="p in presets"
+                :key="p.id"
+              >
+                <button
+                  type="button"
+                  class="preset-card"
+                  :class="{ 'is-active': selectedPresetId === p.id }"
+                  :style="{ '--preset-accent': '#' + p.accent }"
+                  role="radio"
+                  :aria-checked="selectedPresetId === p.id"
+                  @click="applyPreset(p.id)"
+                >
+                  <span class="preset-card-stripe" />
+                  <span class="preset-card-icon">
+                    <UIcon
+                      :name="p.iconName"
+                      class="size-4"
+                    />
+                  </span>
+                  <span class="preset-card-text">
+                    <span class="preset-card-title">{{ presetTitle(p.id) }}</span>
+                    <span class="preset-card-tagline">{{ presetTagline(p.id) }}</span>
+                  </span>
+                </button>
+              </li>
+            </ul>
           </section>
-        </div>
+
+          <!-- Two-column intake: briefing on the left, capabilities on the right. -->
+          <div class="dossier-grid">
+            <section class="dossier-col">
+              <div class="section-rule">
+                <UIcon
+                  name="i-lucide-id-card"
+                  class="size-3.5"
+                />
+                <span class="section-rule-label">{{ t('hire.briefingSection') }}</span>
+                <span class="section-rule-line" />
+              </div>
+
+              <UFormField
+                :label="t('soul.title')"
+                :help="t('soul.hint')"
+              >
+                <UTextarea
+                  :model-value="soul"
+                  :placeholder="t('soul.placeholder')"
+                  :loading="soulLoading"
+                  :rows="12"
+                  autoresize
+                  spellcheck="false"
+                  class="w-full prose-textarea"
+                  @update:model-value="(v: string | number) => onSoulInput(String(v))"
+                />
+              </UFormField>
+
+              <UFormField
+                :label="t('agents.title')"
+                :help="t('agents.hintProfile')"
+              >
+                <UTextarea
+                  :model-value="agents"
+                  :placeholder="t('agents.placeholder')"
+                  :rows="10"
+                  autoresize
+                  spellcheck="false"
+                  class="w-full prose-textarea"
+                  @update:model-value="(v: string | number) => onAgentsInput(String(v))"
+                />
+              </UFormField>
+            </section>
+
+            <section class="dossier-col">
+              <div class="section-rule">
+                <UIcon
+                  name="i-lucide-wrench"
+                  class="size-3.5"
+                />
+                <span class="section-rule-label">{{ t('hire.capabilitiesSection') }}</span>
+                <span class="section-rule-line" />
+              </div>
+
+              <div class="field-row field-row--two">
+                <UFormField
+                  :label="t('hire.nameLabel')"
+                  :help="t('hire.nameHint')"
+                  required
+                >
+                  <UInput
+                    v-model="name"
+                    :placeholder="t('hire.namePlaceholder')"
+                    autocomplete="off"
+                    spellcheck="false"
+                    autofocus
+                    class="w-full font-mono"
+                    @keyup.enter="submit"
+                  />
+                </UFormField>
+
+                <UFormField
+                  :label="t('hire.cloneLabel')"
+                  :help="t('hire.cloneHint')"
+                >
+                  <USelectMenu
+                    v-model="cloneFrom"
+                    :items="cloneOptions"
+                    value-key="value"
+                    class="w-full"
+                  />
+                </UFormField>
+              </div>
+
+              <div class="field-row field-row--two">
+                <UFormField :label="t('profileConfig.provider')">
+                  <USelectMenu
+                    v-model="provider"
+                    :items="providerMenuItems"
+                    value-key="value"
+                    :placeholder="t('profileConfig.providerPlaceholder')"
+                    :search-input="{ placeholder: t('profileConfig.providerPlaceholder') }"
+                    create-item="always"
+                    class="w-full"
+                    :ui="{ base: 'font-mono text-xs' }"
+                  />
+                </UFormField>
+                <UFormField :label="t('profileConfig.model')">
+                  <USelectMenu
+                    v-model="model"
+                    :items="modelMenuItems"
+                    value-key="value"
+                    :search-input="{ placeholder: t('profileConfig.modelSearch') }"
+                    :create-item="catalogLoaded ? 'always' : false"
+                    class="w-full"
+                    :ui="{ base: 'font-mono text-xs', item: 'gap-2', itemLabel: 'font-mono text-xs' }"
+                  >
+                    <template #item="{ item }">
+                      <span class="model-row">
+                        <span class="model-row-id">{{ (item as ModelMenuItem).value }}</span>
+                        <span
+                          v-if="(item as ModelMenuItem).recommended"
+                          class="model-badge model-badge--rec"
+                        >{{ t('profileConfig.modelRecommended') }}</span>
+                        <span
+                          v-else-if="(item as ModelMenuItem).free"
+                          class="model-badge model-badge--free"
+                        >{{ t('profileConfig.modelFree') }}</span>
+                        <span class="model-row-provider">{{ (item as ModelMenuItem).provider }}</span>
+                      </span>
+                    </template>
+                  </USelectMenu>
+                </UFormField>
+              </div>
+
+              <CapabilityCard
+                :label="t('tools.title')"
+                icon="i-lucide-wrench"
+                :items="enabledToolLabels"
+                :total="tools.length"
+                :empty-text="t('tools.empty')"
+                :manage-label="t('common.manage')"
+                :disabled="toolsLoading"
+                @manage="toolsModalOpen = true"
+              />
+
+              <CapabilityCard
+                :label="t('skills.title')"
+                icon="i-lucide-sparkles"
+                :items="enabledSkillLabels"
+                :total="skills.length"
+                mono
+                :empty-text="t('skills.empty')"
+                :manage-label="t('common.manage')"
+                :disabled="skillsLoading"
+                @manage="skillsModalOpen = true"
+              />
+
+              <p class="dossier-note">
+                <UIcon
+                  name="i-lucide-info"
+                  class="size-3.5"
+                />
+                {{ t('hire.noteAfterCreate') }}
+              </p>
+            </section>
+          </div>
         </div>
 
         <!-- Footer with deploy stamp. -->

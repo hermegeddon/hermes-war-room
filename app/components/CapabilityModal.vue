@@ -24,7 +24,9 @@ const { t } = useI18n()
     <template #content>
       <div class="cap-modal">
         <header class="cap-modal-head">
-          <div class="cap-modal-stencil">Capability</div>
+          <div class="cap-modal-stencil">
+            Capability
+          </div>
           <h3 class="cap-modal-title">
             {{ title }}
           </h3>

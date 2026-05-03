@@ -20,8 +20,8 @@ interface Column {
 }
 
 const columns = computed<Column[]>(() => [
-  { status: 'todo',    label: t('mission.board.col.todo'),    tone: 'todo' },
-  { status: 'ready',   label: t('mission.board.col.ready'),   tone: 'ready' },
+  { status: 'todo', label: t('mission.board.col.todo'), tone: 'todo' },
+  { status: 'ready', label: t('mission.board.col.ready'), tone: 'ready' },
   { status: 'running', label: t('mission.board.col.running'), tone: 'running' },
   { status: 'blocked', label: t('mission.board.col.blocked'), tone: 'blocked' }
 ])
