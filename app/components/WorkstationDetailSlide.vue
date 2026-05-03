@@ -632,9 +632,12 @@ const fmtCost = (n: number) => n < 0.01 ? `$${n.toFixed(4)}` : `$${n.toFixed(2)}
             >{{ fullLog?.content ?? taskFeed?.logTail ?? '' }}</pre>
           </details>
 
-          <!-- Kill button. Only meaningful while the worker is alive. -->
+          <!-- Kill button. Available for any non-archived task — `running` /
+               `blocked` send SIGTERM to the worker; `todo` / `ready` simply
+               block + archive on the kanban side so the dispatcher never
+               picks them up. -->
           <div
-            v-if="currentTask && (currentTask.status === 'running' || currentTask.status === 'blocked')"
+            v-if="currentTask && currentTask.status !== 'completed' && currentTask.status !== 'archived'"
             class="feed-kill"
           >
             <button
@@ -724,7 +727,22 @@ const fmtCost = (n: number) => n < 0.01 ? `$${n.toFixed(4)}` : `$${n.toFixed(2)}
                 :name="step.kind === 'tool' ? 'i-lucide-arrow-right' : 'i-lucide-brain'"
                 class="step-glyph"
               />
-              <span class="step-label">{{ step.label }}</span>
+              <div class="step-body">
+                <span class="step-label">
+                  <span
+                    v-if="step.tool"
+                    class="step-tool"
+                  >{{ step.tool }}</span>
+                  <span class="step-text">{{ step.label }}</span>
+                </span>
+                <!-- Tool argument body (shell command, python code, file path
+                     + content, search query, …). Pre-formatted, mono font,
+                     scrolls horizontally on long lines. -->
+                <pre
+                  v-if="step.detail"
+                  class="step-detail"
+                >{{ step.detail }}</pre>
+              </div>
             </li>
           </ul>
           <p
@@ -1429,9 +1447,9 @@ const fmtCost = (n: number) => n < 0.01 ? `$${n.toFixed(4)}` : `$${n.toFixed(2)}
 .step {
   display: grid;
   grid-template-columns: auto auto 1fr;
-  align-items: center;
+  align-items: start;
   gap: 8px;
-  padding: 4px 8px;
+  padding: 5px 8px;
   background: rgba(255, 252, 240, 0.55);
   border-left: 2px solid rgba(28, 26, 20, 0.18);
   font-size: 11px;
@@ -1447,25 +1465,70 @@ const fmtCost = (n: number) => n < 0.01 ? `$${n.toFixed(4)}` : `$${n.toFixed(2)}
   font-size: 9.5px;
   color: rgba(28, 26, 20, 0.45);
   letter-spacing: 0.04em;
+  padding-top: 2px;
 }
 .step-glyph {
   width: 11px;
   height: 11px;
   color: rgba(28, 26, 20, 0.55);
   flex-shrink: 0;
+  margin-top: 2px;
 }
 .step--tool .step-glyph {
   color: #c47b1c;
 }
+.step-body {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
 .step-label {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  min-width: 0;
+}
+.step-tool {
+  flex-shrink: 0;
+  padding: 1px 5px;
+  background: rgba(40, 36, 26, 0.08);
+  border: 1px solid rgba(40, 36, 26, 0.18);
+  border-radius: 2px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(28, 26, 20, 0.7);
+}
+.step--tool .step-tool {
+  background: rgba(243, 169, 59, 0.16);
+  border-color: rgba(243, 169, 59, 0.45);
+  color: #8a5a14;
+}
+.step-text {
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.step:hover .step-label {
+.step:hover .step-text {
   white-space: normal;
   overflow: visible;
+}
+.step-detail {
+  margin: 0;
+  padding: 6px 8px;
+  background: #1c1a14;
+  color: #e6dfc8;
+  border-radius: 2px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 240px;
+  overflow-y: auto;
 }
 
 /* Mission thread — read-only chat-style transcript. */

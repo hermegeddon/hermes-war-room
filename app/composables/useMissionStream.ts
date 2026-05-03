@@ -10,6 +10,14 @@ import type { Mission, MissionMessage, MissionEvent } from '~/types/mission'
 export interface ThoughtStep {
   kind: 'tool' | 'thought'
   label: string
+  /** Tool identifier (`terminal`, `execute_code`, `read_file`, …) when known.
+   *  Surfaced separately from `label` so the UI can show "what kind" + the
+   *  argument body without parsing the label string. */
+  tool?: string
+  /** For tool steps: the actual argument the model passed in — typically the
+   *  shell command, the python code, the file path + body, etc. Surfaced in
+   *  the slideover under the step label so you can see exactly what ran. */
+  detail?: string
   ts: number
 }
 
@@ -56,8 +64,47 @@ function lastThoughtSnippet(buf: string): string {
 function toolLabel(evt: { title?: string, status?: string, raw: unknown }): string {
   if (evt.title && evt.title.trim()) return evt.title.trim()
   // Fall back to a generic name from the raw payload if present.
-  const raw = evt.raw as { name?: string, tool?: string } | undefined
-  return raw?.name ?? raw?.tool ?? 'tool'
+  const raw = evt.raw as { name?: string, tool?: string, kind?: string } | undefined
+  return raw?.name ?? raw?.tool ?? raw?.kind ?? 'tool'
+}
+
+function toolKind(raw: unknown): string | undefined {
+  const r = raw as { kind?: string, name?: string, tool?: string } | undefined
+  return r?.kind || r?.name || r?.tool || undefined
+}
+
+/** Best-effort extraction of the tool's primary argument as readable text.
+ *  Order of preference covers the shapes ACP / Hermes commonly emit:
+ *    - `command` (terminal / shell tool)
+ *    - `code`, `script`, `source` (execute_code variants)
+ *    - `path` (+ optional `content` body)
+ *    - `query` (search-style tools)
+ *  Falls back to a JSON dump so something always shows. */
+function extractToolDetail(raw: unknown): string | undefined {
+  const r = raw as { rawInput?: Record<string, unknown> } | undefined
+  const i = r?.rawInput
+  if (!i || typeof i !== 'object') return undefined
+  const pick = (k: string): string | undefined => {
+    const v = (i as Record<string, unknown>)[k]
+    return typeof v === 'string' ? v : undefined
+  }
+  const command = pick('command')
+  if (command) return command
+  const code = pick('code') ?? pick('script') ?? pick('source')
+  if (code) return code
+  const path = pick('path') ?? pick('file') ?? pick('filename')
+  if (path) {
+    const body = pick('content') ?? pick('text') ?? pick('body')
+    return body ? `${path}\n${body}` : path
+  }
+  const query = pick('query') ?? pick('q') ?? pick('search')
+  if (query) return query
+  try {
+    const json = JSON.stringify(i, null, 2)
+    return json.length > 4000 ? `${json.slice(0, 4000)}…` : json
+  } catch {
+    return undefined
+  }
 }
 
 /**
@@ -151,6 +198,8 @@ export function useMissionStream(): UseMissionStream {
         pushStep({
           kind: 'tool',
           label: toolLabel(evt),
+          tool: toolKind(evt.raw),
+          detail: extractToolDetail(evt.raw),
           ts: Date.now()
         })
       } else if (evt.type === 'state') {
