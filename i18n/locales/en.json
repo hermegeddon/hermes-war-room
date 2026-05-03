@@ -318,6 +318,8 @@
     "modelSearch": "Search or type a model id…",
     "modelCustom": "Use \"{value}\"",
     "modelEmpty": "Catalog empty — type any model id.",
+    "inheritGlobal": "Inherit from global",
+    "inheritGlobalHint": "Use the provider and model from `~/.hermes/config.yaml`. Toggle off to override per-profile.",
     "modelRecommended": "recommended",
     "modelFree": "free",
     "modelCurrent": "current",

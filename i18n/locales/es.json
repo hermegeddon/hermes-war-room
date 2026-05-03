@@ -318,6 +318,8 @@
     "modelSearch": "Buscar o escribir un id de modelo…",
     "modelCustom": "Usar \"{value}\"",
     "modelEmpty": "Catálogo vacío — escribe cualquier id de modelo.",
+    "inheritGlobal": "Heredar global",
+    "inheritGlobalHint": "Usa el proveedor y modelo de `~/.hermes/config.yaml`. Desactiva para sobrescribir por perfil.",
     "modelRecommended": "recomendado",
     "modelFree": "gratis",
     "modelCurrent": "actual",

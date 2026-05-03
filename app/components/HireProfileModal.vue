@@ -86,6 +86,10 @@ const agentsTouched = ref(false)
 
 const model = ref<string | undefined>(undefined)
 const provider = ref<string | undefined>(undefined)
+/* "Inherit from global" — same flag we use in Retrain. Default ON for new
+   hires (most common case: don't override the global model/provider). User
+   toggles OFF when they want this profile to talk to a different model. */
+const inheritGlobal = ref(true)
 const modelCatalog = ref<ModelOption[]>([])
 const providerCatalog = ref<ProviderOption[]>([])
 const catalogLoaded = ref(false)
@@ -275,6 +279,7 @@ watch(() => props.open, (v) => {
     agentsTouched.value = false
     model.value = undefined
     provider.value = undefined
+    inheritGlobal.value = true
     selectedPresetId.value = 'custom'
     if (presets.value.length === 0) loadPresets()
     if (!skillsLoaded.value) loadSkills()
@@ -331,8 +336,11 @@ async function submit() {
         soul: soulPayload,
         agents: agentsPayload,
         preset: selectedPresetId.value === 'custom' ? null : selectedPresetId.value,
-        model: model.value || null,
-        provider: provider.value || null
+        /* When the user wants to inherit from the global config, send null
+           for both fields so the profile's config.yaml stays out of the
+           model:/provider: section and Hermes resolves them globally. */
+        model: inheritGlobal.value ? null : (model.value || null),
+        provider: inheritGlobal.value ? null : (provider.value || null)
       }
     })
     toast.add({
@@ -520,7 +528,23 @@ async function submit() {
                 </UFormField>
               </div>
 
-              <div class="field-row field-row--two">
+              <!-- Inherit-from-global toggle. When ON, the profile's
+                   config.yaml stays without a model:/provider: override and
+                   Hermes resolves both from `~/.hermes/config.yaml` (which
+                   keeps `provider: custom` glued to its base_url + api_key).
+                   Default ON for new hires; flip OFF to override. -->
+              <label class="inherit-toggle">
+                <USwitch v-model="inheritGlobal" />
+                <span class="inherit-toggle-text">
+                  <span class="inherit-toggle-label">{{ t('profileConfig.inheritGlobal') }}</span>
+                  <span class="inherit-toggle-hint">{{ t('profileConfig.inheritGlobalHint') }}</span>
+                </span>
+              </label>
+
+              <div
+                v-if="!inheritGlobal"
+                class="field-row field-row--two"
+              >
                 <UFormField :label="t('profileConfig.provider')">
                   <USelectMenu
                     v-model="provider"
@@ -1026,6 +1050,39 @@ async function submit() {
   background: rgba(243, 169, 59, 0.16);
   color: #8a5a14;
   border: 1px solid rgba(243, 169, 59, 0.4);
+}
+
+/* "Inherit from global" toggle — same shape as the one in Retrain. ON =
+   provider+model dropdowns hidden, profile uses the global model:/provider:
+   block (with its base_url + api_key). OFF = override per profile. */
+.inherit-toggle {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 10px;
+  background: rgba(255, 252, 240, 0.55);
+  border: 1px dashed rgba(28, 26, 20, 0.2);
+  border-radius: 3px;
+  cursor: pointer;
+}
+.inherit-toggle-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.inherit-toggle-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink, #1c1a14);
+}
+.inherit-toggle-hint {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 11px;
+  color: var(--ink-faint, #6b6555);
+  line-height: 1.35;
 }
 
 /* Compact form-field help text + uppercase mono labels. `help` renders below

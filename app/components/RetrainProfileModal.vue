@@ -78,6 +78,12 @@ const slug = ref('')
 const initialSlug = ref('')
 const slugValid = computed(() => slug.value === '' || NAME_RE.test(slug.value))
 
+/* "Inherit from global": when true, the profile-level model + provider get
+   cleared on save, so Hermes inherits the global `model:` block (which on
+   `provider: custom` carries the matching base_url + api_key). Default ON
+   when the loaded profile has no explicit override; OFF when it does. */
+const inheritGlobal = ref(true)
+
 const skills = ref<Skill[]>([])
 const enabledSkills = ref<string[]>([])
 const tools = ref<Tool[]>([])
@@ -224,6 +230,11 @@ async function loadAll(slug: string) {
     initialModel.value = model.value
     provider.value = configData.provider ?? ''
     initialProvider.value = provider.value
+    /* If the profile has neither a model nor a provider, it's currently
+       inheriting from the global config — start the toggle ON. Otherwise
+       it has explicit overrides; default to OFF so the dropdowns are
+       visible and the user can edit. */
+    inheritGlobal.value = !configData.model && !configData.provider
     allowlist.value = [...configData.allowlist]
     initialAllowlist.value = [...configData.allowlist]
   } finally {
@@ -328,13 +339,18 @@ async function submit() {
       }))
     }
 
-    const modelChanged = model.value !== initialModel.value
-    const providerChanged = provider.value !== initialProvider.value
+    /* When "Inherit from global" is on, force model + provider to null on
+       save so the profile's config.yaml drops the override and Hermes uses
+       the global block (which carries base_url + api_key in lockstep). */
+    const effectiveModel = inheritGlobal.value ? null : (model.value.trim() || null)
+    const effectiveProvider = inheritGlobal.value ? null : (provider.value.trim() || null)
+    const modelChanged = effectiveModel !== (initialModel.value || null)
+    const providerChanged = effectiveProvider !== (initialProvider.value || null)
     const allowlistChanged = JSON.stringify(allowlist.value) !== JSON.stringify(initialAllowlist.value)
     if (modelChanged || providerChanged || allowlistChanged) {
       const body: Record<string, unknown> = {}
-      if (modelChanged) body.model = model.value.trim() || null
-      if (providerChanged) body.provider = provider.value.trim() || null
+      if (modelChanged) body.model = effectiveModel
+      if (providerChanged) body.provider = effectiveProvider
       if (allowlistChanged) body.allowlist = allowlist.value
       writes.push($fetch(`/api/profiles/${workingSlug}/config`, {
         method: 'PUT',
@@ -520,7 +536,24 @@ const agentsHint = computed(() => {
                 />
               </UFormField>
 
-              <div class="field-row field-row--two">
+              <!-- Inherit-from-global toggle. When ON, hides provider+model
+                   dropdowns and clears the override on save. Default ON when
+                   the profile already has no override. -->
+              <label class="inherit-toggle">
+                <USwitch
+                  v-model="inheritGlobal"
+                  :disabled="loading"
+                />
+                <span class="inherit-toggle-text">
+                  <span class="inherit-toggle-label">{{ t('profileConfig.inheritGlobal') }}</span>
+                  <span class="inherit-toggle-hint">{{ t('profileConfig.inheritGlobalHint') }}</span>
+                </span>
+              </label>
+
+              <div
+                v-if="!inheritGlobal"
+                class="field-row field-row--two"
+              >
                 <UFormField :label="t('profileConfig.provider')">
                   <USelectMenu
                     v-model="provider"
@@ -1274,6 +1307,38 @@ const agentsHint = computed(() => {
   background: rgba(243, 169, 59, 0.16);
   color: #8a5a14;
   border: 1px solid rgba(243, 169, 59, 0.4);
+}
+
+/* "Inherit from global" toggle. Sits where the provider+model row used to
+   be when ON. Mono caps label + italic-serif hint, matches the dossier. */
+.inherit-toggle {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 10px;
+  background: rgba(255, 252, 240, 0.55);
+  border: 1px dashed rgba(28, 26, 20, 0.2);
+  border-radius: 3px;
+  cursor: pointer;
+}
+.inherit-toggle-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.inherit-toggle-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink, #1c1a14);
+}
+.inherit-toggle-hint {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 11px;
+  color: var(--ink-faint, #6b6555);
+  line-height: 1.35;
 }
 
 /* Make textareas feel like dossier prose blocks. */

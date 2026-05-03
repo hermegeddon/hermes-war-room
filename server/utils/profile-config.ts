@@ -1,7 +1,40 @@
 import { readFileSync, writeFileSync, renameSync, unlinkSync, existsSync } from 'node:fs'
+import { homedir } from 'node:os'
 import { join } from 'node:path'
 import { parse as parseYaml, parseDocument as parseYamlDocument, isMap, isScalar } from 'yaml'
 import type { YAMLMap } from 'yaml'
+
+const HERMES_HOME = process.env.HERMES_HOME || join(homedir(), '.hermes')
+const GLOBAL_CONFIG_PATH = join(HERMES_HOME, 'config.yaml')
+
+/**
+ * Read the global Hermes model config (~/.hermes/config.yaml). Used to detect
+ * when a profile-level override would be redundant — i.e. the user picked the
+ * SAME model/provider that the global already provides — so we can drop the
+ * profile override entirely and let inheritance work.
+ *
+ * Why this matters: at the global level Hermes ties `provider: custom` to
+ * `base_url` + `api_key`. If a profile sets `provider: custom` WITHOUT also
+ * supplying `base_url`, Hermes treats it as a partial override and falls
+ * back to a different endpoint (typically OpenRouter, picked up from env).
+ * The cleanest UX is "if you're not actually changing anything, don't write
+ * an override". Profiles that genuinely need a different base_url have to
+ * edit config.yaml manually for now (no UI yet).
+ */
+function readGlobalModelConfig(): { model: string | null, provider: string | null } {
+  if (!existsSync(GLOBAL_CONFIG_PATH)) return { model: null, provider: null }
+  try {
+    const cfg = parseYaml(readFileSync(GLOBAL_CONFIG_PATH, 'utf8')) as {
+      model?: { default?: unknown, provider?: unknown }
+    } | null
+    return {
+      model: typeof cfg?.model?.default === 'string' ? cfg.model.default : null,
+      provider: typeof cfg?.model?.provider === 'string' ? cfg.model.provider : null
+    }
+  } catch {
+    return { model: null, provider: null }
+  }
+}
 
 export interface ProfileConfigSlice {
   /** model.default — the model string Hermes resolves through its model registry. */
@@ -66,21 +99,37 @@ export function writeProfileConfig(profileDir: string, patch: ProfileConfigPatch
     if (existing != null && !isMap(existing)) {
       throw new Error('model: section in config.yaml is not a mapping')
     }
+    /* Inheritance shortcut: if the value being set equals the global, treat
+       it as a clear (drop the override). Stops the user from accidentally
+       writing `provider: custom` at the profile level without `base_url`,
+       which detaches the provider from its global base_url + api_key.
+       See `readGlobalModelConfig` doc for the full rationale. */
+    const globalModel = readGlobalModelConfig()
+    const trim = (v: string | null | undefined) =>
+      typeof v === 'string' ? v.trim() : v
     if ('model' in patch) {
-      const v = patch.model
-      if (v === null || v === undefined || v === '') {
+      const v = trim(patch.model)
+      const matchesGlobal = !!v && v === globalModel.model
+      if (!v || matchesGlobal) {
         if (doc.hasIn(['model', 'default'])) doc.deleteIn(['model', 'default'])
       } else {
         doc.setIn(['model', 'default'], v)
       }
     }
     if ('provider' in patch) {
-      const v = patch.provider
-      if (v === null || v === undefined || v === '') {
+      const v = trim(patch.provider)
+      const matchesGlobal = !!v && v === globalModel.provider
+      if (!v || matchesGlobal) {
         if (doc.hasIn(['model', 'provider'])) doc.deleteIn(['model', 'provider'])
       } else {
         doc.setIn(['model', 'provider'], v)
       }
+    }
+    /* If after the above edits the `model:` map is empty, drop the empty
+       wrapper too so the file stays minimal and inheritance is unambiguous. */
+    const after = doc.get('model', true) as YAMLMap | undefined | null
+    if (after && isMap(after) && after.items.length === 0) {
+      doc.delete('model')
     }
   }
 
