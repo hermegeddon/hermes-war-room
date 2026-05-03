@@ -223,24 +223,54 @@ The team is mutable from the UI:
 
 ## Quick start
 
+You need Hermes already installed on the host and at least one profile
+created — the war-room shells out to the `hermes` CLI as a subprocess,
+so it has to live in the same process namespace as the Node server.
+Containerising it is more pain than it's worth.
+
 ```bash
-# 1. Make sure Hermes is installed and at least one profile exists.
+# 1. Hermes profiles — at least an orchestrator and a worker.
 hermes profile create lider           # the orchestrator
 hermes profile create investigador    # a worker
 hermes profile create legal           # another worker
 
-# 2. Start the dispatcher in another terminal.
+# 2. Hermes dispatcher — claims kanban tasks and spawns the workers.
 hermes gateway start
 
-# 3. Boot the War Room.
+# 3. The war-room itself.
+git clone https://github.com/Naroh091/hermes-war-room.git
+cd hermes-war-room
 pnpm install
 pnpm dev
 # → http://localhost:3000
 ```
 
-Open the Team page first to give your operatives a callsign and a
-SOUL.md tailored to what each one does. Then go to the War Room and
-brief the orchestrator with a real mission.
+The dev server hot-reloads on file changes and writes its own SQLite
+state to `data/war-room.db` in the repo root.
+
+### Keeping it running across terminal sessions
+
+`pnpm dev` ties to your foreground terminal — close the SSH session or
+the tab and Nitro dies. Wrap both Hermes' dispatcher and the war-room
+in a `tmux` session so they survive logouts and reboots-of-your-mind:
+
+```bash
+# First time:
+tmux new -s hermes
+# Inside tmux:
+hermes gateway start          # ctrl-b c → new window
+pnpm dev                      # in the second window
+# Detach with ctrl-b d. Re-attach later with:
+tmux attach -t hermes
+```
+
+`tmux ls` lists running sessions; `tmux kill-session -t hermes` shuts
+the whole thing down cleanly.
+
+Once the war-room is up, open **The Team** first to give your
+operatives a callsign and a SOUL.md tailored to what each one does.
+Then go to the **War Room** and brief the orchestrator with a real
+mission.
 
 ---
 
@@ -484,21 +514,52 @@ El equipo es mutable desde el UI:
 
 ## Inicio rápido
 
+Necesitas tener Hermes instalado en el host y al menos un perfil creado
+— la sala lanza la CLI `hermes` como subproceso, así que tiene que
+vivir en el mismo namespace de procesos que el server Node.
+Contenerizarla da más dolor que ventajas.
+
 ```bash
-# 1. Asegúrate de tener Hermes instalado y al menos un perfil.
+# 1. Perfiles de Hermes — al menos un orquestador y un worker.
 hermes profile create lider           # el orquestador
 hermes profile create investigador    # un worker
 hermes profile create legal           # otro worker
 
-# 2. Arranca el dispatcher en otra terminal.
+# 2. Dispatcher de Hermes — reclama tareas kanban y lanza los workers.
 hermes gateway start
 
-# 3. Lanza la Sala.
+# 3. La sala en sí.
+git clone https://github.com/Naroh091/hermes-war-room.git
+cd hermes-war-room
 pnpm install
 pnpm dev
 # → http://localhost:3000
 ```
 
-Abre primero El Equipo para darle a tus operativos un callsign y un
-SOUL.md adaptado a lo que hace cada uno. Después vete a la Sala de
-Guerra y dale al orquestador una misión real.
+El dev server hace hot-reload al cambiar ficheros y escribe su propio
+estado SQLite en `data/war-room.db` dentro del repo.
+
+### Mantenerlo corriendo entre sesiones de terminal
+
+`pnpm dev` se ata al terminal en primer plano — cierras la sesión SSH o
+la pestaña y Nitro muere. Mete tanto el dispatcher de Hermes como la
+sala en una sesión `tmux` para que sobrevivan a logouts y a tus
+despistes:
+
+```bash
+# Primera vez:
+tmux new -s hermes
+# Dentro de tmux:
+hermes gateway start          # ctrl-b c → ventana nueva
+pnpm dev                      # en la segunda ventana
+# Te desconectas con ctrl-b d. Vuelves luego con:
+tmux attach -t hermes
+```
+
+`tmux ls` lista las sesiones corriendo; `tmux kill-session -t hermes`
+apaga todo limpiamente.
+
+Una vez arrancada, abre primero **El Equipo** para darle a tus
+operativos un callsign y un SOUL.md adaptado a lo que hace cada uno.
+Después vete a la **Sala de Guerra** y dale al orquestador una misión
+real.
