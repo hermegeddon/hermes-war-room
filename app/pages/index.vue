@@ -109,7 +109,7 @@ const clock = computed(() => {
             {{ t('warRoom.operationsFloor') }}
           </span>
           <span class="strip-meta">
-            {{ t('warRoom.operativesCount', activeProfiles.length, { count: activeProfiles.length }) }}
+            {{ t('warRoom.operativesCount', { count: activeProfiles.length }, activeProfiles.length) }}
           </span>
           <ClientOnly>
             <span class="strip-clock">{{ clock }}</span>

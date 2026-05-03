@@ -234,7 +234,7 @@ async function runNudgeTurn(missionId: string, completed: KanbanTask[]): Promise
     text: buildNudgeText(completed)
   })
 
-  handle.emitter.on('update', (notification) => {
+  handle.emitter.on('update', (notification: { update: Record<string, unknown> }) => {
     const u = notification.update as {
       sessionUpdate?: string
       content?: { text?: string }

@@ -7,7 +7,17 @@ useHead({
     { name: 'viewport', content: 'width=device-width, initial-scale=1' }
   ],
   link: [
-    { rel: 'icon', href: '/favicon.ico' }
+    { rel: 'icon', href: '/favicon.ico' },
+    /* Pre-connect speeds up the actual fetch by warming TLS to Google's CDN
+       before the stylesheet request fires. */
+    { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+    /* Custom font triplet for the war-room aesthetic. Loaded at runtime so
+       the build never has to reach the network. */
+    {
+      rel: 'stylesheet',
+      href: 'https://fonts.googleapis.com/css2?family=Antonio:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap'
+    }
   ],
   htmlAttrs: {
     lang: locale

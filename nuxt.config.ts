@@ -12,6 +12,16 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
+  /* No sourcemaps in production: Tailwind v4's Vite plugin doesn't emit
+     sourcemaps for its CSS transformations, which floods the build log
+     with hundreds of "Sourcemap is likely to be incorrect" warnings.
+     Sourcemaps in production also bloat the deployed bundle without any
+     real debugging benefit (we don't ship the original sources). */
+  sourcemap: {
+    server: false,
+    client: false
+  },
+
   compatibilityDate: '2025-01-15',
 
   eslint: {

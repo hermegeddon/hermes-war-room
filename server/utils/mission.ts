@@ -105,7 +105,7 @@ export function listMissions(opts: {
     `SELECT * FROM missions ${where}
      ORDER BY last_message_at DESC
      LIMIT ? OFFSET ?`
-  ).all(...params, limit, offset) as unknown as MissionRow[]
+  ).all(...params as never[], limit, offset) as unknown as MissionRow[]
 }
 
 /** Total mission count for pagination headers. Optionally filters by status. */
@@ -125,5 +125,5 @@ export function countMissions(opts: {
     params.push(opts.orchestratorSlug)
   }
   const where = conds.length ? `WHERE ${conds.join(' AND ')}` : ''
-  return (db.prepare(`SELECT COUNT(*) as c FROM missions ${where}`).get(...params) as { c: number }).c
+  return (db.prepare(`SELECT COUNT(*) as c FROM missions ${where}`).get(...params as never[]) as { c: number }).c
 }

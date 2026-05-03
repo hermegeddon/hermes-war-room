@@ -79,8 +79,27 @@ const slideOpen = computed({
   set: (v) => { if (!v) selectedId.value = null }
 })
 
-const detailUrl = computed(() => selectedId.value ? `/api/missions/${selectedId.value}` : null)
-const { data: detail, status: detailStatus } = await useFetch<DetailResponse>(detailUrl, { watch: [selectedId] })
+// Manual fetch on selectedId change. We can't use useFetch directly because
+// it doesn't accept a nullable URL — and we don't want to fetch until the
+// user actually clicks a mission card.
+const detail = ref<DetailResponse | null>(null)
+const detailStatus = ref<'idle' | 'pending' | 'success' | 'error'>('idle')
+
+watch(selectedId, async (id) => {
+  if (!id) {
+    detail.value = null
+    detailStatus.value = 'idle'
+    return
+  }
+  detailStatus.value = 'pending'
+  try {
+    detail.value = await $fetch<DetailResponse>(`/api/missions/${id}`)
+    detailStatus.value = 'success'
+  } catch {
+    detail.value = null
+    detailStatus.value = 'error'
+  }
+})
 
 function selectMission(id: string) {
   selectedId.value = id
@@ -267,7 +286,7 @@ function accent(slug: string): string {
               <p class="mdetail-stats">
                 {{ formatDate(detail.mission.createdAt) }}
                 <span class="mdetail-stats-sep">·</span>
-                {{ t('warRoom.history.messageCount', detail.messages.length, { count: detail.messages.length }) }}
+                {{ t('warRoom.history.messageCount', { count: detail.messages.length }, detail.messages.length) }}
               </p>
             </div>
             <UButton

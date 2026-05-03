@@ -262,7 +262,7 @@ async function runMissionTurnLocked(missionId: string, userText: string): Promis
         const cachedInput = tool.toolCallId ? toolInputs.get(tool.toolCallId) : tool.rawInput
         registerCreatedTaskFromTool(missionId, {
           status: tool.status,
-          rawInput: cachedInput,
+          rawInput: cachedInput as Record<string, unknown> | undefined,
           rawOutput: tool.rawOutput,
           content: tool.content
         })

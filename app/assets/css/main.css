@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap');
+/* Google Fonts loaded via <link> tags in app.vue (useHead) so the build
+   doesn't try to fetch them from inside the Docker network sandbox. */
 @import "tailwindcss";
 @import "@nuxt/ui";
 

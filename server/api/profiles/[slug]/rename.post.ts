@@ -72,7 +72,7 @@ export default defineEventHandler(async (event) => {
     console.error('[roster] sync failed after rename:', (e as Error).message)
   }
 
-  const r = db.prepare('SELECT * FROM profiles WHERE slug = ?').get(newSlug) as ProfileRow
+  const r = db.prepare('SELECT * FROM profiles WHERE slug = ?').get(newSlug) as unknown as ProfileRow
   return {
     slug: r.slug,
     displayName: r.display_name,
