@@ -309,7 +309,7 @@ const tokenChip = computed(() => {
           class="lamp"
           :title="taskTooltip ?? gestureLabel"
         />
-        {{ callsign }}
+        <span class="placard-callsign-text">{{ callsign }}</span>
       </span>
       <span class="placard-slug">{{ profile.displayName }}</span>
     </div>
@@ -569,39 +569,72 @@ const tokenChip = computed(() => {
   filter: drop-shadow(0 4px 6px rgba(28, 26, 20, 0.28));
 }
 
-/* Black pill — sits naturally below the figure thanks to the parent's flex
-   column + gap. */
+/* Tactical ID nameplate — replaces the cramped single-pill placard. Two
+   stacked zones (dark callsign band + paper subtitle band) with an accent
+   stripe down the left edge as the operative's unit colour. The split lets
+   the callsign and the full display name each live at a legible size with
+   real contrast, instead of fighting for room inside one tiny pill. */
 .placard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 5px 12px 6px;
+  position: relative;
+  display: grid;
+  grid-template-rows: auto auto;
+  width: max-content;
+  max-width: 96%;
+  border-radius: 8px;
+  overflow: hidden;
   background: #1c1a14;
-  color: #f4efe2;
-  border-radius: 999px;
-  max-width: 86%;
+  border: 1px solid #0f0d08;
+  box-shadow:
+    0 4px 10px -3px rgba(28, 26, 20, 0.4),
+    0 1px 0 rgba(255, 255, 255, 0.06) inset;
   pointer-events: none;
   z-index: 4;
+}
+/* Unit-colour accent — a 3px stripe running the full nameplate height. Same
+   token as the disc gradient so the placard reads as part of the same kit. */
+.placard::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: var(--accent);
 }
 .placard-callsign {
   display: inline-flex;
   align-items: center;
-  font-family: 'Antonio', sans-serif;
+  justify-content: center;
+  padding: 6px 12px 5px 14px;
+  background: #1c1a14;
+  color: #f4efe2;
+  font-family: 'Antonio', 'Bebas Neue', sans-serif;
   font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  line-height: 1.05;
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  line-height: 1;
   white-space: nowrap;
+  overflow: hidden;
+}
+.placard-callsign-text {
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
 }
 .placard-slug {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 7.5px;
+  display: block;
+  padding: 4px 12px 5px 14px;
+  background: #f4efe2;
+  color: #2a261c;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 500;
   letter-spacing: 0.14em;
-  opacity: 0.55;
+  line-height: 1.15;
   text-transform: lowercase;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-top: 1px solid rgba(28, 26, 20, 0.7);
 }
 
 /* Token usage second line inside the thought bubble. Lives only when the
@@ -651,14 +684,14 @@ const tokenChip = computed(() => {
    reads like "● DAVID". Color shifts via .station-{running,blocked} below. */
 .lamp {
   display: inline-block;
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: #f3a93b;
   box-shadow:
     0 0 4px rgba(243, 169, 59, 0.85),
     0 0 10px rgba(243, 169, 59, 0.35);
-  margin-right: 7px;
+  margin-right: 8px;
   flex-shrink: 0;
   animation: blink 2.6s ease-in-out infinite;
 }

@@ -108,6 +108,7 @@
     "archived": "Misión archivada",
     "failure": "No se pudo contactar con el orquestador",
     "orchestrator": "Orquestador",
+    "orchestratorLabel": "Orquestador encargado:",
     "dispatcherWarning": "No se detecta dispatcher. Ejecuta `hermes gateway start` para que los agentes recojan tareas.",
     "connectionLost": "Stream interrumpido. Reconectando…",
     "idle": "En espera",
@@ -137,7 +138,12 @@
         "blocked": "Bloqueadas"
       },
       "started": "empezó hace {ago}",
-      "waiting": "esperando {ago}"
+      "waiting": "esperando {ago}",
+      "completedTitle": "Tareas completadas",
+      "completedAgo": "completada hace {ago}",
+      "completedEmpty": "Sin tareas completadas todavía.",
+      "completedLoading": "Cargando…",
+      "completedMore": "Cargar más"
     },
     "detail": {
       "title": "Expediente del operativo",

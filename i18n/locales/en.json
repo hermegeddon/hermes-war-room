@@ -108,6 +108,7 @@
     "archived": "Mission archived",
     "failure": "Could not reach the orchestrator",
     "orchestrator": "Orchestrator",
+    "orchestratorLabel": "Orchestrator on duty:",
     "dispatcherWarning": "No dispatcher detected. Run `hermes gateway start` so workers pick up tasks.",
     "connectionLost": "Stream interrupted. Reconnecting…",
     "idle": "Idle",
@@ -137,7 +138,12 @@
         "blocked": "Blocked"
       },
       "started": "started {ago} ago",
-      "waiting": "waiting {ago}"
+      "waiting": "waiting {ago}",
+      "completedTitle": "Completed tasks",
+      "completedAgo": "completed {ago} ago",
+      "completedEmpty": "Nothing completed yet.",
+      "completedLoading": "Loading…",
+      "completedMore": "Load more"
     },
     "detail": {
       "title": "Operative dossier",

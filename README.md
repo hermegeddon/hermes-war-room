@@ -1,15 +1,42 @@
 # Orchestration War Room
 
-A visual command layer on top of [Hermes Agent](https://hermes-agent.nousresearch.com)'s
-multi-profile delegation and kanban systems. Hermes already gives you everything
-you need to run a fleet of specialised agents that hand work to each other —
-the Orchestration War Room just makes that fleet **visible**, **legible**, and **directable**
-from a single dashboard instead of a forest of terminal sessions and
-`hermes kanban tail` invocations.
+> *A multilingual visual UI for Hermes agentic orchestration/delegation system.*
 
-> **TL;DR** — Hire a leader and a team, brief the leader, watch the team
+[🇪🇸 Leer en español ↓](#sala-de-operaciones-de-orquestación)
+
+A browser dashboard on top of [Hermes Agent](https://hermes-agent.nousresearch.com)'s multi-profile delegation and kanban systems. Hermes already gives you everything
+you need to run a fleet of specialised agents that hand work to each other — the Orchestration War Room just makes that fleet **visible**, **legible**, and **directable**
+from a single screen instead of a forest of terminal sessions and `hermes kanban tail` invocations.
+
+> **TL;DR** — Hire a leader and a team, brief the leader, watch the team 
 > work. The War Room handles all the wiring (kanban delegation, status
 > tracking, notifications) underneath.
+
+---
+
+## Quickstart
+
+You need Hermes installed on the host (the war-room shells out to the `hermes` CLI, so they share a process namespace) and Node 22+.
+
+```bash
+#Grab the latest release and run it
+mkdir -p ~/hermes-war-room && cd ~/hermes-war-room
+
+curl -L -o hermes-war-room.tar.gz \
+  https://github.com/Naroh091/hermes-war-room/releases/latest/download/hermes-war-room.tar.gz
+
+tar xzf hermes-war-room.tar.gz
+
+HERMES_HOME=$HOME/.hermes NITRO_HOST=127.0.0.1 NITRO_PORT=3000 \
+  node .output/server/index.mjs
+# → http://localhost:3000
+```
+
+Open **The Team** first to give each operative a callsign and a tailored
+SOUL.md, then head to the **War Room** and brief the orchestrator with a
+real mission. For development setup (`pnpm dev`), tmux recipes and
+production tuning, see [Quick start](#quick-start) and [Production
+install](#production-install-no-pnpm-no-source-checkout) below.
 
 ---
 

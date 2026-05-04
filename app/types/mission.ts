@@ -36,6 +36,23 @@ export interface CurrentTask {
   pendingPermission?: boolean
 }
 
+/**
+ * A task that has terminated — status `done` or `archived`. We don't carry
+ * the live worker fields because they're meaningless after completion; we
+ * expose `completedAt` so the history strip can sort and timestamp.
+ */
+export interface CompletedTask {
+  id: string
+  title: string
+  body: string | null
+  assignee: string | null
+  status: 'done' | 'archived'
+  priority: number
+  createdAt: number
+  startedAt: number | null
+  completedAt: number | null
+}
+
 export type MissionEvent
   = | { type: 'chunk', delta: string, thought?: boolean }
     | { type: 'tool', title?: string, status?: string, raw: unknown }

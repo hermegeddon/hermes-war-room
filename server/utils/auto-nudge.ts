@@ -187,6 +187,7 @@ function buildNudgeText(completed: KanbanTask[]): string {
     'The following kanban tasks have just reached a terminal state since your last reply.',
     'For any task whose status is `blocked` OR whose run failed (crashed, timed_out, spawn_failed), TELL THE USER what went wrong using the failure-reason text below — do not glaze over it. Permission errors, missing credentials, model auth failures, and similar should be surfaced verbatim so the user can fix them.',
     'Do NOT re-delegate unless the user explicitly asked for follow-ups. Do NOT echo this system update verbatim.',
+    'Always honor the language in which the user gave you the instructions — reply in that language. Mirror the user; never silently switch to English.',
     ''
   ]
   for (const t of completed) {

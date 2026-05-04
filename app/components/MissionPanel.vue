@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { Profile } from '~/types/profile'
-import type { Mission, MissionMessage, CurrentTask } from '~/types/mission'
+import type { Mission, MissionMessage, CurrentTask, CompletedTask } from '~/types/mission'
+// renderMarkdown / stripHarmonyTags / decorateTaskRefs are auto-imported
+// from `~/composables/useMarkdown`.
 
 interface Props {
   orchestrators: Profile[]
@@ -11,9 +13,9 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), { tasks: () => [] })
 
 const emit = defineEmits<{
-  /** Bubble a click on a board card up to the parent so it can open the
-   *  operative slideover. */
-  selectTask: [task: CurrentTask]
+  /** Bubble a click on a board card (live or history) up to the parent so it
+   *  can open the operative slideover. */
+  selectTask: [task: CurrentTask | CompletedTask]
 }>()
 
 type Tab = 'chat' | 'board'
@@ -132,58 +134,69 @@ async function handleSend() {
 
 const transcriptRef = ref<HTMLElement | null>(null)
 
-/* Auto-scroll to bottom on new messages or streaming chunks — but only if
-   the user is already near the bottom. If they've scrolled UP to read
-   history, we don't yank them down on every chunk. Threshold matches the
-   log-tail implementation (64 px). New-message arrivals (length change)
-   force the scroll regardless, since a fresh user/assistant turn always
-   wants visibility. */
-function scrollTranscriptToBottom(force = false) {
+/* Auto-scroll to bottom on every transcript change — new messages, streaming
+   chunks, mount. Forced rather than gated: the chat is a tailing surface, the
+   user expects new tokens to stay visible. If they want to read scrollback
+   they can switch tabs or pause the stream. */
+function scrollTranscriptToBottom() {
   const el = transcriptRef.value
   if (!el) return
-  if (!force) {
-    const distanceFromBottom = el.scrollHeight - el.scrollTop - el.clientHeight
-    if (distanceFromBottom > 64) return
-  }
   el.scrollTop = el.scrollHeight
 }
 
 watch(() => stream.messages.value.length, () => {
-  nextTick(() => scrollTranscriptToBottom(true))
+  nextTick(() => scrollTranscriptToBottom())
 })
 watch(() => stream.messages.value[stream.messages.value.length - 1]?.content, () => {
-  nextTick(() => scrollTranscriptToBottom(false))
+  nextTick(() => scrollTranscriptToBottom())
 })
 
 const hasMission = computed(() => stream.mission.value !== null)
+
+/* Task-id → metadata map. Drives the inline `t_xxxx · agent — title` chip
+   that decorateTaskRefs() inserts into rendered orchestrator output. The
+   chip's accent comes from the assignee's profile colour, so the text reads
+   like "this task belongs to <agent>" at a glance. */
+const taskRefLookup = computed(() => {
+  const profileBySlug = new Map<string, Profile>()
+  for (const p of props.orchestrators) profileBySlug.set(p.slug, p)
+  const m = new Map<string, { id: string, title: string, assignee: string | null, color: string | null }>()
+  for (const tk of props.tasks) {
+    const profile = tk.assignee ? profileBySlug.get(tk.assignee) ?? null : null
+    m.set(tk.id, {
+      id: tk.id,
+      title: tk.title,
+      assignee: tk.assignee,
+      color: profile?.backgroundColor ?? null
+    })
+  }
+  return m
+})
+
+/* Strip channel-control tokens, render markdown, then decorate task IDs as
+   coloured chips. Used for assistant turns; user turns only get the strip
+   pass since they're plain text. */
+function renderAssistantContent(content: string): string {
+  const cleaned = stripHarmonyTags(content)
+  const html = renderMarkdown(cleaned)
+  return decorateTaskRefs(html, taskRefLookup.value)
+}
+
+/* Force one scroll-to-bottom the moment the transcript element mounts (i.e.
+   when `hasMission` flips true and the v-if renders the container). Without
+   this, opening the panel onto an existing long mission lands the user at the
+   top of the history. */
+watch(transcriptRef, (el) => {
+  if (el) nextTick(() => scrollTranscriptToBottom())
+})
 </script>
 
 <template>
   <section class="mission">
     <header class="mission-header">
-      <div class="mission-orch">
-        <UAvatar
-          v-if="selectedOrchestrator"
-          :src="selectedOrchestrator.avatarUrl"
-          size="sm"
-        />
-        <USelect
-          :model-value="selectedSlug ?? undefined"
-          :items="orchestratorOptions"
-          value-key="value"
-          variant="ghost"
-          size="sm"
-          class="mission-orch-select"
-          @update:model-value="(v: string) => selectedSlug = v"
-        >
-          <template #leading>
-            <UIcon
-              name="i-lucide-radio"
-              class="size-3.5"
-            />
-          </template>
-        </USelect>
-      </div>
+      <!-- MISIÓN on the left — the panel's quiet identity caption. Antonio
+           bold uppercase with the hot-red target glyph; restrained so the
+           eye reads it as a label, not a banner. -->
       <div class="mission-title">
         <UIcon
           name="i-lucide-target"
@@ -191,10 +204,38 @@ const hasMission = computed(() => stream.mission.value !== null)
         />
         {{ t('mission.title') }}
       </div>
-      <!-- "Nueva misión" lives in the page header now, next to the
-           mission scope selector. Keeping the slot here in case we want to
-           bring action buttons back into the MissionPanel later. -->
-      <div class="mission-actions" />
+
+      <!-- Orchestrator on the right: a small "Orquestador encargado:"
+           eyebrow sits above the avatar + select so users know what the
+           dropdown controls without needing to read the placeholder text. -->
+      <div class="mission-orch">
+        <p class="mission-orch-label">
+          {{ t('mission.orchestratorLabel') }}
+        </p>
+        <div class="mission-orch-row">
+          <UAvatar
+            v-if="selectedOrchestrator"
+            :src="selectedOrchestrator.avatarUrl"
+            size="sm"
+          />
+          <USelect
+            :model-value="selectedSlug ?? undefined"
+            :items="orchestratorOptions"
+            value-key="value"
+            variant="ghost"
+            size="sm"
+            class="mission-orch-select"
+            @update:model-value="(v: string) => selectedSlug = v"
+          >
+            <template #leading>
+              <UIcon
+                name="i-lucide-radio"
+                class="size-3.5"
+              />
+            </template>
+          </USelect>
+        </div>
+      </div>
     </header>
 
     <div
@@ -275,7 +316,7 @@ const hasMission = computed(() => stream.mission.value !== null)
             <!-- eslint-disable vue/no-v-html -->
             <div
               class="mission-md"
-              v-html="renderMarkdown(m.content)"
+              v-html="renderAssistantContent(m.content)"
             />
             <!-- eslint-enable vue/no-v-html -->
             <span
@@ -284,7 +325,7 @@ const hasMission = computed(() => stream.mission.value !== null)
             >▍</span>
           </template>
           <template v-else>
-            {{ m.content }}<span
+            {{ stripHarmonyTags(m.content) }}<span
               v-if="m.pending"
               class="mission-caret"
             >▍</span>
@@ -358,25 +399,16 @@ const hasMission = computed(() => stream.mission.value !== null)
 }
 
 .mission-header {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  align-items: center;
-  gap: 12px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
   padding-bottom: 10px;
   border-bottom: 1px dashed rgba(28, 26, 20, 0.2);
   margin-bottom: 12px;
 }
 
-.mission-orch {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-width: 0;
-}
-.mission-orch-select {
-  min-width: 0;
-}
-
+/* MISIÓN — quiet identity caption on the left, original treatment. */
 .mission-title {
   display: inline-flex;
   align-items: center;
@@ -395,11 +427,34 @@ const hasMission = computed(() => stream.mission.value !== null)
   color: #c8421f;
 }
 
-.mission-actions {
+/* Orchestrator cluster on the right: stacked "Orquestador encargado:" label
+   over the avatar + select, both right-aligned so the cluster ends flush
+   with the panel's right edge. */
+.mission-orch {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  min-width: 0;
+}
+.mission-orch-label {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(28, 26, 20, 0.55);
+  margin: 0;
+  line-height: 1;
+}
+.mission-orch-row {
   display: inline-flex;
   align-items: center;
-  justify-content: flex-end;
   gap: 8px;
+  min-width: 0;
+}
+.mission-orch-select {
+  min-width: 0;
 }
 
 .mission-warn {
@@ -554,6 +609,65 @@ const hasMission = computed(() => stream.mission.value !== null)
   background: rgba(28, 26, 20, 0.08);
   padding: 1px 5px;
   border-radius: 3px;
+}
+
+/* Task-reference chip — emitted by decorateTaskRefs(). Inline pill that
+   carries the assignee's profile colour as `--accent`, so a sentence like
+   "I delegated t_abc123 to legal — Search norms" renders the task as a
+   single coloured entity instead of a raw id surrounded by prose. */
+.mission-md :deep(.task-ref) {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 2px 9px 2px 8px;
+  background: color-mix(in srgb, var(--accent, #d4d4d4) 26%, #f4efe2);
+  border: 1px solid color-mix(in srgb, var(--accent, #d4d4d4) 70%, #1c1a14);
+  border-radius: 3px;
+  /* 3 px stripe of pure accent tucked under the left edge — matches the
+     workstation placard's unit-colour stripe so chips read as part of the
+     same visual family. */
+  box-shadow: inset 3px 0 0 0 var(--accent, #d4d4d4);
+  padding-left: 11px;
+  color: #1c1a14;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.92em;
+  line-height: 1.35;
+  text-decoration: none;
+  white-space: nowrap;
+  vertical-align: baseline;
+  cursor: help;
+  transition: transform 0.1s ease, background 0.12s ease;
+}
+.mission-md :deep(.task-ref:hover) {
+  background: color-mix(in srgb, var(--accent, #d4d4d4) 50%, #f4efe2);
+  transform: translateY(-1px);
+}
+.mission-md :deep(.task-ref-id) {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.mission-md :deep(.task-ref-sep) {
+  opacity: 0.5;
+  font-size: 0.85em;
+}
+.mission-md :deep(.task-ref-agent) {
+  font-family: 'Antonio', 'Bebas Neue', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+.mission-md :deep(.task-ref-title) {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: 0.98em;
+  letter-spacing: 0;
+  /* Long titles wrap inside the chip — drop nowrap on the rich variant. */
+  white-space: normal;
+}
+.mission-md :deep(.task-ref--rich) {
+  white-space: normal;
+  max-width: 100%;
 }
 .mission-md :deep(pre) {
   background: #1c1a14;

@@ -98,7 +98,6 @@ function isActive(to: string): boolean {
         </nav>
 
         <div class="hwr-actions">
-          <UColorModeButton class="hwr-mode" />
           <USelect
             :model-value="locale"
             :items="localeOptions"
@@ -142,7 +141,7 @@ function isActive(to: string): boolean {
   overflow: hidden;
 }
 
-/* === Top bar — paper console rule, ties visually to the floor === */
+/* === Top bar — dark console band, contrasts with the cream paper below === */
 .hwr-topbar {
   display: grid;
   grid-template-columns: auto 1fr auto;
@@ -152,18 +151,17 @@ function isActive(to: string): boolean {
   background:
     repeating-linear-gradient(
       135deg,
-      rgba(28, 26, 20, 0.025) 0,
-      rgba(28, 26, 20, 0.025) 1px,
+      rgba(244, 239, 226, 0.04) 0,
+      rgba(244, 239, 226, 0.04) 1px,
       transparent 1px,
       transparent 7px
     ),
-    rgba(255, 252, 240, 0.94);
-  border-bottom: 1.5px solid #1c1a14;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+    #1c1a14;
+  border-bottom: 1.5px solid #0f0d08;
+  color: #f4efe2;
 }
 .hwr-topbar::after {
-  /* engineered tick rule below the divider — same vocabulary as the band on the badges */
+  /* engineered tick rule below the divider — cream dashes on the dark band */
   content: '';
   position: absolute;
   left: 0;
@@ -173,12 +171,12 @@ function isActive(to: string): boolean {
   background-image:
     repeating-linear-gradient(
       to right,
-      #1c1a14 0,
-      #1c1a14 6px,
+      #f4efe2 0,
+      #f4efe2 6px,
       transparent 6px,
       transparent 14px
     );
-  opacity: 0.45;
+  opacity: 0.35;
   pointer-events: none;
 }
 
@@ -199,9 +197,9 @@ function isActive(to: string): boolean {
   width: 32px;
   height: 32px;
   border-radius: 4px;
-  background: #1c1a14;
-  color: #f4efe2;
-  box-shadow: 0 2px 0 rgba(28, 26, 20, 0.25);
+  background: #f4efe2;
+  color: #1c1a14;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.45);
 }
 .hwr-brand-pulse {
   position: absolute;
@@ -212,7 +210,7 @@ function isActive(to: string): boolean {
   border-radius: 50%;
   background: #c8421f;
   box-shadow:
-    0 0 0 2px #f4efe2,
+    0 0 0 2px #1c1a14,
     0 0 8px rgba(200, 66, 31, 0.85);
   animation: hwr-pulse 1.6s ease-in-out infinite;
 }
@@ -231,7 +229,10 @@ function isActive(to: string): boolean {
   font-size: 9px;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: #6b6555;
+  /* Lifted from #a39a83 (~6.6:1) to #c8bea3 (~9.5:1). The stronger ratio
+     compensates for the heavy tracking + tiny size of the eyebrow, where the
+     glyphs are mostly thin-stroke negative space and visually drop back. */
+  color: #c8bea3;
 }
 .hwr-brand-title {
   font-family: 'Antonio', sans-serif;
@@ -239,7 +240,7 @@ function isActive(to: string): boolean {
   font-size: 15px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #1c1a14;
+  color: #f4efe2;
 }
 
 /* === Tabs === */
@@ -249,9 +250,9 @@ function isActive(to: string): boolean {
   align-items: center;
   gap: 4px;
   padding: 3px;
-  background: rgba(28, 26, 20, 0.06);
+  background: rgba(244, 239, 226, 0.06);
   border-radius: 6px;
-  border: 1px solid rgba(28, 26, 20, 0.12);
+  border: 1px solid rgba(244, 239, 226, 0.14);
 }
 .hwr-tab {
   position: relative;
@@ -264,23 +265,26 @@ function isActive(to: string): boolean {
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #4a4536;
+  /* Same lift as the eyebrow — at 11px tracked-out the old #a39a83 read as
+     "disabled" rather than "inactive". #c8bea3 sits clearly above the noise
+     while staying obviously secondary to the cream pill of the active tab. */
+  color: #c8bea3;
   text-decoration: none;
   border-radius: 4px;
   transition: color 0.15s ease, background 0.15s ease;
 }
 .hwr-tab:hover {
-  color: #1c1a14;
-  background: rgba(28, 26, 20, 0.06);
+  color: #f4efe2;
+  background: rgba(244, 239, 226, 0.08);
 }
 .hwr-tab-icon {
   width: 13px;
   height: 13px;
 }
 .hwr-tab.is-active {
-  color: #f4efe2;
-  background: #1c1a14;
-  box-shadow: 0 2px 0 rgba(28, 26, 20, 0.3);
+  color: #1c1a14;
+  background: #f4efe2;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.45);
 }
 .hwr-tab.is-active::after {
   /* vermilion underline accent on the active tab */
@@ -300,29 +304,31 @@ function isActive(to: string): boolean {
   align-items: center;
   gap: 6px;
 }
-.hwr-mode {
-  color: #4a4536 !important;
-  background: transparent !important;
-  border-radius: 4px !important;
-}
-.hwr-mode:hover {
-  color: #1c1a14 !important;
-  background: rgba(28, 26, 20, 0.06) !important;
-}
+/* `.hwr-lang` IS the rendered <button> for the USelect — Nuxt UI doesn't
+   wrap it. So we target the element itself (and its descendant icon/label
+   spans, which the component paints with `text-highlighted` /
+   `text-toned` utility classes that resolve to dark oklch values and would
+   otherwise be invisible on this dark band). */
 .hwr-lang {
   font-family: 'IBM Plex Mono', monospace !important;
   font-size: 11px !important;
   letter-spacing: 0.1em !important;
-}
-.hwr-lang :deep(button),
-.hwr-lang :deep([role="combobox"]) {
   background: transparent !important;
-  color: #4a4536 !important;
+  color: #c8bea3 !important;
 }
-.hwr-lang :deep(button):hover,
-.hwr-lang :deep([role="combobox"]):hover {
-  color: #1c1a14 !important;
-  background: rgba(28, 26, 20, 0.06) !important;
+.hwr-lang * {
+  color: #c8bea3 !important;
+}
+.hwr-lang:hover,
+.hwr-lang:focus,
+.hwr-lang:focus-visible {
+  color: #f4efe2 !important;
+  background: rgba(244, 239, 226, 0.08) !important;
+}
+.hwr-lang:hover *,
+.hwr-lang:focus *,
+.hwr-lang:focus-visible * {
+  color: #f4efe2 !important;
 }
 
 /* === Main content === */

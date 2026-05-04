@@ -168,6 +168,96 @@ export function tasksCreatedSince(unixSec: number): KanbanTask[] {
   return rows.map(rowToTask)
 }
 
+/**
+ * A completed/archived task as we surface it in the history strip. We don't
+ * need the live worker fields (claim_expires, heartbeat, worker_pid…) because
+ * the task has already terminated — instead we expose `completedAt` so the
+ * UI can sort and display "completed Xm ago".
+ */
+export interface CompletedTask {
+  id: string
+  title: string
+  body: string | null
+  assignee: string | null
+  status: 'done' | 'archived'
+  priority: number
+  createdAt: number
+  startedAt: number | null
+  completedAt: number | null
+}
+
+interface RawCompletedRow {
+  id: string
+  title: string
+  body: string | null
+  assignee: string | null
+  status: string
+  priority: number
+  created_at: number
+  started_at: number | null
+  completed_at: number | null
+}
+
+const COMPLETED_STATUSES = ['done', 'archived'] as const
+const HISTORY_DEFAULT_LIMIT = 20
+const HISTORY_MAX_LIMIT = 100
+
+export interface ListCompletedOpts {
+  assignee?: string
+  /** Limit the result set. Clamped to [1, HISTORY_MAX_LIMIT]. */
+  limit?: number
+  /** Cursor: only return tasks whose `completed_at` (or `created_at` for the
+   *  rare task that never started) is strictly older than this Unix-second
+   *  timestamp. Lets the UI page through history without holding onto an
+   *  offset that drifts as new tasks complete. */
+  before?: number
+}
+
+/**
+ * Tasks that have terminated (status `done` or `archived`). Ordered by the
+ * effective completion time DESC so the most-recently-finished comes first.
+ * Hermes' `kanban gc` doesn't delete task rows — only `task_events` and
+ * worker logs — so this view stays accurate over the long term.
+ */
+export function listCompletedTasks(opts: ListCompletedOpts = {}): CompletedTask[] {
+  const db = getKanbanDb()
+  if (!db) return []
+  const limit = Math.max(1, Math.min(opts.limit ?? HISTORY_DEFAULT_LIMIT, HISTORY_MAX_LIMIT))
+  const params: unknown[] = [...COMPLETED_STATUSES]
+  let where = `status IN (${COMPLETED_STATUSES.map(() => '?').join(',')})`
+  if (opts.assignee) {
+    where += ' AND assignee = ?'
+    params.push(opts.assignee)
+  }
+  if (typeof opts.before === 'number' && Number.isFinite(opts.before)) {
+    /* Use COALESCE so tasks without `completed_at` (archived without ever
+       finishing — possible after our wipe + re-archive) still page in
+       chronological order. */
+    where += ' AND COALESCE(completed_at, created_at) < ?'
+    params.push(Math.floor(opts.before))
+  }
+  const rows = db.prepare(
+    `SELECT id, title, body, assignee, status, priority,
+            created_at, started_at, completed_at
+     FROM tasks
+     WHERE ${where}
+     ORDER BY COALESCE(completed_at, created_at) DESC, id DESC
+     LIMIT ?`
+  ).all(...params as never[], limit) as unknown as RawCompletedRow[]
+
+  return rows.map(r => ({
+    id: r.id,
+    title: r.title,
+    body: r.body,
+    assignee: r.assignee,
+    status: r.status as 'done' | 'archived',
+    priority: r.priority,
+    createdAt: r.created_at,
+    startedAt: r.started_at,
+    completedAt: r.completed_at
+  }))
+}
+
 const STALE_READY_AGE_S = 5 * 60
 
 /**
