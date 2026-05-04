@@ -1,5 +1,7 @@
 # Orchestration War Room
 
+![Orchestration War Room](docs/screenshot.png)
+
 > *A multilingual visual UI for Hermes agentic orchestration/delegation system.*
 
 [🇪🇸 Leer en español ↓](#sala-de-operaciones-de-orquestación)
