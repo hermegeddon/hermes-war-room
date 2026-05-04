@@ -536,9 +536,9 @@ const scopeLabel = computed(() => {
 
 .floor-grid {
   display: grid;
-  /* Always two stations per row, each capped at the natural station size
-     (~220px) so they don't balloon to fill the half-pane width. */
-  grid-template-columns: repeat(2, minmax(0, 220px));
+  /* Pack as many 220px stations as fit; collapse empty tracks so the row
+     centres tightly instead of leaving holes on the right. */
+  grid-template-columns: repeat(auto-fit, 220px);
   justify-content: center;
   gap: 48px 28px;
   justify-items: center;

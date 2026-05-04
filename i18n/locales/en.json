@@ -4,7 +4,7 @@
     "description": "Visual orchestration layer for the Hermes multi-agent delegation system."
   },
   "nav": {
-    "warRoom": "OrchestrationWar Room",
+    "warRoom": "Operations Room",
     "team": "The Team",
     "missions": "Missions"
   },
