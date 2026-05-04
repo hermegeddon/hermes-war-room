@@ -331,6 +331,12 @@ function isActive(to: string): boolean {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  /* Without min-height:0, a flex item's default min-height:auto refuses to
+     shrink below its content's min-content size. On short viewports that
+     made .hwr-main grow past the shell, .page--war-room inflate past
+     100dvh, and the inner overflow-y:auto panes never gained a scrollbar
+     because their grid row was already as tall as their content. */
+  min-height: 0;
 }
 .hwr-main > * {
   flex: 1 1 auto;
