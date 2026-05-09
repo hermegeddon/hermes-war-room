@@ -2,6 +2,7 @@ import { useDb, type ProfileRow } from '../utils/db'
 import { discoverProfiles } from '../utils/hermes'
 import { avatarUrl, defaultSeed, pickColor, type Gesture } from '../utils/avatar'
 import { syncRoster } from '../utils/roster'
+import { readProfileConfig } from '../utils/profile-config'
 
 let rosterPrimed = false
 
@@ -37,6 +38,15 @@ export default defineEventHandler(() => {
       now,
       now
     )
+  }
+
+  // Auto-load callsign from config.yaml (config.yaml overrides database)
+  const updateCallsign = db.prepare('UPDATE profiles SET given_name = ? WHERE slug = ?')
+  for (const p of discovered) {
+    const config = readProfileConfig(p.hermesDir)
+    if (config.name) {
+      updateCallsign.run(config.name, p.slug)
+    }
   }
 
   const rows = db

@@ -32,6 +32,7 @@ interface ProfileConfigSlice {
   model: string | null
   provider: string | null
   allowlist: string[]
+  name: string | null
 }
 
 interface ModelOption {
@@ -213,7 +214,7 @@ async function loadAll(slug: string) {
       }),
       $fetch<ProfileConfigSlice>(`/api/profiles/${slug}/config`).catch((e) => {
         toast.add({ title: t('profileConfig.loadFailed'), description: (e as Error).message, color: 'error' })
-        return { model: null, provider: null, allowlist: [] as string[] }
+        return { model: null, provider: null, allowlist: [] as string[], name: null }
       })
     ])
     skills.value = skillList
