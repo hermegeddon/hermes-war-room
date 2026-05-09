@@ -79,6 +79,8 @@ export interface ProfileConfigSlice {
   provider: string | null
   /** command_allowlist — list of dangerous-pattern descriptions pre-approved without prompting. */
   allowlist: string[]
+  /** name — optional display name/callsign for the profile (used by war-room) */
+  name: string | null
 }
 
 function configPath(profileDir: string): string {
@@ -87,23 +89,26 @@ function configPath(profileDir: string): string {
 
 export function readProfileConfig(profileDir: string): ProfileConfigSlice {
   const path = configPath(profileDir)
-  if (!existsSync(path)) return { model: null, provider: null, allowlist: [] }
+  if (!existsSync(path)) return { model: null, provider: null, allowlist: [], name: null }
   try {
     const raw = readFileSync(path, 'utf8')
     const cfg = parseYaml(raw) as {
       model?: { default?: unknown, provider?: unknown }
       command_allowlist?: unknown
+      name?: unknown
     } | null
     const modelDefault = cfg?.model?.default
     const provider = cfg?.model?.provider
+    const name = cfg?.name
     const list = Array.isArray(cfg?.command_allowlist) ? cfg.command_allowlist : []
     return {
       model: typeof modelDefault === 'string' ? modelDefault : null,
       provider: typeof provider === 'string' ? provider : null,
+      name: typeof name === 'string' ? name.trim() : null,
       allowlist: list.filter((v): v is string => typeof v === 'string')
     }
   } catch {
-    return { model: null, provider: null, allowlist: [] }
+    return { model: null, provider: null, allowlist: [], name: null }
   }
 }
 
@@ -111,6 +116,7 @@ export interface ProfileConfigPatch {
   model?: string | null
   provider?: string | null
   allowlist?: string[]
+  name?: string | null
   /** When true, copy the global Hermes `model:` block (default, provider,
    *  base_url, api_key) into this profile's config, overwriting any prior
    *  override. Hermes profiles are NOT inherit-on-miss — they fully shadow
@@ -196,6 +202,14 @@ export function writeProfileConfig(profileDir: string, patch: ProfileConfigPatch
   if (Array.isArray(patch.allowlist)) {
     const cleaned = [...new Set(patch.allowlist.filter(s => typeof s === 'string' && s.trim() !== ''))]
     doc.set('command_allowlist', cleaned)
+  }
+
+  if ('name' in patch) {
+    if (patch.name === null || (typeof patch.name === 'string' && patch.name.trim() === '')) {
+      if (doc.has('name')) doc.delete('name')
+    } else if (typeof patch.name === 'string') {
+      doc.set('name', patch.name.trim())
+    }
   }
 
   // Defensive: if the resulting `command_allowlist` came out as something

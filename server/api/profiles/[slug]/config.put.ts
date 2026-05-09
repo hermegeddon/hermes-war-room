@@ -6,6 +6,7 @@ interface PutBody {
   model?: string | null
   provider?: string | null
   allowlist?: unknown
+  name?: string | null
   /** When true, copy the global `model:` block into the profile config so
    *  Hermes sees explicit values. The war-room's "Heredar global" toggle. */
   inheritGlobalModel?: boolean
@@ -39,6 +40,9 @@ export default defineEventHandler(async (event) => {
       throw createError({ statusCode: 400, statusMessage: '`allowlist` must be an array of strings' })
     }
     patch.allowlist = body.allowlist.filter((v): v is string => typeof v === 'string')
+  }
+  if ('name' in body) {
+    if (body.name === null || typeof body.name === 'string') patch.name = body.name
   }
 
   if (Object.keys(patch).length === 0) {
