@@ -18,11 +18,19 @@ const emit = defineEmits<{
   selectTask: [task: CurrentTask | CompletedTask]
 }>()
 
-type Tab = 'chat' | 'board'
-const tab = ref<Tab>('chat')
-
 const { t } = useI18n()
 const toast = useToast()
+const { data: config } = await useFetch<{ missionsEnabled: boolean }>('/api/config')
+const missionsEnabled = computed(() => config.value?.missionsEnabled ?? true)
+
+type Tab = 'chat' | 'board'
+const tab = ref<Tab>('chat')
+// Default to board when missions are disabled
+watch(missionsEnabled, (enabled) => {
+  if (!enabled && tab.value === 'chat') {
+    tab.value = 'board'
+  }
+}, { immediate: true })
 
 const STORAGE_KEY = 'hermes-war-room.lastOrchestratorSlug'
 
@@ -193,7 +201,10 @@ watch(transcriptRef, (el) => {
 
 <template>
   <section class="mission">
-    <header class="mission-header">
+    <header
+      v-if="missionsEnabled"
+      class="mission-header"
+    >
       <!-- MISIÓN on the left — the panel's quiet identity caption. Antonio
            bold uppercase with the hot-red target glyph; restrained so the
            eye reads it as a label, not a banner. -->
@@ -208,7 +219,10 @@ watch(transcriptRef, (el) => {
       <!-- Orchestrator on the right: a small "Orquestador encargado:"
            eyebrow sits above the avatar + select so users know what the
            dropdown controls without needing to read the placeholder text. -->
-      <div class="mission-orch">
+      <div
+        v-if="missionsEnabled"
+        class="mission-orch"
+      >
         <p class="mission-orch-label">
           {{ t('mission.orchestratorLabel') }}
         </p>
@@ -252,8 +266,11 @@ watch(transcriptRef, (el) => {
     <!-- Tab strip — switches the body between the chat transcript and the
          live kanban board. The composer at the bottom stays mounted in
          both views so the user can keep talking to the orchestrator while
-         watching the board. -->
-    <div class="mission-tabs">
+         watching the board. When missions are disabled, tabs are hidden. -->
+    <div
+      v-if="missionsEnabled"
+      class="mission-tabs"
+    >
       <button
         type="button"
         class="mission-tab"
@@ -285,7 +302,7 @@ watch(transcriptRef, (el) => {
     </div>
 
     <MissionKanban
-      v-if="tab === 'board'"
+      v-if="tab === 'board' || !missionsEnabled"
       class="mission-board"
       :tasks="tasks"
       :profiles="orchestrators"
@@ -345,6 +362,7 @@ watch(transcriptRef, (el) => {
     </div>
 
     <form
+      v-if="missionsEnabled"
       class="mission-input"
       @submit.prevent="handleSend"
     >
