@@ -1,3 +1,9 @@
+## [1.4.0](https://github.com/Naroh091/hermes-war-room/compare/v1.3.0...v1.4.0) (2026-05-09)
+
+### Features
+
+* auto-load callsign from profile config.yaml ([f57b269](https://github.com/Naroh091/hermes-war-room/commit/f57b2699ff9b5a2d5016d13206dc1dfbc09e2b5e))
+
 ## [1.3.0](https://github.com/Naroh091/hermes-war-room/compare/v1.2.0...v1.3.0) (2026-05-04)
 
 ### Features
