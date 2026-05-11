@@ -46,7 +46,7 @@ const tabs = computed<TopTab[]>(() => {
     { to: '/team', icon: 'i-lucide-users-round', label: t('nav.team') },
     { to: '/missions', icon: 'i-lucide-folder-clock', label: t('nav.missions') }
   ]
-  return missionsEnabled ? allTabs : allTabs.filter(tab => tab.to !== '/missions')
+  return missionsEnabled.value ? allTabs : allTabs.filter(tab => tab.to !== '/missions')
 })
 
 const localeOptions = computed(() =>
@@ -89,11 +89,11 @@ function isActive(to: string): boolean {
         >
           <NuxtLink
             v-for="tab in tabs"
+            v-show="tab.to !== '/missions' || missionsEnabled"
             :key="tab.to"
             :to="tab.to"
             class="hwr-tab"
             :class="{ 'is-active': isActive(tab.to) }"
-            v-show="tab.to !== '/missions' || missionsEnabled"
           >
             <UIcon
               :name="tab.icon"

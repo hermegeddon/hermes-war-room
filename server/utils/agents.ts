@@ -108,7 +108,9 @@ export function syncManagedAgentsBlock(profileDir: string): void {
     writeFileSync(tmp, next, { mode: 0o600 })
     renameSync(tmp, path)
   } catch (e) {
-    try { unlinkSync(tmp) } catch { /* ignore */ }
+    try {
+      unlinkSync(tmp)
+    } catch { /* ignore */ }
     throw e
   }
 }
