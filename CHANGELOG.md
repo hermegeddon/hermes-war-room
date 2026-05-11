@@ -1,3 +1,9 @@
+## [1.4.1](https://github.com/Naroh091/hermes-war-room/compare/v1.4.0...v1.4.1) (2026-05-11)
+
+### Bug Fixes
+
+* lint errors — .value on computed, attribute order, max-statements-per-line ([7a2466f](https://github.com/Naroh091/hermes-war-room/commit/7a2466fead1884fe2a72dabd173d209a485321ca))
+
 ## [1.4.0](https://github.com/Naroh091/hermes-war-room/compare/v1.3.0...v1.4.0) (2026-05-09)
 
 ### Features
