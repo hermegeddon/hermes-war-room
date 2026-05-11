@@ -1,0 +1,383 @@
+{
+  "app": {
+    "title": "Ruang Kendali Orkestrasi Hermes",
+    "description": "Lapisan orkestrasi visual untuk sistem delegasi multi-agen Hermes."
+  },
+  "nav": {
+    "warRoom": "Ruang Operasi",
+    "team": "Tim",
+    "missions": "Misi"
+  },
+  "common": {
+    "rescan": "Pindai ulang",
+    "cancel": "Batal",
+    "default": "bawaan",
+    "language": "Bahasa",
+    "manage": "Kelola",
+    "done": "Selesai",
+    "forceDispatch": "Paksa dispatch",
+    "forceDispatchOk": "Dispatch dipaksa",
+    "forceDispatchFailed": "Gagal memaksa dispatch"
+  },
+  "warRoom": {
+    "title": "Ruang Operasi",
+    "errorTitle": "Gagal memuat profil",
+    "empty": "Tidak ada profil Hermes ditemukan di {dir}.",
+    "operativesCount": "tidak ada operator | 1 operator | {count} operator",
+    "stationLabel": "Stasiun {num}",
+    "operationsFloor": "Lantai Operasi",
+    "missionScope": "Cakupan misi",
+    "globalScope": "Semua tugas",
+    "scopeToggle": "Tampilkan semua tugas",
+    "scopeToggleMission": "Batasi ke misi",
+    "scopeAll": "Semua tugas",
+    "scopeMissingFallback": "(misi tidak ada dalam daftar)",
+    "scopeUntitledMission": "(misi tanpa judul)",
+    "detail": {
+      "title": "Berkas operator",
+      "currentTask": "Tugas saat ini",
+      "noTask": "Tidak ada tugas aktif - siaga.",
+      "delegatedBy": "Didelegasikan oleh",
+      "heartbeat": "Heartbeat terakhir {ago} lalu",
+      "live": "Live",
+      "started": "Dimulai {time}",
+      "lastSteps": "Langkah terbaru",
+      "noSteps": "Belum ada aktivitas tercatat.",
+      "missionThread": "Thread misi",
+      "noMission": "Tidak ada misi berjalan.",
+      "subtasks": "Subtugas",
+      "noSubtasks": "Tidak ada subtugas terlampir.",
+      "taskFeed": "Aktivitas tugas",
+      "taskFeedLoading": "Memuat percakapan...",
+      "taskFeedNotStarted": "Worker belum mulai - tidak ada file log di disk.",
+      "taskFeedNoSession": "Worker sudah mulai tetapi session ID belum dicatat di log.",
+      "taskFeedEmpty": "Belum ada pesan tercatat.",
+      "taskFeedReasoning": "Penalaran",
+      "taskFeedTotalsTitle": "Input: {input} token / Output: {output} token",
+      "taskFeedLog": "Output worker",
+      "taskFeedLogHint": "Menampilkan baris terakhir dari log mentah worker - berguna saat state.db belum menyusul.",
+      "taskFeedLogSpan": "{from} -> {to}",
+      "taskFeedLastActivity": "penulisan terakhir {ago} lalu",
+      "taskFeedLogTruncated": "Menampilkan {bytes} terakhir dari {total} (terpotong).",
+      "taskFeedLogLoading": "Memuat log lengkap...",
+      "taskFeedLogReload": "Muat ulang",
+      "taskKill": "Matikan tugas",
+      "taskKillConfirmTitle": "Matikan tugas {id}?",
+      "taskKillConfirmBody": "Menghentikan proses worker (SIGTERM) dan mengarsipkan tugas agar hilang dari papan aktif. Bisa dipulihkan lewat `hermes kanban` jika perlu diperiksa nanti.",
+      "taskKillConfirmAction": "Matikan",
+      "taskKilling": "Mematikan...",
+      "taskKilled": "Tugas dimatikan",
+      "taskKillFailed": "Tidak dapat mematikan tugas",
+      "permissionPending": "IZIN TERTUNDA",
+      "permissionPendingShort": "IZIN",
+      "approveTitle": "Penolakan izin",
+      "approveBody": "Worker terkena classifier izin Hermes dan otomatis ditolak. Setujui label pola berbahaya di bawah untuk menambahkannya ke `command_allowlist` profil ini dan mencoba ulang tugas.",
+      "approveLabelHint": "Label persis seperti yang dikeluarkan classifier Hermes. Edit jika saran terlihat salah sebelum menyetujui.",
+      "approveAction": "Setujui dan coba ulang",
+      "approving": "Menyetujui...",
+      "approveSuccess": "Disetujui dan mencoba ulang",
+      "approveFailed": "Tidak dapat menyetujui",
+      "approveNoLabel": "Tidak dapat mengekstrak label - ketik secara manual.",
+      "taskFeedSession": "Sesi",
+      "taskFeedDuration": "Berjalan selama {duration}",
+      "tokenInput": "input",
+      "tokenOutput": "output",
+      "tokenCacheRead": "cache baca",
+      "tokenCacheWrite": "cache tulis",
+      "tokenCost": "biaya"
+    },
+    "history": {
+      "title": "Arsip misi",
+      "subtitle": "Misi sebelumnya, terbaru di atas.",
+      "empty": "Belum ada misi.",
+      "open": "Terbuka",
+      "archived": "Diarsipkan",
+      "all": "Semua",
+      "messageCount": "tidak ada pesan | 1 pesan | {count} pesan",
+      "createdAt": "Dimulai {when}",
+      "updatedAt": "Aktivitas terakhir {when}",
+      "loadFailed": "Tidak dapat memuat misi",
+      "page": "Halaman {current} dari {total}",
+      "prev": "Sebelumnya",
+      "next": "Berikutnya"
+    }
+  },
+  "mission": {
+    "title": "Misi",
+    "send": "Tugaskan",
+    "sending": "Menugaskan...",
+    "thinking": "{orch} sedang berpikir...",
+    "newMission": "Misi baru",
+    "archived": "Misi diarsipkan",
+    "failure": "Tidak dapat menghubungi orkestrator",
+    "orchestrator": "Orkestrator",
+    "orchestratorLabel": "Orkestrator bertugas:",
+    "dispatcherWarning": "Dispatcher tidak terdeteksi. Jalankan `hermes gateway start` agar worker mengambil tugas.",
+    "connectionLost": "Stream terputus. Menyambung ulang...",
+    "idle": "Menganggur",
+    "empty": {
+      "placeholder": "Jelaskan misi untuk {orch}..."
+    },
+    "input": {
+      "followUp": "Balas atau perbaiki misi..."
+    },
+    "task": {
+      "running": "Sedang mengerjakan",
+      "queued": "Dalam antrean",
+      "blocked": "Terblokir",
+      "thinking": "Berpikir..."
+    },
+    "tabs": {
+      "chat": "Chat",
+      "board": "Papan"
+    },
+    "board": {
+      "empty": "Tidak ada tugas di sini.",
+      "boardEmpty": "Papan masih kosong - tugaskan misi untuk mulai.",
+      "col": {
+        "todo": "Perlu dikerjakan",
+        "ready": "Siap",
+        "running": "Berjalan",
+        "blocked": "Terblokir"
+      },
+      "started": "dimulai {ago} lalu",
+      "waiting": "menunggu {ago}",
+      "completedTitle": "Tugas selesai",
+      "completedAgo": "selesai {ago} lalu",
+      "completedEmpty": "Belum ada tugas selesai.",
+      "completedLoading": "Memuat...",
+      "completedMore": "Muat lagi"
+    },
+    "detail": {
+      "title": "Berkas operator",
+      "currentTask": "Tugas saat ini",
+      "noTask": "Tidak ada tugas aktif.",
+      "subtasks": "Tugas terdelegasi",
+      "noSubtasks": "Tidak ada delegasi tertunda.",
+      "delegatedBy": "Didelegasikan oleh",
+      "started": "Dimulai {time}",
+      "heartbeat": "Heartbeat {ago} detik lalu",
+      "openMission": "Buka misi",
+      "viewKanban": "Lihat di kanban",
+      "lastSteps": "Aktivitas terbaru",
+      "noSteps": "Tidak ada aktivitas terbaru.",
+      "missionThread": "Thread misi",
+      "noMission": "Tidak ada misi aktif untuk operator ini.",
+      "live": "Live"
+    }
+  },
+  "team": {
+    "title": "Tim",
+    "errorTitle": "Gagal memuat profil",
+    "empty": "Tidak ada profil Hermes ditemukan di {dir}.",
+    "hire": "Rekrut"
+  },
+  "hire": {
+    "title": "Penerimaan operator",
+    "subtitle": "Pilih preset, edit dossier, deploy.",
+    "presetSection": "Jalur",
+    "presetHint": "Setiap preset mengisi identitas, aturan, tools, dan skill. Semua bisa disesuaikan sebelum merekrut.",
+    "briefingSection": "Briefing",
+    "capabilitiesSection": "Kapabilitas",
+    "nameLabel": "Slug profil",
+    "namePlaceholder": "mis. peneliti",
+    "nameHint": "Hanya huruf kecil dan angka - digunakan sebagai nilai assignee kanban.",
+    "cloneLabel": "Salin dari",
+    "clonePlaceholder": "Mulai baru",
+    "cloneHint": "Opsional: seed config.yaml + .env dari profil yang ada. Identitas di bawah menimpa SOUL.md mereka.",
+    "noteAfterCreate": "Server MCP dan autentikasi provider dapat dikonfigurasi setelah profil dibuat.",
+    "submit": "Rekrut",
+    "submitting": "Merekrut...",
+    "success": "{name} direkrut.",
+    "failure": "Tidak dapat merekrut profil"
+  },
+  "presets": {
+    "orchestrator": {
+      "title": "Orkestrator",
+      "tagline": "Anda perlu dispatch, routing, deteksi drift, dan eskalasi."
+    },
+    "builder": {
+      "title": "Builder",
+      "tagline": "Anda perlu mengirim kode produk dengan test dan bukti build."
+    },
+    "reviewer": {
+      "title": "Reviewer",
+      "tagline": "Anda perlu review terverifikasi byte dan kesiapan merge."
+    },
+    "triage": {
+      "title": "Triage",
+      "tagline": "Anda perlu issue dan PR dinilai, direproduksi, dipatch, dan disiapkan."
+    },
+    "lab": {
+      "title": "Lab",
+      "tagline": "Anda perlu eksperimen terisolasi atau benchmarking model lokal."
+    },
+    "fetcher": {
+      "title": "Pengambil Data",
+      "tagline": "Anda perlu informasi dari web terbuka - pencarian, scraping, ekstraksi terstruktur. Tanpa analisis."
+    },
+    "sage": {
+      "title": "Sage",
+      "tagline": "Anda perlu riset, sintesis, skrip, atau copy peluncuran."
+    },
+    "scribe": {
+      "title": "Scribe",
+      "tagline": "Anda perlu dokumen, spesifikasi, handoff, kebersihan skill, atau kurasi memori."
+    },
+    "foundation": {
+      "title": "Fondasi",
+      "tagline": "Anda perlu runtime, perbaikan, infra, health, atau lifecycle work."
+    },
+    "qa": {
+      "title": "QA",
+      "tagline": "Anda perlu regresi, smoke test, dan verifikasi expected-vs-actual."
+    },
+    "mirror": {
+      "title": "Integrasi Mirror",
+      "tagline": "Anda perlu sinkronisasi upstream, integrasi, atau paket aset."
+    },
+    "custom": {
+      "title": "Kustom",
+      "tagline": "Anda membuat jalur yang tidak cocok dengan preset yang ada."
+    }
+  },
+  "skills": {
+    "title": "Skill",
+    "loading": "Memuat skill...",
+    "loadFailed": "Gagal memuat skill",
+    "empty": "Tidak ada skill tersedia.",
+    "search": "Cari skill...",
+    "selectAll": "Aktifkan semua",
+    "selectNone": "Nonaktifkan semua",
+    "selected": "{count} dari {total} aktif",
+    "uncategorized": "Lainnya",
+    "sourceBuiltin": "Bawaan",
+    "sourceGlobal": "Global",
+    "sourceProfile": "Lokal"
+  },
+  "tools": {
+    "title": "Tools",
+    "loading": "Memuat tools...",
+    "loadFailed": "Gagal memuat tools",
+    "empty": "Tidak ada tools tersedia.",
+    "search": "Cari tools...",
+    "selectAll": "Aktifkan semua",
+    "selectNone": "Nonaktifkan semua",
+    "selected": "{count} dari {total} aktif"
+  },
+  "soul": {
+    "title": "Identitas",
+    "hint": "Markdown bebas yang disimpan ke SOUL.md di dalam profil. Menjelaskan siapa agen dan apa tugasnya.",
+    "placeholder": "# Siapa Anda\n\n_Anda bukan chatbot. Anda sedang menjadi seseorang._\n\nSiapa Saya?\n\n- **Nama:**\n- **Peran:**\n- **Gaya:**",
+    "loadFailed": "Gagal memuat SOUL.md"
+  },
+  "mcp": {
+    "title": "Server MCP",
+    "hint": "Sumber tool jarak jauh yang terhubung ke profil ini. Server yang gagal memperlambat cold start (3 percobaan ulang, ~7 dtk terbuang) - hapus yang tidak dipakai profil ini.",
+    "loading": "Memuat server MCP...",
+    "loadFailed": "Gagal memuat server MCP",
+    "empty": "Tidak ada server MCP dikonfigurasi untuk profil ini.",
+    "remove": "Hapus",
+    "removed": "{name} dihapus",
+    "removeFailed": "Tidak dapat menghapus server MCP",
+    "confirmRemove": "Hapus server MCP \"{name}\" dari profil ini? Menambahkan kembali memerlukan Hermes CLI.",
+    "headers": "tanpa header | 1 header | {count} header",
+    "headersTooltip": "Jumlah header HTTP yang dikonfigurasi (kemungkinan token auth). Nilainya tidak ditampilkan.",
+    "transport": {
+      "http": "HTTP",
+      "stdio": "stdio",
+      "unknown": "tidak diketahui"
+    }
+  },
+  "retrain": {
+    "action": "Latih ulang",
+    "title": "Latih ulang {name}",
+    "subtitle": "Identitas dan aturan di kiri, tools dan pengetahuan di kanan. Simpan saat selesai.",
+    "submit": "Simpan",
+    "submitting": "Menyimpan...",
+    "success": "Profil diperbarui",
+    "failure": "Tidak dapat memperbarui profil",
+    "identitySection": "Identitas dan aturan",
+    "capabilitiesSection": "Kapabilitas"
+  },
+  "rename": {
+    "label": "Slug profil",
+    "help": "Huruf kecil alfanumerik. Mengganti nama profil Hermes dan mengarahkan worker ke id baru.",
+    "blockedDefault": "Profil default tidak dapat diganti namanya.",
+    "invalid": "Slug hanya boleh berisi huruf kecil dan angka.",
+    "renaming": "Mengganti nama...",
+    "success": "Diganti nama menjadi {slug}",
+    "failure": "Tidak dapat mengganti nama profil"
+  },
+  "fire": {
+    "action": "Pecat",
+    "confirmTitle": "Pecat {name}?",
+    "confirmBody": "Ini akan menghapus permanen profil Hermes, konfigurasi, SOUL, aturan AGENTS, skill, dan data kanban. Tidak dapat dibatalkan.",
+    "confirmAction": "Pecat",
+    "submitting": "Memecat...",
+    "success": "{name} dipecat",
+    "failure": "Tidak dapat memecat operator",
+    "blockedDefault": "Profil default tidak dapat dipecat."
+  },
+  "profileConfig": {
+    "loadFailed": "Gagal memuat konfigurasi profil",
+    "model": "Model",
+    "modelHint": "Nilai `model.default` yang Hermes resolve melalui registry modelnya (mis. `qwen3.6`, `claude-sonnet-4-5`, `gpt-4-turbo`).",
+    "modelPlaceholder": "mis. claude-sonnet-4-5",
+    "modelSearch": "Cari atau ketik id model...",
+    "modelCustom": "Gunakan \"{value}\"",
+    "modelEmpty": "Katalog kosong - ketik id model apa pun.",
+    "inheritGlobal": "Warisi dari global",
+    "inheritGlobalHint": "Gunakan provider dan model dari `~/.hermes/config.yaml`. Matikan untuk override per profil.",
+    "modelRecommended": "direkomendasikan",
+    "modelFree": "gratis",
+    "modelCurrent": "saat ini",
+    "provider": "Provider",
+    "providerHint": "Provider inferensi (`anthropic`, `openai`, `custom`, ...). Kosongkan untuk mewarisi dari config global Hermes.",
+    "providerPlaceholder": "(default global)",
+    "allowlist": "Command berbahaya yang sudah disetujui",
+    "allowlistHint": "Command yang cocok dengan deskripsi pola berbahaya ini melewati prompt persetujuan pengguna. Untuk orkestrator, biarkan KOSONG agar command seperti `python3 -c` otomatis ditolak.",
+    "allowlistEmpty": "Tanpa pra-persetujuan - setiap command berbahaya akan melewati callback izin (yang ditolak war-room secara default).",
+    "allowlistRemove": "Hapus pra-persetujuan: {entry}",
+    "allowlistClear": "Hapus semua"
+  },
+  "agents": {
+    "title": "Aturan perilaku (AGENTS.md)",
+    "hintGlobal": "Profil ini tidak punya AGENTS.md lokal - Anda melihat global ~/.hermes/AGENTS.md. Menyimpan akan membuat salinan khusus profil yang menimpa global.",
+    "hintProfile": "AGENTS.md khusus profil. Dimuat ke system prompt agen pada setiap turn.",
+    "hintEmpty": "Tidak ada aturan yang ditentukan secara global atau untuk profil ini. Tambahkan konvensi perilaku, hal yang boleh dan tidak boleh, dll.",
+    "placeholder": "# Aturan perilaku\n\n- Jangan pernah commit tanpa konfirmasi eksplisit.\n- Biasakan membaca sebelum menulis.\n- Gunakan bahasa jelas untuk laporan non-teknis.",
+    "inheriting": "Mewarisi global",
+    "loadFailed": "Gagal memuat AGENTS.md"
+  },
+  "badge": {
+    "operativeFile": "Berkas Operator",
+    "callsign": "Callsign",
+    "profileId": "ID Profil",
+    "status": "Status",
+    "assignCallsign": "Tetapkan callsign",
+    "unnamed": "-- tanpa nama --",
+    "primary": "Utama",
+    "issued": "Diterbitkan {date}",
+    "rolling": "mengacak",
+    "reroll": "acak ulang",
+    "callsignAssigned": "Callsign ditetapkan",
+    "saveFailed": "Gagal menyimpan",
+    "rerollFailed": "Gagal mengacak ulang",
+    "active": "Aktif",
+    "inactive": "Nonaktif",
+    "activate": "Aktifkan",
+    "deactivate": "Nonaktifkan",
+    "activeUpdated": "Roster diperbarui",
+    "activeFailed": "Tidak dapat memperbarui roster",
+    "gesture": {
+      "hand": "Siaga",
+      "handPhone": "Sedang komunikasi",
+      "ok": "Dikonfirmasi",
+      "okLongarms": "Menyiarkan",
+      "pointLongarms": "Menargetkan",
+      "waveLongarms": "Menyapa",
+      "waveOkLongarms": "Mengoordinasikan"
+    }
+  }
+}
