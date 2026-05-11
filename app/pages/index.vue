@@ -2,6 +2,8 @@
 import type { Profile } from '~/types/profile'
 
 const { t } = useI18n()
+const { data: config } = await useFetch<{ missionsEnabled: boolean }>('/api/config')
+const missionsEnabled = computed(() => config.value?.missionsEnabled ?? true)
 const { data: profiles, status, error, refresh } = await useFetch<Profile[]>('/api/profiles')
 
 // Home is the live operations floor — only active operatives are on duty here.
@@ -239,7 +241,7 @@ const scopeLabel = computed(() => {
     <PageHeader :title="t('warRoom.title')">
       <template #leadingActions>
         <UButton
-          v-if="missionStream.mission.value"
+          v-if="missionsEnabled && missionStream.mission.value"
           icon="i-lucide-archive"
           size="sm"
           variant="ghost"
@@ -251,6 +253,7 @@ const scopeLabel = computed(() => {
       </template>
       <template #actions>
         <USelectMenu
+          v-if="missionsEnabled"
           :model-value="scopeMissionId ?? SENTINEL_ALL"
           :items="scopeItems"
           value-key="value"
@@ -311,7 +314,8 @@ const scopeLabel = computed(() => {
     </PageHeader>
 
     <!-- Two equal vertical columns: mission control on the left, the live
-         operatives floor on the right. Stacks top/bottom on narrow viewports. -->
+         operatives floor on the right. Stacks top/bottom on narrow viewports.
+         When missions are disabled, MissionPanel hides chat and shows only board. -->
     <div class="split">
       <section class="split-mission">
         <MissionPanel

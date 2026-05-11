@@ -1,6 +1,8 @@
 <script setup lang="ts">
 const route = useRoute()
 const { t, locale, locales, setLocale } = useI18n()
+const { data: config } = await useFetch<{ missionsEnabled: boolean }>('/api/config')
+const missionsEnabled = computed(() => config.value?.missionsEnabled ?? true)
 
 useHead({
   meta: [
@@ -38,11 +40,14 @@ interface TopTab {
   label: string
 }
 
-const tabs = computed<TopTab[]>(() => [
-  { to: '/', icon: 'i-lucide-radar', label: t('nav.warRoom') },
-  { to: '/team', icon: 'i-lucide-users-round', label: t('nav.team') },
-  { to: '/missions', icon: 'i-lucide-folder-clock', label: t('nav.missions') }
-])
+const tabs = computed<TopTab[]>(() => {
+  const allTabs = [
+    { to: '/', icon: 'i-lucide-radar', label: t('nav.warRoom') },
+    { to: '/team', icon: 'i-lucide-users-round', label: t('nav.team') },
+    { to: '/missions', icon: 'i-lucide-folder-clock', label: t('nav.missions') }
+  ]
+  return missionsEnabled ? allTabs : allTabs.filter(tab => tab.to !== '/missions')
+})
 
 const localeOptions = computed(() =>
   (locales.value as { code: string, name: string }[]).map(l => ({
@@ -88,6 +93,7 @@ function isActive(to: string): boolean {
             :to="tab.to"
             class="hwr-tab"
             :class="{ 'is-active': isActive(tab.to) }"
+            v-show="tab.to !== '/missions' || missionsEnabled"
           >
             <UIcon
               :name="tab.icon"
