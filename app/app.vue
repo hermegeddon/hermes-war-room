@@ -112,7 +112,7 @@ function isActive(to: string): boolean {
             icon="i-lucide-languages"
             :aria-label="t('common.language')"
             class="hwr-lang"
-            @update:model-value="(v: string) => setLocale(v as 'en' | 'es')"
+            @update:model-value="(v: string) => setLocale(v as 'en' | 'es' | 'id')"
           />
         </div>
       </header>
