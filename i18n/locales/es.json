@@ -19,6 +19,11 @@
     "forceDispatchOk": "Dispatching forzado",
     "forceDispatchFailed": "No se pudo forzar dispatching"
   },
+  "update": {
+    "available": "Nueva versión v{version}",
+    "tooltip": "Tienes la v{current} instalada — la última publicada es v{latest}. Pulsa para ver las notas de la release.",
+    "dismiss": "Ocultar este aviso"
+  },
   "warRoom": {
     "title": "Sala de Operaciones",
     "errorTitle": "No se pudieron cargar los perfiles",

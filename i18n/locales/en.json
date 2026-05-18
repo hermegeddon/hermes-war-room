@@ -19,6 +19,11 @@
     "forceDispatchOk": "Dispatching forced",
     "forceDispatchFailed": "Force dispatching failed"
   },
+  "update": {
+    "available": "New release v{version}",
+    "tooltip": "You're on v{current} — latest published is v{latest}. Click for release notes.",
+    "dismiss": "Dismiss this notice"
+  },
   "warRoom": {
     "title": "Operations Room",
     "errorTitle": "Failed to load profiles",

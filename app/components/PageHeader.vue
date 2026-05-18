@@ -27,6 +27,7 @@ defineProps<{
       </div>
     </div>
     <div class="page-head-actions">
+      <UpdateBanner />
       <slot name="actions" />
     </div>
   </header>
