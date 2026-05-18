@@ -1,3 +1,10 @@
+## [1.5.0](https://github.com/Naroh091/hermes-war-room/compare/v1.4.1...v1.5.0) (2026-05-18)
+
+### Features
+
+* adapt the new kanban flow ([064c2c7](https://github.com/Naroh091/hermes-war-room/commit/064c2c76f75943356f4a894ea2b2e557ce007209))
+* add new version warning ([ce4152a](https://github.com/Naroh091/hermes-war-room/commit/ce4152a347d709c488073b855fe36dd774e0b802))
+
 ## [1.4.1](https://github.com/Naroh091/hermes-war-room/compare/v1.4.0...v1.4.1) (2026-05-11)
 
 ### Bug Fixes
