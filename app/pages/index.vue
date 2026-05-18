@@ -324,6 +324,9 @@ const scopeLabel = computed(() => {
           :tasks="tasks"
           @select-task="(task) => task.assignee && (selectedSlug = task.assignee)"
         />
+        <!-- One-shot onboarding popup explaining the new triage flow.
+             Self-managed: shows once per browser, persisted via localStorage. -->
+        <WhatsNewModal />
       </section>
 
       <section

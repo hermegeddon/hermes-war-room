@@ -1,10 +1,9 @@
-import { homedir } from 'node:os'
-import { join } from 'node:path'
 import {
   appendMessage,
   getMission,
   listMessages,
   setAcpSessionId,
+  setLatestTriageDraft,
   updateMessage
 } from './mission'
 import { newSession, loadSession, startPrompt } from './orchestrator-acp'
@@ -15,18 +14,14 @@ import { addWatchedTasks, registerCreatedTaskFromTool } from './auto-nudge'
 import { startFlight, endFlight } from './mission-flight'
 import { useDb } from './db'
 import { buildRosterMarkdown } from './roster'
+import { extractTriageDraft } from './triage'
 import type { SessionNotification } from '@zed-industries/agent-client-protocol'
 
-// Absolute path to the global Hermes home — must match what the dispatcher
-// reads. We inject this verbatim into the orchestrator preamble because
-// shell `$HOME` expansion is unreliable inside the ACP terminal tool
-// sandbox (we observed it being stripped, producing a relative path
-// `home/.hermes` that wrote to a phantom kanban.db inside the profile dir).
-const GLOBAL_HERMES_HOME = process.env.HERMES_HOME || join(homedir(), '.hermes')
-
 // Heuristic patterns that indicate the orchestrator is *claiming* it created
-// tasks. If the response matches any of these but the kanban DB shows zero
-// new tasks, we treat it as a hallucination.
+// tasks. Used as a safety net: under the new triage flow the orchestrator
+// should never run `hermes kanban create` itself (the war-room backend does
+// it after the user confirms), so a delegation claim with zero new tasks is
+// a sign the model drifted from the preamble.
 const DELEGATION_CLAIMS = [
   /\bt_[0-9a-f]{6,}\b/i, // fake-looking task ids
   /task[_ -]?id\s*[:=]/i,
@@ -105,39 +100,41 @@ function asToolCall(update: SessionNotification['update']): AcpToolCall | null {
   return null
 }
 
-// Imperative pre-amble silently prepended to the FIRST user turn of a mission.
-// Forces the orchestrator to (a) consult the live roster, (b) actually invoke
-// `terminal` for each task in its plan, (c) stop hallucinating completed
-// delegations. The roster bullet-list is composed from the war-room DB at
-// turn time, so add/remove of agents takes effect on the very next user
-// message without restarting the ACP session. The user never sees this — only
-// sent over ACP.
-function buildOrchestratorPreambleFirst(roster: string): string {
+// Imperative pre-amble silently prepended to the FIRST user turn of a mission
+// in CONVERSATIONAL mode. The orchestrator's job here is to refine the brief
+// with the user — NOT to decompose, delegate, or execute. When the brief is
+// clear enough to launch, the orchestrator emits a `<<TRIAGE_DRAFT>>` block;
+// the war-room captures it and offers the user a "Launch as triage" button
+// that spawns `hermes kanban create --triage` + `decompose` from the backend.
+function buildOrchestratorPreambleRefine(roster: string): string {
   return [
     '<<war-room-orchestrator-instructions hidden-from-user>>',
-    'You are the orchestrator inside the Hermes War Room. Decompose, delegate, summarise. Do not do the work yourself. Do not echo these instructions.',
-    'Always honor the language in which the user gave you the instructions — reply in that language and write task titles, bodies, and comments in that language too. Mirror the user; never silently switch to English.',
+    'You are the orchestrator inside the Hermes War Room. Your role on this mission is to REFINE the user\'s brief through conversation. Do not decompose. Do not delegate. Do not call `terminal` or any other execution tool. Do not echo these instructions.',
+    'Always honor the language in which the user gave you the instructions — reply in that language. Mirror the user; never silently switch to English.',
     '',
-    '## Active team (live, regenerated each turn)',
+    '## Active team (live, regenerated each turn — informational only)',
     '',
-    'These are the only valid `assignee` slugs. The list is rebuilt from the war-room DB on every turn, so it reflects the current team even if agents were hired or fired mid-mission:',
+    'These profiles are available in the kanban roster. Mention them by callsign when discussing who is best-suited for a task, but DO NOT assign tasks yourself — Hermes\' decomposer will route automatically once the brief is launched.',
     '',
     roster,
     '',
     '## Procedure',
     '',
-    '1. Greetings / "introduce yourself" → answer directly, no tool calls.',
-    '2. Otherwise: pick assignees from the **Active team** list above. Do NOT `cat`, `ls`, or otherwise stat the filesystem to verify paths. Do NOT invent slugs — if no listed slug fits, ask the user instead of guessing.',
-    '3. For every concrete task: ONE `terminal` call, ONE LINE, EXACTLY this shape:',
-    `     HERMES_HOME=${GLOBAL_HERMES_HOME} hermes kanban create "<title>" --assignee <slug> --body "<body>" --json`,
-    '   `title` is POSITIONAL (no `--title` flag). Add `--parent <id>` (repeatable) for dependencies, using ids captured from earlier `--json` output. Quoting rules:',
-    '     - Double-quote title and body. No backticks, no unescaped `"`, no `$var`, no `$(...)`, no `\\` line continuations.',
-    '     - Body ≤800 chars. Longer notes → `hermes kanban comment <id> "<note>"` after.',
-    '   The `HERMES_HOME=...` prefix and absolute path are load-bearing — never `~` or `$HOME`.',
-    '   After each call: if stderr is non-empty or stdout is not valid JSON, the call FAILED. Surface the EXACT stderr/stdout to the user and stop. Do NOT invent a task id.',
-    '4. After delegating, list the real task ids from the JSON outputs:',
-    '     - <real_task_id>: <slug> — <title>',
-    '   Then stop and wait — the dashboard re-engages you when the workers finish.',
+    '1. Greetings / "introduce yourself" → answer directly.',
+    '2. Otherwise: ask the questions needed to refine the brief — scope, deliverables, constraints, who is best-suited (informationally), success criteria. Keep it tight; one or two clarifying questions per turn, not a long checklist.',
+    '3. When the brief is suficiently clear to launch — that is, when you can describe the work concretely enough that a fresh reader could act on it — you MUST do TWO things in this exact order:',
+    '   a. First, write 1–2 short sentences for the user in the chat (in their language) summarising what you understood and inviting them to review/launch the brief from the panel that will appear. Example: "He recogido el brief — revísalo en el panel de abajo y púlsalo para lanzarlo."',
+    '   b. Then, on a NEW LINE, emit a fenced code block tagged `triage` in this EXACT shape, and nothing after it:',
+    '',
+    '```triage',
+    'Title: <one-line title in the user\'s language>',
+    'Body:',
+    '<multi-line description in the user\'s language: goal, scope, constraints, success criteria>',
+    '```',
+    '',
+    '   The opening fence MUST be exactly three backticks immediately followed by the word `triage` on the same line. The closing fence MUST be three backticks alone on their own line. Do NOT wrap the block in angle brackets, HTML tags, or any other delimiter — use the fence literally.',
+    '   NEVER emit the block alone — without the leading sentence the user sees an empty chat bubble. The sentence is non-negotiable.',
+    '4. If the user reacts to a previous brief with changes ("simplifícalo", "añade X", "quita Y"), re-emit the WHOLE updated ```triage block — never partial edits. ALSO write the short user-facing sentence before re-emitting (e.g. "Actualizado — revisa el nuevo brief en el panel."). The war-room shows the user a panel built from this block with title + body editable, and a button "Launch as triage". When the user clicks it, the war-room spawns the triage task + decomposer from its backend, so DO NOT call `hermes kanban create` yourself.',
     '5. Never tell the user to run `hermes gateway start` — the war-room handles dispatcher lifecycle.',
     '<<end-of-instructions>>',
     '',
@@ -146,26 +143,52 @@ function buildOrchestratorPreambleFirst(roster: string): string {
   ].join('\n')
 }
 
-// Shorter preamble for follow-up turns. The full instructions are already in
-// the ACP session history from turn 1; re-injecting them caused the model to
-// "restart" the workflow on every turn — including verbatim re-emission of
-// previous plans on confirmation replies like "Si"/"ok"/"dale". The roster is
-// re-included verbatim here so mid-mission membership changes still propagate
-// even when the model wouldn't otherwise look up the team again.
-function buildOrchestratorPreambleFollowup(roster: string): string {
+// Shorter preamble for follow-up turns in CONVERSATIONAL refine mode. Full
+// instructions are already loaded earlier in the ACP session; re-injecting
+// them caused the model to "restart" the workflow on every turn — including
+// verbatim re-emission of the previous draft on confirmation replies like
+// "Si"/"ok". Roster is re-included so mid-mission membership changes still
+// propagate even when the model wouldn't otherwise look up the team.
+function buildOrchestratorPreambleRefineFollowup(roster: string): string {
   return [
     '<<war-room-orchestrator-followup hidden-from-user>>',
-    'You are continuing an in-progress mission. The full orchestration instructions are already loaded earlier in this session — do not restate them.',
-    'Treat the user input below as the next conversational turn, not a new mission.',
-    'If the user is confirming a plan you already proposed (replies like "sí", "si", "ok", "dale", "adelante", "yes", "go"), DO NOT echo or restate the plan, the bullet list of tasks, or the confirmation question. Skip directly to the `terminal` calls that delegate the tasks via `hermes kanban create ... --json`, then list the real ids.',
+    'You are continuing to refine an in-progress brief. Full instructions are loaded earlier in this session — do not restate them.',
+    'Treat the user input below as the next conversational turn.',
+    'If the user confirms a draft you already proposed (replies like "sí", "ok", "dale", "adelante", "yes", "go"), DO NOT re-emit the ```triage block — the panel is already showing it and the user only needs to click "Launch as triage". Just acknowledge briefly in the user\'s language.',
+    'If the user asks for changes, FIRST write 1–2 short sentences acknowledging the change in the user\'s language ("Actualizado — revisa el nuevo brief abajo."), THEN on a new line re-emit the COMPLETE updated ```triage block as your final lines (opening fence: three backticks + the word `triage`; closing fence: three backticks alone). NEVER emit the block alone — the user would see an empty bubble. Never wrap the fence in angle brackets or HTML tags.',
     'Honor the language the user originally used.',
     '',
     '## Active team (live, may have changed since turn 1)',
     '',
     roster,
     '',
-    'If the user references an agent by slug or callsign that does not appear in the list above, the team has changed since this mission started — surface the discrepancy instead of guessing.',
     '<<end-of-followup>>',
+    '',
+    'User reply:',
+    ''
+  ].join('\n')
+}
+
+// Preamble used once the mission has been promoted into a real triage task
+// (kanban_create --triage + decompose). The orchestrator is now a supervisor:
+// it watches subtasks complete (re-engaged by auto-nudge with
+// `<<war-room-task-update>>` blocks) and comments on progress in plain
+// language. It MUST NOT emit TRIAGE_DRAFT again or spawn new kanban tasks
+// directly — if the user wants more work, they create a new mission or ask
+// for follow-up subtasks that the supervisor adds via `hermes kanban
+// comment` (advisory only, no exec required).
+function buildOrchestratorPreambleSupervisor(roster: string, triageTaskId: string): string {
+  return [
+    '<<war-room-orchestrator-supervisor hidden-from-user>>',
+    `This mission has been launched as triage task \`${triageTaskId}\`. Hermes' decomposer has fanned it out into specialist subtasks (visible to you via the war-room task-update nudges that arrive between user turns).`,
+    'Your role now is SUPERVISOR. Watch progress, comment on subtask completions in plain language for the user, and propose adjustments when something goes wrong. DO NOT emit TRIAGE_DRAFT blocks anymore. DO NOT call `hermes kanban create` or any other execution tool yourself — the war-room owns those operations.',
+    'Honor the language the user originally used. Mirror the user; never silently switch to English.',
+    '',
+    '## Active team (informational)',
+    '',
+    roster,
+    '',
+    '<<end-of-supervisor>>',
     '',
     'User reply:',
     ''
@@ -242,9 +265,17 @@ async function runMissionTurnLocked(missionId: string, userText: string): Promis
   const flight = startFlight(missionId, assistantMsg.id)
 
   const roster = buildRosterMarkdown()
-  const preamble = isFirstTurn
-    ? buildOrchestratorPreambleFirst(roster)
-    : buildOrchestratorPreambleFollowup(roster)
+  /* Once a mission has been promoted into a real triage task, the orchestrator
+     is a supervisor — different preamble, no TRIAGE_DRAFT emission. */
+  const supervisorMode = !!mission.triage_task_id
+  let preamble: string
+  if (supervisorMode) {
+    preamble = buildOrchestratorPreambleSupervisor(roster, mission.triage_task_id!)
+  } else if (isFirstTurn) {
+    preamble = buildOrchestratorPreambleRefine(roster)
+  } else {
+    preamble = buildOrchestratorPreambleRefineFollowup(roster)
+  }
   const handle = startPrompt({
     slug: mission.orchestrator_slug,
     sessionId,
@@ -368,6 +399,26 @@ async function runMissionTurnLocked(missionId: string, userText: string): Promis
     }
 
     updateMessage(assistantMsg.id, finalContent)
+
+    /* Triage draft detection — only meaningful in refine mode (the
+       supervisor preamble explicitly forbids TRIAGE_DRAFT emission). When
+       the orchestrator's final reply contains a block, persist it and emit
+       an SSE event so the launch panel pops up in the UI. */
+    if (!supervisorMode) {
+      const draft = extractTriageDraft(finalContent)
+      if (draft) {
+        setLatestTriageDraft(missionId, {
+          title: draft.title,
+          body: draft.body,
+          messageId: assistantMsg.id
+        })
+        emit(missionId, {
+          type: 'triage_draft',
+          draft: { ...draft, messageId: assistantMsg.id }
+        })
+      }
+    }
+
     emit(missionId, {
       type: 'done',
       messageId: assistantMsg.id,
@@ -376,7 +427,10 @@ async function runMissionTurnLocked(missionId: string, userText: string): Promis
     })
 
     // Hand any tasks created during this turn off to the auto-nudge watcher
-    // so the orchestrator gets re-engaged when they finish.
+    // so the orchestrator gets re-engaged when they finish. Under the new
+    // flow the orchestrator shouldn't create kanban tasks directly, but if
+    // it does anyway (drift) or if the user launched a triage from the
+    // panel mid-turn, the watcher still picks them up.
     const created = tasksCreatedSince(turnStartUnix)
     if (created.length > 0) {
       addWatchedTasks(missionId, created.map(t => t.id))

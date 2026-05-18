@@ -1,4 +1,4 @@
-import { getMission, listMessages } from '../../../utils/mission'
+import { getMission, listMessages, serializeMission } from '../../../utils/mission'
 
 export default defineEventHandler((event) => {
   const id = getRouterParam(event, 'id')
@@ -9,15 +9,7 @@ export default defineEventHandler((event) => {
 
   const messages = listMessages(id)
   return {
-    mission: {
-      id: m.id,
-      orchestratorSlug: m.orchestrator_slug,
-      acpSessionId: m.acp_session_id,
-      title: m.title,
-      status: m.status,
-      createdAt: m.created_at,
-      lastMessageAt: m.last_message_at
-    },
+    mission: serializeMission(m),
     messages: messages.map(msg => ({
       id: msg.id,
       role: msg.role,

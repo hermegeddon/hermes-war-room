@@ -1,4 +1,4 @@
-import type { Mission, MissionMessage, MissionEvent } from '~/types/mission'
+import type { Mission, MissionMessage, MissionEvent, MissionMode, TriageDraft } from '~/types/mission'
 
 /**
  * Latest "thinking step" surfaced from the SSE stream — used by the floor
@@ -31,11 +31,20 @@ export interface UseMissionStream {
   lastStep: Ref<ThoughtStep | null>
   /** Rolling buffer of the last N steps (newest first). */
   recentSteps: Ref<ThoughtStep[]>
-  start: (orchestratorSlug: string, message: string) => Promise<void>
+  /** Latest <<TRIAGE_DRAFT>> block emitted by the orchestrator, or null if
+   *  there is nothing pending. Drives the TriageDraftPanel visibility. */
+  triageDraft: Ref<TriageDraft | null>
+  /** True while we're waiting for the backend to spawn `kanban create
+   *  --triage` + `decompose` for this mission (either direct-triage mode or
+   *  the user just clicked "Launch as triage"). */
+  triageLaunching: Ref<boolean>
+  start: (orchestratorSlug: string, message: string, opts?: { mode?: MissionMode }) => Promise<void>
   send: (message: string) => Promise<void>
   attach: (mission: Mission, initialMessages: MissionMessage[]) => void
   archive: () => Promise<void>
   reset: () => void
+  /** Promote the active conversational mission into a real triage task. */
+  launchTriage: (title: string, body: string) => Promise<void>
 }
 
 const RECENT_STEPS_CAP = 30
@@ -120,6 +129,8 @@ export function useMissionStream(): UseMissionStream {
   const error = useState<string | null>('mission.error', () => null)
   const lastStep = useState<ThoughtStep | null>('mission.lastStep', () => null)
   const recentSteps = useState<ThoughtStep[]>('mission.recentSteps', () => [])
+  const triageDraft = useState<TriageDraft | null>('mission.triageDraft', () => null)
+  const triageLaunching = useState<boolean>('mission.triageLaunching', () => false)
 
   /**
    * Push a step into both refs. Recent buffer is FIFO with a cap; the
@@ -262,9 +273,25 @@ export function useMissionStream(): UseMissionStream {
         // what the orchestrator just did.
         thoughtBuffer = ''
         lastStep.value = null
+      } else if (evt.type === 'triage_draft') {
+        /* Orchestrator emitted a <<TRIAGE_DRAFT>> block in this turn —
+           surface the launch panel. We replace any previous draft because
+           the model re-emits the whole block on edits, so the newest one
+           is always authoritative. */
+        triageDraft.value = evt.draft
+      } else if (evt.type === 'triage_launched') {
+        /* Backend has spawned `kanban create --triage` + `decompose`.
+           Dismiss the panel and flip the mission into supervisor mode so
+           the next user reply doesn't ask for a new draft. */
+        triageDraft.value = null
+        triageLaunching.value = false
+        if (mission.value) {
+          mission.value = { ...mission.value, triageTaskId: evt.triageTaskId, latestTriageDraft: null }
+        }
       } else if (evt.type === 'error') {
         error.value = evt.message
         streaming.value = false
+        triageLaunching.value = false
       }
     }
 
@@ -274,6 +301,8 @@ export function useMissionStream(): UseMissionStream {
     source.addEventListener('done', handle as EventListener)
     source.addEventListener('error', handle as EventListener)
     source.addEventListener('state', handle as EventListener)
+    source.addEventListener('triage_draft', handle as EventListener)
+    source.addEventListener('triage_launched', handle as EventListener)
 
     es = source
   }
@@ -292,13 +321,20 @@ export function useMissionStream(): UseMissionStream {
     streaming.value = false
     error.value = null
     pendingAssistant = null
+    /* Rehydrate the draft from the server snapshot so a tab joining
+       mid-conversation immediately sees the panel without waiting for a
+       new stream chunk. */
+    triageDraft.value = m.latestTriageDraft ?? null
+    triageLaunching.value = false
     ensureStream(m.id)
   }
 
-  async function start(orchestratorSlug: string, text: string) {
+  async function start(orchestratorSlug: string, text: string, opts: { mode?: MissionMode } = {}) {
     error.value = null
     streaming.value = true
     pendingAssistant = null
+    triageDraft.value = null
+    triageLaunching.value = opts.mode === 'direct-triage'
     const optimistic: MissionMessage = {
       id: -Date.now(),
       role: 'user',
@@ -310,12 +346,38 @@ export function useMissionStream(): UseMissionStream {
     try {
       const res = await $fetch<{ mission: Mission }>('/api/missions', {
         method: 'POST',
-        body: { orchestratorSlug, message: text }
+        body: { orchestratorSlug, message: text, mode: opts.mode }
       })
       mission.value = res.mission
+      /* In direct-triage mode the server never starts an ACP turn, so the
+         "streaming" flag would otherwise hang true forever. The triage_launched
+         SSE event will turn off `triageLaunching` once the kanban work lands. */
+      if (res.mission.mode === 'direct-triage') {
+        streaming.value = false
+      }
       ensureStream(res.mission.id)
     } catch (e) {
       streaming.value = false
+      triageLaunching.value = false
+      error.value = (e as Error).message
+      throw e
+    }
+  }
+
+  async function launchTriage(title: string, body: string) {
+    if (!mission.value) throw new Error('No active mission')
+    triageLaunching.value = true
+    try {
+      await $fetch(`/api/missions/${mission.value.id}/launch-triage`, {
+        method: 'POST',
+        body: { title, body }
+      })
+      /* Don't toggle `triageLaunching` off here — wait for the SSE
+         `triage_launched` event so the panel only disappears when the
+         backend actually finished spawning the kanban work. If the
+         request itself failed (catch below) we do toggle off. */
+    } catch (e) {
+      triageLaunching.value = false
       error.value = (e as Error).message
       throw e
     }
@@ -364,7 +426,13 @@ export function useMissionStream(): UseMissionStream {
     thoughtBuffer = ''
     lastStep.value = null
     recentSteps.value = []
+    triageDraft.value = null
+    triageLaunching.value = false
   }
 
-  return { mission, messages, streaming, connected, error, lastStep, recentSteps, start, send, attach, archive, reset }
+  return {
+    mission, messages, streaming, connected, error, lastStep, recentSteps,
+    triageDraft, triageLaunching,
+    start, send, attach, archive, reset, launchTriage
+  }
 }

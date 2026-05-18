@@ -119,7 +119,36 @@
       "placeholder": "Describe the mission for {orch}…"
     },
     "input": {
-      "followUp": "Reply or refine the mission…"
+      "followUp": "Reply or refine the mission…",
+      "supervisor": "Comment or request adjustments while the team works…"
+    },
+    "commands": {
+      "menuTitle": "Commands",
+      "triage": {
+        "label": "/triage",
+        "description": "Let Hermes decompose the task automatically"
+      }
+    },
+    "triageDraft": {
+      "title": "Brief ready for triage",
+      "subtitle": "Review or edit the brief before launching it to the kanban.",
+      "titleLabel": "Title",
+      "bodyLabel": "Description",
+      "launch": "Launch as triage",
+      "launching": "Launching…",
+      "dismiss": "Dismiss",
+      "launchedTitle": "Triage decomposed",
+      "launchedBody": "No subtasks | 1 subtask created | {count} subtasks created",
+      "launchFailed": "Could not launch triage",
+      "checkPanel": "Brief prepared — review and launch it from the panel below."
+    },
+    "directTriage": {
+      "launching": "Decomposing the mission with Hermes…",
+      "launched": "Triage decomposed into subtasks — the team is on it."
+    },
+    "supervisor": {
+      "badge": "SUPERVISOR",
+      "note": "Triage `{id}` in flight · the orchestrator is supervising the team."
     },
     "task": {
       "running": "Working on",
@@ -135,10 +164,21 @@
       "empty": "No tasks here.",
       "boardEmpty": "Nothing on the board yet — assign a mission to get started.",
       "col": {
+        "triage": "Triage",
         "todo": "Todo",
         "ready": "Ready",
         "running": "Running",
         "blocked": "Blocked"
+      },
+      "action": {
+        "decompose": "Decompose",
+        "decomposing": "Decomposing…",
+        "decomposeSuccess": "Fan-out into {count} subtasks",
+        "decomposeFailed": "Could not decompose",
+        "specify": "Specify",
+        "specifying": "Specifying…",
+        "specifySuccess": "Brief rewritten and promoted to todo",
+        "specifyFailed": "Could not specify"
       },
       "started": "started {ago} ago",
       "waiting": "waiting {ago}",
@@ -378,6 +418,46 @@
       "pointLongarms": "Targeting",
       "waveLongarms": "Hailing",
       "waveOkLongarms": "Coordinating"
+    },
+    "description": {
+      "label": "Operative description",
+      "hint": "Short summary of what this operative is used for. Hermes' decomposer reads it to route new tasks to the best-fit profile.",
+      "placeholder": "e.g. \"legal researcher: tracks regulatory changes in BOE and summarises into actionable notes\"…",
+      "empty": "No description — the decomposer will route by name only.",
+      "save": "Save",
+      "saving": "Saving…",
+      "saved": "Description saved",
+      "saveFailed": "Could not save description",
+      "auto": "Auto",
+      "autoTitle": "Generate description automatically via the auxiliary LLM",
+      "autoRunning": "Generating…",
+      "autoSuccess": "Description auto-generated",
+      "autoFailed": "Could not auto-generate description"
     }
+  },
+  "whatsNew": {
+    "eyebrow": "Aligned with Hermes 0.14",
+    "title": "New triage + auto-decompose flow",
+    "lead": "Hermes just changed how the kanban gets orchestrated. The War Room now delegates subtask routing to Hermes itself instead of asking the orchestrator to dispatch them one-by-one.",
+    "features": {
+      "slash": {
+        "title": "/triage shortcut",
+        "body": "Type \"/\" in the mission chat and a command menu appears. /triage drops the prompt straight into Hermes' triage column and decomposes the mission, skipping the conversation entirely."
+      },
+      "refine": {
+        "title": "Refine, then launch when ready",
+        "body": "Without the shortcut, you chat with the orchestrator to refine the brief. When it's solid, a \"Brief ready for triage\" panel appears with editable title and description; clicking \"Launch\" makes the War Room fire create+decompose for you."
+      },
+      "descriptions": {
+        "title": "Operative descriptions drive routing",
+        "body": "From each operative's dossier you can edit (or auto-generate) its description. That's the signal Hermes' decomposer reads to route each subtask to the best-fit profile."
+      },
+      "kanban": {
+        "title": "New Triage column on the board",
+        "body": "Rough ideas parked in the Triage column expose \"Decompose\" and \"Specify\" actions per card, so you can promote them into the active flow without leaving the War Room."
+      }
+    },
+    "docs": "Read the Hermes docs",
+    "dismiss": "Got it"
   }
 }

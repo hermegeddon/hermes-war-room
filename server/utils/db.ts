@@ -49,6 +49,22 @@ export function useDb(): DatabaseSync {
       last_message_at    TEXT NOT NULL
     );
   `)
+
+  const missionCols = db.prepare('PRAGMA table_info(missions)').all() as { name: string }[]
+  const missionColNames = new Set(missionCols.map(c => c.name))
+  if (!missionColNames.has('mode')) {
+    db.exec('ALTER TABLE missions ADD COLUMN mode TEXT NOT NULL DEFAULT \'conversational\';')
+  }
+  if (!missionColNames.has('triage_task_id')) {
+    db.exec('ALTER TABLE missions ADD COLUMN triage_task_id TEXT;')
+  }
+  if (!missionColNames.has('latest_triage_draft')) {
+    /* JSON-encoded `{ title, body, messageId }` snapshot of the most recent
+       TRIAGE_DRAFT block emitted by the orchestrator. Surfaced to the
+       frontend so a tab joining mid-conversation still sees the active draft
+       panel without waiting for the next stream chunk. */
+    db.exec('ALTER TABLE missions ADD COLUMN latest_triage_draft TEXT;')
+  }
   db.exec(`
     CREATE TABLE IF NOT EXISTS mission_messages (
       id          INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -98,6 +114,9 @@ export interface MissionRow {
   status: string
   created_at: string
   last_message_at: string
+  mode: string
+  triage_task_id: string | null
+  latest_triage_draft: string | null
 }
 
 export interface MissionMessageRow {

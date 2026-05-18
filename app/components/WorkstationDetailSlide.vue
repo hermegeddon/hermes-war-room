@@ -15,6 +15,9 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   'update:open': [value: boolean]
+  /** Fired after the operative's description is edited so the parent can
+   *  refetch /api/profiles and surface the new value across the floor. */
+  'description-updated': [slug: string, description: string | null]
 }>()
 
 // Mission stream is a singleton — calling the composable here gives us the
@@ -311,6 +314,91 @@ const visibleMessages = computed(() =>
   (taskFeed.value?.messages ?? []).filter(m => m.role !== 'system')
 )
 
+/* === Operative description (Hermes' decomposer routing signal) === */
+const descriptionDraft = ref<string>('')
+const descriptionSaving = ref(false)
+const descriptionGenerating = ref(false)
+/* Re-seed the local draft whenever a new profile lands or a fresh value
+   arrives from the server. We don't want to clobber an unsaved in-flight
+   edit if the user is mid-typing; we reset only on slug change OR when the
+   server-provided value differs from what was loaded last time. */
+const lastSeenDescription = ref<string | null>(null)
+watch(
+  () => props.profile,
+  (p) => {
+    if (!p) {
+      descriptionDraft.value = ''
+      lastSeenDescription.value = null
+      return
+    }
+    if (p.description !== lastSeenDescription.value) {
+      descriptionDraft.value = p.description ?? ''
+      lastSeenDescription.value = p.description
+    }
+  },
+  { immediate: true }
+)
+const descriptionDirty = computed(() => {
+  const current = props.profile?.description ?? ''
+  return descriptionDraft.value.trim() !== current.trim()
+})
+async function saveDescription() {
+  if (!props.profile || !descriptionDirty.value || descriptionSaving.value) return
+  const slug = props.profile.slug
+  descriptionSaving.value = true
+  try {
+    const res = await $fetch<{ description: string | null }>(
+      `/api/profiles/${encodeURIComponent(slug)}/description`,
+      { method: 'PATCH', body: { text: descriptionDraft.value.trim() } }
+    )
+    lastSeenDescription.value = res.description
+    descriptionDraft.value = res.description ?? ''
+    toast.add({
+      title: t('badge.description.saved'),
+      color: 'primary',
+      icon: 'i-lucide-save'
+    })
+    emit('description-updated', slug, res.description)
+  } catch (e) {
+    const err = e as { data?: { message?: string }, message?: string }
+    toast.add({
+      title: t('badge.description.saveFailed'),
+      description: err.data?.message ?? err.message,
+      color: 'error'
+    })
+  } finally {
+    descriptionSaving.value = false
+  }
+}
+async function generateDescriptionAuto() {
+  if (!props.profile || descriptionGenerating.value) return
+  const slug = props.profile.slug
+  descriptionGenerating.value = true
+  try {
+    const res = await $fetch<{ description: string | null }>(
+      `/api/profiles/${encodeURIComponent(slug)}/description-auto`,
+      { method: 'POST' }
+    )
+    lastSeenDescription.value = res.description
+    descriptionDraft.value = res.description ?? ''
+    toast.add({
+      title: t('badge.description.autoSuccess'),
+      color: 'primary',
+      icon: 'i-lucide-sparkles'
+    })
+    emit('description-updated', slug, res.description)
+  } catch (e) {
+    const err = e as { data?: { message?: string }, message?: string }
+    toast.add({
+      title: t('badge.description.autoFailed'),
+      description: err.data?.message ?? err.message,
+      color: 'error'
+    })
+  } finally {
+    descriptionGenerating.value = false
+  }
+}
+
 function roleVariant(role: string): 'user' | 'assistant' | 'tool' | 'other' {
   if (role === 'user' || role === 'assistant' || role === 'tool') return role
   return 'other'
@@ -483,6 +571,57 @@ const logFetchAgo = computed(() => {
             class="col col--left"
             :aria-label="t('warRoom.detail.currentTask')"
           >
+            <!-- ══════════ Operative description ══════════
+                 The routing signal Hermes' decomposer reads when fanning
+                 out a triage task. Editable inline (manual text) or auto-
+                 generated via the auxiliary LLM. -->
+            <div class="block block--description">
+              <h3 class="block-title">
+                {{ t('badge.description.label') }}
+              </h3>
+              <p class="description-hint">
+                {{ t('badge.description.hint') }}
+              </p>
+              <UTextarea
+                v-model="descriptionDraft"
+                :rows="3"
+                autoresize
+                :disabled="descriptionSaving || descriptionGenerating"
+                :placeholder="t('badge.description.placeholder')"
+                variant="subtle"
+                class="description-input"
+              />
+              <p
+                v-if="!descriptionDraft.trim() && !descriptionSaving && !descriptionGenerating"
+                class="description-empty"
+              >
+                {{ t('badge.description.empty') }}
+              </p>
+              <div class="description-actions">
+                <UButton
+                  size="xs"
+                  color="primary"
+                  icon="i-lucide-save"
+                  :loading="descriptionSaving"
+                  :disabled="!descriptionDirty || descriptionGenerating"
+                  @click="saveDescription"
+                >
+                  {{ descriptionSaving ? t('badge.description.saving') : t('badge.description.save') }}
+                </UButton>
+                <UButton
+                  size="xs"
+                  variant="ghost"
+                  icon="i-lucide-sparkles"
+                  :loading="descriptionGenerating"
+                  :disabled="descriptionSaving"
+                  :title="t('badge.description.autoTitle')"
+                  @click="generateDescriptionAuto"
+                >
+                  {{ descriptionGenerating ? t('badge.description.autoRunning') : t('badge.description.auto') }}
+                </UButton>
+              </div>
+            </div>
+
             <!-- ══════════ Current task ══════════ -->
             <div class="block">
               <h3 class="block-title">
@@ -1391,6 +1530,34 @@ const logFetchAgo = computed(() => {
   border: 1px solid color-mix(in srgb, var(--accent) 70%, var(--ink));
   margin-left: auto;
   text-transform: none;
+}
+
+/* Description block — sits at the top of the left column so it reads as
+   the operative's "what do you do" before any task detail. The hint is
+   intentionally low-contrast so the textarea is the eye-catcher. */
+.block--description { gap: 6px; }
+.description-hint {
+  margin: 0;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  line-height: 1.4;
+  color: rgba(28, 26, 20, 0.6);
+}
+.description-empty {
+  margin: -2px 0 0;
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: 11.5px;
+  color: rgba(28, 26, 20, 0.55);
+}
+.description-input {
+  width: 100%;
+}
+.description-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
 }
 
 .empty {

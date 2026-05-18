@@ -46,6 +46,30 @@ export interface StateEvent {
   content: string
 }
 
+/**
+ * Emitted whenever the orchestrator's reply contains a TRIAGE_DRAFT block —
+ * the frontend uses it to surface the launch panel with editable title/body.
+ */
+export interface TriageDraftEvent {
+  type: 'triage_draft'
+  draft: {
+    title: string
+    body: string
+    messageId: number | null
+  }
+}
+
+/**
+ * Emitted once the backend has spawned `hermes kanban create --triage` and
+ * `hermes kanban decompose` for this mission. Frontend dismisses the draft
+ * panel and flips the chat into supervisor mode.
+ */
+export interface TriageLaunchedEvent {
+  type: 'triage_launched'
+  triageTaskId: string
+  childIds: string[]
+}
+
 export type MissionEvent
   = | ChunkEvent
     | ToolEvent
@@ -53,6 +77,8 @@ export type MissionEvent
     | AssistantMessageDoneEvent
     | ErrorEvent
     | StateEvent
+    | TriageDraftEvent
+    | TriageLaunchedEvent
 
 const buses = new Map<string, EventEmitter>()
 

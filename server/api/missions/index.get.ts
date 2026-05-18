@@ -1,4 +1,4 @@
-import { listMissions, countMissions } from '../../utils/mission'
+import { listMissions, countMissions, serializeMission } from '../../utils/mission'
 
 const DEFAULT_PAGE_SIZE = 25
 const MAX_PAGE_SIZE = 100
@@ -20,15 +20,7 @@ export default defineEventHandler((event) => {
   const totalPages = Math.max(1, Math.ceil(filteredTotal / pageSize))
 
   return {
-    missions: missions.map(m => ({
-      id: m.id,
-      orchestratorSlug: m.orchestrator_slug,
-      acpSessionId: m.acp_session_id,
-      title: m.title,
-      status: m.status,
-      createdAt: m.created_at,
-      lastMessageAt: m.last_message_at
-    })),
+    missions: missions.map(serializeMission),
     page,
     pageSize,
     totalPages,

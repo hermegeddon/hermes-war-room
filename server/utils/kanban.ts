@@ -71,7 +71,7 @@ function rowToTask(r: RawTaskRow): KanbanTask {
   }
 }
 
-const ACTIVE_STATUSES = ['running', 'ready', 'todo', 'blocked'] as const
+const ACTIVE_STATUSES = ['running', 'ready', 'todo', 'blocked', 'triage'] as const
 
 export function listActiveTasks(assignee?: string): KanbanTask[] {
   const db = getKanbanDb()
@@ -89,7 +89,14 @@ export function listActiveTasks(assignee?: string): KanbanTask[] {
      FROM tasks
      WHERE ${where}
      ORDER BY
-       CASE status WHEN 'running' THEN 0 WHEN 'blocked' THEN 1 WHEN 'ready' THEN 2 ELSE 3 END,
+       CASE status
+         WHEN 'running' THEN 0
+         WHEN 'blocked' THEN 1
+         WHEN 'ready' THEN 2
+         WHEN 'todo' THEN 3
+         WHEN 'triage' THEN 4
+         ELSE 5
+       END,
        priority DESC,
        created_at ASC`
   ).all(...params as never[]) as unknown as RawTaskRow[]

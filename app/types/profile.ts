@@ -12,4 +12,7 @@ export interface Profile {
   avatarPortraitUrl: string
   firstSeen: string
   lastSeen: string
+  /** Hermes profile description — the routing signal the kanban decomposer
+   *  uses to pick assignees. Null when the profile has none set. */
+  description: string | null
 }

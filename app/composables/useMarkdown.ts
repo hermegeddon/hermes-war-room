@@ -75,7 +75,12 @@ export function stripHarmonyTags(input: string): string {
   out = out.replace(/<\|[^|<>]*\|>/g, '')
   out = out.replace(/<\|[^|<>]*>/g, '')
   out = out.replace(/<[^|<>]*\|>/g, '')
-  return out
+  // Triage draft block — both shapes (current fenced ```triage…``` and the
+  // legacy <<TRIAGE_DRAFT>>…<</TRIAGE_DRAFT>>) are surfaced through the
+  // TriageDraftPanel; rendering them inside the chat bubble would be noise.
+  out = out.replace(/```(?:triage(?:_draft|-draft)?)\s*\n[\s\S]*?```/gi, '')
+  out = out.replace(/<<TRIAGE_DRAFT>>[\s\S]*?<<\/TRIAGE_DRAFT>>/g, '')
+  return out.trimEnd()
 }
 
 export interface TaskRefMeta {

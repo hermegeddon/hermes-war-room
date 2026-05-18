@@ -3,6 +3,7 @@ import type { Profile } from '~/types/profile'
 import type { CompletedTask, CurrentTask } from '~/types/mission'
 
 const { t } = useI18n()
+const toast = useToast()
 
 const props = defineProps<{
   tasks: CurrentTask[]
@@ -11,6 +12,7 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   select: [task: CurrentTask | CompletedTask]
+  refresh: []
 }>()
 
 /* Same shared key the home page writes — reading it here keeps the history
@@ -29,17 +31,75 @@ function toggleHistory() {
 }
 
 interface Column {
-  status: 'todo' | 'ready' | 'running' | 'blocked'
+  status: 'triage' | 'todo' | 'ready' | 'running' | 'blocked'
   label: string
-  tone: 'todo' | 'ready' | 'running' | 'blocked'
+  tone: 'triage' | 'todo' | 'ready' | 'running' | 'blocked'
 }
 
 const columns = computed<Column[]>(() => [
+  { status: 'triage', label: t('mission.board.col.triage'), tone: 'triage' },
   { status: 'todo', label: t('mission.board.col.todo'), tone: 'todo' },
   { status: 'ready', label: t('mission.board.col.ready'), tone: 'ready' },
   { status: 'running', label: t('mission.board.col.running'), tone: 'running' },
   { status: 'blocked', label: t('mission.board.col.blocked'), tone: 'blocked' }
 ])
+
+/* Per-card action state for the triage column. We track in-flight requests
+   by task id so a slow `decompose` on one card doesn't disable the others. */
+const decomposing = ref<Set<string>>(new Set())
+const specifying = ref<Set<string>>(new Set())
+
+async function decomposeCard(task: CurrentTask) {
+  if (decomposing.value.has(task.id)) return
+  decomposing.value = new Set([...decomposing.value, task.id])
+  try {
+    const res = await $fetch<{ childIds: string[] }>(`/api/kanban/tasks/${task.id}/decompose`, {
+      method: 'POST'
+    })
+    toast.add({
+      title: t('mission.board.action.decomposeSuccess', { count: res.childIds.length }),
+      color: 'primary',
+      icon: 'i-lucide-network'
+    })
+    emit('refresh')
+  } catch (e) {
+    const err = e as { data?: { message?: string }, message?: string }
+    toast.add({
+      title: t('mission.board.action.decomposeFailed'),
+      description: err.data?.message ?? err.message,
+      color: 'error'
+    })
+  } finally {
+    const next = new Set(decomposing.value)
+    next.delete(task.id)
+    decomposing.value = next
+  }
+}
+
+async function specifyCard(task: CurrentTask) {
+  if (specifying.value.has(task.id)) return
+  specifying.value = new Set([...specifying.value, task.id])
+  try {
+    await $fetch(`/api/kanban/tasks/${task.id}/specify`, { method: 'POST' })
+    toast.add({
+      title: t('mission.board.action.specifySuccess'),
+      color: 'primary',
+      icon: 'i-lucide-list-checks'
+    })
+    emit('refresh')
+  } catch (e) {
+    const err = e as { data?: { message?: string }, message?: string }
+    toast.add({
+      title: t('mission.board.action.specifyFailed'),
+      description: err.data?.message ?? err.message,
+      color: 'error'
+    })
+  } finally {
+    const next = new Set(specifying.value)
+    next.delete(task.id)
+    specifying.value = next
+  }
+}
 
 const tasksByStatus = computed(() => {
   const map = new Map<string, CurrentTask[]>()
@@ -132,6 +192,40 @@ const totalTasks = computed(() => props.tasks.length)
             <p class="card-title">
               {{ task.title || '—' }}
             </p>
+            <div
+              v-if="col.status === 'triage'"
+              class="card-triage-actions"
+              @click.stop
+            >
+              <button
+                type="button"
+                class="card-triage-btn card-triage-btn--decompose"
+                :disabled="decomposing.has(task.id)"
+                :title="t('mission.board.action.decompose')"
+                @click.stop="decomposeCard(task)"
+              >
+                <UIcon
+                  name="i-lucide-network"
+                  class="card-triage-glyph"
+                  :class="{ 'card-triage-glyph--spin': decomposing.has(task.id) }"
+                />
+                <span>{{ decomposing.has(task.id) ? t('mission.board.action.decomposing') : t('mission.board.action.decompose') }}</span>
+              </button>
+              <button
+                type="button"
+                class="card-triage-btn card-triage-btn--specify"
+                :disabled="specifying.has(task.id)"
+                :title="t('mission.board.action.specify')"
+                @click.stop="specifyCard(task)"
+              >
+                <UIcon
+                  name="i-lucide-list-checks"
+                  class="card-triage-glyph"
+                  :class="{ 'card-triage-glyph--spin': specifying.has(task.id) }"
+                />
+                <span>{{ specifying.has(task.id) ? t('mission.board.action.specifying') : t('mission.board.action.specify') }}</span>
+              </button>
+            </div>
             <div class="card-foot">
               <span
                 v-if="timeLine(task)"
@@ -254,7 +348,7 @@ const totalTasks = computed(() => props.tasks.length)
 
 .board {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 8px;
   flex: 1 1 auto;
   min-height: 0;
@@ -307,6 +401,92 @@ const totalTasks = computed(() => props.tasks.length)
 .col--blocked .col-count { background: #5a1f12; }
 .col--ready .col-head { background: rgba(138, 90, 20, 0.12); border-bottom-color: rgba(138, 90, 20, 0.4); }
 .col--ready .col-count { background: #8a5a14; }
+/* Triage = ideas waiting for the decomposer. Hot accent so it reads as
+   "needs a decision". The action buttons inside each card share the tone. */
+.col--triage .col-head {
+  background: rgba(200, 66, 31, 0.12);
+  border-bottom-color: rgba(200, 66, 31, 0.45);
+}
+.col--triage .col-count { background: #c8421f; }
+.card--triage { border-color: rgba(200, 66, 31, 0.34); }
+
+.card-triage-actions {
+  display: flex;
+  gap: 4px;
+  margin-top: 4px;
+  /* Don't let two long captions push the row beyond the card's content
+     box. The inner buttons clip to their flex basis and elide the label. */
+  min-width: 0;
+}
+.card-triage-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1 1 0;
+  /* `min-width: 0` is the load-bearing line: without it, flex items refuse
+     to shrink below their content's intrinsic size, so the longest label
+     ("DESCOMPONIENDO…") would push the second button off the card. */
+  min-width: 0;
+  justify-content: center;
+  padding: 4px 6px;
+  background: transparent;
+  border: 1px solid rgba(28, 26, 20, 0.2);
+  border-radius: 2px;
+  font: inherit;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #1c1a14;
+  cursor: pointer;
+  transition: background 0.1s ease, border-color 0.1s ease;
+  overflow: hidden;
+}
+.card-triage-btn > span {
+  /* Caption gets nowrap + ellipsis so a slightly-too-wide label trims
+     instead of wrapping (which would jump the button to two lines and
+     unbalance the row). */
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card-triage-btn:hover:not(:disabled) {
+  border-color: rgba(28, 26, 20, 0.6);
+  background: rgba(28, 26, 20, 0.05);
+}
+.card-triage-btn:disabled {
+  opacity: 0.55;
+  cursor: progress;
+}
+.card-triage-btn--decompose { color: #c8421f; border-color: rgba(200, 66, 31, 0.4); }
+.card-triage-btn--decompose:hover:not(:disabled) {
+  background: rgba(200, 66, 31, 0.1);
+}
+.card-triage-btn--specify { color: #6b4a13; border-color: rgba(138, 90, 20, 0.4); }
+.card-triage-btn--specify:hover:not(:disabled) {
+  background: rgba(243, 169, 59, 0.14);
+}
+.card-triage-glyph {
+  width: 11px;
+  height: 11px;
+  flex-shrink: 0;
+}
+.card-triage-glyph--spin {
+  animation: card-triage-spin 1.2s linear infinite;
+}
+@keyframes card-triage-spin { to { transform: rotate(360deg); } }
+
+/* Narrow viewports — drop to a horizontally-scrollable rail so 5 columns
+   don't crush. Same approach the prior 4-col layout already supported via
+   the parent's overflow. */
+@media (max-width: 880px) {
+  .board {
+    grid-template-columns: repeat(5, minmax(200px, 1fr));
+    overflow-x: auto;
+  }
+}
 
 .card-list {
   list-style: none;
@@ -332,6 +512,11 @@ const totalTasks = computed(() => props.tasks.length)
   border-radius: 2px;
   cursor: pointer;
   transition: transform 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+  /* Cap any descendant (the triage action row, long task ids) to the card
+     box so nothing leaks past the border. The 5-column layout left less
+     room per card than the original 4-col grid did. */
+  min-width: 0;
+  overflow: hidden;
 }
 .card:hover {
   transform: translateX(1px);

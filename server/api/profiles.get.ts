@@ -3,10 +3,11 @@ import { discoverProfiles } from '../utils/hermes'
 import { avatarUrl, defaultSeed, pickColor, type Gesture } from '../utils/avatar'
 import { syncRoster } from '../utils/roster'
 import { readProfileConfig } from '../utils/profile-config'
+import { readProfileDescription } from '../utils/profile-description'
 
 let rosterPrimed = false
 
-export default defineEventHandler(() => {
+export default defineEventHandler(async () => {
   const db = useDb()
   const now = new Date().toISOString()
 
@@ -65,7 +66,14 @@ export default defineEventHandler(() => {
     }
   }
 
-  return rows.map(r => ({
+  /* Enrich each profile with its current description (the routing signal
+     Hermes' decomposer reads). Cached in-memory with a 10s TTL so list
+     polls don't fork N subprocesses each tick. */
+  const descriptions = await Promise.all(
+    rows.map(r => readProfileDescription(r.slug).catch(() => null))
+  )
+
+  return rows.map((r, i) => ({
     slug: r.slug,
     displayName: r.display_name,
     givenName: r.given_name,
@@ -88,6 +96,7 @@ export default defineEventHandler(() => {
       transparent: true
     }),
     firstSeen: r.first_seen,
-    lastSeen: r.last_seen
+    lastSeen: r.last_seen,
+    description: descriptions[i] ?? null
   }))
 })

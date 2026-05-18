@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { Profile } from '~/types/profile'
 import type { Mission, MissionMessage, CurrentTask, CompletedTask } from '~/types/mission'
+import SlashCommandPicker, { type SlashCommand } from './SlashCommandPicker.vue'
+import TriageDraftPanel from './TriageDraftPanel.vue'
 // renderMarkdown / stripHarmonyTags / decorateTaskRefs are auto-imported
 // from `~/composables/useMarkdown`.
 
@@ -118,13 +120,31 @@ onMounted(() => {
   if (selectedSlug.value) warmupOrchestrator(selectedSlug.value)
 })
 
+const TRIAGE_PREFIX_RE = /^\s*\/triage(?:\s+|$)/i
+
 async function handleSend() {
-  const text = draft.value.trim()
+  const rawText = draft.value
+  const text = rawText.trim()
   if (!text || sending.value || !selectedSlug.value) return
   sending.value = true
   try {
     if (stream.mission.value) {
+      /* Mid-mission: slash shortcuts are first-message only by design — if
+         the user happens to type `/triage` after the mission is open, send
+         it as plain text rather than re-triggering triage (which would
+         hijack the conversation). */
       await stream.send(text)
+    } else if (TRIAGE_PREFIX_RE.test(text)) {
+      const prompt = text.replace(TRIAGE_PREFIX_RE, '').trim()
+      if (!prompt) {
+        toast.add({
+          title: t('mission.failure'),
+          description: t('mission.commands.triage.description'),
+          color: 'warning'
+        })
+        return
+      }
+      await stream.start(selectedSlug.value, prompt, { mode: 'direct-triage' })
     } else {
       await stream.start(selectedSlug.value, text)
     }
@@ -138,6 +158,74 @@ async function handleSend() {
   } finally {
     sending.value = false
   }
+}
+
+/* Slash command picker — currently exposes only `/triage`. Visible while
+   the composer holds an unsent `/<word>` and the mission hasn't started
+   yet (per-mission, not per-turn). */
+const slashCommands = computed<SlashCommand[]>(() => [
+  {
+    id: 'triage',
+    label: t('mission.commands.triage.label'),
+    description: t('mission.commands.triage.description')
+  }
+])
+const slashPickerRef = ref<InstanceType<typeof SlashCommandPicker> | null>(null)
+const slashCommandsEnabled = computed(() => !hasMission.value)
+
+function onSlashCommandSelect(cmd: SlashCommand) {
+  if (cmd.id === '__dismiss__') {
+    draft.value = ''
+    return
+  }
+  if (cmd.id === 'triage') {
+    /* Pre-fill the buffer with `/triage ` and leave the caret after the
+       space so the user types the prompt next; pressing Enter will trigger
+       the direct-triage path in handleSend(). */
+    draft.value = cmd.label + ' '
+  }
+}
+
+function onComposerKeydown(e: KeyboardEvent) {
+  if (slashPickerRef.value?.handleKeydown(e)) {
+    e.preventDefault()
+    e.stopPropagation()
+    return
+  }
+  if (e.key === 'Enter' && !e.shiftKey && !e.altKey && !e.ctrlKey && !e.metaKey) {
+    e.preventDefault()
+    handleSend()
+  }
+}
+
+/* Supervisor mode = the mission has been promoted into a triage task and
+   the orchestrator is now watching subtasks complete. Drives placeholder
+   text + a small badge above the composer. */
+const isSupervisor = computed(() => !!stream.mission.value?.triageTaskId)
+
+const composerPlaceholder = computed(() => {
+  if (isSupervisor.value) return t('mission.input.supervisor')
+  if (hasMission.value) return t('mission.input.followUp')
+  return t('mission.empty.placeholder', { orch: orchestratorLabel.value })
+})
+
+async function onLaunchDraft(payload: { title: string, body: string }) {
+  try {
+    await stream.launchTriage(payload.title, payload.body)
+  } catch (e) {
+    toast.add({
+      title: t('mission.triageDraft.launchFailed'),
+      description: (e as Error).message,
+      color: 'error'
+    })
+  }
+}
+
+function onDismissDraft() {
+  /* Soft dismiss — clears the panel locally without telling the server.
+     The orchestrator will re-emit the block on the next refinement turn
+     if the user keeps refining; otherwise nothing happens. */
+  stream.triageDraft.value = null
 }
 
 const transcriptRef = ref<HTMLElement | null>(null)
@@ -188,6 +276,27 @@ function renderAssistantContent(content: string): string {
   const cleaned = stripHarmonyTags(content)
   const html = renderMarkdown(cleaned)
   return decorateTaskRefs(html, taskRefLookup.value)
+}
+
+/* True when the assistant message, once stripped of harmony tags and the
+   TRIAGE_DRAFT block, still has visible prose. False positives here would
+   render an empty bubble — exactly the bug we patch downstream by showing
+   a "check the panel below" placeholder instead. */
+function hasVisibleAssistantContent(content: string): boolean {
+  return stripHarmonyTags(content).trim().length > 0
+}
+
+/* True when the raw content carries a triage-draft block in either shape
+   — the current fenced `\`\`\`triage` block or the legacy `<<TRIAGE_DRAFT>>`
+   wrapper. We strip both from the rendered bubble because the panel surfaces
+   them; this helper decides whether an empty bubble means "model emitted
+   only the draft" (show panel hint) vs. "model failed to emit anything
+   visible" (no hint). Without this gate, every plain assistant turn that
+   happens to strip down to empty (harmony-channel-only output, etc.) would
+   incorrectly nudge the user toward the launch panel. */
+const TRIAGE_DRAFT_RE = /```(?:triage(?:_draft|-draft)?)\s*\n[\s\S]*?```|<<TRIAGE_DRAFT>>[\s\S]*?<<\/TRIAGE_DRAFT>>/i
+function hasTriageDraftBlock(content: string): boolean {
+  return TRIAGE_DRAFT_RE.test(content)
 }
 
 /* Force one scroll-to-bottom the moment the transcript element mounts (i.e.
@@ -315,6 +424,25 @@ watch(transcriptRef, (el) => {
       class="mission-transcript"
     >
       <div
+        v-if="isSupervisor && stream.mission.value?.triageTaskId"
+        class="mission-supervisor-banner"
+      >
+        <span class="mission-supervisor-badge">{{ t('mission.supervisor.badge') }}</span>
+        <span class="mission-supervisor-note">
+          {{ t('mission.supervisor.note', { id: stream.mission.value.triageTaskId }) }}
+        </span>
+      </div>
+      <div
+        v-if="stream.triageLaunching.value && !stream.triageDraft.value"
+        class="mission-direct-triage"
+      >
+        <UIcon
+          name="i-lucide-loader"
+          class="size-4 mission-direct-triage-spin"
+        />
+        {{ t('mission.directTriage.launching') }}
+      </div>
+      <div
         v-for="m in stream.messages.value"
         :key="m.id"
         class="mission-msg"
@@ -330,12 +458,24 @@ watch(transcriptRef, (el) => {
             <span class="mission-dot" />
           </span>
           <template v-else-if="m.role === 'assistant'">
-            <!-- eslint-disable vue/no-v-html -->
-            <div
-              class="mission-md"
-              v-html="renderAssistantContent(m.content)"
-            />
-            <!-- eslint-enable vue/no-v-html -->
+            <template v-if="hasVisibleAssistantContent(m.content)">
+              <!-- eslint-disable vue/no-v-html -->
+              <div
+                class="mission-md"
+                v-html="renderAssistantContent(m.content)"
+              />
+              <!-- eslint-enable vue/no-v-html -->
+            </template>
+            <span
+              v-else-if="hasTriageDraftBlock(m.content)"
+              class="mission-draft-hint"
+            >
+              <UIcon
+                name="i-lucide-arrow-down"
+                class="mission-draft-hint-glyph"
+              />
+              {{ t('mission.triageDraft.checkPanel') }}
+            </span>
             <span
               v-if="m.pending"
               class="mission-caret"
@@ -349,6 +489,13 @@ watch(transcriptRef, (el) => {
           </template>
         </div>
       </div>
+      <TriageDraftPanel
+        v-if="stream.triageDraft.value && !isSupervisor"
+        :draft="stream.triageDraft.value"
+        :launching="stream.triageLaunching.value"
+        @launch="onLaunchDraft"
+        @dismiss="onDismissDraft"
+      />
       <div
         v-if="stream.error.value"
         class="mission-error"
@@ -374,16 +521,21 @@ watch(transcriptRef, (el) => {
         {{ t('mission.thinking', { orch: orchestratorLabel }) }}
       </p>
       <div class="mission-composer">
+        <SlashCommandPicker
+          ref="slashPickerRef"
+          :value="draft"
+          :commands="slashCommands"
+          :enabled="slashCommandsEnabled"
+          @select="onSlashCommandSelect"
+        />
         <UTextarea
           v-model="draft"
-          :placeholder="hasMission
-            ? t('mission.input.followUp')
-            : t('mission.empty.placeholder', { orch: orchestratorLabel })"
+          :placeholder="composerPlaceholder"
           :rows="2"
           autoresize
           :disabled="sending || !selectedSlug"
           class="mission-textarea"
-          @keydown.enter.exact.prevent="handleSend"
+          @keydown="onComposerKeydown"
         />
         <UButton
           type="submit"
@@ -772,6 +924,70 @@ watch(transcriptRef, (el) => {
   font-size: 11px;
   color: #c8421f;
   align-self: flex-start;
+}
+
+/* Banner above the transcript that signals the mission has been promoted
+   into a real triage task. The chat still works (the orchestrator now
+   supervises) but the user should know they're no longer refining. */
+.mission-supervisor-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: rgba(28, 26, 20, 0.06);
+  border: 1px solid rgba(28, 26, 20, 0.18);
+  border-left: 3px solid #c8421f;
+  border-radius: 3px;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: #1c1a14;
+}
+.mission-supervisor-badge {
+  font-family: 'Antonio', sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #c8421f;
+  flex-shrink: 0;
+}
+.mission-supervisor-note { color: #4a4536; }
+
+/* Inline progress indicator shown while the backend is spawning the
+   direct-triage workflow (`/triage <prompt>` shortcut, no chat). */
+.mission-direct-triage {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  background: rgba(243, 169, 59, 0.16);
+  border: 1px solid rgba(243, 169, 59, 0.45);
+  border-radius: 3px;
+  color: #6b4a13;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  align-self: flex-start;
+}
+.mission-direct-triage-spin { animation: mission-spin 1.4s linear infinite; }
+@keyframes mission-spin { to { transform: rotate(360deg); } }
+
+/* Fallback shown inside an assistant bubble when the model's reply boils
+   down to the TRIAGE_DRAFT block alone (stripped from the visible chat by
+   stripHarmonyTags). Without this, the user would see an empty bubble. */
+.mission-draft-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: #6b4a13;
+}
+.mission-draft-hint-glyph {
+  width: 13px;
+  height: 13px;
+  color: #c8421f;
+  flex-shrink: 0;
 }
 
 /* Input zone — always pinned to the bottom of the panel column thanks to

@@ -21,6 +21,7 @@ import { useDb } from './db'
 /* Failure-context helpers moved to ./task-failure.ts so the new
    approve-and-retry endpoint can reuse them too. */
 import { getFailureContext, distillReason } from './task-failure'
+import { parseKanbanJson } from './triage'
 
 const POLL_MS = 5000
 const NUDGE_DEBOUNCE_MS = 3000
@@ -155,17 +156,10 @@ export function registerCreatedTaskFromTool(missionId: string, tool: PartialAcpT
   }
   if (!text) return
 
-  // Some shells leave warning lines before the JSON — find the first {...}.
-  const jsonStart = text.indexOf('{')
-  if (jsonStart < 0) return
-  try {
-    const parsed = JSON.parse(text.slice(jsonStart)) as { id?: unknown }
-    const id = parsed.id
-    if (typeof id === 'string' && /^t_/.test(id)) {
-      addWatchedTasks(missionId, [id])
-    }
-  } catch {
-    /* not JSON or no id field — ignore. */
+  const parsed = parseKanbanJson<{ id?: unknown }>(text)
+  const id = parsed?.id
+  if (typeof id === 'string' && /^t_/.test(id)) {
+    addWatchedTasks(missionId, [id])
   }
 }
 

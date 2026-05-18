@@ -1,3 +1,13 @@
+export type MissionMode = 'conversational' | 'direct-triage'
+
+export interface TriageDraft {
+  title: string
+  body: string
+  /** The assistant message that produced this draft. Used by the panel to
+   *  invalidate itself when a newer draft supersedes it. */
+  messageId: number | null
+}
+
 export interface Mission {
   id: string
   orchestratorSlug: string
@@ -6,6 +16,16 @@ export interface Mission {
   status: 'open' | 'archived'
   createdAt: string
   lastMessageAt: string
+  mode: MissionMode
+  /** When non-null, the mission has already been promoted from a triage
+   *  draft into a real kanban triage task (and its decomposed children).
+   *  Switches the orchestrator into supervisor mode on subsequent turns. */
+  triageTaskId: string | null
+  /** Server-persisted snapshot of the latest TRIAGE_DRAFT block emitted by
+   *  the orchestrator in conversational mode. Lets clients joining
+   *  mid-conversation render the launch panel without waiting for a new
+   *  stream chunk. */
+  latestTriageDraft: TriageDraft | null
 }
 
 export interface MissionMessage {
@@ -60,3 +80,11 @@ export type MissionEvent
     | { type: 'done', messageId: number, content: string, stopReason: string }
     | { type: 'error', message: string }
     | { type: 'state', streaming: boolean, messageId: number | null, content: string }
+    /** Emitted whenever the orchestrator's reply contains a TRIAGE_DRAFT
+     *  block. Frontend uses it to show the "Launch as triage" panel. Pass
+     *  `null` content (no event) when no block is present. */
+    | { type: 'triage_draft', draft: TriageDraft }
+    /** Emitted once the backend has spawned `kanban create --triage` +
+     *  `kanban decompose` for this mission. Frontend uses it to dismiss the
+     *  draft panel and flip the chat into supervisor mode. */
+    | { type: 'triage_launched', triageTaskId: string, childIds: string[] }

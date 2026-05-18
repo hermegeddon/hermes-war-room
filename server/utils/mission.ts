@@ -3,6 +3,44 @@ import { useDb, type MissionRow, type MissionMessageRow } from './db'
 
 const TITLE_MAX_LEN = 80
 
+/**
+ * Map an internal mission row to the shape the frontend consumes. Includes
+ * the triage-related fields (mode, triageTaskId, latestTriageDraft) so the
+ * UI can pick the right rendering branch — chat vs supervisor vs draft
+ * panel — without a second roundtrip.
+ */
+export function serializeMission(m: MissionRow): {
+  id: string
+  orchestratorSlug: string
+  acpSessionId: string | null
+  title: string | null
+  status: string
+  createdAt: string
+  lastMessageAt: string
+  mode: string
+  triageTaskId: string | null
+  latestTriageDraft: { title: string, body: string, messageId: number | null } | null
+} {
+  let draft: { title: string, body: string, messageId: number | null } | null = null
+  if (m.latest_triage_draft) {
+    try {
+      draft = JSON.parse(m.latest_triage_draft)
+    } catch { /* corrupted row — surface as no-draft. */ }
+  }
+  return {
+    id: m.id,
+    orchestratorSlug: m.orchestrator_slug,
+    acpSessionId: m.acp_session_id,
+    title: m.title,
+    status: m.status,
+    createdAt: m.created_at,
+    lastMessageAt: m.last_message_at,
+    mode: m.mode ?? 'conversational',
+    triageTaskId: m.triage_task_id,
+    latestTriageDraft: draft
+  }
+}
+
 export function summarizeTitle(text: string): string {
   const trimmed = text.replace(/\s+/g, ' ').trim()
   return trimmed.length > TITLE_MAX_LEN ? trimmed.slice(0, TITLE_MAX_LEN - 1) + '…' : trimmed
@@ -32,11 +70,18 @@ export function listMessages(missionId: string): MissionMessageRow[] {
   ).all(missionId) as unknown as MissionMessageRow[]
 }
 
-export function createMission(orchestratorSlug: string, firstMessage: string): MissionRow {
+export type MissionMode = 'conversational' | 'direct-triage'
+
+export function createMission(
+  orchestratorSlug: string,
+  firstMessage: string,
+  opts: { mode?: MissionMode } = {}
+): MissionRow {
   const db = useDb()
   const id = randomUUID()
   const now = new Date().toISOString()
   const title = summarizeTitle(firstMessage)
+  const mode: MissionMode = opts.mode ?? 'conversational'
 
   /* Auto-archive any open mission this orchestrator already has. We only
      allow ONE open mission per orchestrator at a time — the alternative
@@ -61,15 +106,36 @@ export function createMission(orchestratorSlug: string, firstMessage: string): M
   }
 
   db.prepare(
-    `INSERT INTO missions (id, orchestrator_slug, title, status, created_at, last_message_at)
-     VALUES (?, ?, ?, 'open', ?, ?)`
-  ).run(id, orchestratorSlug, title, now, now)
+    `INSERT INTO missions (id, orchestrator_slug, title, status, mode, created_at, last_message_at)
+     VALUES (?, ?, ?, 'open', ?, ?, ?)`
+  ).run(id, orchestratorSlug, title, mode, now, now)
   return getMission(id)!
 }
 
 export function setAcpSessionId(id: string, acpSessionId: string): void {
   const db = useDb()
   db.prepare('UPDATE missions SET acp_session_id = ? WHERE id = ?').run(acpSessionId, id)
+}
+
+/**
+ * Persist the latest TRIAGE_DRAFT block detected in an orchestrator turn so
+ * a tab joining mid-conversation can re-render the launch panel without
+ * waiting for a fresh chunk. Stored as JSON `{title, body, messageId}`.
+ */
+export function setLatestTriageDraft(
+  missionId: string,
+  draft: { title: string, body: string, messageId: number | null } | null
+): void {
+  const db = useDb()
+  db.prepare('UPDATE missions SET latest_triage_draft = ? WHERE id = ?')
+    .run(draft ? JSON.stringify(draft) : null, missionId)
+}
+
+/** Set the kanban triage_task_id this mission was promoted into. */
+export function setTriageTaskId(missionId: string, triageTaskId: string | null): void {
+  const db = useDb()
+  db.prepare('UPDATE missions SET triage_task_id = ? WHERE id = ?')
+    .run(triageTaskId, missionId)
 }
 
 export function appendMessage(missionId: string, role: 'user' | 'assistant', content: string): MissionMessageRow {
