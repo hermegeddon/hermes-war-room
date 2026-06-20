@@ -13,26 +13,80 @@ import {
   type ContentBlock
 } from '@zed-industries/agent-client-protocol'
 
+const ACP_SDK_SESSION_UPDATE_KINDS = new Set([
+  'user_message_chunk',
+  'agent_message_chunk',
+  'agent_thought_chunk',
+  'tool_call',
+  'tool_call_update',
+  'plan',
+  'available_commands_update',
+  'current_mode_update'
+])
+
+interface AcpNdjsonMessage {
+  id?: unknown
+  method?: unknown
+  params?: {
+    update?: Record<string, unknown>
+  }
+}
+
 /**
- * Transform stream that fixes a known SDK/server schema mismatch in
- * @zed-industries/agent-client-protocol@0.4.5: its Zod schema for
- * `session/update`'s `rawInput` and `rawOutput` requires `Record<string, unknown>`
- * (an object), but Hermes' ACP server sends them as JSON-serialised strings.
- * The strict schema rejects every notification with a tool result, breaking
- * the entire mission stream.
+ * Normalize Hermes ACP stdout before @zed-industries/agent-client-protocol@0.4.5
+ * validates it with strict Zod schemas.
  *
- * We sit between the child process stdout and the SDK's NDJSON parser. For
- * each complete line:
+ * War Room currently consumes only message/tool/plan-ish updates, but newer
+ * Hermes ACP servers also emit session metadata notifications (`usage_update`,
+ * `session_info_update`) from the Python `acp` package. The npm SDK's latest
+ * published schema does not know those variants yet, so it rejects them before
+ * our WarRoomClient can ignore them and logs noisy `Invalid params` errors.
+ *
+ * For each complete NDJSON line:
  *   1. Try JSON.parse.
- *   2. If `params.update.rawInput` or `rawOutput` is a string, JSON.parse it
- *      (or wrap as `{ raw: <string> }` if it isn't valid JSON) so the SDK's
- *      `z.record(z.unknown())` validator passes.
- *   3. Re-serialise and pass through.
+ *   2. Drop notification-only `session/update` variants unsupported by the
+ *      npm SDK; War Room does not need those updates today.
+ *   3. If supported `params.update.rawInput` or `rawOutput` is a string,
+ *      JSON.parse it (or wrap as `{ raw: <string> }` if it isn't valid JSON)
+ *      so the SDK's `z.record(z.unknown())` validator passes.
+ *   4. Re-serialise and pass through.
  *
- * Invalid lines (non-JSON garbage) are passed through untouched so the SDK
- * can produce its own error if needed.
+ * Invalid lines (non-JSON garbage) are passed through untouched so the SDK can
+ * produce its own error if needed.
  */
-function fixupRawIO(): Transform {
+export function normalizeAcpStdoutLine(line: string): string | null {
+  try {
+    const obj = JSON.parse(line) as AcpNdjsonMessage
+    const update = obj.method === 'session/update' ? obj.params?.update : undefined
+    if (update) {
+      const kind = update.sessionUpdate
+      if (typeof kind === 'string' && !ACP_SDK_SESSION_UPDATE_KINDS.has(kind) && !('id' in obj)) {
+        return null
+      }
+
+      for (const key of ['rawInput', 'rawOutput'] as const) {
+        const v = update[key]
+        if (typeof v === 'string') {
+          try {
+            const parsed = JSON.parse(v)
+            // The SDK requires an object — if Hermes sent a JSON primitive
+            // (string/number/array), wrap it.
+            update[key] = parsed && typeof parsed === 'object' && !Array.isArray(parsed)
+              ? parsed
+              : { value: parsed }
+          } catch {
+            update[key] = { raw: v }
+          }
+        }
+      }
+    }
+    return JSON.stringify(obj)
+  } catch {
+    return line
+  }
+}
+
+function fixupAcpStdout(): Transform {
   let buffer = ''
   return new Transform({
     transform(chunk: Buffer | string, _enc: string, cb: (err?: Error | null) => void) {
@@ -41,37 +95,17 @@ function fixupRawIO(): Transform {
       while (nl >= 0) {
         const line = buffer.slice(0, nl)
         buffer = buffer.slice(nl + 1)
-        try {
-          const obj = JSON.parse(line) as { params?: { update?: Record<string, unknown> } }
-          const update = obj?.params?.update
-          if (update) {
-            for (const key of ['rawInput', 'rawOutput'] as const) {
-              const v = update[key]
-              if (typeof v === 'string') {
-                try {
-                  const parsed = JSON.parse(v)
-                  // The SDK requires an object — if Hermes sent a JSON
-                  // primitive (string/number/array), wrap it.
-                  update[key] = parsed && typeof parsed === 'object' && !Array.isArray(parsed)
-                    ? parsed
-                    : { value: parsed }
-                } catch {
-                  update[key] = { raw: v }
-                }
-              }
-            }
-          }
-          this.push(JSON.stringify(obj) + '\n')
-        } catch {
-          // Not JSON — pass through verbatim with the newline preserved.
-          this.push(line + '\n')
-        }
+        const normalized = normalizeAcpStdoutLine(line)
+        if (normalized !== null) this.push(normalized + '\n')
         nl = buffer.indexOf('\n')
       }
       cb()
     },
     flush(cb: (err?: Error | null) => void) {
-      if (buffer.length > 0) this.push(buffer)
+      if (buffer.length > 0) {
+        const normalized = normalizeAcpStdoutLine(buffer)
+        if (normalized !== null) this.push(normalized)
+      }
       cb()
     }
   })
@@ -168,9 +202,9 @@ function spawnEntry(slug: string): Promise<PoolEntry> {
     }
 
     // Convert Node streams to Web streams for ndJsonStream. We pipe stdout
-    // through a Transform that repairs the rawInput/rawOutput shape so the
-    // SDK's strict Zod schema doesn't reject every tool_call_update.
-    const repaired = child.stdout.pipe(fixupRawIO())
+    // through a Transform that repairs known Hermes-vs-npm-SDK schema drift
+    // before the SDK's strict Zod validator sees each session/update line.
+    const repaired = child.stdout.pipe(fixupAcpStdout())
     const input = Readable.toWeb(repaired) as ReadableStream<Uint8Array>
     const output = Writable.toWeb(child.stdin) as WritableStream<Uint8Array>
     const stream = ndJsonStream(output, input)
