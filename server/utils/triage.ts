@@ -1,5 +1,6 @@
 import { spawn } from 'node:child_process'
 import { useDb } from './db'
+import { getKanbanDb } from './kanban'
 
 export interface RunResult {
   code: number
@@ -58,6 +59,118 @@ export interface DecomposeResult {
   reason?: string
   newTitle?: string
   raw: Record<string, unknown>
+}
+
+interface KanbanTaskStateRow {
+  id: string
+  title: string
+  status: string
+}
+
+interface KanbanTaskEventRow {
+  kind: string
+  payload: string | null
+  created_at: number
+}
+
+function normalizeTaskIds(value: unknown): string[] {
+  if (!Array.isArray(value)) return []
+  return value
+    .map(c => typeof c === 'string'
+      ? c
+      : (typeof c === 'object' && c && typeof (c as { id?: unknown }).id === 'string'
+          ? (c as { id: string }).id
+          : null))
+    .filter((c): c is string => typeof c === 'string' && /^t_/.test(c))
+}
+
+function extractChildIdsFromDecomposedEvent(payload: string | null): string[] {
+  if (!payload) return []
+  try {
+    const parsed = JSON.parse(payload) as { child_ids?: unknown }
+    return normalizeTaskIds(parsed.child_ids)
+  } catch {
+    return []
+  }
+}
+
+export function decomposeResultFromParsed(
+  taskId: string,
+  parsed: {
+    task_id?: unknown
+    fanout?: unknown
+    child_ids?: unknown
+    children?: unknown
+    reason?: unknown
+    new_title?: unknown
+  }
+): DecomposeResult {
+  const rawChildIds = Array.isArray(parsed.child_ids)
+    ? parsed.child_ids
+    : (Array.isArray(parsed.children) ? parsed.children : [])
+  return {
+    taskId,
+    childIds: normalizeTaskIds(rawChildIds),
+    reason: typeof parsed.reason === 'string' ? parsed.reason : undefined,
+    newTitle: typeof parsed.new_title === 'string' ? parsed.new_title : undefined,
+    raw: parsed as Record<string, unknown>
+  }
+}
+
+/**
+ * `hermes kanban decompose <id> --json` is expected to print a JSON object,
+ * but the CLI has occasionally completed the DB mutation while producing an
+ * empty stdout pipe under the Nuxt child-process path. Do not strand the War
+ * Room in that already-mutated state: if the command exited 0 but stdout was
+ * empty/malformed, read the canonical Kanban DB and reconstruct the launch
+ * result from the task's persisted status/decomposition event.
+ */
+export function recoverDecomposeFromKanbanState(taskId: string): DecomposeResult | null {
+  const db = getKanbanDb()
+  if (!db) return null
+
+  const task = db.prepare(
+    'SELECT id, title, status FROM tasks WHERE id = ?'
+  ).get(taskId) as unknown as KanbanTaskStateRow | undefined
+  if (!task) return null
+
+  const events = db.prepare(
+    `SELECT kind, payload, created_at FROM task_events
+     WHERE task_id = ?
+     ORDER BY created_at DESC, id DESC
+     LIMIT 20`
+  ).all(taskId) as unknown as KanbanTaskEventRow[]
+
+  let childIds: string[] = []
+  for (const event of events) {
+    if (event.kind !== 'decomposed') continue
+    childIds = extractChildIdsFromDecomposedEvent(event.payload)
+    if (childIds.length > 0) break
+  }
+
+  if (childIds.length === 0) {
+    const links = db.prepare(
+      'SELECT parent_id FROM task_links WHERE child_id = ? ORDER BY parent_id'
+    ).all(taskId) as unknown as { parent_id: string }[]
+    childIds = normalizeTaskIds(links.map(l => l.parent_id))
+  }
+
+  // No evidence of a successful decompose/specify-style promotion yet.
+  if (task.status === 'triage' && childIds.length === 0) return null
+
+  return {
+    taskId,
+    childIds,
+    raw: {
+      task_id: taskId,
+      ok: true,
+      recovered_from: 'kanban_state_after_empty_decompose_stdout',
+      fanout: childIds.length > 0,
+      child_ids: childIds,
+      task_status: task.status,
+      task_title: task.title
+    }
+  }
 }
 
 export interface SpecifyResult {
@@ -120,22 +233,16 @@ export async function decomposeTask(taskId: string): Promise<DecomposeResult> {
     reason?: unknown
     new_title?: unknown
   }>(stdout)
-  if (!parsed) {
-    throw new Error(`hermes kanban decompose returned no JSON (stdout: ${stdout.slice(0, 200)})`)
+  if (parsed) return decomposeResultFromParsed(taskId, parsed)
+
+  const recovered = recoverDecomposeFromKanbanState(taskId)
+  if (recovered) {
+    console.warn(`[triage] recovered ${taskId} from Kanban state after empty/malformed decompose stdout`)
+    return recovered
   }
-  const rawChildIds = Array.isArray(parsed.child_ids)
-    ? parsed.child_ids
-    : (Array.isArray(parsed.children) ? parsed.children : [])
-  const childIds = rawChildIds
-    .map(c => typeof c === 'string' ? c : (typeof c === 'object' && c && typeof (c as { id?: unknown }).id === 'string' ? (c as { id: string }).id : null))
-    .filter((c): c is string => typeof c === 'string')
-  return {
-    taskId,
-    childIds,
-    reason: typeof parsed.reason === 'string' ? parsed.reason : undefined,
-    newTitle: typeof parsed.new_title === 'string' ? parsed.new_title : undefined,
-    raw: parsed as Record<string, unknown>
-  }
+
+  const stderrPart = stderr.trim() ? `, stderr: ${stderr.slice(0, 200)}` : ''
+  throw new Error(`hermes kanban decompose returned no JSON (stdout: ${stdout.slice(0, 200)}${stderrPart})`)
 }
 
 /**
@@ -197,7 +304,7 @@ export async function launchTriage(opts: {
 
 function persistTriageTaskId(missionId: string, triageTaskId: string): void {
   useDb()
-    .prepare('UPDATE missions SET triage_task_id = ? WHERE id = ?')
+    .prepare('UPDATE missions SET triage_task_id = ?, latest_triage_draft = NULL WHERE id = ?')
     .run(triageTaskId, missionId)
 }
 

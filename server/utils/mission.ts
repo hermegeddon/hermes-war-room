@@ -22,7 +22,7 @@ export function serializeMission(m: MissionRow): {
   latestTriageDraft: { title: string, body: string, messageId: number | null } | null
 } {
   let draft: { title: string, body: string, messageId: number | null } | null = null
-  if (m.latest_triage_draft) {
+  if (!m.triage_task_id && m.latest_triage_draft) {
     try {
       draft = JSON.parse(m.latest_triage_draft)
     } catch { /* corrupted row — surface as no-draft. */ }
