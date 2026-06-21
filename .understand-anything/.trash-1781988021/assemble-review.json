@@ -1,0 +1,13 @@
+{
+  "fixedSectionOk": true,
+  "nodesRecovered": 0,
+  "edgesRestored": 0,
+  "crossBatchEdgesAdded": 0,
+  "typesRemapped": 0,
+  "complexityRemapped": 0,
+  "notes": [
+    "Merge report sanity verified: 11 batch files sum to 275 nodes and 465 edges, matching assembled-graph.json output counts.",
+    "ImportMap verified: all 127 import relationships from 128 importMap entries already have matching imports edges in assembled-graph.json.",
+    "No missing import endpoints, duplicate node IDs, duplicate edge tuples, type remaps, complexity remaps, or mechanical graph fixes were required."
+  ]
+}

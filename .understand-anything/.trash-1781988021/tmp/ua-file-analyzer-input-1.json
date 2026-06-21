@@ -1,0 +1,192 @@
+{
+  "projectRoot": "/home/openclaw/hermes-war-room",
+  "batchFiles": [
+    {
+      "path": "server/api/kanban/tasks/[id]/decompose.post.ts",
+      "language": "typescript",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/kanban/tasks/[id]/specify.post.ts",
+      "language": "typescript",
+      "sizeLines": 21,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/missions.post.ts",
+      "language": "typescript",
+      "sizeLines": 101,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/missions/[id]/archive.post.ts",
+      "language": "typescript",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/missions/[id]/index.get.ts",
+      "language": "typescript",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/missions/[id]/launch-triage.post.ts",
+      "language": "typescript",
+      "sizeLines": 59,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/missions/[id]/messages.post.ts",
+      "language": "typescript",
+      "sizeLines": 25,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/missions/[id]/stream.get.ts",
+      "language": "typescript",
+      "sizeLines": 34,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/missions/active.get.ts",
+      "language": "typescript",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/missions/index.get.ts",
+      "language": "typescript",
+      "sizeLines": 35,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/plugins/auto-nudge.ts",
+      "language": "typescript",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/auto-nudge.ts",
+      "language": "typescript",
+      "sizeLines": 412,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/mission-bus.ts",
+      "language": "typescript",
+      "sizeLines": 102,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/mission-flight.ts",
+      "language": "typescript",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/mission-lock.ts",
+      "language": "typescript",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/mission-turn.ts",
+      "language": "typescript",
+      "sizeLines": 446,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/mission.ts",
+      "language": "typescript",
+      "sizeLines": 218,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/triage.ts",
+      "language": "typescript",
+      "sizeLines": 394,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "server/api/kanban/tasks/[id]/decompose.post.ts": [
+      "server/utils/triage.ts"
+    ],
+    "server/api/kanban/tasks/[id]/specify.post.ts": [
+      "server/utils/triage.ts"
+    ],
+    "server/api/missions.post.ts": [
+      "server/utils/auto-nudge.ts",
+      "server/utils/db.ts",
+      "server/utils/mission-bus.ts",
+      "server/utils/mission-turn.ts",
+      "server/utils/mission.ts",
+      "server/utils/triage.ts"
+    ],
+    "server/api/missions/[id]/archive.post.ts": [
+      "server/utils/auto-nudge.ts",
+      "server/utils/mission.ts"
+    ],
+    "server/api/missions/[id]/index.get.ts": [
+      "server/utils/mission.ts"
+    ],
+    "server/api/missions/[id]/launch-triage.post.ts": [
+      "server/utils/auto-nudge.ts",
+      "server/utils/mission-bus.ts",
+      "server/utils/mission.ts",
+      "server/utils/triage.ts"
+    ],
+    "server/api/missions/[id]/messages.post.ts": [
+      "server/utils/mission-turn.ts",
+      "server/utils/mission.ts"
+    ],
+    "server/api/missions/[id]/stream.get.ts": [
+      "server/utils/mission-bus.ts",
+      "server/utils/mission.ts"
+    ],
+    "server/api/missions/active.get.ts": [
+      "server/utils/mission.ts"
+    ],
+    "server/api/missions/index.get.ts": [
+      "server/utils/mission.ts"
+    ],
+    "server/plugins/auto-nudge.ts": [
+      "server/utils/auto-nudge.ts"
+    ],
+    "server/utils/auto-nudge.ts": [
+      "server/utils/db.ts",
+      "server/utils/kanban.ts",
+      "server/utils/mission-bus.ts",
+      "server/utils/mission-flight.ts",
+      "server/utils/mission-lock.ts",
+      "server/utils/mission.ts",
+      "server/utils/orchestrator-acp.ts",
+      "server/utils/task-failure.ts",
+      "server/utils/triage.ts"
+    ],
+    "server/utils/mission-bus.ts": [],
+    "server/utils/mission-flight.ts": [],
+    "server/utils/mission-lock.ts": [],
+    "server/utils/mission-turn.ts": [
+      "server/utils/auto-nudge.ts",
+      "server/utils/db.ts",
+      "server/utils/kanban.ts",
+      "server/utils/mission-bus.ts",
+      "server/utils/mission-flight.ts",
+      "server/utils/mission-lock.ts",
+      "server/utils/mission.ts",
+      "server/utils/orchestrator-acp.ts",
+      "server/utils/roster.ts",
+      "server/utils/triage.ts"
+    ],
+    "server/utils/mission.ts": [
+      "server/utils/db.ts"
+    ],
+    "server/utils/triage.ts": [
+      "server/utils/db.ts",
+      "server/utils/kanban.ts"
+    ]
+  }
+}

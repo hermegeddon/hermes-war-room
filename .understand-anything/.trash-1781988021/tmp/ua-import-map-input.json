@@ -1,0 +1,645 @@
+{
+  "projectRoot": "/home/openclaw/hermes-war-room",
+  "files": [
+    {
+      "path": ".claude/settings.json",
+      "language": "json",
+      "fileCategory": "config"
+    },
+    {
+      "path": ".dockerignore",
+      "language": "unknown",
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "language": "yaml",
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "language": "yaml",
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".releaserc.json",
+      "language": "json",
+      "fileCategory": "config"
+    },
+    {
+      "path": ".understand-anything/.understandignore",
+      "language": "unknown",
+      "fileCategory": "code"
+    },
+    {
+      "path": ".understand-anything/config.json",
+      "language": "json",
+      "fileCategory": "config"
+    },
+    {
+      "path": "app/app.config.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/app.vue",
+      "language": "vue",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/assets/css/main.css",
+      "language": "css",
+      "fileCategory": "markup"
+    },
+    {
+      "path": "app/components/CapabilityCard.vue",
+      "language": "vue",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/CapabilityModal.vue",
+      "language": "vue",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/DelegationOverlay.vue",
+      "language": "vue",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/HireProfileModal.vue",
+      "language": "vue",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/McpPicker.vue",
+      "language": "vue",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/MissionKanban.vue",
+      "language": "vue",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/MissionPanel.vue",
+      "language": "vue",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/PageHeader.vue",
+      "language": "vue",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/ProfileBadge.vue",
+      "language": "vue",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/RetrainProfileModal.vue",
+      "language": "vue",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/SkillsPicker.vue",
+      "language": "vue",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/SlashCommandPicker.vue",
+      "language": "vue",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/ToolsPicker.vue",
+      "language": "vue",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/TriageDraftPanel.vue",
+      "language": "vue",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/UpdateBanner.vue",
+      "language": "vue",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/WhatsNewModal.vue",
+      "language": "vue",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/Workstation.vue",
+      "language": "vue",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/WorkstationDetailSlide.vue",
+      "language": "vue",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/composables/useKanbanHistory.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/composables/useKanbanTasks.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/composables/useMarkdown.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/composables/useMissionStream.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/composables/useStationRegistry.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/composables/useTaskFeed.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/composables/useTokenUsage.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/pages/index.vue",
+      "language": "vue",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/pages/missions.vue",
+      "language": "vue",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/pages/team.vue",
+      "language": "vue",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/types/mission.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/types/profile.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/utils/avatar.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "language": "markdown",
+      "fileCategory": "docs"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "language": "javascript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "i18n/locales/en.json",
+      "language": "json",
+      "fileCategory": "config"
+    },
+    {
+      "path": "i18n/locales/es.json",
+      "language": "json",
+      "fileCategory": "config"
+    },
+    {
+      "path": "i18n/locales/id.json",
+      "language": "json",
+      "fileCategory": "config"
+    },
+    {
+      "path": "mise.toml",
+      "language": "toml",
+      "fileCategory": "config"
+    },
+    {
+      "path": "nuxt.config.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "package.json",
+      "language": "json",
+      "fileCategory": "config"
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "language": "yaml",
+      "fileCategory": "config"
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "fileCategory": "docs"
+    },
+    {
+      "path": "renovate.json",
+      "language": "json",
+      "fileCategory": "config"
+    },
+    {
+      "path": "server/api/config.get.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/kanban/dispatch.post.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/kanban/tasks.get.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/kanban/tasks/[id]/approve-and-retry.post.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/kanban/tasks/[id]/decompose.post.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/kanban/tasks/[id]/failure.get.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/kanban/tasks/[id]/feed.get.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/kanban/tasks/[id]/kill.post.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/kanban/tasks/[id]/log.get.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/kanban/tasks/[id]/specify.post.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/kanban/tasks/history.get.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/missions.post.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/missions/[id]/archive.post.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/missions/[id]/index.get.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/missions/[id]/launch-triage.post.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/missions/[id]/messages.post.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/missions/[id]/stream.get.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/missions/active.get.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/missions/index.get.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/models.get.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/orchestrators/[slug]/warmup.post.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/presets.get.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles.get.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles.post.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug].delete.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug].patch.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/agents.get.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/agents.put.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/config.get.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/config.put.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/description-auto.post.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/description.patch.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/mcp.get.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/mcp/[name].delete.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/rename.post.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/skills.get.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/skills.put.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/soul.get.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/soul.put.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/tools.get.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/tools.put.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/skills.get.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/tools.get.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/usage.get.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/version.get.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/plugins/auto-nudge.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/plugins/mission-cleanup.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/plugins/skills-repair.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/agents.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/auto-nudge.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/avatar.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/db.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/hermes.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/kanban-symlinks.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/kanban.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/mcp.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/mission-bus.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/mission-flight.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/mission-lock.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/mission-turn.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/mission.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/orchestrator-acp.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/permission-extract.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/presets.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/profile-config.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/profile-description.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/roster.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/skills.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/soul.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/task-failure.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/task-feed.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/tokens.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/tools.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/triage.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/version.ts",
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "path": "tsconfig.json",
+      "language": "json",
+      "fileCategory": "config"
+    }
+  ]
+}

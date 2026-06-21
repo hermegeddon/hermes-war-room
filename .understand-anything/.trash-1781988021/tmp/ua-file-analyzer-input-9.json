@@ -1,0 +1,28 @@
+{
+  "projectRoot": "/home/openclaw/hermes-war-room",
+  "batchFiles": [
+    {
+      "path": "i18n/locales/en.json",
+      "language": "json",
+      "sizeLines": 468,
+      "fileCategory": "config"
+    },
+    {
+      "path": "i18n/locales/es.json",
+      "language": "json",
+      "sizeLines": 468,
+      "fileCategory": "config"
+    },
+    {
+      "path": "i18n/locales/id.json",
+      "language": "json",
+      "sizeLines": 383,
+      "fileCategory": "config"
+    }
+  ],
+  "batchImportData": {
+    "i18n/locales/en.json": [],
+    "i18n/locales/es.json": [],
+    "i18n/locales/id.json": []
+  }
+}

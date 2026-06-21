@@ -1,0 +1,188 @@
+{
+  "projectRoot": "/home/openclaw/hermes-war-room",
+  "batchFiles": [
+    {
+      "path": "app/composables/useKanbanTasks.ts",
+      "language": "typescript",
+      "sizeLines": 64,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/composables/useMarkdown.ts",
+      "language": "typescript",
+      "sizeLines": 198,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/composables/useMissionStream.ts",
+      "language": "typescript",
+      "sizeLines": 438,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/composables/useStationRegistry.ts",
+      "language": "typescript",
+      "sizeLines": 117,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/composables/useTaskFeed.ts",
+      "language": "typescript",
+      "sizeLines": 95,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/composables/useTokenUsage.ts",
+      "language": "typescript",
+      "sizeLines": 64,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/pages/index.vue",
+      "language": "vue",
+      "sizeLines": 631,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/pages/missions.vue",
+      "language": "vue",
+      "sizeLines": 683,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/pages/team.vue",
+      "language": "vue",
+      "sizeLines": 137,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/types/mission.ts",
+      "language": "typescript",
+      "sizeLines": 90,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/types/profile.ts",
+      "language": "typescript",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/utils/avatar.ts",
+      "language": "typescript",
+      "sizeLines": 101,
+      "fileCategory": "code"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "language": "javascript",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "nuxt.config.ts",
+      "language": "typescript",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/config.get.ts",
+      "language": "typescript",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/kanban/dispatch.post.ts",
+      "language": "typescript",
+      "sizeLines": 34,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/kanban/tasks/[id]/feed.get.ts",
+      "language": "typescript",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/kanban/tasks/[id]/kill.post.ts",
+      "language": "typescript",
+      "sizeLines": 118,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/kanban/tasks/[id]/log.get.ts",
+      "language": "typescript",
+      "sizeLines": 66,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/models.get.ts",
+      "language": "typescript",
+      "sizeLines": 219,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/presets.get.ts",
+      "language": "typescript",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/version.get.ts",
+      "language": "typescript",
+      "sizeLines": 12,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/presets.ts",
+      "language": "typescript",
+      "sizeLines": 453,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/task-feed.ts",
+      "language": "typescript",
+      "sizeLines": 259,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/version.ts",
+      "language": "typescript",
+      "sizeLines": 148,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "app/composables/useKanbanTasks.ts": [],
+    "app/composables/useMarkdown.ts": [],
+    "app/composables/useMissionStream.ts": [],
+    "app/composables/useStationRegistry.ts": [],
+    "app/composables/useTaskFeed.ts": [],
+    "app/composables/useTokenUsage.ts": [],
+    "app/pages/index.vue": [],
+    "app/pages/missions.vue": [],
+    "app/pages/team.vue": [],
+    "app/types/mission.ts": [],
+    "app/types/profile.ts": [],
+    "app/utils/avatar.ts": [],
+    "eslint.config.mjs": [],
+    "nuxt.config.ts": [],
+    "server/api/config.get.ts": [],
+    "server/api/kanban/dispatch.post.ts": [],
+    "server/api/kanban/tasks/[id]/feed.get.ts": [
+      "server/utils/task-feed.ts"
+    ],
+    "server/api/kanban/tasks/[id]/kill.post.ts": [],
+    "server/api/kanban/tasks/[id]/log.get.ts": [],
+    "server/api/models.get.ts": [],
+    "server/api/presets.get.ts": [
+      "server/utils/presets.ts"
+    ],
+    "server/api/version.get.ts": [
+      "server/utils/version.ts"
+    ],
+    "server/utils/presets.ts": [],
+    "server/utils/task-feed.ts": [],
+    "server/utils/version.ts": []
+  }
+}

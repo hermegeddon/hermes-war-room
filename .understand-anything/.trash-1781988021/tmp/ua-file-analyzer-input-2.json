@@ -1,0 +1,139 @@
+{
+  "projectRoot": "/home/openclaw/hermes-war-room",
+  "batchFiles": [
+    {
+      "path": "server/api/profiles/[slug]/agents.get.ts",
+      "language": "typescript",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/agents.put.ts",
+      "language": "typescript",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/mcp.get.ts",
+      "language": "typescript",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/mcp/[name].delete.ts",
+      "language": "typescript",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/tools.get.ts",
+      "language": "typescript",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/tools.put.ts",
+      "language": "typescript",
+      "sizeLines": 45,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/tools.get.ts",
+      "language": "typescript",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/usage.get.ts",
+      "language": "typescript",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/plugins/mission-cleanup.ts",
+      "language": "typescript",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/agents.ts",
+      "language": "typescript",
+      "sizeLines": 116,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/db.ts",
+      "language": "typescript",
+      "sizeLines": 143,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/kanban-symlinks.ts",
+      "language": "typescript",
+      "sizeLines": 91,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/mcp.ts",
+      "language": "typescript",
+      "sizeLines": 93,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/tokens.ts",
+      "language": "typescript",
+      "sizeLines": 122,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/tools.ts",
+      "language": "typescript",
+      "sizeLines": 90,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "server/api/profiles/[slug]/agents.get.ts": [
+      "server/utils/agents.ts",
+      "server/utils/db.ts"
+    ],
+    "server/api/profiles/[slug]/agents.put.ts": [
+      "server/utils/agents.ts",
+      "server/utils/db.ts"
+    ],
+    "server/api/profiles/[slug]/mcp.get.ts": [
+      "server/utils/db.ts",
+      "server/utils/mcp.ts"
+    ],
+    "server/api/profiles/[slug]/mcp/[name].delete.ts": [
+      "server/utils/db.ts",
+      "server/utils/mcp.ts"
+    ],
+    "server/api/profiles/[slug]/tools.get.ts": [
+      "server/utils/db.ts",
+      "server/utils/tools.ts"
+    ],
+    "server/api/profiles/[slug]/tools.put.ts": [
+      "server/utils/db.ts",
+      "server/utils/tools.ts"
+    ],
+    "server/api/tools.get.ts": [
+      "server/utils/tools.ts"
+    ],
+    "server/api/usage.get.ts": [
+      "server/utils/db.ts",
+      "server/utils/tokens.ts"
+    ],
+    "server/plugins/mission-cleanup.ts": [
+      "server/utils/db.ts"
+    ],
+    "server/utils/agents.ts": [],
+    "server/utils/db.ts": [],
+    "server/utils/kanban-symlinks.ts": [
+      "server/utils/db.ts"
+    ],
+    "server/utils/mcp.ts": [],
+    "server/utils/tokens.ts": [],
+    "server/utils/tools.ts": []
+  }
+}

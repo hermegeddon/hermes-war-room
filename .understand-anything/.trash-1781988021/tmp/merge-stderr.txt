@@ -1,0 +1,21 @@
+Found 11 batch files (11 logical batches, 0 multi-part):
+  batch-1.json: 68 nodes, 159 edges
+  batch-2.json: 29 nodes, 46 edges
+  batch-3.json: 33 nodes, 74 edges
+  batch-4.json: 18 nodes, 39 edges
+  batch-5.json: 21 nodes, 37 edges
+  batch-6.json: 11 nodes, 20 edges
+  batch-7.json: 2 nodes, 4 edges
+  batch-8.json: 9 nodes, 18 edges
+  batch-9.json: 3 nodes, 6 edges
+  batch-10.json: 26 nodes, 6 edges
+  batch-11.json: 55 nodes, 56 edges
+
+Input: 275 nodes, 465 edges
+
+Output: 275 nodes, 465 edges
+
+Imports edge recovery:
+  Recovered 0 `imports` edges from importMap (128 entries scanned)
+
+Written to /home/openclaw/hermes-war-room/.understand-anything/intermediate/assembled-graph.json (205 KB)

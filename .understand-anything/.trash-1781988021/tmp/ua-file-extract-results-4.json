@@ -1,0 +1,608 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 6,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "server/api/kanban/tasks.get.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 23,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/kanban/tasks/[id]/failure.get.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 54,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/kanban/tasks/history.get.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 47,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/utils/kanban.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 284,
+      "nonEmptyLines": 261,
+      "functions": [
+        {
+          "name": "getKanbanDb",
+          "startLine": 14,
+          "endLine": 21,
+          "params": []
+        },
+        {
+          "name": "rowToTask",
+          "startLine": 57,
+          "endLine": 72,
+          "params": [
+            "r"
+          ]
+        },
+        {
+          "name": "listActiveTasks",
+          "startLine": 76,
+          "endLine": 137,
+          "params": [
+            "assignee"
+          ]
+        },
+        {
+          "name": "currentTaskByAssignee",
+          "startLine": 143,
+          "endLine": 147,
+          "params": [
+            "assignee"
+          ]
+        },
+        {
+          "name": "totalTaskCount",
+          "startLine": 154,
+          "endLine": 159,
+          "params": []
+        },
+        {
+          "name": "tasksCreatedSince",
+          "startLine": 165,
+          "endLine": 176,
+          "params": [
+            "unixSec"
+          ]
+        },
+        {
+          "name": "listCompletedTasks",
+          "startLine": 229,
+          "endLine": 266,
+          "params": [
+            "opts"
+          ]
+        },
+        {
+          "name": "dispatcherLikelyStale",
+          "startLine": 274,
+          "endLine": 284,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "getKanbanDb",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "listActiveTasks",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "currentTaskByAssignee",
+          "line": 143,
+          "isDefault": false
+        },
+        {
+          "name": "totalTaskCount",
+          "line": 154,
+          "isDefault": false
+        },
+        {
+          "name": "tasksCreatedSince",
+          "line": 165,
+          "isDefault": false
+        },
+        {
+          "name": "listCompletedTasks",
+          "line": 229,
+          "isDefault": false
+        },
+        {
+          "name": "dispatcherLikelyStale",
+          "line": 274,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getKanbanDb",
+          "callee": "existsSync",
+          "lineNumber": 16
+        },
+        {
+          "caller": "listActiveTasks",
+          "callee": "getKanbanDb",
+          "lineNumber": 77
+        },
+        {
+          "caller": "listActiveTasks",
+          "callee": "ACTIVE_STATUSES.map(() => '?').join",
+          "lineNumber": 79
+        },
+        {
+          "caller": "listActiveTasks",
+          "callee": "ACTIVE_STATUSES.map",
+          "lineNumber": 79
+        },
+        {
+          "caller": "listActiveTasks",
+          "callee": "params.push",
+          "lineNumber": 84
+        },
+        {
+          "caller": "listActiveTasks",
+          "callee": "db.prepare(\n    `SELECT id, title, body, assignee, status, priority,\n            worker_pid, started_at, claim_expires, last_heartbeat_at, created_at\n     FROM tasks\n     WHERE ${where}\n     ORDER BY\n       CASE status\n         WHEN 'running' THEN 0\n         WHEN 'blocked' THEN 1\n         WHEN 'ready' THEN 2\n         WHEN 'todo' THEN 3\n         WHEN 'triage' THEN 4\n         ELSE 5\n       END,\n       priority DESC,\n       created_at ASC`\n  ).all",
+          "lineNumber": 86
+        },
+        {
+          "caller": "listActiveTasks",
+          "callee": "db.prepare",
+          "lineNumber": 86
+        },
+        {
+          "caller": "listActiveTasks",
+          "callee": "rows.map",
+          "lineNumber": 103
+        },
+        {
+          "caller": "listActiveTasks",
+          "callee": "tasks.map",
+          "lineNumber": 109
+        },
+        {
+          "caller": "listActiveTasks",
+          "callee": "ids.map(() => '?').join",
+          "lineNumber": 110
+        },
+        {
+          "caller": "listActiveTasks",
+          "callee": "ids.map",
+          "lineNumber": 110
+        },
+        {
+          "caller": "listActiveTasks",
+          "callee": "db.prepare(\n      `SELECT parent_id, child_id FROM task_links WHERE child_id IN (${placeholdersIds})`\n    ).all",
+          "lineNumber": 111
+        },
+        {
+          "caller": "listActiveTasks",
+          "callee": "db.prepare",
+          "lineNumber": 111
+        },
+        {
+          "caller": "listActiveTasks",
+          "callee": "byChild.get",
+          "lineNumber": 116
+        },
+        {
+          "caller": "listActiveTasks",
+          "callee": "arr.push",
+          "lineNumber": 117
+        },
+        {
+          "caller": "listActiveTasks",
+          "callee": "byChild.set",
+          "lineNumber": 118
+        },
+        {
+          "caller": "listActiveTasks",
+          "callee": "byChild.get",
+          "lineNumber": 121
+        },
+        {
+          "caller": "listActiveTasks",
+          "callee": "tasks.filter",
+          "lineNumber": 129
+        },
+        {
+          "caller": "listActiveTasks",
+          "callee": "getFailureContext",
+          "lineNumber": 131
+        },
+        {
+          "caller": "listActiveTasks",
+          "callee": "distillReason",
+          "lineNumber": 132
+        },
+        {
+          "caller": "listActiveTasks",
+          "callee": "looksLikePermissionDenial",
+          "lineNumber": 133
+        },
+        {
+          "caller": "currentTaskByAssignee",
+          "callee": "listActiveTasks",
+          "lineNumber": 144
+        },
+        {
+          "caller": "totalTaskCount",
+          "callee": "getKanbanDb",
+          "lineNumber": 155
+        },
+        {
+          "caller": "totalTaskCount",
+          "callee": "db.prepare('SELECT COUNT(*) as count FROM tasks').get",
+          "lineNumber": 157
+        },
+        {
+          "caller": "totalTaskCount",
+          "callee": "db.prepare",
+          "lineNumber": 157
+        },
+        {
+          "caller": "tasksCreatedSince",
+          "callee": "getKanbanDb",
+          "lineNumber": 166
+        },
+        {
+          "caller": "tasksCreatedSince",
+          "callee": "db.prepare(\n    `SELECT id, title, body, assignee, status, priority,\n            worker_pid, started_at, claim_expires, last_heartbeat_at, created_at\n     FROM tasks\n     WHERE created_at > ?\n     ORDER BY created_at ASC`\n  ).all",
+          "lineNumber": 168
+        },
+        {
+          "caller": "tasksCreatedSince",
+          "callee": "db.prepare",
+          "lineNumber": 168
+        },
+        {
+          "caller": "tasksCreatedSince",
+          "callee": "rows.map",
+          "lineNumber": 175
+        },
+        {
+          "caller": "listCompletedTasks",
+          "callee": "getKanbanDb",
+          "lineNumber": 230
+        },
+        {
+          "caller": "listCompletedTasks",
+          "callee": "Math.max",
+          "lineNumber": 232
+        },
+        {
+          "caller": "listCompletedTasks",
+          "callee": "Math.min",
+          "lineNumber": 232
+        },
+        {
+          "caller": "listCompletedTasks",
+          "callee": "COMPLETED_STATUSES.map(() => '?').join",
+          "lineNumber": 234
+        },
+        {
+          "caller": "listCompletedTasks",
+          "callee": "COMPLETED_STATUSES.map",
+          "lineNumber": 234
+        },
+        {
+          "caller": "listCompletedTasks",
+          "callee": "params.push",
+          "lineNumber": 237
+        },
+        {
+          "caller": "listCompletedTasks",
+          "callee": "Number.isFinite",
+          "lineNumber": 239
+        },
+        {
+          "caller": "listCompletedTasks",
+          "callee": "params.push",
+          "lineNumber": 244
+        },
+        {
+          "caller": "listCompletedTasks",
+          "callee": "Math.floor",
+          "lineNumber": 244
+        },
+        {
+          "caller": "listCompletedTasks",
+          "callee": "db.prepare(\n    `SELECT id, title, body, assignee, status, priority,\n            created_at, started_at, completed_at\n     FROM tasks\n     WHERE ${where}\n     ORDER BY COALESCE(completed_at, created_at) DESC, id DESC\n     LIMIT ?`\n  ).all",
+          "lineNumber": 246
+        },
+        {
+          "caller": "listCompletedTasks",
+          "callee": "db.prepare",
+          "lineNumber": 246
+        },
+        {
+          "caller": "listCompletedTasks",
+          "callee": "rows.map",
+          "lineNumber": 255
+        },
+        {
+          "caller": "dispatcherLikelyStale",
+          "callee": "getKanbanDb",
+          "lineNumber": 275
+        },
+        {
+          "caller": "dispatcherLikelyStale",
+          "callee": "Math.floor",
+          "lineNumber": 277
+        },
+        {
+          "caller": "dispatcherLikelyStale",
+          "callee": "Date.now",
+          "lineNumber": 277
+        },
+        {
+          "caller": "dispatcherLikelyStale",
+          "callee": "db.prepare(\n    `SELECT COUNT(*) as count FROM tasks\n     WHERE status = 'ready' AND created_at < ?`\n  ).get",
+          "lineNumber": 279
+        },
+        {
+          "caller": "dispatcherLikelyStale",
+          "callee": "db.prepare",
+          "lineNumber": 279
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 7,
+        "functionCount": 8,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/utils/permission-extract.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 46,
+      "functions": [
+        {
+          "name": "looksLikePermissionDenial",
+          "startLine": 19,
+          "endLine": 21,
+          "params": [
+            "reason"
+          ]
+        },
+        {
+          "name": "extractPermissionLabel",
+          "startLine": 24,
+          "endLine": 50,
+          "params": [
+            "reason"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "looksLikePermissionDenial",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "extractPermissionLabel",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "looksLikePermissionDenial",
+          "callee": "PERMISSION_KEYWORDS.test",
+          "lineNumber": 20
+        },
+        {
+          "caller": "extractPermissionLabel",
+          "callee": "reason.trim",
+          "lineNumber": 26
+        },
+        {
+          "caller": "extractPermissionLabel",
+          "callee": "text.match",
+          "lineNumber": 37
+        },
+        {
+          "caller": "extractPermissionLabel",
+          "callee": "m[1].trim().replace(/[.;,]+$/, '').trim",
+          "lineNumber": 39
+        },
+        {
+          "caller": "extractPermissionLabel",
+          "callee": "m[1].trim().replace",
+          "lineNumber": 39
+        },
+        {
+          "caller": "extractPermissionLabel",
+          "callee": "m[1].trim",
+          "lineNumber": 39
+        },
+        {
+          "caller": "extractPermissionLabel",
+          "callee": "PERMISSION_KEYWORDS.test",
+          "lineNumber": 40
+        },
+        {
+          "caller": "extractPermissionLabel",
+          "callee": "label.split",
+          "lineNumber": 40
+        },
+        {
+          "caller": "extractPermissionLabel",
+          "callee": "/[.!?]/.test",
+          "lineNumber": 46
+        },
+        {
+          "caller": "extractPermissionLabel",
+          "callee": "text.split",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/utils/task-failure.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 73,
+      "nonEmptyLines": 67,
+      "functions": [
+        {
+          "name": "getFailureContext",
+          "startLine": 20,
+          "endLine": 55,
+          "params": [
+            "taskId"
+          ]
+        },
+        {
+          "name": "distillReason",
+          "startLine": 59,
+          "endLine": 73,
+          "params": [
+            "ctx"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getFailureContext",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "distillReason",
+          "line": 59,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getFailureContext",
+          "callee": "getKanbanDb",
+          "lineNumber": 28
+        },
+        {
+          "caller": "getFailureContext",
+          "callee": "db.prepare(\n      `SELECT result, spawn_failures FROM tasks WHERE id = ?`\n    ).get",
+          "lineNumber": 31
+        },
+        {
+          "caller": "getFailureContext",
+          "callee": "db.prepare",
+          "lineNumber": 31
+        },
+        {
+          "caller": "getFailureContext",
+          "callee": "db.prepare(\n      `SELECT author, body FROM task_comments WHERE task_id = ?\n       ORDER BY created_at DESC LIMIT 1`\n    ).get",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getFailureContext",
+          "callee": "db.prepare",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getFailureContext",
+          "callee": "db.prepare(\n      `SELECT outcome, error FROM task_runs WHERE task_id = ?\n       ORDER BY started_at DESC LIMIT 1`\n    ).get",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getFailureContext",
+          "callee": "db.prepare",
+          "lineNumber": 40
+        },
+        {
+          "caller": "distillReason",
+          "callee": "ctx.lastComment.body.trim().replace(/\\s+/g, ' ').slice",
+          "lineNumber": 61
+        },
+        {
+          "caller": "distillReason",
+          "callee": "ctx.lastComment.body.trim().replace",
+          "lineNumber": 61
+        },
+        {
+          "caller": "distillReason",
+          "callee": "ctx.lastComment.body.trim",
+          "lineNumber": 61
+        },
+        {
+          "caller": "distillReason",
+          "callee": "ctx.lastRunError.trim().replace(/\\s+/g, ' ').slice",
+          "lineNumber": 64
+        },
+        {
+          "caller": "distillReason",
+          "callee": "ctx.lastRunError.trim().replace",
+          "lineNumber": 64
+        },
+        {
+          "caller": "distillReason",
+          "callee": "ctx.lastRunError.trim",
+          "lineNumber": 64
+        },
+        {
+          "caller": "distillReason",
+          "callee": "ctx.taskResult.trim().replace(/\\s+/g, ' ').slice",
+          "lineNumber": 67
+        },
+        {
+          "caller": "distillReason",
+          "callee": "ctx.taskResult.trim().replace",
+          "lineNumber": 67
+        },
+        {
+          "caller": "distillReason",
+          "callee": "ctx.taskResult.trim",
+          "lineNumber": 67
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    }
+  ]
+}

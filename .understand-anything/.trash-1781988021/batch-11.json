@@ -1,0 +1,1245 @@
+{
+  "nodes": [
+    {
+      "id": "file:app/composables/useKanbanTasks.ts",
+      "type": "file",
+      "name": "useKanbanTasks.ts",
+      "filePath": "app/composables/useKanbanTasks.ts",
+      "summary": "Vue/nuxt composable usekanbantasks with 1 extracted functions.",
+      "tags": [
+        "composable",
+        "state",
+        "frontend",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:app/composables/useKanbanTasks.ts:useKanbanTasks",
+      "type": "function",
+      "name": "useKanbanTasks",
+      "filePath": "app/composables/useKanbanTasks.ts",
+      "lineRange": [
+        10,
+        64
+      ],
+      "summary": "Provides the useKanbanTasks composable or hook behavior for Vue/Nuxt composable useKanbanTasks.",
+      "tags": [
+        "function",
+        "exported",
+        "composable",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:app/composables/useMarkdown.ts",
+      "type": "file",
+      "name": "useMarkdown.ts",
+      "filePath": "app/composables/useMarkdown.ts",
+      "summary": "Vue/nuxt composable usemarkdown with 4 extracted functions.",
+      "tags": [
+        "composable",
+        "state",
+        "frontend",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:app/composables/useMarkdown.ts:renderMarkdown",
+      "type": "function",
+      "name": "renderMarkdown",
+      "filePath": "app/composables/useMarkdown.ts",
+      "lineRange": [
+        25,
+        34
+      ],
+      "summary": "Implements renderMarkdown behavior inside Vue/Nuxt composable useMarkdown.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/composables/useMarkdown.ts:stripHarmonyTags",
+      "type": "function",
+      "name": "stripHarmonyTags",
+      "filePath": "app/composables/useMarkdown.ts",
+      "lineRange": [
+        61,
+        84
+      ],
+      "summary": "Implements stripHarmonyTags behavior inside Vue/Nuxt composable useMarkdown.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/composables/useMarkdown.ts:decorateTaskRefs",
+      "type": "function",
+      "name": "decorateTaskRefs",
+      "filePath": "app/composables/useMarkdown.ts",
+      "lineRange": [
+        107,
+        198
+      ],
+      "summary": "Implements decorateTaskRefs behavior inside Vue/Nuxt composable useMarkdown.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:app/composables/useMissionStream.ts",
+      "type": "file",
+      "name": "useMissionStream.ts",
+      "filePath": "app/composables/useMissionStream.ts",
+      "summary": "Vue/nuxt composable usemissionstream with 5 extracted functions.",
+      "tags": [
+        "composable",
+        "state",
+        "frontend",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:app/composables/useMissionStream.ts:lastThoughtSnippet",
+      "type": "function",
+      "name": "lastThoughtSnippet",
+      "filePath": "app/composables/useMissionStream.ts",
+      "lineRange": [
+        62,
+        71
+      ],
+      "summary": "Implements lastThoughtSnippet behavior inside Vue/Nuxt composable useMissionStream.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/composables/useMissionStream.ts:extractToolDetail",
+      "type": "function",
+      "name": "extractToolDetail",
+      "filePath": "app/composables/useMissionStream.ts",
+      "lineRange": [
+        92,
+        117
+      ],
+      "summary": "Implements extractToolDetail behavior inside Vue/Nuxt composable useMissionStream.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/composables/useMissionStream.ts:useMissionStream",
+      "type": "function",
+      "name": "useMissionStream",
+      "filePath": "app/composables/useMissionStream.ts",
+      "lineRange": [
+        124,
+        438
+      ],
+      "summary": "Provides the useMissionStream composable or hook behavior for Vue/Nuxt composable useMissionStream.",
+      "tags": [
+        "function",
+        "exported",
+        "composable",
+        "utility"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:app/composables/useStationRegistry.ts",
+      "type": "file",
+      "name": "useStationRegistry.ts",
+      "filePath": "app/composables/useStationRegistry.ts",
+      "summary": "Vue/nuxt composable usestationregistry with 2 extracted functions.",
+      "tags": [
+        "composable",
+        "state",
+        "frontend",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:app/composables/useStationRegistry.ts:provideStationRegistry",
+      "type": "function",
+      "name": "provideStationRegistry",
+      "filePath": "app/composables/useStationRegistry.ts",
+      "lineRange": [
+        35,
+        113
+      ],
+      "summary": "Implements provideStationRegistry behavior inside Vue/Nuxt composable useStationRegistry.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:app/composables/useStationRegistry.ts:useStationRegistry",
+      "type": "function",
+      "name": "useStationRegistry",
+      "filePath": "app/composables/useStationRegistry.ts",
+      "lineRange": [
+        115,
+        117
+      ],
+      "summary": "Provides the useStationRegistry composable or hook behavior for Vue/Nuxt composable useStationRegistry.",
+      "tags": [
+        "function",
+        "exported",
+        "composable",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:app/composables/useTaskFeed.ts",
+      "type": "file",
+      "name": "useTaskFeed.ts",
+      "filePath": "app/composables/useTaskFeed.ts",
+      "summary": "Vue/nuxt composable usetaskfeed with 1 extracted functions.",
+      "tags": [
+        "composable",
+        "state",
+        "frontend",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:app/composables/useTaskFeed.ts:useTaskFeed",
+      "type": "function",
+      "name": "useTaskFeed",
+      "filePath": "app/composables/useTaskFeed.ts",
+      "lineRange": [
+        41,
+        95
+      ],
+      "summary": "Provides the useTaskFeed composable or hook behavior for Vue/Nuxt composable useTaskFeed.",
+      "tags": [
+        "function",
+        "exported",
+        "composable",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:app/composables/useTokenUsage.ts",
+      "type": "file",
+      "name": "useTokenUsage.ts",
+      "filePath": "app/composables/useTokenUsage.ts",
+      "summary": "Vue/nuxt composable usetokenusage with 2 extracted functions.",
+      "tags": [
+        "composable",
+        "state",
+        "frontend",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:app/composables/useTokenUsage.ts:useTokenUsage",
+      "type": "function",
+      "name": "useTokenUsage",
+      "filePath": "app/composables/useTokenUsage.ts",
+      "lineRange": [
+        16,
+        48
+      ],
+      "summary": "Provides the useTokenUsage composable or hook behavior for Vue/Nuxt composable useTokenUsage.",
+      "tags": [
+        "function",
+        "exported",
+        "composable",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/composables/useTokenUsage.ts:compactNumber",
+      "type": "function",
+      "name": "compactNumber",
+      "filePath": "app/composables/useTokenUsage.ts",
+      "lineRange": [
+        53,
+        64
+      ],
+      "summary": "Implements compactNumber behavior inside Vue/Nuxt composable useTokenUsage.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:app/pages/index.vue",
+      "type": "file",
+      "name": "index.vue",
+      "filePath": "app/pages/index.vue",
+      "summary": "Nuxt route page index in the Hermes War Room project.",
+      "tags": [
+        "route",
+        "page",
+        "frontend",
+        "entry-point",
+        "vue"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:app/pages/missions.vue",
+      "type": "file",
+      "name": "missions.vue",
+      "filePath": "app/pages/missions.vue",
+      "summary": "Nuxt route page missions in the Hermes War Room project.",
+      "tags": [
+        "route",
+        "page",
+        "frontend",
+        "vue"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:app/pages/team.vue",
+      "type": "file",
+      "name": "team.vue",
+      "filePath": "app/pages/team.vue",
+      "summary": "Nuxt route page team in the Hermes War Room project.",
+      "tags": [
+        "route",
+        "page",
+        "frontend",
+        "vue"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:app/types/mission.ts",
+      "type": "file",
+      "name": "mission.ts",
+      "filePath": "app/types/mission.ts",
+      "summary": "Frontend type definitions for mission in the Hermes War Room project.",
+      "tags": [
+        "code",
+        "module",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:app/types/profile.ts",
+      "type": "file",
+      "name": "profile.ts",
+      "filePath": "app/types/profile.ts",
+      "summary": "Frontend type definitions for profile in the Hermes War Room project.",
+      "tags": [
+        "code",
+        "module",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:app/utils/avatar.ts",
+      "type": "file",
+      "name": "avatar.ts",
+      "filePath": "app/utils/avatar.ts",
+      "summary": "Frontend utility module avatar with 4 extracted functions.",
+      "tags": [
+        "code",
+        "module",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:app/utils/avatar.ts:buildAvatarUrl",
+      "type": "function",
+      "name": "buildAvatarUrl",
+      "filePath": "app/utils/avatar.ts",
+      "lineRange": [
+        50,
+        72
+      ],
+      "summary": "Builds AvatarUrl used by frontend utility module avatar.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/utils/avatar.ts:pickActiveGesture",
+      "type": "function",
+      "name": "pickActiveGesture",
+      "filePath": "app/utils/avatar.ts",
+      "lineRange": [
+        88,
+        91
+      ],
+      "summary": "Implements pickActiveGesture behavior inside frontend utility module avatar.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/utils/avatar.ts:randomActiveGesture",
+      "type": "function",
+      "name": "randomActiveGesture",
+      "filePath": "app/utils/avatar.ts",
+      "lineRange": [
+        98,
+        101
+      ],
+      "summary": "Implements randomActiveGesture behavior inside frontend utility module avatar.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:eslint.config.mjs",
+      "type": "file",
+      "name": "eslint.config.mjs",
+      "filePath": "eslint.config.mjs",
+      "summary": "Eslint configuration with 1 imports.",
+      "tags": [
+        "code",
+        "module",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:nuxt.config.ts",
+      "type": "file",
+      "name": "nuxt.config.ts",
+      "filePath": "nuxt.config.ts",
+      "summary": "Nuxt application configuration in the Hermes War Room project.",
+      "tags": [
+        "code",
+        "module",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/api/config.get.ts",
+      "type": "file",
+      "name": "config.get.ts",
+      "filePath": "server/api/config.get.ts",
+      "summary": "Nitro api route handler for config.get in the Hermes War Room project.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/api/kanban/dispatch.post.ts",
+      "type": "file",
+      "name": "dispatch.post.ts",
+      "filePath": "server/api/kanban/dispatch.post.ts",
+      "summary": "Nitro api route handler for kanban/dispatch.post with 1 extracted functions.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/api/kanban/dispatch.post.ts:runHermes",
+      "type": "function",
+      "name": "runHermes",
+      "filePath": "server/api/kanban/dispatch.post.ts",
+      "lineRange": [
+        10,
+        22
+      ],
+      "summary": "Implements runHermes behavior inside Nitro API route handler for kanban/dispatch.post.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/api/kanban/tasks/[id]/feed.get.ts",
+      "type": "file",
+      "name": "feed.get.ts",
+      "filePath": "server/api/kanban/tasks/[id]/feed.get.ts",
+      "summary": "Nitro api route handler for kanban/tasks/[id]/feed.get with 1 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/api/kanban/tasks/[id]/kill.post.ts",
+      "type": "file",
+      "name": "kill.post.ts",
+      "filePath": "server/api/kanban/tasks/[id]/kill.post.ts",
+      "summary": "Nitro api route handler for kanban/tasks/[id]/kill.post with 2 extracted functions.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/api/kanban/tasks/[id]/kill.post.ts:runHermes",
+      "type": "function",
+      "name": "runHermes",
+      "filePath": "server/api/kanban/tasks/[id]/kill.post.ts",
+      "lineRange": [
+        11,
+        23
+      ],
+      "summary": "Implements runHermes behavior inside Nitro API route handler for kanban/tasks/[id]/kill.post.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/api/kanban/tasks/[id]/kill.post.ts:killPid",
+      "type": "function",
+      "name": "killPid",
+      "filePath": "server/api/kanban/tasks/[id]/kill.post.ts",
+      "lineRange": [
+        25,
+        35
+      ],
+      "summary": "Implements killPid behavior inside Nitro API route handler for kanban/tasks/[id]/kill.post.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/api/kanban/tasks/[id]/log.get.ts",
+      "type": "file",
+      "name": "log.get.ts",
+      "filePath": "server/api/kanban/tasks/[id]/log.get.ts",
+      "summary": "Nitro api route handler for kanban/tasks/[id]/log.get in the Hermes War Room project.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/api/models.get.ts",
+      "type": "file",
+      "name": "models.get.ts",
+      "filePath": "server/api/models.get.ts",
+      "summary": "Nitro api route handler for models.get with 4 extracted functions.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/api/models.get.ts:extractModelIds",
+      "type": "function",
+      "name": "extractModelIds",
+      "filePath": "server/api/models.get.ts",
+      "lineRange": [
+        82,
+        96
+      ],
+      "summary": "Implements extractModelIds behavior inside Nitro API route handler for models.get.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/api/models.get.ts:build",
+      "type": "function",
+      "name": "build",
+      "filePath": "server/api/models.get.ts",
+      "lineRange": [
+        98,
+        199
+      ],
+      "summary": "Builds structured output used by Nitro API route handler for models.get.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/api/presets.get.ts",
+      "type": "file",
+      "name": "presets.get.ts",
+      "filePath": "server/api/presets.get.ts",
+      "summary": "Nitro api route handler for presets.get with 1 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/api/version.get.ts",
+      "type": "file",
+      "name": "version.get.ts",
+      "filePath": "server/api/version.get.ts",
+      "summary": "Nitro api route handler for version.get with 1 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/utils/presets.ts",
+      "type": "file",
+      "name": "presets.ts",
+      "filePath": "server/utils/presets.ts",
+      "summary": "Server-side utility module presets with 1 extracted functions.",
+      "tags": [
+        "utility",
+        "server",
+        "service",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:server/utils/presets.ts:getPreset",
+      "type": "function",
+      "name": "getPreset",
+      "filePath": "server/utils/presets.ts",
+      "lineRange": [
+        451,
+        453
+      ],
+      "summary": "Retrieves or derives Preset for server-side utility module presets.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/utils/task-feed.ts",
+      "type": "file",
+      "name": "task-feed.ts",
+      "filePath": "server/utils/task-feed.ts",
+      "summary": "Server-side utility module task-feed with 9 extracted functions.",
+      "tags": [
+        "utility",
+        "server",
+        "service",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:server/utils/task-feed.ts:readLogTail",
+      "type": "function",
+      "name": "readLogTail",
+      "filePath": "server/utils/task-feed.ts",
+      "lineRange": [
+        56,
+        75
+      ],
+      "summary": "Implements readLogTail behavior inside server-side utility module task-feed.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/task-feed.ts:readLogHead",
+      "type": "function",
+      "name": "readLogHead",
+      "filePath": "server/utils/task-feed.ts",
+      "lineRange": [
+        84,
+        93
+      ],
+      "summary": "Implements readLogHead behavior inside server-side utility module task-feed.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/task-feed.ts:findTaskAssignee",
+      "type": "function",
+      "name": "findTaskAssignee",
+      "filePath": "server/utils/task-feed.ts",
+      "lineRange": [
+        107,
+        126
+      ],
+      "summary": "Implements findTaskAssignee behavior inside server-side utility module task-feed.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/task-feed.ts:combineReasoning",
+      "type": "function",
+      "name": "combineReasoning",
+      "filePath": "server/utils/task-feed.ts",
+      "lineRange": [
+        150,
+        159
+      ],
+      "summary": "Implements combineReasoning behavior inside server-side utility module task-feed.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/task-feed.ts:getTaskFeed",
+      "type": "function",
+      "name": "getTaskFeed",
+      "filePath": "server/utils/task-feed.ts",
+      "lineRange": [
+        161,
+        259
+      ],
+      "summary": "Retrieves or derives TaskFeed for server-side utility module task-feed.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/utils/version.ts",
+      "type": "file",
+      "name": "version.ts",
+      "filePath": "server/utils/version.ts",
+      "summary": "Server-side utility module version with 4 extracted functions.",
+      "tags": [
+        "utility",
+        "server",
+        "service",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/utils/version.ts:readLocalVersion",
+      "type": "function",
+      "name": "readLocalVersion",
+      "filePath": "server/utils/version.ts",
+      "lineRange": [
+        46,
+        55
+      ],
+      "summary": "Implements readLocalVersion behavior inside server-side utility module version.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/version.ts:versionLessThan",
+      "type": "function",
+      "name": "versionLessThan",
+      "filePath": "server/utils/version.ts",
+      "lineRange": [
+        63,
+        74
+      ],
+      "summary": "Implements versionLessThan behavior inside server-side utility module version.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/version.ts:fetchLatestRelease",
+      "type": "function",
+      "name": "fetchLatestRelease",
+      "filePath": "server/utils/version.ts",
+      "lineRange": [
+        85,
+        102
+      ],
+      "summary": "Implements fetchLatestRelease behavior inside server-side utility module version.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/version.ts:getVersionInfo",
+      "type": "function",
+      "name": "getVersionInfo",
+      "filePath": "server/utils/version.ts",
+      "lineRange": [
+        111,
+        148
+      ],
+      "summary": "Retrieves or derives VersionInfo for server-side utility module version.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:app/composables/useKanbanTasks.ts",
+      "target": "function:app/composables/useKanbanTasks.ts:useKanbanTasks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/composables/useKanbanTasks.ts",
+      "target": "function:app/composables/useKanbanTasks.ts:useKanbanTasks",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/composables/useMarkdown.ts",
+      "target": "function:app/composables/useMarkdown.ts:renderMarkdown",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/composables/useMarkdown.ts",
+      "target": "function:app/composables/useMarkdown.ts:renderMarkdown",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/composables/useMarkdown.ts",
+      "target": "function:app/composables/useMarkdown.ts:stripHarmonyTags",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/composables/useMarkdown.ts",
+      "target": "function:app/composables/useMarkdown.ts:stripHarmonyTags",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/composables/useMarkdown.ts",
+      "target": "function:app/composables/useMarkdown.ts:decorateTaskRefs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/composables/useMarkdown.ts",
+      "target": "function:app/composables/useMarkdown.ts:decorateTaskRefs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/composables/useMissionStream.ts",
+      "target": "function:app/composables/useMissionStream.ts:lastThoughtSnippet",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/composables/useMissionStream.ts",
+      "target": "function:app/composables/useMissionStream.ts:extractToolDetail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/composables/useMissionStream.ts",
+      "target": "function:app/composables/useMissionStream.ts:useMissionStream",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/composables/useMissionStream.ts",
+      "target": "function:app/composables/useMissionStream.ts:useMissionStream",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/composables/useStationRegistry.ts",
+      "target": "function:app/composables/useStationRegistry.ts:provideStationRegistry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/composables/useStationRegistry.ts",
+      "target": "function:app/composables/useStationRegistry.ts:provideStationRegistry",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/composables/useStationRegistry.ts",
+      "target": "function:app/composables/useStationRegistry.ts:useStationRegistry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/composables/useStationRegistry.ts",
+      "target": "function:app/composables/useStationRegistry.ts:useStationRegistry",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/composables/useTaskFeed.ts",
+      "target": "function:app/composables/useTaskFeed.ts:useTaskFeed",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/composables/useTaskFeed.ts",
+      "target": "function:app/composables/useTaskFeed.ts:useTaskFeed",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/composables/useTokenUsage.ts",
+      "target": "function:app/composables/useTokenUsage.ts:useTokenUsage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/composables/useTokenUsage.ts",
+      "target": "function:app/composables/useTokenUsage.ts:useTokenUsage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/composables/useTokenUsage.ts",
+      "target": "function:app/composables/useTokenUsage.ts:compactNumber",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/composables/useTokenUsage.ts",
+      "target": "function:app/composables/useTokenUsage.ts:compactNumber",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/utils/avatar.ts",
+      "target": "function:app/utils/avatar.ts:buildAvatarUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/utils/avatar.ts",
+      "target": "function:app/utils/avatar.ts:buildAvatarUrl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/utils/avatar.ts",
+      "target": "function:app/utils/avatar.ts:pickActiveGesture",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/utils/avatar.ts",
+      "target": "function:app/utils/avatar.ts:pickActiveGesture",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/utils/avatar.ts",
+      "target": "function:app/utils/avatar.ts:randomActiveGesture",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/utils/avatar.ts",
+      "target": "function:app/utils/avatar.ts:randomActiveGesture",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/api/kanban/dispatch.post.ts",
+      "target": "function:server/api/kanban/dispatch.post.ts:runHermes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/api/kanban/tasks/[id]/kill.post.ts",
+      "target": "function:server/api/kanban/tasks/[id]/kill.post.ts:runHermes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/api/kanban/tasks/[id]/kill.post.ts",
+      "target": "function:server/api/kanban/tasks/[id]/kill.post.ts:killPid",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/api/models.get.ts",
+      "target": "function:server/api/models.get.ts:extractModelIds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/api/models.get.ts",
+      "target": "function:server/api/models.get.ts:build",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/presets.ts",
+      "target": "function:server/utils/presets.ts:getPreset",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/presets.ts",
+      "target": "function:server/utils/presets.ts:getPreset",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/task-feed.ts",
+      "target": "function:server/utils/task-feed.ts:readLogTail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/task-feed.ts",
+      "target": "function:server/utils/task-feed.ts:readLogHead",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/task-feed.ts",
+      "target": "function:server/utils/task-feed.ts:findTaskAssignee",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/task-feed.ts",
+      "target": "function:server/utils/task-feed.ts:combineReasoning",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/task-feed.ts",
+      "target": "function:server/utils/task-feed.ts:getTaskFeed",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/task-feed.ts",
+      "target": "function:server/utils/task-feed.ts:getTaskFeed",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/version.ts",
+      "target": "function:server/utils/version.ts:readLocalVersion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/version.ts",
+      "target": "function:server/utils/version.ts:versionLessThan",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/version.ts",
+      "target": "function:server/utils/version.ts:fetchLatestRelease",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/version.ts",
+      "target": "function:server/utils/version.ts:getVersionInfo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/version.ts",
+      "target": "function:server/utils/version.ts:getVersionInfo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/api/kanban/tasks/[id]/feed.get.ts",
+      "target": "file:server/utils/task-feed.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:server/api/models.get.ts:build",
+      "target": "function:server/api/models.get.ts:extractModelIds",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/api/presets.get.ts",
+      "target": "file:server/utils/presets.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/version.get.ts",
+      "target": "file:server/utils/version.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:server/utils/task-feed.ts:getTaskFeed",
+      "target": "function:server/utils/task-feed.ts:findTaskAssignee",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/task-feed.ts:getTaskFeed",
+      "target": "function:server/utils/task-feed.ts:readLogTail",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/task-feed.ts:getTaskFeed",
+      "target": "function:server/utils/task-feed.ts:combineReasoning",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/version.ts:getVersionInfo",
+      "target": "function:server/utils/version.ts:readLocalVersion",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/version.ts:getVersionInfo",
+      "target": "function:server/utils/version.ts:fetchLatestRelease",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/version.ts:getVersionInfo",
+      "target": "function:server/utils/version.ts:versionLessThan",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

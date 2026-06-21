@@ -1,0 +1,566 @@
+{
+  "nodes": [
+    {
+      "id": "file:server/api/kanban/tasks.get.ts",
+      "type": "file",
+      "name": "tasks.get.ts",
+      "filePath": "server/api/kanban/tasks.get.ts",
+      "summary": "Nitro api route handler for kanban/tasks.get with 2 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/api/kanban/tasks/[id]/failure.get.ts",
+      "type": "file",
+      "name": "failure.get.ts",
+      "filePath": "server/api/kanban/tasks/[id]/failure.get.ts",
+      "summary": "Nitro api route handler for kanban/tasks/[id]/failure.get with 3 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/api/kanban/tasks/history.get.ts",
+      "type": "file",
+      "name": "history.get.ts",
+      "filePath": "server/api/kanban/tasks/history.get.ts",
+      "summary": "Nitro api route handler for kanban/tasks/history.get with 2 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/utils/kanban.ts",
+      "type": "file",
+      "name": "kanban.ts",
+      "filePath": "server/utils/kanban.ts",
+      "summary": "Server-side utility module kanban with 8 extracted functions, 2 imports.",
+      "tags": [
+        "utility",
+        "server",
+        "service",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:server/utils/kanban.ts:getKanbanDb",
+      "type": "function",
+      "name": "getKanbanDb",
+      "filePath": "server/utils/kanban.ts",
+      "lineRange": [
+        14,
+        21
+      ],
+      "summary": "Retrieves or derives KanbanDb for server-side utility module kanban.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/kanban.ts:rowToTask",
+      "type": "function",
+      "name": "rowToTask",
+      "filePath": "server/utils/kanban.ts",
+      "lineRange": [
+        57,
+        72
+      ],
+      "summary": "Implements rowToTask behavior inside server-side utility module kanban.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/kanban.ts:listActiveTasks",
+      "type": "function",
+      "name": "listActiveTasks",
+      "filePath": "server/utils/kanban.ts",
+      "lineRange": [
+        76,
+        137
+      ],
+      "summary": "Lists ActiveTasks for server-side utility module kanban.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/utils/kanban.ts:currentTaskByAssignee",
+      "type": "function",
+      "name": "currentTaskByAssignee",
+      "filePath": "server/utils/kanban.ts",
+      "lineRange": [
+        143,
+        147
+      ],
+      "summary": "Implements currentTaskByAssignee behavior inside server-side utility module kanban.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/kanban.ts:totalTaskCount",
+      "type": "function",
+      "name": "totalTaskCount",
+      "filePath": "server/utils/kanban.ts",
+      "lineRange": [
+        154,
+        159
+      ],
+      "summary": "Implements totalTaskCount behavior inside server-side utility module kanban.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/kanban.ts:tasksCreatedSince",
+      "type": "function",
+      "name": "tasksCreatedSince",
+      "filePath": "server/utils/kanban.ts",
+      "lineRange": [
+        165,
+        176
+      ],
+      "summary": "Implements tasksCreatedSince behavior inside server-side utility module kanban.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/kanban.ts:listCompletedTasks",
+      "type": "function",
+      "name": "listCompletedTasks",
+      "filePath": "server/utils/kanban.ts",
+      "lineRange": [
+        229,
+        266
+      ],
+      "summary": "Lists CompletedTasks for server-side utility module kanban.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/kanban.ts:dispatcherLikelyStale",
+      "type": "function",
+      "name": "dispatcherLikelyStale",
+      "filePath": "server/utils/kanban.ts",
+      "lineRange": [
+        274,
+        284
+      ],
+      "summary": "Implements dispatcherLikelyStale behavior inside server-side utility module kanban.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/utils/permission-extract.ts",
+      "type": "file",
+      "name": "permission-extract.ts",
+      "filePath": "server/utils/permission-extract.ts",
+      "summary": "Server-side utility module permission-extract with 2 extracted functions.",
+      "tags": [
+        "utility",
+        "server",
+        "service",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/permission-extract.ts:looksLikePermissionDenial",
+      "type": "function",
+      "name": "looksLikePermissionDenial",
+      "filePath": "server/utils/permission-extract.ts",
+      "lineRange": [
+        19,
+        21
+      ],
+      "summary": "Implements looksLikePermissionDenial behavior inside server-side utility module permission-extract.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/permission-extract.ts:extractPermissionLabel",
+      "type": "function",
+      "name": "extractPermissionLabel",
+      "filePath": "server/utils/permission-extract.ts",
+      "lineRange": [
+        24,
+        50
+      ],
+      "summary": "Implements extractPermissionLabel behavior inside server-side utility module permission-extract.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/utils/task-failure.ts",
+      "type": "file",
+      "name": "task-failure.ts",
+      "filePath": "server/utils/task-failure.ts",
+      "summary": "Server-side utility module task-failure with 2 extracted functions, 1 imports.",
+      "tags": [
+        "utility",
+        "server",
+        "service",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/utils/task-failure.ts:getFailureContext",
+      "type": "function",
+      "name": "getFailureContext",
+      "filePath": "server/utils/task-failure.ts",
+      "lineRange": [
+        20,
+        55
+      ],
+      "summary": "Retrieves or derives FailureContext for server-side utility module task-failure.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/task-failure.ts:distillReason",
+      "type": "function",
+      "name": "distillReason",
+      "filePath": "server/utils/task-failure.ts",
+      "lineRange": [
+        59,
+        73
+      ],
+      "summary": "Implements distillReason behavior inside server-side utility module task-failure.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:server/utils/kanban.ts",
+      "target": "function:server/utils/kanban.ts:getKanbanDb",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/kanban.ts",
+      "target": "function:server/utils/kanban.ts:getKanbanDb",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/kanban.ts",
+      "target": "function:server/utils/kanban.ts:rowToTask",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/kanban.ts",
+      "target": "function:server/utils/kanban.ts:listActiveTasks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/kanban.ts",
+      "target": "function:server/utils/kanban.ts:listActiveTasks",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/kanban.ts",
+      "target": "function:server/utils/kanban.ts:currentTaskByAssignee",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/kanban.ts",
+      "target": "function:server/utils/kanban.ts:currentTaskByAssignee",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/kanban.ts",
+      "target": "function:server/utils/kanban.ts:totalTaskCount",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/kanban.ts",
+      "target": "function:server/utils/kanban.ts:totalTaskCount",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/kanban.ts",
+      "target": "function:server/utils/kanban.ts:tasksCreatedSince",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/kanban.ts",
+      "target": "function:server/utils/kanban.ts:tasksCreatedSince",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/kanban.ts",
+      "target": "function:server/utils/kanban.ts:listCompletedTasks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/kanban.ts",
+      "target": "function:server/utils/kanban.ts:listCompletedTasks",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/kanban.ts",
+      "target": "function:server/utils/kanban.ts:dispatcherLikelyStale",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/kanban.ts",
+      "target": "function:server/utils/kanban.ts:dispatcherLikelyStale",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/permission-extract.ts",
+      "target": "function:server/utils/permission-extract.ts:looksLikePermissionDenial",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/permission-extract.ts",
+      "target": "function:server/utils/permission-extract.ts:looksLikePermissionDenial",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/permission-extract.ts",
+      "target": "function:server/utils/permission-extract.ts:extractPermissionLabel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/permission-extract.ts",
+      "target": "function:server/utils/permission-extract.ts:extractPermissionLabel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/task-failure.ts",
+      "target": "function:server/utils/task-failure.ts:getFailureContext",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/task-failure.ts",
+      "target": "function:server/utils/task-failure.ts:getFailureContext",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/task-failure.ts",
+      "target": "function:server/utils/task-failure.ts:distillReason",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/task-failure.ts",
+      "target": "function:server/utils/task-failure.ts:distillReason",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/api/kanban/tasks.get.ts",
+      "target": "file:server/utils/db.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/kanban/tasks.get.ts",
+      "target": "file:server/utils/kanban.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/kanban/tasks/[id]/failure.get.ts",
+      "target": "file:server/utils/kanban.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/kanban/tasks/[id]/failure.get.ts",
+      "target": "file:server/utils/permission-extract.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/kanban/tasks/[id]/failure.get.ts",
+      "target": "file:server/utils/task-failure.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/kanban/tasks/history.get.ts",
+      "target": "file:server/utils/db.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/kanban/tasks/history.get.ts",
+      "target": "file:server/utils/kanban.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/utils/kanban.ts",
+      "target": "file:server/utils/permission-extract.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/utils/kanban.ts",
+      "target": "file:server/utils/task-failure.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:server/utils/kanban.ts:listActiveTasks",
+      "target": "function:server/utils/kanban.ts:getKanbanDb",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/kanban.ts:currentTaskByAssignee",
+      "target": "function:server/utils/kanban.ts:listActiveTasks",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/kanban.ts:totalTaskCount",
+      "target": "function:server/utils/kanban.ts:getKanbanDb",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/kanban.ts:tasksCreatedSince",
+      "target": "function:server/utils/kanban.ts:getKanbanDb",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/kanban.ts:listCompletedTasks",
+      "target": "function:server/utils/kanban.ts:getKanbanDb",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/kanban.ts:dispatcherLikelyStale",
+      "target": "function:server/utils/kanban.ts:getKanbanDb",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/task-failure.ts",
+      "target": "file:server/utils/kanban.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

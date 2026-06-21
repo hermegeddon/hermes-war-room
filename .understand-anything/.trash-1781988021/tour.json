@@ -1,0 +1,108 @@
+[
+  {
+    "order": 1,
+    "title": "Project Overview",
+    "description": "Start with the README and package manifest to understand that War Room is a Nuxt dashboard for making Hermes multi-profile delegation and Kanban work visible and directable.",
+    "nodeIds": [
+      "document:README.md",
+      "config:package.json",
+      "file:nuxt.config.ts"
+    ],
+    "languageLesson": "Nuxt projects combine Vue UI files with server-side Nitro routes, so understanding both app/ and server/ is essential."
+  },
+  {
+    "order": 2,
+    "title": "Application Shell and Main Screens",
+    "description": "Inspect the app shell and route pages that frame the War Room, Missions, and Team views before diving into lower-level components.",
+    "nodeIds": [
+      "file:app/app.vue",
+      "file:app/pages/index.vue",
+      "file:app/pages/missions.vue",
+      "file:app/pages/team.vue",
+      "file:app/assets/css/main.css"
+    ]
+  },
+  {
+    "order": 3,
+    "title": "Mission Control UI Components",
+    "description": "Follow the mission and workstation components that render live delegation state, task cards, operative drill-downs, and command surfaces in the browser.",
+    "nodeIds": [
+      "file:app/components/MissionPanel.vue",
+      "file:app/components/MissionKanban.vue",
+      "file:app/components/Workstation.vue",
+      "file:app/components/WorkstationDetailSlide.vue",
+      "file:app/components/DelegationOverlay.vue"
+    ]
+  },
+  {
+    "order": 4,
+    "title": "Client-Side State and Live Streams",
+    "description": "Review the composables that poll Kanban state, subscribe to mission streams, transform task feeds, render markdown, and keep the UI reactive.",
+    "nodeIds": [
+      "file:app/composables/useMissionStream.ts",
+      "file:app/composables/useKanbanTasks.ts",
+      "file:app/composables/useKanbanHistory.ts",
+      "file:app/composables/useTaskFeed.ts",
+      "file:app/composables/useMarkdown.ts",
+      "file:app/composables/useTokenUsage.ts"
+    ],
+    "languageLesson": "Vue Composition API composables centralize reusable reactive behavior; files named useX typically expose shared stateful logic."
+  },
+  {
+    "order": 5,
+    "title": "Browser-to-Server API Boundary",
+    "description": "Trace the Nitro API routes that the UI calls to create missions, dispatch Kanban work, list profiles and capabilities, and fetch runtime state.",
+    "nodeIds": [
+      "file:server/api/missions.post.ts",
+      "file:server/api/missions/index.get.ts",
+      "file:server/api/missions/active.get.ts",
+      "file:server/api/kanban/dispatch.post.ts",
+      "file:server/api/kanban/tasks.get.ts",
+      "file:server/api/profiles.get.ts",
+      "file:server/api/tools.get.ts",
+      "file:server/api/skills.get.ts"
+    ]
+  },
+  {
+    "order": 6,
+    "title": "Mission and Orchestration Core",
+    "description": "Dive into the server utilities that persist mission state, emit live updates, run Hermes turns, handle locks, decompose work, and integrate with ACP/orchestrator execution.",
+    "nodeIds": [
+      "file:server/utils/mission.ts",
+      "file:server/utils/mission-turn.ts",
+      "file:server/utils/mission-bus.ts",
+      "file:server/utils/mission-lock.ts",
+      "file:server/utils/triage.ts",
+      "file:server/utils/orchestrator-acp.ts",
+      "file:server/utils/auto-nudge.ts"
+    ]
+  },
+  {
+    "order": 7,
+    "title": "Profiles, Roster, Skills, and Tooling",
+    "description": "Inspect the support utilities that discover Hermes profiles, manage roster metadata, read/write profile configuration, and surface skills, tools, MCP servers, presets, and agent metadata.",
+    "nodeIds": [
+      "file:server/utils/hermes.ts",
+      "file:server/utils/agents.ts",
+      "file:server/utils/roster.ts",
+      "file:server/utils/profile-config.ts",
+      "file:server/utils/skills.ts",
+      "file:server/utils/tools.ts",
+      "file:server/utils/mcp.ts",
+      "file:server/utils/presets.ts"
+    ]
+  },
+  {
+    "order": 8,
+    "title": "Automation and Release Surface",
+    "description": "Finish with repository-level automation: CI, release configuration, lint/typecheck setup, and workspace/runtime metadata that support building and shipping the dashboard.",
+    "nodeIds": [
+      "pipeline:.github/workflows/ci.yml",
+      "pipeline:.github/workflows/release.yml",
+      "config:.releaserc.json",
+      "file:eslint.config.mjs",
+      "config:pnpm-workspace.yaml",
+      "config:mise.toml"
+    ]
+  }
+]

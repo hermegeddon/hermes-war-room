@@ -1,0 +1,1078 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 14,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "server/api/profiles.get.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 91,
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/profiles.post.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 221,
+      "nonEmptyLines": 199,
+      "functions": [
+        {
+          "name": "runHermes",
+          "startLine": 29,
+          "endLine": 41,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "runHermes",
+          "callee": "spawn",
+          "lineNumber": 31
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.stdout.setEncoding",
+          "lineNumber": 32
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.stderr.setEncoding",
+          "lineNumber": 33
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.stdout.on",
+          "lineNumber": 36
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.stderr.on",
+          "lineNumber": 37
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.on",
+          "lineNumber": 38
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.on",
+          "lineNumber": 39
+        },
+        {
+          "caller": "runHermes",
+          "callee": "resolve",
+          "lineNumber": 39
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/profiles/[slug].delete.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 48,
+      "functions": [
+        {
+          "name": "runHermes",
+          "startLine": 5,
+          "endLine": 17,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "runHermes",
+          "callee": "spawn",
+          "lineNumber": 7
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.stdout.setEncoding",
+          "lineNumber": 8
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.stderr.setEncoding",
+          "lineNumber": 9
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.stdout.on",
+          "lineNumber": 12
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.stderr.on",
+          "lineNumber": 13
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.on",
+          "lineNumber": 14
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.on",
+          "lineNumber": 15
+        },
+        {
+          "caller": "runHermes",
+          "callee": "resolve",
+          "lineNumber": 15
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/profiles/[slug].patch.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 88,
+      "nonEmptyLines": 75,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/profiles/[slug]/description-auto.post.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 17,
+      "nonEmptyLines": 16,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/profiles/[slug]/description.patch.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 13,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/profiles/[slug]/rename.post.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 101,
+      "nonEmptyLines": 89,
+      "functions": [
+        {
+          "name": "runHermes",
+          "startLine": 9,
+          "endLine": 21,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "runHermes",
+          "callee": "spawn",
+          "lineNumber": 11
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.stdout.setEncoding",
+          "lineNumber": 12
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.stderr.setEncoding",
+          "lineNumber": 13
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.stdout.on",
+          "lineNumber": 16
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.stderr.on",
+          "lineNumber": 17
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.on",
+          "lineNumber": 18
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.on",
+          "lineNumber": 19
+        },
+        {
+          "caller": "runHermes",
+          "callee": "resolve",
+          "lineNumber": 19
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/profiles/[slug]/soul.get.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 12,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/profiles/[slug]/soul.put.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 30,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/utils/avatar.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 56,
+      "functions": [
+        {
+          "name": "hashStr",
+          "startLine": 27,
+          "endLine": 34,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "pickColor",
+          "startLine": 36,
+          "endLine": 38,
+          "params": [
+            "slug"
+          ]
+        },
+        {
+          "name": "defaultSeed",
+          "startLine": 42,
+          "endLine": 44,
+          "params": [
+            "slug"
+          ]
+        },
+        {
+          "name": "avatarUrl",
+          "startLine": 46,
+          "endLine": 62,
+          "params": [
+            "opts"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "GESTURES",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "pickColor",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "defaultSeed",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "avatarUrl",
+          "line": 46,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "hashStr",
+          "callee": "s.charCodeAt",
+          "lineNumber": 30
+        },
+        {
+          "caller": "hashStr",
+          "callee": "Math.imul",
+          "lineNumber": 31
+        },
+        {
+          "caller": "pickColor",
+          "callee": "hashStr",
+          "lineNumber": 37
+        },
+        {
+          "caller": "avatarUrl",
+          "callee": "params.set",
+          "lineNumber": 58
+        },
+        {
+          "caller": "avatarUrl",
+          "callee": "params.set",
+          "lineNumber": 60
+        },
+        {
+          "caller": "avatarUrl",
+          "callee": "String",
+          "lineNumber": 60
+        },
+        {
+          "caller": "avatarUrl",
+          "callee": "params.toString",
+          "lineNumber": 61
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/utils/hermes.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "discoverProfiles",
+          "startLine": 13,
+          "endLine": 41,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "discoverProfiles",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "discoverProfiles",
+          "callee": "statSync",
+          "lineNumber": 17
+        },
+        {
+          "caller": "discoverProfiles",
+          "callee": "out.push",
+          "lineNumber": 18
+        },
+        {
+          "caller": "discoverProfiles",
+          "callee": "join",
+          "lineNumber": 23
+        },
+        {
+          "caller": "discoverProfiles",
+          "callee": "readdirSync",
+          "lineNumber": 26
+        },
+        {
+          "caller": "discoverProfiles",
+          "callee": "join",
+          "lineNumber": 32
+        },
+        {
+          "caller": "discoverProfiles",
+          "callee": "statSync(dir).isDirectory",
+          "lineNumber": 34
+        },
+        {
+          "caller": "discoverProfiles",
+          "callee": "statSync",
+          "lineNumber": 34
+        },
+        {
+          "caller": "discoverProfiles",
+          "callee": "out.push",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/utils/profile-description.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 45,
+      "functions": [
+        {
+          "name": "readProfileDescription",
+          "startLine": 14,
+          "endLine": 30,
+          "params": [
+            "slug"
+          ]
+        },
+        {
+          "name": "invalidateProfileDescription",
+          "startLine": 32,
+          "endLine": 34,
+          "params": [
+            "slug"
+          ]
+        },
+        {
+          "name": "setProfileDescription",
+          "startLine": 36,
+          "endLine": 43,
+          "params": [
+            "slug",
+            "text"
+          ]
+        },
+        {
+          "name": "autoProfileDescription",
+          "startLine": 45,
+          "endLine": 52,
+          "params": [
+            "slug"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "readProfileDescription",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "invalidateProfileDescription",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "setProfileDescription",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "autoProfileDescription",
+          "line": 45,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "readProfileDescription",
+          "callee": "cache.get",
+          "lineNumber": 15
+        },
+        {
+          "caller": "readProfileDescription",
+          "callee": "Date.now",
+          "lineNumber": 16
+        },
+        {
+          "caller": "readProfileDescription",
+          "callee": "runHermes",
+          "lineNumber": 18
+        },
+        {
+          "caller": "readProfileDescription",
+          "callee": "console.warn",
+          "lineNumber": 22
+        },
+        {
+          "caller": "readProfileDescription",
+          "callee": "stderr.trim",
+          "lineNumber": 22
+        },
+        {
+          "caller": "readProfileDescription",
+          "callee": "cache.set",
+          "lineNumber": 23
+        },
+        {
+          "caller": "readProfileDescription",
+          "callee": "Date.now",
+          "lineNumber": 23
+        },
+        {
+          "caller": "readProfileDescription",
+          "callee": "stdout.trim",
+          "lineNumber": 26
+        },
+        {
+          "caller": "readProfileDescription",
+          "callee": "NO_DESC_RE.test",
+          "lineNumber": 27
+        },
+        {
+          "caller": "readProfileDescription",
+          "callee": "cache.set",
+          "lineNumber": 28
+        },
+        {
+          "caller": "readProfileDescription",
+          "callee": "Date.now",
+          "lineNumber": 28
+        },
+        {
+          "caller": "invalidateProfileDescription",
+          "callee": "cache.delete",
+          "lineNumber": 33
+        },
+        {
+          "caller": "setProfileDescription",
+          "callee": "runHermes",
+          "lineNumber": 38
+        },
+        {
+          "caller": "setProfileDescription",
+          "callee": "stderr.trim",
+          "lineNumber": 40
+        },
+        {
+          "caller": "setProfileDescription",
+          "callee": "invalidateProfileDescription",
+          "lineNumber": 42
+        },
+        {
+          "caller": "autoProfileDescription",
+          "callee": "runHermes",
+          "lineNumber": 46
+        },
+        {
+          "caller": "autoProfileDescription",
+          "callee": "stderr.trim",
+          "lineNumber": 48
+        },
+        {
+          "caller": "autoProfileDescription",
+          "callee": "invalidateProfileDescription",
+          "lineNumber": 50
+        },
+        {
+          "caller": "autoProfileDescription",
+          "callee": "readProfileDescription",
+          "lineNumber": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/utils/roster.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 160,
+      "nonEmptyLines": 140,
+      "functions": [
+        {
+          "name": "extractRole",
+          "startLine": 21,
+          "endLine": 46,
+          "params": [
+            "soul"
+          ]
+        },
+        {
+          "name": "buildRosterMarkdown",
+          "startLine": 54,
+          "endLine": 73,
+          "params": []
+        },
+        {
+          "name": "safeUnlink",
+          "startLine": 75,
+          "endLine": 85,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "safeRmdir",
+          "startLine": 87,
+          "endLine": 97,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "cleanupLegacyRosterArtefacts",
+          "startLine": 107,
+          "endLine": 125,
+          "params": []
+        },
+        {
+          "name": "syncRoster",
+          "startLine": 132,
+          "endLine": 160,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "extractRole",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "buildRosterMarkdown",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "syncRoster",
+          "line": 132,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "extractRole",
+          "callee": "soul.split",
+          "lineNumber": 24
+        },
+        {
+          "caller": "extractRole",
+          "callee": "raw.match",
+          "lineNumber": 28
+        },
+        {
+          "caller": "extractRole",
+          "callee": "m[2].replace(/\\*\\*/g, '').trim().slice",
+          "lineNumber": 30
+        },
+        {
+          "caller": "extractRole",
+          "callee": "m[2].replace(/\\*\\*/g, '').trim",
+          "lineNumber": 30
+        },
+        {
+          "caller": "extractRole",
+          "callee": "m[2].replace",
+          "lineNumber": 30
+        },
+        {
+          "caller": "extractRole",
+          "callee": "raw.trim",
+          "lineNumber": 36
+        },
+        {
+          "caller": "extractRole",
+          "callee": "line.startsWith",
+          "lineNumber": 38
+        },
+        {
+          "caller": "extractRole",
+          "callee": "/^[_*].*[_*]$/.test",
+          "lineNumber": 39
+        },
+        {
+          "caller": "extractRole",
+          "callee": "/[a-z0-9].*[a-z0-9]/i.test",
+          "lineNumber": 39
+        },
+        {
+          "caller": "extractRole",
+          "callee": "line.replace",
+          "lineNumber": 39
+        },
+        {
+          "caller": "extractRole",
+          "callee": "line.startsWith",
+          "lineNumber": 40
+        },
+        {
+          "caller": "extractRole",
+          "callee": "/^who am i\\??$/i.test",
+          "lineNumber": 41
+        },
+        {
+          "caller": "extractRole",
+          "callee": "line.replace(/^\\*\\*|\\*\\*$/g, '').replace(/\\*\\*/g, '').slice",
+          "lineNumber": 42
+        },
+        {
+          "caller": "extractRole",
+          "callee": "line.replace(/^\\*\\*|\\*\\*$/g, '').replace",
+          "lineNumber": 42
+        },
+        {
+          "caller": "extractRole",
+          "callee": "line.replace",
+          "lineNumber": 42
+        },
+        {
+          "caller": "buildRosterMarkdown",
+          "callee": "useDb",
+          "lineNumber": 55
+        },
+        {
+          "caller": "buildRosterMarkdown",
+          "callee": "db\n    .prepare('SELECT * FROM profiles WHERE present = 1 AND active = 1 ORDER BY is_default DESC, slug ASC')\n    .all",
+          "lineNumber": 56
+        },
+        {
+          "caller": "buildRosterMarkdown",
+          "callee": "db\n    .prepare",
+          "lineNumber": 56
+        },
+        {
+          "caller": "buildRosterMarkdown",
+          "callee": "r.given_name?.trim",
+          "lineNumber": 66
+        },
+        {
+          "caller": "buildRosterMarkdown",
+          "callee": "readSoul",
+          "lineNumber": 67
+        },
+        {
+          "caller": "buildRosterMarkdown",
+          "callee": "extractRole",
+          "lineNumber": 68
+        },
+        {
+          "caller": "buildRosterMarkdown",
+          "callee": "lines.push",
+          "lineNumber": 70
+        },
+        {
+          "caller": "buildRosterMarkdown",
+          "callee": "lines.join",
+          "lineNumber": 72
+        },
+        {
+          "caller": "safeUnlink",
+          "callee": "existsSync",
+          "lineNumber": 77
+        },
+        {
+          "caller": "safeUnlink",
+          "callee": "unlinkSync",
+          "lineNumber": 78
+        },
+        {
+          "caller": "safeUnlink",
+          "callee": "console.error",
+          "lineNumber": 82
+        },
+        {
+          "caller": "safeRmdir",
+          "callee": "existsSync",
+          "lineNumber": 89
+        },
+        {
+          "caller": "safeRmdir",
+          "callee": "statSync(path).isDirectory",
+          "lineNumber": 89
+        },
+        {
+          "caller": "safeRmdir",
+          "callee": "statSync",
+          "lineNumber": 89
+        },
+        {
+          "caller": "safeRmdir",
+          "callee": "readdirSync",
+          "lineNumber": 89
+        },
+        {
+          "caller": "safeRmdir",
+          "callee": "rmdirSync",
+          "lineNumber": 90
+        },
+        {
+          "caller": "safeRmdir",
+          "callee": "console.error",
+          "lineNumber": 94
+        },
+        {
+          "caller": "cleanupLegacyRosterArtefacts",
+          "callee": "safeUnlink",
+          "lineNumber": 109
+        },
+        {
+          "caller": "cleanupLegacyRosterArtefacts",
+          "callee": "safeUnlink",
+          "lineNumber": 112
+        },
+        {
+          "caller": "cleanupLegacyRosterArtefacts",
+          "callee": "join",
+          "lineNumber": 112
+        },
+        {
+          "caller": "cleanupLegacyRosterArtefacts",
+          "callee": "safeRmdir",
+          "lineNumber": 113
+        },
+        {
+          "caller": "cleanupLegacyRosterArtefacts",
+          "callee": "useDb",
+          "lineNumber": 116
+        },
+        {
+          "caller": "cleanupLegacyRosterArtefacts",
+          "callee": "db\n    .prepare('SELECT hermes_dir FROM profiles WHERE present = 1')\n    .all",
+          "lineNumber": 117
+        },
+        {
+          "caller": "cleanupLegacyRosterArtefacts",
+          "callee": "db\n    .prepare",
+          "lineNumber": 117
+        },
+        {
+          "caller": "cleanupLegacyRosterArtefacts",
+          "callee": "join",
+          "lineNumber": 121
+        },
+        {
+          "caller": "cleanupLegacyRosterArtefacts",
+          "callee": "safeUnlink",
+          "lineNumber": 122
+        },
+        {
+          "caller": "cleanupLegacyRosterArtefacts",
+          "callee": "join",
+          "lineNumber": 122
+        },
+        {
+          "caller": "cleanupLegacyRosterArtefacts",
+          "callee": "safeRmdir",
+          "lineNumber": 123
+        },
+        {
+          "caller": "syncRoster",
+          "callee": "cleanupLegacyRosterArtefacts",
+          "lineNumber": 133
+        },
+        {
+          "caller": "syncRoster",
+          "callee": "useDb",
+          "lineNumber": 135
+        },
+        {
+          "caller": "syncRoster",
+          "callee": "db\n    .prepare('SELECT hermes_dir FROM profiles WHERE present = 1')\n    .all",
+          "lineNumber": 136
+        },
+        {
+          "caller": "syncRoster",
+          "callee": "db\n    .prepare",
+          "lineNumber": 136
+        },
+        {
+          "caller": "syncRoster",
+          "callee": "syncManagedAgentsBlock",
+          "lineNumber": 141
+        },
+        {
+          "caller": "syncRoster",
+          "callee": "console.error",
+          "lineNumber": 143
+        },
+        {
+          "caller": "syncRoster",
+          "callee": "(async () => {\n    const { ensureKanbanSymlinks } = await import('./kanban-symlinks')\n    try {\n      const { updated } = ensureKanbanSymlinks()\n      if (updated.length > 0) {\n        console.log(`[kanban-symlinks] refreshed for: ${updated.join(', ')}`)\n      }\n    } catch (e) {\n      console.error('[kanban-symlinks] sync failed:', (e as Error).message)\n    }\n  })",
+          "lineNumber": 149
+        },
+        {
+          "caller": "syncRoster",
+          "callee": "import",
+          "lineNumber": 150
+        },
+        {
+          "caller": "syncRoster",
+          "callee": "ensureKanbanSymlinks",
+          "lineNumber": 152
+        },
+        {
+          "caller": "syncRoster",
+          "callee": "console.log",
+          "lineNumber": 154
+        },
+        {
+          "caller": "syncRoster",
+          "callee": "updated.join",
+          "lineNumber": 154
+        },
+        {
+          "caller": "syncRoster",
+          "callee": "console.error",
+          "lineNumber": 157
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 3,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/utils/soul.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 29,
+      "functions": [
+        {
+          "name": "soulPath",
+          "startLine": 8,
+          "endLine": 10,
+          "params": [
+            "profileDir"
+          ]
+        },
+        {
+          "name": "readSoul",
+          "startLine": 12,
+          "endLine": 16,
+          "params": [
+            "profileDir"
+          ]
+        },
+        {
+          "name": "writeSoul",
+          "startLine": 18,
+          "endLine": 33,
+          "params": [
+            "profileDir",
+            "contents"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "readSoul",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "writeSoul",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "soulPath",
+          "callee": "join",
+          "lineNumber": 9
+        },
+        {
+          "caller": "readSoul",
+          "callee": "soulPath",
+          "lineNumber": 13
+        },
+        {
+          "caller": "readSoul",
+          "callee": "existsSync",
+          "lineNumber": 14
+        },
+        {
+          "caller": "readSoul",
+          "callee": "readFileSync",
+          "lineNumber": 15
+        },
+        {
+          "caller": "writeSoul",
+          "callee": "Buffer.byteLength",
+          "lineNumber": 19
+        },
+        {
+          "caller": "writeSoul",
+          "callee": "soulPath",
+          "lineNumber": 22
+        },
+        {
+          "caller": "writeSoul",
+          "callee": "Date.now",
+          "lineNumber": 23
+        },
+        {
+          "caller": "writeSoul",
+          "callee": "writeFileSync",
+          "lineNumber": 25
+        },
+        {
+          "caller": "writeSoul",
+          "callee": "renameSync",
+          "lineNumber": 26
+        },
+        {
+          "caller": "writeSoul",
+          "callee": "unlinkSync",
+          "lineNumber": 29
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,409 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 5,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "server/api/profiles/[slug]/skills.get.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 42,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/profiles/[slug]/skills.put.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 25,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/skills.get.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 25,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/plugins/skills-repair.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 35,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/utils/skills.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 145,
+      "nonEmptyLines": 125,
+      "functions": [
+        {
+          "name": "readFrontmatter",
+          "startLine": 24,
+          "endLine": 34,
+          "params": [
+            "file"
+          ]
+        },
+        {
+          "name": "walkSkills",
+          "startLine": 36,
+          "endLine": 75,
+          "params": [
+            "root",
+            "source"
+          ]
+        },
+        {
+          "name": "listGlobalSkills",
+          "startLine": 77,
+          "endLine": 82,
+          "params": []
+        },
+        {
+          "name": "listProfileSkills",
+          "startLine": 84,
+          "endLine": 86,
+          "params": [
+            "profileDir"
+          ]
+        },
+        {
+          "name": "profileConfigPath",
+          "startLine": 88,
+          "endLine": 90,
+          "params": [
+            "profileDir"
+          ]
+        },
+        {
+          "name": "getDisabledSkills",
+          "startLine": 92,
+          "endLine": 104,
+          "params": [
+            "profileDir"
+          ]
+        },
+        {
+          "name": "setDisabledSkills",
+          "startLine": 116,
+          "endLine": 145,
+          "params": [
+            "profileDir",
+            "disabled"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "listGlobalSkills",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "listProfileSkills",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "getDisabledSkills",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "setDisabledSkills",
+          "line": 116,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "readFrontmatter",
+          "callee": "readFileSync(file, 'utf8').slice",
+          "lineNumber": 26
+        },
+        {
+          "caller": "readFrontmatter",
+          "callee": "readFileSync",
+          "lineNumber": 26
+        },
+        {
+          "caller": "readFrontmatter",
+          "callee": "head.match",
+          "lineNumber": 27
+        },
+        {
+          "caller": "readFrontmatter",
+          "callee": "parseYaml",
+          "lineNumber": 29
+        },
+        {
+          "caller": "walkSkills",
+          "callee": "existsSync",
+          "lineNumber": 37
+        },
+        {
+          "caller": "visit",
+          "callee": "readdirSync",
+          "lineNumber": 44
+        },
+        {
+          "caller": "visit",
+          "callee": "join",
+          "lineNumber": 49
+        },
+        {
+          "caller": "visit",
+          "callee": "existsSync",
+          "lineNumber": 50
+        },
+        {
+          "caller": "visit",
+          "callee": "readFrontmatter",
+          "lineNumber": 51
+        },
+        {
+          "caller": "visit",
+          "callee": "relative",
+          "lineNumber": 52
+        },
+        {
+          "caller": "visit",
+          "callee": "rel.split",
+          "lineNumber": 53
+        },
+        {
+          "caller": "visit",
+          "callee": "(fm?.name?.trim() || parts[parts.length - 1] || rel).slice",
+          "lineNumber": 54
+        },
+        {
+          "caller": "visit",
+          "callee": "fm?.name?.trim",
+          "lineNumber": 54
+        },
+        {
+          "caller": "visit",
+          "callee": "parts.slice(0, -1).join",
+          "lineNumber": 55
+        },
+        {
+          "caller": "visit",
+          "callee": "parts.slice",
+          "lineNumber": 55
+        },
+        {
+          "caller": "visit",
+          "callee": "fm?.description?.trim",
+          "lineNumber": 56
+        },
+        {
+          "caller": "visit",
+          "callee": "out.push",
+          "lineNumber": 57
+        },
+        {
+          "caller": "visit",
+          "callee": "entry.startsWith",
+          "lineNumber": 63
+        },
+        {
+          "caller": "visit",
+          "callee": "join",
+          "lineNumber": 64
+        },
+        {
+          "caller": "visit",
+          "callee": "statSync(full).isDirectory",
+          "lineNumber": 66
+        },
+        {
+          "caller": "visit",
+          "callee": "statSync",
+          "lineNumber": 66
+        },
+        {
+          "caller": "visit",
+          "callee": "visit",
+          "lineNumber": 66
+        },
+        {
+          "caller": "walkSkills",
+          "callee": "visit",
+          "lineNumber": 73
+        },
+        {
+          "caller": "listGlobalSkills",
+          "callee": "walkSkills",
+          "lineNumber": 79
+        },
+        {
+          "caller": "listGlobalSkills",
+          "callee": "join",
+          "lineNumber": 79
+        },
+        {
+          "caller": "listGlobalSkills",
+          "callee": "walkSkills",
+          "lineNumber": 80
+        },
+        {
+          "caller": "listGlobalSkills",
+          "callee": "join",
+          "lineNumber": 80
+        },
+        {
+          "caller": "listProfileSkills",
+          "callee": "walkSkills",
+          "lineNumber": 85
+        },
+        {
+          "caller": "listProfileSkills",
+          "callee": "join",
+          "lineNumber": 85
+        },
+        {
+          "caller": "profileConfigPath",
+          "callee": "join",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getDisabledSkills",
+          "callee": "profileConfigPath",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getDisabledSkills",
+          "callee": "existsSync",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getDisabledSkills",
+          "callee": "readFileSync",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getDisabledSkills",
+          "callee": "parseYaml",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getDisabledSkills",
+          "callee": "Array.isArray",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getDisabledSkills",
+          "callee": "disabled.filter",
+          "lineNumber": 100
+        },
+        {
+          "caller": "setDisabledSkills",
+          "callee": "profileConfigPath",
+          "lineNumber": 117
+        },
+        {
+          "caller": "setDisabledSkills",
+          "callee": "existsSync",
+          "lineNumber": 122
+        },
+        {
+          "caller": "setDisabledSkills",
+          "callee": "readFileSync",
+          "lineNumber": 122
+        },
+        {
+          "caller": "setDisabledSkills",
+          "callee": "parseYamlDocument",
+          "lineNumber": 123
+        },
+        {
+          "caller": "setDisabledSkills",
+          "callee": "[...new Set(disabled.filter(s => !PROTECTED_SKILLS.has(s)))].sort",
+          "lineNumber": 125
+        },
+        {
+          "caller": "setDisabledSkills",
+          "callee": "disabled.filter",
+          "lineNumber": 125
+        },
+        {
+          "caller": "setDisabledSkills",
+          "callee": "PROTECTED_SKILLS.has",
+          "lineNumber": 125
+        },
+        {
+          "caller": "setDisabledSkills",
+          "callee": "doc.has",
+          "lineNumber": 128
+        },
+        {
+          "caller": "setDisabledSkills",
+          "callee": "doc.set",
+          "lineNumber": 129
+        },
+        {
+          "caller": "setDisabledSkills",
+          "callee": "doc.setIn",
+          "lineNumber": 131
+        },
+        {
+          "caller": "setDisabledSkills",
+          "callee": "Date.now",
+          "lineNumber": 135
+        },
+        {
+          "caller": "setDisabledSkills",
+          "callee": "writeFileSync",
+          "lineNumber": 137
+        },
+        {
+          "caller": "setDisabledSkills",
+          "callee": "doc.toString",
+          "lineNumber": 137
+        },
+        {
+          "caller": "setDisabledSkills",
+          "callee": "renameSync",
+          "lineNumber": 138
+        },
+        {
+          "caller": "setDisabledSkills",
+          "callee": "unlinkSync",
+          "lineNumber": 141
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    }
+  ]
+}

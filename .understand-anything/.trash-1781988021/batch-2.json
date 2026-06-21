@@ -1,0 +1,773 @@
+{
+  "nodes": [
+    {
+      "id": "file:server/api/profiles/[slug]/agents.get.ts",
+      "type": "file",
+      "name": "agents.get.ts",
+      "filePath": "server/api/profiles/[slug]/agents.get.ts",
+      "summary": "Nitro api route handler for profiles/[slug]/agents.get with 2 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/api/profiles/[slug]/agents.put.ts",
+      "type": "file",
+      "name": "agents.put.ts",
+      "filePath": "server/api/profiles/[slug]/agents.put.ts",
+      "summary": "Nitro api route handler for profiles/[slug]/agents.put with 2 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/api/profiles/[slug]/mcp.get.ts",
+      "type": "file",
+      "name": "mcp.get.ts",
+      "filePath": "server/api/profiles/[slug]/mcp.get.ts",
+      "summary": "Nitro api route handler for profiles/[slug]/mcp.get with 2 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/api/profiles/[slug]/mcp/[name].delete.ts",
+      "type": "file",
+      "name": "[name].delete.ts",
+      "filePath": "server/api/profiles/[slug]/mcp/[name].delete.ts",
+      "summary": "Nitro api route handler for profiles/[slug]/mcp/[name].delete with 2 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/api/profiles/[slug]/tools.get.ts",
+      "type": "file",
+      "name": "tools.get.ts",
+      "filePath": "server/api/profiles/[slug]/tools.get.ts",
+      "summary": "Nitro api route handler for profiles/[slug]/tools.get with 2 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/api/profiles/[slug]/tools.put.ts",
+      "type": "file",
+      "name": "tools.put.ts",
+      "filePath": "server/api/profiles/[slug]/tools.put.ts",
+      "summary": "Nitro api route handler for profiles/[slug]/tools.put with 2 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/api/tools.get.ts",
+      "type": "file",
+      "name": "tools.get.ts",
+      "filePath": "server/api/tools.get.ts",
+      "summary": "Nitro api route handler for tools.get with 1 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/api/usage.get.ts",
+      "type": "file",
+      "name": "usage.get.ts",
+      "filePath": "server/api/usage.get.ts",
+      "summary": "Nitro api route handler for usage.get with 2 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/plugins/mission-cleanup.ts",
+      "type": "file",
+      "name": "mission-cleanup.ts",
+      "filePath": "server/plugins/mission-cleanup.ts",
+      "summary": "Nuxt/nitro server plugin mission-cleanup with 1 imports.",
+      "tags": [
+        "plugin",
+        "server",
+        "lifecycle",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/utils/agents.ts",
+      "type": "file",
+      "name": "agents.ts",
+      "filePath": "server/utils/agents.ts",
+      "summary": "Server-side utility module agents with 4 extracted functions.",
+      "tags": [
+        "utility",
+        "server",
+        "service",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/utils/agents.ts:readAgents",
+      "type": "function",
+      "name": "readAgents",
+      "filePath": "server/utils/agents.ts",
+      "lineRange": [
+        27,
+        36
+      ],
+      "summary": "Implements readAgents behavior inside server-side utility module agents.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/agents.ts:writeAgents",
+      "type": "function",
+      "name": "writeAgents",
+      "filePath": "server/utils/agents.ts",
+      "lineRange": [
+        38,
+        53
+      ],
+      "summary": "Implements writeAgents behavior inside server-side utility module agents.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/agents.ts:syncManagedAgentsBlock",
+      "type": "function",
+      "name": "syncManagedAgentsBlock",
+      "filePath": "server/utils/agents.ts",
+      "lineRange": [
+        85,
+        116
+      ],
+      "summary": "Implements syncManagedAgentsBlock behavior inside server-side utility module agents.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/utils/db.ts",
+      "type": "file",
+      "name": "db.ts",
+      "filePath": "server/utils/db.ts",
+      "summary": "Server-side utility module db with 1 extracted functions.",
+      "tags": [
+        "utility",
+        "server",
+        "service",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/utils/db.ts:useDb",
+      "type": "function",
+      "name": "useDb",
+      "filePath": "server/utils/db.ts",
+      "lineRange": [
+        7,
+        107
+      ],
+      "summary": "Provides the useDb composable or hook behavior for server-side utility module db.",
+      "tags": [
+        "function",
+        "exported",
+        "composable",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/utils/kanban-symlinks.ts",
+      "type": "file",
+      "name": "kanban-symlinks.ts",
+      "filePath": "server/utils/kanban-symlinks.ts",
+      "summary": "Server-side utility module kanban-symlinks with 3 extracted functions, 1 imports.",
+      "tags": [
+        "utility",
+        "server",
+        "service",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/utils/kanban-symlinks.ts:ensureSymlink",
+      "type": "function",
+      "name": "ensureSymlink",
+      "filePath": "server/utils/kanban-symlinks.ts",
+      "lineRange": [
+        28,
+        61
+      ],
+      "summary": "Implements ensureSymlink behavior inside server-side utility module kanban-symlinks.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/kanban-symlinks.ts:ensureKanbanSymlinks",
+      "type": "function",
+      "name": "ensureKanbanSymlinks",
+      "filePath": "server/utils/kanban-symlinks.ts",
+      "lineRange": [
+        72,
+        91
+      ],
+      "summary": "Implements ensureKanbanSymlinks behavior inside server-side utility module kanban-symlinks.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/utils/mcp.ts",
+      "type": "file",
+      "name": "mcp.ts",
+      "filePath": "server/utils/mcp.ts",
+      "summary": "Server-side utility module mcp with 4 extracted functions.",
+      "tags": [
+        "utility",
+        "server",
+        "service",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/utils/mcp.ts:readMcpMap",
+      "type": "function",
+      "name": "readMcpMap",
+      "filePath": "server/utils/mcp.ts",
+      "lineRange": [
+        31,
+        41
+      ],
+      "summary": "Implements readMcpMap behavior inside server-side utility module mcp.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/mcp.ts:listMcpServers",
+      "type": "function",
+      "name": "listMcpServers",
+      "filePath": "server/utils/mcp.ts",
+      "lineRange": [
+        43,
+        68
+      ],
+      "summary": "Lists McpServers for server-side utility module mcp.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/mcp.ts:removeMcpServer",
+      "type": "function",
+      "name": "removeMcpServer",
+      "filePath": "server/utils/mcp.ts",
+      "lineRange": [
+        70,
+        93
+      ],
+      "summary": "Implements removeMcpServer behavior inside server-side utility module mcp.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/utils/tokens.ts",
+      "type": "file",
+      "name": "tokens.ts",
+      "filePath": "server/utils/tokens.ts",
+      "summary": "Server-side utility module tokens with 2 extracted functions.",
+      "tags": [
+        "utility",
+        "server",
+        "service",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/utils/tokens.ts:getDb",
+      "type": "function",
+      "name": "getDb",
+      "filePath": "server/utils/tokens.ts",
+      "lineRange": [
+        49,
+        61
+      ],
+      "summary": "Retrieves or derives Db for server-side utility module tokens.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/tokens.ts:readTokenUsage",
+      "type": "function",
+      "name": "readTokenUsage",
+      "filePath": "server/utils/tokens.ts",
+      "lineRange": [
+        65,
+        122
+      ],
+      "summary": "Implements readTokenUsage behavior inside server-side utility module tokens.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/utils/tools.ts",
+      "type": "file",
+      "name": "tools.ts",
+      "filePath": "server/utils/tools.ts",
+      "summary": "Server-side utility module tools with 3 extracted functions.",
+      "tags": [
+        "utility",
+        "server",
+        "service",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/utils/tools.ts:runHermes",
+      "type": "function",
+      "name": "runHermes",
+      "filePath": "server/utils/tools.ts",
+      "lineRange": [
+        15,
+        27
+      ],
+      "summary": "Implements runHermes behavior inside server-side utility module tools.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/tools.ts:listTools",
+      "type": "function",
+      "name": "listTools",
+      "filePath": "server/utils/tools.ts",
+      "lineRange": [
+        38,
+        75
+      ],
+      "summary": "Lists Tools for server-side utility module tools.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/tools.ts:applyToolState",
+      "type": "function",
+      "name": "applyToolState",
+      "filePath": "server/utils/tools.ts",
+      "lineRange": [
+        77,
+        90
+      ],
+      "summary": "Implements applyToolState behavior inside server-side utility module tools.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:server/utils/agents.ts",
+      "target": "function:server/utils/agents.ts:readAgents",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/agents.ts",
+      "target": "function:server/utils/agents.ts:readAgents",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/agents.ts",
+      "target": "function:server/utils/agents.ts:writeAgents",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/agents.ts",
+      "target": "function:server/utils/agents.ts:writeAgents",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/agents.ts",
+      "target": "function:server/utils/agents.ts:syncManagedAgentsBlock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/agents.ts",
+      "target": "function:server/utils/agents.ts:syncManagedAgentsBlock",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/db.ts",
+      "target": "function:server/utils/db.ts:useDb",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/db.ts",
+      "target": "function:server/utils/db.ts:useDb",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/kanban-symlinks.ts",
+      "target": "function:server/utils/kanban-symlinks.ts:ensureSymlink",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/kanban-symlinks.ts",
+      "target": "function:server/utils/kanban-symlinks.ts:ensureKanbanSymlinks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/kanban-symlinks.ts",
+      "target": "function:server/utils/kanban-symlinks.ts:ensureKanbanSymlinks",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/mcp.ts",
+      "target": "function:server/utils/mcp.ts:readMcpMap",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mcp.ts",
+      "target": "function:server/utils/mcp.ts:listMcpServers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mcp.ts",
+      "target": "function:server/utils/mcp.ts:listMcpServers",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/mcp.ts",
+      "target": "function:server/utils/mcp.ts:removeMcpServer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mcp.ts",
+      "target": "function:server/utils/mcp.ts:removeMcpServer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/tokens.ts",
+      "target": "function:server/utils/tokens.ts:getDb",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/tokens.ts",
+      "target": "function:server/utils/tokens.ts:readTokenUsage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/tokens.ts",
+      "target": "function:server/utils/tokens.ts:readTokenUsage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/tools.ts",
+      "target": "function:server/utils/tools.ts:runHermes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/tools.ts",
+      "target": "function:server/utils/tools.ts:listTools",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/tools.ts",
+      "target": "function:server/utils/tools.ts:listTools",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/tools.ts",
+      "target": "function:server/utils/tools.ts:applyToolState",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/tools.ts",
+      "target": "function:server/utils/tools.ts:applyToolState",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/api/profiles/[slug]/agents.get.ts",
+      "target": "file:server/utils/agents.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/profiles/[slug]/agents.get.ts",
+      "target": "file:server/utils/db.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/profiles/[slug]/agents.put.ts",
+      "target": "file:server/utils/agents.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/profiles/[slug]/agents.put.ts",
+      "target": "file:server/utils/db.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/profiles/[slug]/mcp.get.ts",
+      "target": "file:server/utils/db.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/profiles/[slug]/mcp.get.ts",
+      "target": "file:server/utils/mcp.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/profiles/[slug]/mcp/[name].delete.ts",
+      "target": "file:server/utils/db.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/profiles/[slug]/mcp/[name].delete.ts",
+      "target": "file:server/utils/mcp.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/profiles/[slug]/tools.get.ts",
+      "target": "file:server/utils/db.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/profiles/[slug]/tools.get.ts",
+      "target": "file:server/utils/tools.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/profiles/[slug]/tools.put.ts",
+      "target": "file:server/utils/db.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/profiles/[slug]/tools.put.ts",
+      "target": "file:server/utils/tools.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/tools.get.ts",
+      "target": "file:server/utils/tools.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/usage.get.ts",
+      "target": "file:server/utils/db.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/usage.get.ts",
+      "target": "file:server/utils/tokens.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/plugins/mission-cleanup.ts",
+      "target": "file:server/utils/db.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/utils/kanban-symlinks.ts",
+      "target": "file:server/utils/db.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:server/utils/kanban-symlinks.ts:ensureKanbanSymlinks",
+      "target": "function:server/utils/kanban-symlinks.ts:ensureSymlink",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/mcp.ts:listMcpServers",
+      "target": "function:server/utils/mcp.ts:readMcpMap",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/tokens.ts:readTokenUsage",
+      "target": "function:server/utils/tokens.ts:getDb",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/tools.ts:listTools",
+      "target": "function:server/utils/tools.ts:runHermes",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/tools.ts:applyToolState",
+      "target": "function:server/utils/tools.ts:runHermes",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

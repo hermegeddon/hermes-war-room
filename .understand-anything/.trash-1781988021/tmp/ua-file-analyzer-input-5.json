@@ -1,0 +1,63 @@
+{
+  "projectRoot": "/home/openclaw/hermes-war-room",
+  "batchFiles": [
+    {
+      "path": "server/api/kanban/tasks/[id]/approve-and-retry.post.ts",
+      "language": "typescript",
+      "sizeLines": 126,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/orchestrators/[slug]/warmup.post.ts",
+      "language": "typescript",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/config.get.ts",
+      "language": "typescript",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/config.put.ts",
+      "language": "typescript",
+      "sizeLines": 66,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/orchestrator-acp.ts",
+      "language": "typescript",
+      "sizeLines": 407,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/profile-config.ts",
+      "language": "typescript",
+      "sizeLines": 233,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "server/api/kanban/tasks/[id]/approve-and-retry.post.ts": [
+      "server/utils/db.ts",
+      "server/utils/kanban.ts",
+      "server/utils/profile-config.ts"
+    ],
+    "server/api/orchestrators/[slug]/warmup.post.ts": [
+      "server/utils/db.ts",
+      "server/utils/orchestrator-acp.ts"
+    ],
+    "server/api/profiles/[slug]/config.get.ts": [
+      "server/utils/db.ts",
+      "server/utils/profile-config.ts"
+    ],
+    "server/api/profiles/[slug]/config.put.ts": [
+      "server/utils/db.ts",
+      "server/utils/orchestrator-acp.ts",
+      "server/utils/profile-config.ts"
+    ],
+    "server/utils/orchestrator-acp.ts": [],
+    "server/utils/profile-config.ts": []
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "nodes": [
+    {
+      "id": "config:i18n/locales/en.json",
+      "type": "config",
+      "name": "en.json",
+      "filePath": "i18n/locales/en.json",
+      "summary": "Json configuration with 20 documented sections/keys.",
+      "tags": [
+        "configuration",
+        "build-system",
+        "json"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "config:i18n/locales/es.json",
+      "type": "config",
+      "name": "es.json",
+      "filePath": "i18n/locales/es.json",
+      "summary": "Json configuration with 20 documented sections/keys.",
+      "tags": [
+        "configuration",
+        "build-system",
+        "json"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "config:i18n/locales/id.json",
+      "type": "config",
+      "name": "id.json",
+      "filePath": "i18n/locales/id.json",
+      "summary": "Json configuration with 18 documented sections/keys.",
+      "tags": [
+        "configuration",
+        "build-system",
+        "json"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:i18n/locales/en.json",
+      "target": "config:package.json",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:i18n/locales/en.json",
+      "target": "file:nuxt.config.ts",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:i18n/locales/es.json",
+      "target": "config:package.json",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:i18n/locales/es.json",
+      "target": "file:nuxt.config.ts",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:i18n/locales/id.json",
+      "target": "config:package.json",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:i18n/locales/id.json",
+      "target": "file:nuxt.config.ts",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

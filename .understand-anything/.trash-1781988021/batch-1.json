@@ -1,0 +1,2209 @@
+{
+  "nodes": [
+    {
+      "id": "file:server/api/kanban/tasks/[id]/decompose.post.ts",
+      "type": "file",
+      "name": "decompose.post.ts",
+      "filePath": "server/api/kanban/tasks/[id]/decompose.post.ts",
+      "summary": "Nitro api route handler for kanban/tasks/[id]/decompose.post with 1 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/api/kanban/tasks/[id]/specify.post.ts",
+      "type": "file",
+      "name": "specify.post.ts",
+      "filePath": "server/api/kanban/tasks/[id]/specify.post.ts",
+      "summary": "Nitro api route handler for kanban/tasks/[id]/specify.post with 1 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/api/missions.post.ts",
+      "type": "file",
+      "name": "missions.post.ts",
+      "filePath": "server/api/missions.post.ts",
+      "summary": "Nitro api route handler for missions.post with 6 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/api/missions/[id]/archive.post.ts",
+      "type": "file",
+      "name": "archive.post.ts",
+      "filePath": "server/api/missions/[id]/archive.post.ts",
+      "summary": "Nitro api route handler for missions/[id]/archive.post with 2 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/api/missions/[id]/index.get.ts",
+      "type": "file",
+      "name": "index.get.ts",
+      "filePath": "server/api/missions/[id]/index.get.ts",
+      "summary": "Nitro api route handler for missions/[id]/index.get with 1 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/api/missions/[id]/launch-triage.post.ts",
+      "type": "file",
+      "name": "launch-triage.post.ts",
+      "filePath": "server/api/missions/[id]/launch-triage.post.ts",
+      "summary": "Nitro api route handler for missions/[id]/launch-triage.post with 4 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/api/missions/[id]/messages.post.ts",
+      "type": "file",
+      "name": "messages.post.ts",
+      "filePath": "server/api/missions/[id]/messages.post.ts",
+      "summary": "Nitro api route handler for missions/[id]/messages.post with 2 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/api/missions/[id]/stream.get.ts",
+      "type": "file",
+      "name": "stream.get.ts",
+      "filePath": "server/api/missions/[id]/stream.get.ts",
+      "summary": "Nitro api route handler for missions/[id]/stream.get with 2 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/api/missions/active.get.ts",
+      "type": "file",
+      "name": "active.get.ts",
+      "filePath": "server/api/missions/active.get.ts",
+      "summary": "Nitro api route handler for missions/active.get with 1 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/api/missions/index.get.ts",
+      "type": "file",
+      "name": "index.get.ts",
+      "filePath": "server/api/missions/index.get.ts",
+      "summary": "Nitro api route handler for missions/index.get with 1 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/plugins/auto-nudge.ts",
+      "type": "file",
+      "name": "auto-nudge.ts",
+      "filePath": "server/plugins/auto-nudge.ts",
+      "summary": "Nuxt/nitro server plugin auto-nudge with 1 imports.",
+      "tags": [
+        "plugin",
+        "server",
+        "lifecycle",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/utils/auto-nudge.ts",
+      "type": "file",
+      "name": "auto-nudge.ts",
+      "filePath": "server/utils/auto-nudge.ts",
+      "summary": "Server-side utility module auto-nudge with 13 extracted functions, 9 imports.",
+      "tags": [
+        "utility",
+        "server",
+        "service",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:server/utils/auto-nudge.ts:addWatchedTasks",
+      "type": "function",
+      "name": "addWatchedTasks",
+      "filePath": "server/utils/auto-nudge.ts",
+      "lineRange": [
+        64,
+        90
+      ],
+      "summary": "Implements addWatchedTasks behavior inside server-side utility module auto-nudge.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/auto-nudge.ts:removeMission",
+      "type": "function",
+      "name": "removeMission",
+      "filePath": "server/utils/auto-nudge.ts",
+      "lineRange": [
+        93,
+        98
+      ],
+      "summary": "Implements removeMission behavior inside server-side utility module auto-nudge.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/auto-nudge.ts:loadWatchedFromDb",
+      "type": "function",
+      "name": "loadWatchedFromDb",
+      "filePath": "server/utils/auto-nudge.ts",
+      "lineRange": [
+        105,
+        121
+      ],
+      "summary": "Implements loadWatchedFromDb behavior inside server-side utility module auto-nudge.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/auto-nudge.ts:registerCreatedTaskFromTool",
+      "type": "function",
+      "name": "registerCreatedTaskFromTool",
+      "filePath": "server/utils/auto-nudge.ts",
+      "lineRange": [
+        135,
+        164
+      ],
+      "summary": "Implements registerCreatedTaskFromTool behavior inside server-side utility module auto-nudge.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/auto-nudge.ts:buildNudgeText",
+      "type": "function",
+      "name": "buildNudgeText",
+      "filePath": "server/utils/auto-nudge.ts",
+      "lineRange": [
+        178,
+        207
+      ],
+      "summary": "Builds NudgeText used by server-side utility module auto-nudge.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/auto-nudge.ts:buildVisibleNudge",
+      "type": "function",
+      "name": "buildVisibleNudge",
+      "filePath": "server/utils/auto-nudge.ts",
+      "lineRange": [
+        213,
+        236
+      ],
+      "summary": "Builds VisibleNudge used by server-side utility module auto-nudge.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/auto-nudge.ts:runNudgeTurn",
+      "type": "function",
+      "name": "runNudgeTurn",
+      "filePath": "server/utils/auto-nudge.ts",
+      "lineRange": [
+        244,
+        311
+      ],
+      "summary": "Implements runNudgeTurn behavior inside server-side utility module auto-nudge.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/utils/auto-nudge.ts:scheduleNudge",
+      "type": "function",
+      "name": "scheduleNudge",
+      "filePath": "server/utils/auto-nudge.ts",
+      "lineRange": [
+        314,
+        332
+      ],
+      "summary": "Implements scheduleNudge behavior inside server-side utility module auto-nudge.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/auto-nudge.ts:checkAll",
+      "type": "function",
+      "name": "checkAll",
+      "filePath": "server/utils/auto-nudge.ts",
+      "lineRange": [
+        338,
+        395
+      ],
+      "summary": "Implements checkAll behavior inside server-side utility module auto-nudge.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/utils/auto-nudge.ts:startAutoNudge",
+      "type": "function",
+      "name": "startAutoNudge",
+      "filePath": "server/utils/auto-nudge.ts",
+      "lineRange": [
+        399,
+        407
+      ],
+      "summary": "Implements startAutoNudge behavior inside server-side utility module auto-nudge.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/auto-nudge.ts:stopAutoNudge",
+      "type": "function",
+      "name": "stopAutoNudge",
+      "filePath": "server/utils/auto-nudge.ts",
+      "lineRange": [
+        409,
+        412
+      ],
+      "summary": "Implements stopAutoNudge behavior inside server-side utility module auto-nudge.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/utils/mission-bus.ts",
+      "type": "file",
+      "name": "mission-bus.ts",
+      "filePath": "server/utils/mission-bus.ts",
+      "summary": "Server-side utility module mission-bus with 3 extracted functions.",
+      "tags": [
+        "utility",
+        "server",
+        "service",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/utils/mission-bus.ts:getMissionBus",
+      "type": "function",
+      "name": "getMissionBus",
+      "filePath": "server/utils/mission-bus.ts",
+      "lineRange": [
+        85,
+        93
+      ],
+      "summary": "Retrieves or derives MissionBus for server-side utility module mission-bus.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/mission-bus.ts:dropMissionBus",
+      "type": "function",
+      "name": "dropMissionBus",
+      "filePath": "server/utils/mission-bus.ts",
+      "lineRange": [
+        95,
+        97
+      ],
+      "summary": "Implements dropMissionBus behavior inside server-side utility module mission-bus.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/mission-bus.ts:emit",
+      "type": "function",
+      "name": "emit",
+      "filePath": "server/utils/mission-bus.ts",
+      "lineRange": [
+        99,
+        102
+      ],
+      "summary": "Implements emit behavior inside server-side utility module mission-bus.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/utils/mission-flight.ts",
+      "type": "file",
+      "name": "mission-flight.ts",
+      "filePath": "server/utils/mission-flight.ts",
+      "summary": "Server-side utility module mission-flight with 4 extracted functions.",
+      "tags": [
+        "utility",
+        "server",
+        "service",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/utils/mission-flight.ts:startFlight",
+      "type": "function",
+      "name": "startFlight",
+      "filePath": "server/utils/mission-flight.ts",
+      "lineRange": [
+        20,
+        24
+      ],
+      "summary": "Implements startFlight behavior inside server-side utility module mission-flight.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/mission-flight.ts:endFlight",
+      "type": "function",
+      "name": "endFlight",
+      "filePath": "server/utils/mission-flight.ts",
+      "lineRange": [
+        26,
+        28
+      ],
+      "summary": "Implements endFlight behavior inside server-side utility module mission-flight.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/mission-flight.ts:getFlight",
+      "type": "function",
+      "name": "getFlight",
+      "filePath": "server/utils/mission-flight.ts",
+      "lineRange": [
+        30,
+        32
+      ],
+      "summary": "Retrieves or derives Flight for server-side utility module mission-flight.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/mission-flight.ts:isInFlight",
+      "type": "function",
+      "name": "isInFlight",
+      "filePath": "server/utils/mission-flight.ts",
+      "lineRange": [
+        34,
+        36
+      ],
+      "summary": "Implements isInFlight behavior inside server-side utility module mission-flight.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/utils/mission-lock.ts",
+      "type": "file",
+      "name": "mission-lock.ts",
+      "filePath": "server/utils/mission-lock.ts",
+      "summary": "Server-side utility module mission-lock with 1 extracted functions.",
+      "tags": [
+        "utility",
+        "server",
+        "service",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/mission-lock.ts:withMissionLock",
+      "type": "function",
+      "name": "withMissionLock",
+      "filePath": "server/utils/mission-lock.ts",
+      "lineRange": [
+        17,
+        22
+      ],
+      "summary": "Implements withMissionLock behavior inside server-side utility module mission-lock.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/utils/mission-turn.ts",
+      "type": "file",
+      "name": "mission-turn.ts",
+      "filePath": "server/utils/mission-turn.ts",
+      "summary": "Server-side utility module mission-turn with 10 extracted functions, 10 imports.",
+      "tags": [
+        "utility",
+        "server",
+        "service",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:server/utils/mission-turn.ts:extractToolText",
+      "type": "function",
+      "name": "extractToolText",
+      "filePath": "server/utils/mission-turn.ts",
+      "lineRange": [
+        62,
+        79
+      ],
+      "summary": "Implements extractToolText behavior inside server-side utility module mission-turn.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/mission-turn.ts:extractText",
+      "type": "function",
+      "name": "extractText",
+      "filePath": "server/utils/mission-turn.ts",
+      "lineRange": [
+        81,
+        91
+      ],
+      "summary": "Implements extractText behavior inside server-side utility module mission-turn.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/mission-turn.ts:buildOrchestratorPreambleRefine",
+      "type": "function",
+      "name": "buildOrchestratorPreambleRefine",
+      "filePath": "server/utils/mission-turn.ts",
+      "lineRange": [
+        109,
+        144
+      ],
+      "summary": "Builds OrchestratorPreambleRefine used by server-side utility module mission-turn.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/mission-turn.ts:buildOrchestratorPreambleRefineFollowup",
+      "type": "function",
+      "name": "buildOrchestratorPreambleRefineFollowup",
+      "filePath": "server/utils/mission-turn.ts",
+      "lineRange": [
+        152,
+        170
+      ],
+      "summary": "Builds OrchestratorPreambleRefineFollowup used by server-side utility module mission-turn.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/mission-turn.ts:buildOrchestratorPreambleSupervisor",
+      "type": "function",
+      "name": "buildOrchestratorPreambleSupervisor",
+      "filePath": "server/utils/mission-turn.ts",
+      "lineRange": [
+        180,
+        196
+      ],
+      "summary": "Builds OrchestratorPreambleSupervisor used by server-side utility module mission-turn.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/mission-turn.ts:runMissionTurn",
+      "type": "function",
+      "name": "runMissionTurn",
+      "filePath": "server/utils/mission-turn.ts",
+      "lineRange": [
+        206,
+        208
+      ],
+      "summary": "Implements runMissionTurn behavior inside server-side utility module mission-turn.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/mission-turn.ts:runMissionTurnLocked",
+      "type": "function",
+      "name": "runMissionTurnLocked",
+      "filePath": "server/utils/mission-turn.ts",
+      "lineRange": [
+        210,
+        446
+      ],
+      "summary": "Implements runMissionTurnLocked behavior inside server-side utility module mission-turn.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:server/utils/mission.ts",
+      "type": "file",
+      "name": "mission.ts",
+      "filePath": "server/utils/mission.ts",
+      "summary": "Server-side utility module mission with 14 extracted functions, 1 imports.",
+      "tags": [
+        "utility",
+        "server",
+        "service",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/utils/mission.ts:serializeMission",
+      "type": "function",
+      "name": "serializeMission",
+      "filePath": "server/utils/mission.ts",
+      "lineRange": [
+        12,
+        42
+      ],
+      "summary": "Implements serializeMission behavior inside server-side utility module mission.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/mission.ts:summarizeTitle",
+      "type": "function",
+      "name": "summarizeTitle",
+      "filePath": "server/utils/mission.ts",
+      "lineRange": [
+        44,
+        47
+      ],
+      "summary": "Implements summarizeTitle behavior inside server-side utility module mission.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/mission.ts:getActiveMission",
+      "type": "function",
+      "name": "getActiveMission",
+      "filePath": "server/utils/mission.ts",
+      "lineRange": [
+        49,
+        58
+      ],
+      "summary": "Retrieves or derives ActiveMission for server-side utility module mission.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/mission.ts:getMission",
+      "type": "function",
+      "name": "getMission",
+      "filePath": "server/utils/mission.ts",
+      "lineRange": [
+        60,
+        64
+      ],
+      "summary": "Retrieves or derives Mission for server-side utility module mission.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/mission.ts:listMessages",
+      "type": "function",
+      "name": "listMessages",
+      "filePath": "server/utils/mission.ts",
+      "lineRange": [
+        66,
+        71
+      ],
+      "summary": "Lists Messages for server-side utility module mission.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/mission.ts:createMission",
+      "type": "function",
+      "name": "createMission",
+      "filePath": "server/utils/mission.ts",
+      "lineRange": [
+        75,
+        113
+      ],
+      "summary": "Creates Mission for server-side utility module mission.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/mission.ts:setAcpSessionId",
+      "type": "function",
+      "name": "setAcpSessionId",
+      "filePath": "server/utils/mission.ts",
+      "lineRange": [
+        115,
+        118
+      ],
+      "summary": "Implements setAcpSessionId behavior inside server-side utility module mission.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/mission.ts:setLatestTriageDraft",
+      "type": "function",
+      "name": "setLatestTriageDraft",
+      "filePath": "server/utils/mission.ts",
+      "lineRange": [
+        125,
+        132
+      ],
+      "summary": "Implements setLatestTriageDraft behavior inside server-side utility module mission.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/mission.ts:setTriageTaskId",
+      "type": "function",
+      "name": "setTriageTaskId",
+      "filePath": "server/utils/mission.ts",
+      "lineRange": [
+        135,
+        139
+      ],
+      "summary": "Implements setTriageTaskId behavior inside server-side utility module mission.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/mission.ts:appendMessage",
+      "type": "function",
+      "name": "appendMessage",
+      "filePath": "server/utils/mission.ts",
+      "lineRange": [
+        141,
+        157
+      ],
+      "summary": "Implements appendMessage behavior inside server-side utility module mission.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/mission.ts:updateMessage",
+      "type": "function",
+      "name": "updateMessage",
+      "filePath": "server/utils/mission.ts",
+      "lineRange": [
+        159,
+        162
+      ],
+      "summary": "Implements updateMessage behavior inside server-side utility module mission.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/mission.ts:archiveMission",
+      "type": "function",
+      "name": "archiveMission",
+      "filePath": "server/utils/mission.ts",
+      "lineRange": [
+        164,
+        167
+      ],
+      "summary": "Implements archiveMission behavior inside server-side utility module mission.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/mission.ts:listMissions",
+      "type": "function",
+      "name": "listMissions",
+      "filePath": "server/utils/mission.ts",
+      "lineRange": [
+        173,
+        198
+      ],
+      "summary": "Lists Missions for server-side utility module mission.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/mission.ts:countMissions",
+      "type": "function",
+      "name": "countMissions",
+      "filePath": "server/utils/mission.ts",
+      "lineRange": [
+        201,
+        218
+      ],
+      "summary": "Implements countMissions behavior inside server-side utility module mission.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/utils/triage.ts",
+      "type": "file",
+      "name": "triage.ts",
+      "filePath": "server/utils/triage.ts",
+      "summary": "Server-side utility module triage with 12 extracted functions, 2 imports.",
+      "tags": [
+        "utility",
+        "server",
+        "service",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:server/utils/triage.ts:runHermes",
+      "type": "function",
+      "name": "runHermes",
+      "filePath": "server/utils/triage.ts",
+      "lineRange": [
+        17,
+        33
+      ],
+      "summary": "Implements runHermes behavior inside server-side utility module triage.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/triage.ts:parseKanbanJson",
+      "type": "function",
+      "name": "parseKanbanJson",
+      "filePath": "server/utils/triage.ts",
+      "lineRange": [
+        40,
+        49
+      ],
+      "summary": "Implements parseKanbanJson behavior inside server-side utility module triage.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/triage.ts:normalizeTaskIds",
+      "type": "function",
+      "name": "normalizeTaskIds",
+      "filePath": "server/utils/triage.ts",
+      "lineRange": [
+        76,
+        85
+      ],
+      "summary": "Implements normalizeTaskIds behavior inside server-side utility module triage.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/triage.ts:decomposeResultFromParsed",
+      "type": "function",
+      "name": "decomposeResultFromParsed",
+      "filePath": "server/utils/triage.ts",
+      "lineRange": [
+        97,
+        118
+      ],
+      "summary": "Implements decomposeResultFromParsed behavior inside server-side utility module triage.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/triage.ts:recoverDecomposeFromKanbanState",
+      "type": "function",
+      "name": "recoverDecomposeFromKanbanState",
+      "filePath": "server/utils/triage.ts",
+      "lineRange": [
+        128,
+        174
+      ],
+      "summary": "Implements recoverDecomposeFromKanbanState behavior inside server-side utility module triage.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/triage.ts:createTriageTask",
+      "type": "function",
+      "name": "createTriageTask",
+      "filePath": "server/utils/triage.ts",
+      "lineRange": [
+        189,
+        216
+      ],
+      "summary": "Creates TriageTask for server-side utility module triage.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/triage.ts:decomposeTask",
+      "type": "function",
+      "name": "decomposeTask",
+      "filePath": "server/utils/triage.ts",
+      "lineRange": [
+        222,
+        246
+      ],
+      "summary": "Implements decomposeTask behavior inside server-side utility module triage.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/triage.ts:specifyTask",
+      "type": "function",
+      "name": "specifyTask",
+      "filePath": "server/utils/triage.ts",
+      "lineRange": [
+        252,
+        272
+      ],
+      "summary": "Implements specifyTask behavior inside server-side utility module triage.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/triage.ts:launchTriage",
+      "type": "function",
+      "name": "launchTriage",
+      "filePath": "server/utils/triage.ts",
+      "lineRange": [
+        279,
+        303
+      ],
+      "summary": "Implements launchTriage behavior inside server-side utility module triage.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/triage.ts:extractTriageDraft",
+      "type": "function",
+      "name": "extractTriageDraft",
+      "filePath": "server/utils/triage.ts",
+      "lineRange": [
+        356,
+        394
+      ],
+      "summary": "Implements extractTriageDraft behavior inside server-side utility module triage.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:server/utils/auto-nudge.ts",
+      "target": "function:server/utils/auto-nudge.ts:addWatchedTasks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/auto-nudge.ts",
+      "target": "function:server/utils/auto-nudge.ts:addWatchedTasks",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/auto-nudge.ts",
+      "target": "function:server/utils/auto-nudge.ts:removeMission",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/auto-nudge.ts",
+      "target": "function:server/utils/auto-nudge.ts:removeMission",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/auto-nudge.ts",
+      "target": "function:server/utils/auto-nudge.ts:loadWatchedFromDb",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/auto-nudge.ts",
+      "target": "function:server/utils/auto-nudge.ts:loadWatchedFromDb",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/auto-nudge.ts",
+      "target": "function:server/utils/auto-nudge.ts:registerCreatedTaskFromTool",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/auto-nudge.ts",
+      "target": "function:server/utils/auto-nudge.ts:registerCreatedTaskFromTool",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/auto-nudge.ts",
+      "target": "function:server/utils/auto-nudge.ts:buildNudgeText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/auto-nudge.ts",
+      "target": "function:server/utils/auto-nudge.ts:buildVisibleNudge",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/auto-nudge.ts",
+      "target": "function:server/utils/auto-nudge.ts:runNudgeTurn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/auto-nudge.ts",
+      "target": "function:server/utils/auto-nudge.ts:scheduleNudge",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/auto-nudge.ts",
+      "target": "function:server/utils/auto-nudge.ts:checkAll",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/auto-nudge.ts",
+      "target": "function:server/utils/auto-nudge.ts:startAutoNudge",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/auto-nudge.ts",
+      "target": "function:server/utils/auto-nudge.ts:startAutoNudge",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/auto-nudge.ts",
+      "target": "function:server/utils/auto-nudge.ts:stopAutoNudge",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/auto-nudge.ts",
+      "target": "function:server/utils/auto-nudge.ts:stopAutoNudge",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/mission-bus.ts",
+      "target": "function:server/utils/mission-bus.ts:getMissionBus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission-bus.ts",
+      "target": "function:server/utils/mission-bus.ts:getMissionBus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/mission-bus.ts",
+      "target": "function:server/utils/mission-bus.ts:dropMissionBus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission-bus.ts",
+      "target": "function:server/utils/mission-bus.ts:dropMissionBus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/mission-bus.ts",
+      "target": "function:server/utils/mission-bus.ts:emit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission-bus.ts",
+      "target": "function:server/utils/mission-bus.ts:emit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/mission-flight.ts",
+      "target": "function:server/utils/mission-flight.ts:startFlight",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission-flight.ts",
+      "target": "function:server/utils/mission-flight.ts:startFlight",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/mission-flight.ts",
+      "target": "function:server/utils/mission-flight.ts:endFlight",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission-flight.ts",
+      "target": "function:server/utils/mission-flight.ts:endFlight",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/mission-flight.ts",
+      "target": "function:server/utils/mission-flight.ts:getFlight",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission-flight.ts",
+      "target": "function:server/utils/mission-flight.ts:getFlight",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/mission-flight.ts",
+      "target": "function:server/utils/mission-flight.ts:isInFlight",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission-flight.ts",
+      "target": "function:server/utils/mission-flight.ts:isInFlight",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/mission-lock.ts",
+      "target": "function:server/utils/mission-lock.ts:withMissionLock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission-lock.ts",
+      "target": "function:server/utils/mission-lock.ts:withMissionLock",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/mission-turn.ts",
+      "target": "function:server/utils/mission-turn.ts:extractToolText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission-turn.ts",
+      "target": "function:server/utils/mission-turn.ts:extractText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission-turn.ts",
+      "target": "function:server/utils/mission-turn.ts:buildOrchestratorPreambleRefine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission-turn.ts",
+      "target": "function:server/utils/mission-turn.ts:buildOrchestratorPreambleRefineFollowup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission-turn.ts",
+      "target": "function:server/utils/mission-turn.ts:buildOrchestratorPreambleSupervisor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission-turn.ts",
+      "target": "function:server/utils/mission-turn.ts:runMissionTurn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission-turn.ts",
+      "target": "function:server/utils/mission-turn.ts:runMissionTurn",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/mission-turn.ts",
+      "target": "function:server/utils/mission-turn.ts:runMissionTurnLocked",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:serializeMission",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:serializeMission",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:summarizeTitle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:summarizeTitle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:getActiveMission",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:getActiveMission",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:getMission",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:getMission",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:listMessages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:listMessages",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:createMission",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:createMission",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:setAcpSessionId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:setAcpSessionId",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:setLatestTriageDraft",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:setLatestTriageDraft",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:setTriageTaskId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:setTriageTaskId",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:appendMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:appendMessage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:updateMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:updateMessage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:archiveMission",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:archiveMission",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:listMissions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:listMissions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:countMissions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "function:server/utils/mission.ts:countMissions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/triage.ts",
+      "target": "function:server/utils/triage.ts:runHermes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/triage.ts",
+      "target": "function:server/utils/triage.ts:runHermes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/triage.ts",
+      "target": "function:server/utils/triage.ts:parseKanbanJson",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/triage.ts",
+      "target": "function:server/utils/triage.ts:parseKanbanJson",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/triage.ts",
+      "target": "function:server/utils/triage.ts:normalizeTaskIds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/triage.ts",
+      "target": "function:server/utils/triage.ts:decomposeResultFromParsed",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/triage.ts",
+      "target": "function:server/utils/triage.ts:decomposeResultFromParsed",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/triage.ts",
+      "target": "function:server/utils/triage.ts:recoverDecomposeFromKanbanState",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/triage.ts",
+      "target": "function:server/utils/triage.ts:recoverDecomposeFromKanbanState",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/triage.ts",
+      "target": "function:server/utils/triage.ts:createTriageTask",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/triage.ts",
+      "target": "function:server/utils/triage.ts:createTriageTask",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/triage.ts",
+      "target": "function:server/utils/triage.ts:decomposeTask",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/triage.ts",
+      "target": "function:server/utils/triage.ts:decomposeTask",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/triage.ts",
+      "target": "function:server/utils/triage.ts:specifyTask",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/triage.ts",
+      "target": "function:server/utils/triage.ts:specifyTask",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/triage.ts",
+      "target": "function:server/utils/triage.ts:launchTriage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/triage.ts",
+      "target": "function:server/utils/triage.ts:launchTriage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/triage.ts",
+      "target": "function:server/utils/triage.ts:extractTriageDraft",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/triage.ts",
+      "target": "function:server/utils/triage.ts:extractTriageDraft",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/api/kanban/tasks/[id]/decompose.post.ts",
+      "target": "file:server/utils/triage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/kanban/tasks/[id]/specify.post.ts",
+      "target": "file:server/utils/triage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/missions.post.ts",
+      "target": "file:server/utils/auto-nudge.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/missions.post.ts",
+      "target": "file:server/utils/db.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/missions.post.ts",
+      "target": "file:server/utils/mission-bus.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/missions.post.ts",
+      "target": "file:server/utils/mission-turn.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/missions.post.ts",
+      "target": "file:server/utils/mission.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/missions.post.ts",
+      "target": "file:server/utils/triage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/missions/[id]/archive.post.ts",
+      "target": "file:server/utils/auto-nudge.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/missions/[id]/archive.post.ts",
+      "target": "file:server/utils/mission.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/missions/[id]/index.get.ts",
+      "target": "file:server/utils/mission.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/missions/[id]/launch-triage.post.ts",
+      "target": "file:server/utils/auto-nudge.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/missions/[id]/launch-triage.post.ts",
+      "target": "file:server/utils/mission-bus.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/missions/[id]/launch-triage.post.ts",
+      "target": "file:server/utils/mission.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/missions/[id]/launch-triage.post.ts",
+      "target": "file:server/utils/triage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/missions/[id]/messages.post.ts",
+      "target": "file:server/utils/mission-turn.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/missions/[id]/messages.post.ts",
+      "target": "file:server/utils/mission.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/missions/[id]/stream.get.ts",
+      "target": "file:server/utils/mission-bus.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/missions/[id]/stream.get.ts",
+      "target": "file:server/utils/mission.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/missions/active.get.ts",
+      "target": "file:server/utils/mission.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/missions/index.get.ts",
+      "target": "file:server/utils/mission.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/plugins/auto-nudge.ts",
+      "target": "file:server/utils/auto-nudge.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/utils/auto-nudge.ts",
+      "target": "file:server/utils/db.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/utils/auto-nudge.ts",
+      "target": "file:server/utils/kanban.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/utils/auto-nudge.ts",
+      "target": "file:server/utils/mission-bus.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/utils/auto-nudge.ts",
+      "target": "file:server/utils/mission-flight.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/utils/auto-nudge.ts",
+      "target": "file:server/utils/mission-lock.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/utils/auto-nudge.ts",
+      "target": "file:server/utils/mission.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/utils/auto-nudge.ts",
+      "target": "file:server/utils/orchestrator-acp.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/utils/auto-nudge.ts",
+      "target": "file:server/utils/task-failure.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/utils/auto-nudge.ts",
+      "target": "file:server/utils/triage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:server/utils/auto-nudge.ts:registerCreatedTaskFromTool",
+      "target": "function:server/utils/auto-nudge.ts:addWatchedTasks",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/auto-nudge.ts:runNudgeTurn",
+      "target": "function:server/utils/auto-nudge.ts:buildVisibleNudge",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/auto-nudge.ts:runNudgeTurn",
+      "target": "function:server/utils/auto-nudge.ts:buildNudgeText",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/auto-nudge.ts:runNudgeTurn",
+      "target": "function:server/utils/auto-nudge.ts:registerCreatedTaskFromTool",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/auto-nudge.ts:scheduleNudge",
+      "target": "function:server/utils/auto-nudge.ts:runNudgeTurn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/auto-nudge.ts:checkAll",
+      "target": "function:server/utils/auto-nudge.ts:scheduleNudge",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/auto-nudge.ts:startAutoNudge",
+      "target": "function:server/utils/auto-nudge.ts:checkAll",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/mission-turn.ts",
+      "target": "file:server/utils/auto-nudge.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/utils/mission-turn.ts",
+      "target": "file:server/utils/db.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/utils/mission-turn.ts",
+      "target": "file:server/utils/kanban.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/utils/mission-turn.ts",
+      "target": "file:server/utils/mission-bus.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/utils/mission-turn.ts",
+      "target": "file:server/utils/mission-flight.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/utils/mission-turn.ts",
+      "target": "file:server/utils/mission-lock.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/utils/mission-turn.ts",
+      "target": "file:server/utils/mission.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/utils/mission-turn.ts",
+      "target": "file:server/utils/orchestrator-acp.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/utils/mission-turn.ts",
+      "target": "file:server/utils/roster.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/utils/mission-turn.ts",
+      "target": "file:server/utils/triage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:server/utils/mission-turn.ts:runMissionTurn",
+      "target": "function:server/utils/mission-turn.ts:runMissionTurnLocked",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/mission-turn.ts:runMissionTurnLocked",
+      "target": "function:server/utils/mission-turn.ts:buildOrchestratorPreambleSupervisor",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/mission-turn.ts:runMissionTurnLocked",
+      "target": "function:server/utils/mission-turn.ts:buildOrchestratorPreambleRefine",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/mission-turn.ts:runMissionTurnLocked",
+      "target": "function:server/utils/mission-turn.ts:buildOrchestratorPreambleRefineFollowup",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/mission-turn.ts:runMissionTurnLocked",
+      "target": "function:server/utils/mission-turn.ts:extractText",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/mission-turn.ts:runMissionTurnLocked",
+      "target": "function:server/utils/mission-turn.ts:extractToolText",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/mission.ts",
+      "target": "file:server/utils/db.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:server/utils/mission.ts:createMission",
+      "target": "function:server/utils/mission.ts:summarizeTitle",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/mission.ts:createMission",
+      "target": "function:server/utils/mission.ts:getMission",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/triage.ts",
+      "target": "file:server/utils/db.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/utils/triage.ts",
+      "target": "file:server/utils/kanban.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:server/utils/triage.ts:decomposeResultFromParsed",
+      "target": "function:server/utils/triage.ts:normalizeTaskIds",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/triage.ts:recoverDecomposeFromKanbanState",
+      "target": "function:server/utils/triage.ts:normalizeTaskIds",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/triage.ts:createTriageTask",
+      "target": "function:server/utils/triage.ts:runHermes",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/triage.ts:createTriageTask",
+      "target": "function:server/utils/triage.ts:parseKanbanJson",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/triage.ts:decomposeTask",
+      "target": "function:server/utils/triage.ts:runHermes",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/triage.ts:decomposeTask",
+      "target": "function:server/utils/triage.ts:parseKanbanJson",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/triage.ts:decomposeTask",
+      "target": "function:server/utils/triage.ts:decomposeResultFromParsed",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/triage.ts:decomposeTask",
+      "target": "function:server/utils/triage.ts:recoverDecomposeFromKanbanState",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/triage.ts:specifyTask",
+      "target": "function:server/utils/triage.ts:runHermes",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/triage.ts:specifyTask",
+      "target": "function:server/utils/triage.ts:parseKanbanJson",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/triage.ts:launchTriage",
+      "target": "function:server/utils/triage.ts:createTriageTask",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/triage.ts:launchTriage",
+      "target": "function:server/utils/triage.ts:decomposeTask",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

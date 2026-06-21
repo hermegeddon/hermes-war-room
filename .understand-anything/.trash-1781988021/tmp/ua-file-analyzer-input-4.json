@@ -1,0 +1,64 @@
+{
+  "projectRoot": "/home/openclaw/hermes-war-room",
+  "batchFiles": [
+    {
+      "path": "server/api/kanban/tasks.get.ts",
+      "language": "typescript",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/kanban/tasks/[id]/failure.get.ts",
+      "language": "typescript",
+      "sizeLines": 59,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/kanban/tasks/history.get.ts",
+      "language": "typescript",
+      "sizeLines": 52,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/kanban.ts",
+      "language": "typescript",
+      "sizeLines": 284,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/permission-extract.ts",
+      "language": "typescript",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/task-failure.ts",
+      "language": "typescript",
+      "sizeLines": 73,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "server/api/kanban/tasks.get.ts": [
+      "server/utils/db.ts",
+      "server/utils/kanban.ts"
+    ],
+    "server/api/kanban/tasks/[id]/failure.get.ts": [
+      "server/utils/kanban.ts",
+      "server/utils/permission-extract.ts",
+      "server/utils/task-failure.ts"
+    ],
+    "server/api/kanban/tasks/history.get.ts": [
+      "server/utils/db.ts",
+      "server/utils/kanban.ts"
+    ],
+    "server/utils/kanban.ts": [
+      "server/utils/permission-extract.ts",
+      "server/utils/task-failure.ts"
+    ],
+    "server/utils/permission-extract.ts": [],
+    "server/utils/task-failure.ts": [
+      "server/utils/kanban.ts"
+    ]
+  }
+}

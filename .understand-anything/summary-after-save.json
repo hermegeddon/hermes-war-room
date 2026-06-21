@@ -1,0 +1,64 @@
+{
+  "project": {
+    "name": "hermes-war-room",
+    "languages": [
+      "css",
+      "javascript",
+      "json",
+      "markdown",
+      "toml",
+      "typescript",
+      "unknown",
+      "vue",
+      "yaml"
+    ],
+    "frameworks": [
+      "GitHub Actions",
+      "Nuxt",
+      "Tailwind CSS"
+    ],
+    "description": "A browser dashboard on top of Hermes Agent multi-profile delegation and kanban systems, making agent fleets visible, legible, and directable from a single screen. Note: this project has over 100 source files; consider scoping analysis to a subdirectory for faster results.",
+    "analyzedAt": "2026-06-20T20:38:15Z",
+    "gitCommitHash": "ace973c3c1bf04e589f2800e4f20790decafd3ae"
+  },
+  "filesAnalyzed": 128,
+  "byCategory": {
+    "config": 11,
+    "infra": 3,
+    "code": 111,
+    "markup": 1,
+    "docs": 2
+  },
+  "nodeTypes": {
+    "file": 112,
+    "function": 146,
+    "class": 1,
+    "pipeline": 2,
+    "service": 1,
+    "config": 11,
+    "document": 2
+  },
+  "edgeTypes": {
+    "contains": 147,
+    "exports": 102,
+    "imports": 127,
+    "calls": 57,
+    "triggers": 4,
+    "deploys": 2,
+    "configures": 22,
+    "documents": 4,
+    "related": 28
+  },
+  "layers": [
+    "Frontend UI",
+    "Frontend State, Composables, and Types",
+    "Server API Routes",
+    "Server Orchestration Services",
+    "Project Configuration, Documentation, and Automation"
+  ],
+  "tourSteps": 8,
+  "reviewIssues": 0,
+  "reviewWarnings": 0,
+  "output": "/home/openclaw/hermes-war-room/.understand-anything/knowledge-graph.json",
+  "meta": "/home/openclaw/hermes-war-room/.understand-anything/meta.json"
+}

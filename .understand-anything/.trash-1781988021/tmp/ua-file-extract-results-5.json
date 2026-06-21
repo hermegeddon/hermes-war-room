@@ -1,0 +1,1045 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 6,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "server/api/kanban/tasks/[id]/approve-and-retry.post.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 126,
+      "nonEmptyLines": 115,
+      "functions": [
+        {
+          "name": "runHermes",
+          "startLine": 30,
+          "endLine": 42,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "runHermes",
+          "callee": "spawn",
+          "lineNumber": 32
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.stdout.setEncoding",
+          "lineNumber": 33
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.stderr.setEncoding",
+          "lineNumber": 34
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.stdout.on",
+          "lineNumber": 37
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.stderr.on",
+          "lineNumber": 38
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.on",
+          "lineNumber": 39
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.on",
+          "lineNumber": 40
+        },
+        {
+          "caller": "runHermes",
+          "callee": "resolve",
+          "lineNumber": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/orchestrators/[slug]/warmup.post.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 23,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/profiles/[slug]/config.get.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 12,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/profiles/[slug]/config.put.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 66,
+      "nonEmptyLines": 57,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/utils/orchestrator-acp.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 407,
+      "nonEmptyLines": 373,
+      "functions": [
+        {
+          "name": "normalizeAcpStdoutLine",
+          "startLine": 57,
+          "endLine": 87,
+          "params": [
+            "line"
+          ]
+        },
+        {
+          "name": "fixupAcpStdout",
+          "startLine": 89,
+          "endLine": 112,
+          "params": []
+        },
+        {
+          "name": "spawnEntry",
+          "startLine": 150,
+          "endLine": 243,
+          "params": [
+            "slug"
+          ]
+        },
+        {
+          "name": "getEntry",
+          "startLine": 245,
+          "endLine": 253,
+          "params": [
+            "slug"
+          ]
+        },
+        {
+          "name": "defaultCwd",
+          "startLine": 255,
+          "endLine": 259,
+          "params": []
+        },
+        {
+          "name": "restart",
+          "startLine": 268,
+          "endLine": 276,
+          "params": [
+            "slug"
+          ]
+        },
+        {
+          "name": "warmup",
+          "startLine": 283,
+          "endLine": 291,
+          "params": [
+            "slug"
+          ]
+        },
+        {
+          "name": "newSession",
+          "startLine": 293,
+          "endLine": 300,
+          "params": [
+            "slug",
+            "cwd"
+          ]
+        },
+        {
+          "name": "loadSession",
+          "startLine": 302,
+          "endLine": 309,
+          "params": [
+            "slug",
+            "sessionId",
+            "cwd"
+          ]
+        },
+        {
+          "name": "startPrompt",
+          "startLine": 332,
+          "endLine": 374,
+          "params": [
+            "opts"
+          ]
+        },
+        {
+          "name": "ensureReaper",
+          "startLine": 377,
+          "endLine": 394,
+          "params": []
+        },
+        {
+          "name": "shutdownAll",
+          "startLine": 397,
+          "endLine": 404,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "WarRoomClient",
+          "startLine": 131,
+          "endLine": 148,
+          "methods": [
+            "constructor",
+            "sessionUpdate",
+            "requestPermission"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "normalizeAcpStdoutLine",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "restart",
+          "line": 268,
+          "isDefault": false
+        },
+        {
+          "name": "warmup",
+          "line": 283,
+          "isDefault": false
+        },
+        {
+          "name": "newSession",
+          "line": 293,
+          "isDefault": false
+        },
+        {
+          "name": "loadSession",
+          "line": 302,
+          "isDefault": false
+        },
+        {
+          "name": "startPrompt",
+          "line": 332,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "normalizeAcpStdoutLine",
+          "callee": "JSON.parse",
+          "lineNumber": 59
+        },
+        {
+          "caller": "normalizeAcpStdoutLine",
+          "callee": "ACP_SDK_SESSION_UPDATE_KINDS.has",
+          "lineNumber": 63
+        },
+        {
+          "caller": "normalizeAcpStdoutLine",
+          "callee": "JSON.parse",
+          "lineNumber": 71
+        },
+        {
+          "caller": "normalizeAcpStdoutLine",
+          "callee": "Array.isArray",
+          "lineNumber": 74
+        },
+        {
+          "caller": "normalizeAcpStdoutLine",
+          "callee": "JSON.stringify",
+          "lineNumber": 83
+        },
+        {
+          "caller": "transform",
+          "callee": "chunk.toString",
+          "lineNumber": 93
+        },
+        {
+          "caller": "transform",
+          "callee": "buffer.indexOf",
+          "lineNumber": 94
+        },
+        {
+          "caller": "transform",
+          "callee": "buffer.slice",
+          "lineNumber": 96
+        },
+        {
+          "caller": "transform",
+          "callee": "buffer.slice",
+          "lineNumber": 97
+        },
+        {
+          "caller": "transform",
+          "callee": "normalizeAcpStdoutLine",
+          "lineNumber": 98
+        },
+        {
+          "caller": "transform",
+          "callee": "this.push",
+          "lineNumber": 99
+        },
+        {
+          "caller": "transform",
+          "callee": "buffer.indexOf",
+          "lineNumber": 100
+        },
+        {
+          "caller": "transform",
+          "callee": "cb",
+          "lineNumber": 102
+        },
+        {
+          "caller": "flush",
+          "callee": "normalizeAcpStdoutLine",
+          "lineNumber": 106
+        },
+        {
+          "caller": "flush",
+          "callee": "this.push",
+          "lineNumber": 107
+        },
+        {
+          "caller": "flush",
+          "callee": "cb",
+          "lineNumber": 109
+        },
+        {
+          "caller": "sessionUpdate",
+          "callee": "pool.get",
+          "lineNumber": 135
+        },
+        {
+          "caller": "sessionUpdate",
+          "callee": "Date.now",
+          "lineNumber": 137
+        },
+        {
+          "caller": "sessionUpdate",
+          "callee": "entry.sessionEmitters.get",
+          "lineNumber": 138
+        },
+        {
+          "caller": "sessionUpdate",
+          "callee": "emitter.emit",
+          "lineNumber": 139
+        },
+        {
+          "caller": "spawnEntry",
+          "callee": "spawn",
+          "lineNumber": 171
+        },
+        {
+          "caller": "spawnEntry",
+          "callee": "child.stderr?.setEncoding",
+          "lineNumber": 180
+        },
+        {
+          "caller": "spawnEntry",
+          "callee": "child.stderr?.on",
+          "lineNumber": 181
+        },
+        {
+          "caller": "spawnEntry",
+          "callee": "process.stderr.write",
+          "lineNumber": 183
+        },
+        {
+          "caller": "spawnEntry",
+          "callee": "child.on",
+          "lineNumber": 187
+        },
+        {
+          "caller": "spawnEntry",
+          "callee": "console.error",
+          "lineNumber": 188
+        },
+        {
+          "caller": "spawnEntry",
+          "callee": "pool.delete",
+          "lineNumber": 189
+        },
+        {
+          "caller": "spawnEntry",
+          "callee": "rejectEntry",
+          "lineNumber": 190
+        },
+        {
+          "caller": "spawnEntry",
+          "callee": "child.on",
+          "lineNumber": 192
+        },
+        {
+          "caller": "spawnEntry",
+          "callee": "console.error",
+          "lineNumber": 194
+        },
+        {
+          "caller": "spawnEntry",
+          "callee": "pool.delete",
+          "lineNumber": 195
+        },
+        {
+          "caller": "spawnEntry",
+          "callee": "child.kill",
+          "lineNumber": 199
+        },
+        {
+          "caller": "spawnEntry",
+          "callee": "rejectEntry",
+          "lineNumber": 200
+        },
+        {
+          "caller": "spawnEntry",
+          "callee": "child.stdout.pipe",
+          "lineNumber": 207
+        },
+        {
+          "caller": "spawnEntry",
+          "callee": "fixupAcpStdout",
+          "lineNumber": 207
+        },
+        {
+          "caller": "spawnEntry",
+          "callee": "Readable.toWeb",
+          "lineNumber": 208
+        },
+        {
+          "caller": "spawnEntry",
+          "callee": "Writable.toWeb",
+          "lineNumber": 209
+        },
+        {
+          "caller": "spawnEntry",
+          "callee": "ndJsonStream",
+          "lineNumber": 210
+        },
+        {
+          "caller": "spawnEntry",
+          "callee": "Date.now",
+          "lineNumber": 222
+        },
+        {
+          "caller": "spawnEntry",
+          "callee": "pool.set",
+          "lineNumber": 224
+        },
+        {
+          "caller": "spawnEntry",
+          "callee": "conn.initialize({\n      protocolVersion: PROTOCOL_VERSION,\n      clientCapabilities: {\n        fs: { readTextFile: false, writeTextFile: false },\n        terminal: false\n      }\n    }).then(() => {\n      entry.initialized = true\n      resolveEntry(entry)\n    }).catch",
+          "lineNumber": 226
+        },
+        {
+          "caller": "spawnEntry",
+          "callee": "conn.initialize({\n      protocolVersion: PROTOCOL_VERSION,\n      clientCapabilities: {\n        fs: { readTextFile: false, writeTextFile: false },\n        terminal: false\n      }\n    }).then",
+          "lineNumber": 226
+        },
+        {
+          "caller": "spawnEntry",
+          "callee": "conn.initialize",
+          "lineNumber": 226
+        },
+        {
+          "caller": "spawnEntry",
+          "callee": "resolveEntry",
+          "lineNumber": 234
+        },
+        {
+          "caller": "spawnEntry",
+          "callee": "child.kill",
+          "lineNumber": 237
+        },
+        {
+          "caller": "spawnEntry",
+          "callee": "pool.delete",
+          "lineNumber": 239
+        },
+        {
+          "caller": "spawnEntry",
+          "callee": "rejectEntry",
+          "lineNumber": 240
+        },
+        {
+          "caller": "getEntry",
+          "callee": "pool.get",
+          "lineNumber": 246
+        },
+        {
+          "caller": "getEntry",
+          "callee": "Date.now",
+          "lineNumber": 248
+        },
+        {
+          "caller": "getEntry",
+          "callee": "pool.delete",
+          "lineNumber": 251
+        },
+        {
+          "caller": "getEntry",
+          "callee": "spawnEntry",
+          "lineNumber": 252
+        },
+        {
+          "caller": "defaultCwd",
+          "callee": "homedir",
+          "lineNumber": 258
+        },
+        {
+          "caller": "restart",
+          "callee": "pool.get",
+          "lineNumber": 269
+        },
+        {
+          "caller": "restart",
+          "callee": "entry.child.kill",
+          "lineNumber": 272
+        },
+        {
+          "caller": "restart",
+          "callee": "pool.delete",
+          "lineNumber": 274
+        },
+        {
+          "caller": "warmup",
+          "callee": "pool.get",
+          "lineNumber": 284
+        },
+        {
+          "caller": "warmup",
+          "callee": "Date.now",
+          "lineNumber": 286
+        },
+        {
+          "caller": "warmup",
+          "callee": "getEntry",
+          "lineNumber": 289
+        },
+        {
+          "caller": "newSession",
+          "callee": "getEntry",
+          "lineNumber": 294
+        },
+        {
+          "caller": "newSession",
+          "callee": "entry.conn.newSession",
+          "lineNumber": 295
+        },
+        {
+          "caller": "newSession",
+          "callee": "defaultCwd",
+          "lineNumber": 297
+        },
+        {
+          "caller": "loadSession",
+          "callee": "getEntry",
+          "lineNumber": 303
+        },
+        {
+          "caller": "loadSession",
+          "callee": "entry.conn.loadSession",
+          "lineNumber": 304
+        },
+        {
+          "caller": "loadSession",
+          "callee": "defaultCwd",
+          "lineNumber": 307
+        },
+        {
+          "caller": "startPrompt",
+          "callee": "(async () => {\n    const entry = await getEntry(opts.slug)\n    if (entry.inFlight.has(opts.sessionId)) {\n      throw new Error(`Session ${opts.sessionId} already has a prompt in flight`)\n    }\n    entry.inFlight.add(opts.sessionId)\n    entry.sessionEmitters.set(opts.sessionId, emitter)\n    entry.lastActivityMs = Date.now()\n\n    try {\n      const res = await entry.conn.prompt({\n        sessionId: opts.sessionId,\n        prompt: [{ type: 'text', text: opts.text }] as ContentBlock[]\n      })\n      const stopReason = res.stopReason\n      emitter.emit('done', { stopReason })\n      return { stopReason }\n    } catch (e) {\n      emitter.emit('error', e)\n      throw e\n    } finally {\n      entry.inFlight.delete(opts.sessionId)\n      entry.sessionEmitters.delete(opts.sessionId)\n      entry.lastActivityMs = Date.now()\n    }\n  })",
+          "lineNumber": 335
+        },
+        {
+          "caller": "startPrompt",
+          "callee": "getEntry",
+          "lineNumber": 336
+        },
+        {
+          "caller": "startPrompt",
+          "callee": "entry.inFlight.has",
+          "lineNumber": 337
+        },
+        {
+          "caller": "startPrompt",
+          "callee": "entry.inFlight.add",
+          "lineNumber": 340
+        },
+        {
+          "caller": "startPrompt",
+          "callee": "entry.sessionEmitters.set",
+          "lineNumber": 341
+        },
+        {
+          "caller": "startPrompt",
+          "callee": "Date.now",
+          "lineNumber": 342
+        },
+        {
+          "caller": "startPrompt",
+          "callee": "entry.conn.prompt",
+          "lineNumber": 345
+        },
+        {
+          "caller": "startPrompt",
+          "callee": "emitter.emit",
+          "lineNumber": 350
+        },
+        {
+          "caller": "startPrompt",
+          "callee": "emitter.emit",
+          "lineNumber": 353
+        },
+        {
+          "caller": "startPrompt",
+          "callee": "entry.inFlight.delete",
+          "lineNumber": 356
+        },
+        {
+          "caller": "startPrompt",
+          "callee": "entry.sessionEmitters.delete",
+          "lineNumber": 357
+        },
+        {
+          "caller": "startPrompt",
+          "callee": "Date.now",
+          "lineNumber": 358
+        },
+        {
+          "caller": "startPrompt",
+          "callee": "done.catch",
+          "lineNumber": 363
+        },
+        {
+          "caller": "startPrompt",
+          "callee": "pool.get",
+          "lineNumber": 369
+        },
+        {
+          "caller": "startPrompt",
+          "callee": "entry.conn.cancel",
+          "lineNumber": 371
+        },
+        {
+          "caller": "ensureReaper",
+          "callee": "setInterval",
+          "lineNumber": 380
+        },
+        {
+          "caller": "ensureReaper",
+          "callee": "Date.now",
+          "lineNumber": 381
+        },
+        {
+          "caller": "ensureReaper",
+          "callee": "console.error",
+          "lineNumber": 385
+        },
+        {
+          "caller": "ensureReaper",
+          "callee": "entry.child.kill",
+          "lineNumber": 387
+        },
+        {
+          "caller": "ensureReaper",
+          "callee": "pool.delete",
+          "lineNumber": 389
+        },
+        {
+          "caller": "ensureReaper",
+          "callee": "(reaper as { unref?: () => void }).unref",
+          "lineNumber": 393
+        },
+        {
+          "caller": "shutdownAll",
+          "callee": "entry.child.kill",
+          "lineNumber": 400
+        },
+        {
+          "caller": "shutdownAll",
+          "callee": "pool.delete",
+          "lineNumber": 402
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 12,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "server/utils/profile-config.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 233,
+      "nonEmptyLines": 220,
+      "functions": [
+        {
+          "name": "readGlobalModelConfig",
+          "startLine": 24,
+          "endLine": 37,
+          "params": []
+        },
+        {
+          "name": "readGlobalModelBlock",
+          "startLine": 51,
+          "endLine": 73,
+          "params": []
+        },
+        {
+          "name": "configPath",
+          "startLine": 86,
+          "endLine": 88,
+          "params": [
+            "profileDir"
+          ]
+        },
+        {
+          "name": "readProfileConfig",
+          "startLine": 90,
+          "endLine": 113,
+          "params": [
+            "profileDir"
+          ]
+        },
+        {
+          "name": "writeProfileConfig",
+          "startLine": 133,
+          "endLine": 233,
+          "params": [
+            "profileDir",
+            "patch"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "readGlobalModelBlock",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "readProfileConfig",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "writeProfileConfig",
+          "line": 133,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "readGlobalModelConfig",
+          "callee": "existsSync",
+          "lineNumber": 25
+        },
+        {
+          "caller": "readGlobalModelConfig",
+          "callee": "parseYaml",
+          "lineNumber": 27
+        },
+        {
+          "caller": "readGlobalModelConfig",
+          "callee": "readFileSync",
+          "lineNumber": 27
+        },
+        {
+          "caller": "readGlobalModelBlock",
+          "callee": "existsSync",
+          "lineNumber": 52
+        },
+        {
+          "caller": "readGlobalModelBlock",
+          "callee": "parseYaml",
+          "lineNumber": 54
+        },
+        {
+          "caller": "readGlobalModelBlock",
+          "callee": "readFileSync",
+          "lineNumber": 54
+        },
+        {
+          "caller": "configPath",
+          "callee": "join",
+          "lineNumber": 87
+        },
+        {
+          "caller": "readProfileConfig",
+          "callee": "configPath",
+          "lineNumber": 91
+        },
+        {
+          "caller": "readProfileConfig",
+          "callee": "existsSync",
+          "lineNumber": 92
+        },
+        {
+          "caller": "readProfileConfig",
+          "callee": "readFileSync",
+          "lineNumber": 94
+        },
+        {
+          "caller": "readProfileConfig",
+          "callee": "parseYaml",
+          "lineNumber": 95
+        },
+        {
+          "caller": "readProfileConfig",
+          "callee": "Array.isArray",
+          "lineNumber": 103
+        },
+        {
+          "caller": "readProfileConfig",
+          "callee": "name.trim",
+          "lineNumber": 107
+        },
+        {
+          "caller": "readProfileConfig",
+          "callee": "list.filter",
+          "lineNumber": 108
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "configPath",
+          "lineNumber": 134
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "existsSync",
+          "lineNumber": 138
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "readFileSync",
+          "lineNumber": 138
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "parseYamlDocument",
+          "lineNumber": 139
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "readGlobalModelBlock",
+          "lineNumber": 145
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "doc.set",
+          "lineNumber": 147
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "doc.has",
+          "lineNumber": 156
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "doc.delete",
+          "lineNumber": 156
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "doc.get",
+          "lineNumber": 164
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "isMap",
+          "lineNumber": 165
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "readGlobalModelConfig",
+          "lineNumber": 173
+        },
+        {
+          "caller": "trim",
+          "callee": "v.trim",
+          "lineNumber": 175
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "trim",
+          "lineNumber": 177
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "doc.hasIn",
+          "lineNumber": 180
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "doc.deleteIn",
+          "lineNumber": 180
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "doc.setIn",
+          "lineNumber": 182
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "trim",
+          "lineNumber": 186
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "doc.hasIn",
+          "lineNumber": 189
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "doc.deleteIn",
+          "lineNumber": 189
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "doc.setIn",
+          "lineNumber": 191
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "doc.get",
+          "lineNumber": 196
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "isMap",
+          "lineNumber": 197
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "doc.delete",
+          "lineNumber": 198
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "Array.isArray",
+          "lineNumber": 202
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "patch.allowlist.filter",
+          "lineNumber": 203
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "s.trim",
+          "lineNumber": 203
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "doc.set",
+          "lineNumber": 204
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "patch.name.trim",
+          "lineNumber": 208
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "doc.has",
+          "lineNumber": 209
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "doc.delete",
+          "lineNumber": 209
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "doc.set",
+          "lineNumber": 211
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "patch.name.trim",
+          "lineNumber": 211
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "doc.get",
+          "lineNumber": 218
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "Array.isArray",
+          "lineNumber": 219
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "isScalar",
+          "lineNumber": 219
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "doc.set",
+          "lineNumber": 220
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "Date.now",
+          "lineNumber": 223
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "writeFileSync",
+          "lineNumber": 225
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "doc.toString",
+          "lineNumber": 225
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "renameSync",
+          "lineNumber": 226
+        },
+        {
+          "caller": "writeProfileConfig",
+          "callee": "unlinkSync",
+          "lineNumber": 229
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    }
+  ]
+}

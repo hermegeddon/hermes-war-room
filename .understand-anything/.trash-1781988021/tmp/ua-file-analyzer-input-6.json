@@ -1,0 +1,54 @@
+{
+  "projectRoot": "/home/openclaw/hermes-war-room",
+  "batchFiles": [
+    {
+      "path": "server/api/profiles/[slug]/skills.get.ts",
+      "language": "typescript",
+      "sizeLines": 47,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/skills.put.ts",
+      "language": "typescript",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/skills.get.ts",
+      "language": "typescript",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/plugins/skills-repair.ts",
+      "language": "typescript",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/skills.ts",
+      "language": "typescript",
+      "sizeLines": 145,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "server/api/profiles/[slug]/skills.get.ts": [
+      "server/api/skills.get.ts",
+      "server/utils/db.ts",
+      "server/utils/skills.ts"
+    ],
+    "server/api/profiles/[slug]/skills.put.ts": [
+      "server/utils/db.ts",
+      "server/utils/skills.ts"
+    ],
+    "server/api/skills.get.ts": [
+      "server/utils/skills.ts"
+    ],
+    "server/plugins/skills-repair.ts": [
+      "server/utils/hermes.ts",
+      "server/utils/skills.ts"
+    ],
+    "server/utils/skills.ts": []
+  }
+}

@@ -1,0 +1,2744 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 18,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "server/api/kanban/tasks/[id]/decompose.post.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 21,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/kanban/tasks/[id]/specify.post.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 20,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/missions.post.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 101,
+      "nonEmptyLines": 91,
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/missions/[id]/archive.post.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 11,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/missions/[id]/index.get.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 17,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/missions/[id]/launch-triage.post.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 50,
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/missions/[id]/messages.post.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 19,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/missions/[id]/stream.get.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 27,
+      "callGraph": [
+        {
+          "caller": "onEvent",
+          "callee": "stream.push",
+          "lineNumber": 15
+        },
+        {
+          "caller": "onEvent",
+          "callee": "JSON.stringify",
+          "lineNumber": 17
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/missions/active.get.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 19,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/missions/index.get.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 30,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/plugins/auto-nudge.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 13,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/utils/auto-nudge.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 412,
+      "nonEmptyLines": 377,
+      "functions": [
+        {
+          "name": "ensureState",
+          "startLine": 48,
+          "endLine": 55,
+          "params": [
+            "missionId"
+          ]
+        },
+        {
+          "name": "addWatchedTasks",
+          "startLine": 64,
+          "endLine": 90,
+          "params": [
+            "missionId",
+            "taskIds"
+          ]
+        },
+        {
+          "name": "removeMission",
+          "startLine": 93,
+          "endLine": 98,
+          "params": [
+            "missionId"
+          ]
+        },
+        {
+          "name": "loadWatchedFromDb",
+          "startLine": 105,
+          "endLine": 121,
+          "params": []
+        },
+        {
+          "name": "registerCreatedTaskFromTool",
+          "startLine": 135,
+          "endLine": 164,
+          "params": [
+            "missionId",
+            "tool"
+          ]
+        },
+        {
+          "name": "markNotified",
+          "startLine": 167,
+          "endLine": 174,
+          "params": [
+            "missionId",
+            "taskIds"
+          ]
+        },
+        {
+          "name": "buildNudgeText",
+          "startLine": 178,
+          "endLine": 207,
+          "params": [
+            "completed"
+          ]
+        },
+        {
+          "name": "buildVisibleNudge",
+          "startLine": 213,
+          "endLine": 236,
+          "params": [
+            "completed"
+          ]
+        },
+        {
+          "name": "runNudgeTurn",
+          "startLine": 244,
+          "endLine": 311,
+          "params": [
+            "missionId",
+            "completed"
+          ]
+        },
+        {
+          "name": "scheduleNudge",
+          "startLine": 314,
+          "endLine": 332,
+          "params": [
+            "missionId",
+            "completed"
+          ]
+        },
+        {
+          "name": "checkAll",
+          "startLine": 338,
+          "endLine": 395,
+          "params": []
+        },
+        {
+          "name": "startAutoNudge",
+          "startLine": 399,
+          "endLine": 407,
+          "params": []
+        },
+        {
+          "name": "stopAutoNudge",
+          "startLine": 409,
+          "endLine": 412,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "addWatchedTasks",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "removeMission",
+          "line": 93,
+          "isDefault": false
+        },
+        {
+          "name": "loadWatchedFromDb",
+          "line": 105,
+          "isDefault": false
+        },
+        {
+          "name": "registerCreatedTaskFromTool",
+          "line": 135,
+          "isDefault": false
+        },
+        {
+          "name": "startAutoNudge",
+          "line": 399,
+          "isDefault": false
+        },
+        {
+          "name": "stopAutoNudge",
+          "line": 409,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ensureState",
+          "callee": "state.get",
+          "lineNumber": 49
+        },
+        {
+          "caller": "ensureState",
+          "callee": "state.set",
+          "lineNumber": 52
+        },
+        {
+          "caller": "addWatchedTasks",
+          "callee": "getKanbanDb",
+          "lineNumber": 66
+        },
+        {
+          "caller": "addWatchedTasks",
+          "callee": "taskIds.map(() => '?').join",
+          "lineNumber": 69
+        },
+        {
+          "caller": "addWatchedTasks",
+          "callee": "taskIds.map",
+          "lineNumber": 69
+        },
+        {
+          "caller": "addWatchedTasks",
+          "callee": "db.prepare(\n    `SELECT id, status FROM tasks WHERE id IN (${placeholders})`\n  ).all",
+          "lineNumber": 70
+        },
+        {
+          "caller": "addWatchedTasks",
+          "callee": "db.prepare",
+          "lineNumber": 70
+        },
+        {
+          "caller": "addWatchedTasks",
+          "callee": "ensureState",
+          "lineNumber": 74
+        },
+        {
+          "caller": "addWatchedTasks",
+          "callee": "useDb",
+          "lineNumber": 75
+        },
+        {
+          "caller": "addWatchedTasks",
+          "callee": "wrDb.prepare",
+          "lineNumber": 76
+        },
+        {
+          "caller": "addWatchedTasks",
+          "callee": "Math.floor",
+          "lineNumber": 80
+        },
+        {
+          "caller": "addWatchedTasks",
+          "callee": "Date.now",
+          "lineNumber": 80
+        },
+        {
+          "caller": "addWatchedTasks",
+          "callee": "s.watched.has",
+          "lineNumber": 83
+        },
+        {
+          "caller": "addWatchedTasks",
+          "callee": "s.watched.set",
+          "lineNumber": 84
+        },
+        {
+          "caller": "addWatchedTasks",
+          "callee": "insert.run",
+          "lineNumber": 85
+        },
+        {
+          "caller": "addWatchedTasks",
+          "callee": "console.log",
+          "lineNumber": 89
+        },
+        {
+          "caller": "removeMission",
+          "callee": "state.get",
+          "lineNumber": 94
+        },
+        {
+          "caller": "removeMission",
+          "callee": "clearTimeout",
+          "lineNumber": 95
+        },
+        {
+          "caller": "removeMission",
+          "callee": "state.delete",
+          "lineNumber": 96
+        },
+        {
+          "caller": "removeMission",
+          "callee": "useDb().prepare('DELETE FROM mission_watched_tasks WHERE mission_id = ?').run",
+          "lineNumber": 97
+        },
+        {
+          "caller": "removeMission",
+          "callee": "useDb().prepare",
+          "lineNumber": 97
+        },
+        {
+          "caller": "removeMission",
+          "callee": "useDb",
+          "lineNumber": 97
+        },
+        {
+          "caller": "loadWatchedFromDb",
+          "callee": "useDb",
+          "lineNumber": 106
+        },
+        {
+          "caller": "loadWatchedFromDb",
+          "callee": "wrDb.prepare(`\n    SELECT mission_id, task_id, added_status FROM mission_watched_tasks\n    WHERE notified_at IS NULL\n  `).all",
+          "lineNumber": 107
+        },
+        {
+          "caller": "loadWatchedFromDb",
+          "callee": "wrDb.prepare",
+          "lineNumber": 107
+        },
+        {
+          "caller": "loadWatchedFromDb",
+          "callee": "ensureState",
+          "lineNumber": 113
+        },
+        {
+          "caller": "loadWatchedFromDb",
+          "callee": "s.watched.has",
+          "lineNumber": 114
+        },
+        {
+          "caller": "loadWatchedFromDb",
+          "callee": "s.watched.set",
+          "lineNumber": 115
+        },
+        {
+          "caller": "loadWatchedFromDb",
+          "callee": "console.log",
+          "lineNumber": 119
+        },
+        {
+          "caller": "registerCreatedTaskFromTool",
+          "callee": "String",
+          "lineNumber": 137
+        },
+        {
+          "caller": "registerCreatedTaskFromTool",
+          "callee": "/hermes\\s+kanban\\s+create/i.test",
+          "lineNumber": 138
+        },
+        {
+          "caller": "registerCreatedTaskFromTool",
+          "callee": "Array.isArray",
+          "lineNumber": 143
+        },
+        {
+          "caller": "registerCreatedTaskFromTool",
+          "callee": "parts.push",
+          "lineNumber": 147
+        },
+        {
+          "caller": "registerCreatedTaskFromTool",
+          "callee": "parts.join('\\n').trim",
+          "lineNumber": 149
+        },
+        {
+          "caller": "registerCreatedTaskFromTool",
+          "callee": "parts.join",
+          "lineNumber": 149
+        },
+        {
+          "caller": "registerCreatedTaskFromTool",
+          "callee": "parseKanbanJson",
+          "lineNumber": 159
+        },
+        {
+          "caller": "registerCreatedTaskFromTool",
+          "callee": "/^t_/.test",
+          "lineNumber": 161
+        },
+        {
+          "caller": "registerCreatedTaskFromTool",
+          "callee": "addWatchedTasks",
+          "lineNumber": 162
+        },
+        {
+          "caller": "markNotified",
+          "callee": "taskIds.map(() => '?').join",
+          "lineNumber": 169
+        },
+        {
+          "caller": "markNotified",
+          "callee": "taskIds.map",
+          "lineNumber": 169
+        },
+        {
+          "caller": "markNotified",
+          "callee": "useDb().prepare(`\n    UPDATE mission_watched_tasks SET notified_at = ?\n    WHERE mission_id = ? AND task_id IN (${placeholders})\n  `).run",
+          "lineNumber": 170
+        },
+        {
+          "caller": "markNotified",
+          "callee": "useDb().prepare",
+          "lineNumber": 170
+        },
+        {
+          "caller": "markNotified",
+          "callee": "useDb",
+          "lineNumber": 170
+        },
+        {
+          "caller": "markNotified",
+          "callee": "Math.floor",
+          "lineNumber": 173
+        },
+        {
+          "caller": "markNotified",
+          "callee": "Date.now",
+          "lineNumber": 173
+        },
+        {
+          "caller": "buildNudgeText",
+          "callee": "lines.push",
+          "lineNumber": 188
+        },
+        {
+          "caller": "buildNudgeText",
+          "callee": "t.body.trim().replace(/\\s+/g, ' ').slice",
+          "lineNumber": 190
+        },
+        {
+          "caller": "buildNudgeText",
+          "callee": "t.body.trim().replace",
+          "lineNumber": 190
+        },
+        {
+          "caller": "buildNudgeText",
+          "callee": "t.body.trim",
+          "lineNumber": 190
+        },
+        {
+          "caller": "buildNudgeText",
+          "callee": "lines.push",
+          "lineNumber": 191
+        },
+        {
+          "caller": "buildNudgeText",
+          "callee": "getFailureContext",
+          "lineNumber": 193
+        },
+        {
+          "caller": "buildNudgeText",
+          "callee": "distillReason",
+          "lineNumber": 194
+        },
+        {
+          "caller": "buildNudgeText",
+          "callee": "lines.push",
+          "lineNumber": 196
+        },
+        {
+          "caller": "buildNudgeText",
+          "callee": "lines.push",
+          "lineNumber": 199
+        },
+        {
+          "caller": "buildNudgeText",
+          "callee": "lines.push",
+          "lineNumber": 202
+        },
+        {
+          "caller": "buildNudgeText",
+          "callee": "lines.push",
+          "lineNumber": 205
+        },
+        {
+          "caller": "buildNudgeText",
+          "callee": "lines.join",
+          "lineNumber": 206
+        },
+        {
+          "caller": "buildVisibleNudge",
+          "callee": "completed.some",
+          "lineNumber": 214
+        },
+        {
+          "caller": "buildVisibleNudge",
+          "callee": "lines.push",
+          "lineNumber": 221
+        },
+        {
+          "caller": "buildVisibleNudge",
+          "callee": "verb",
+          "lineNumber": 221
+        },
+        {
+          "caller": "buildVisibleNudge",
+          "callee": "getFailureContext",
+          "lineNumber": 225
+        },
+        {
+          "caller": "buildVisibleNudge",
+          "callee": "distillReason",
+          "lineNumber": 226
+        },
+        {
+          "caller": "buildVisibleNudge",
+          "callee": "reason.replace(/\\s+/g, ' ').slice",
+          "lineNumber": 231
+        },
+        {
+          "caller": "buildVisibleNudge",
+          "callee": "reason.replace",
+          "lineNumber": 231
+        },
+        {
+          "caller": "buildVisibleNudge",
+          "callee": "lines.push",
+          "lineNumber": 232
+        },
+        {
+          "caller": "buildVisibleNudge",
+          "callee": "[head, ...lines].join",
+          "lineNumber": 235
+        },
+        {
+          "caller": "runNudgeTurn",
+          "callee": "getMission",
+          "lineNumber": 245
+        },
+        {
+          "caller": "runNudgeTurn",
+          "callee": "console.log",
+          "lineNumber": 247
+        },
+        {
+          "caller": "runNudgeTurn",
+          "callee": "buildVisibleNudge",
+          "lineNumber": 251
+        },
+        {
+          "caller": "runNudgeTurn",
+          "callee": "appendMessage",
+          "lineNumber": 252
+        },
+        {
+          "caller": "runNudgeTurn",
+          "callee": "emit",
+          "lineNumber": 253
+        },
+        {
+          "caller": "runNudgeTurn",
+          "callee": "appendMessage",
+          "lineNumber": 255
+        },
+        {
+          "caller": "runNudgeTurn",
+          "callee": "startFlight",
+          "lineNumber": 257
+        },
+        {
+          "caller": "runNudgeTurn",
+          "callee": "startPrompt",
+          "lineNumber": 259
+        },
+        {
+          "caller": "runNudgeTurn",
+          "callee": "buildNudgeText",
+          "lineNumber": 262
+        },
+        {
+          "caller": "runNudgeTurn",
+          "callee": "handle.emitter.on",
+          "lineNumber": 265
+        },
+        {
+          "caller": "runNudgeTurn",
+          "callee": "emit",
+          "lineNumber": 283
+        },
+        {
+          "caller": "runNudgeTurn",
+          "callee": "emit",
+          "lineNumber": 287
+        },
+        {
+          "caller": "runNudgeTurn",
+          "callee": "registerCreatedTaskFromTool",
+          "lineNumber": 290
+        },
+        {
+          "caller": "runNudgeTurn",
+          "callee": "updateMessage",
+          "lineNumber": 296
+        },
+        {
+          "caller": "runNudgeTurn",
+          "callee": "emit",
+          "lineNumber": 297
+        },
+        {
+          "caller": "runNudgeTurn",
+          "callee": "updateMessage",
+          "lineNumber": 305
+        },
+        {
+          "caller": "runNudgeTurn",
+          "callee": "emit",
+          "lineNumber": 306
+        },
+        {
+          "caller": "runNudgeTurn",
+          "callee": "console.error",
+          "lineNumber": 307
+        },
+        {
+          "caller": "runNudgeTurn",
+          "callee": "endFlight",
+          "lineNumber": 309
+        },
+        {
+          "caller": "scheduleNudge",
+          "callee": "ensureState",
+          "lineNumber": 315
+        },
+        {
+          "caller": "scheduleNudge",
+          "callee": "s.pendingCompleted.push",
+          "lineNumber": 316
+        },
+        {
+          "caller": "scheduleNudge",
+          "callee": "clearTimeout",
+          "lineNumber": 317
+        },
+        {
+          "caller": "scheduleNudge",
+          "callee": "setTimeout",
+          "lineNumber": 318
+        },
+        {
+          "caller": "scheduleNudge",
+          "callee": "withMissionLock(missionId, () => runNudgeTurn(missionId, batch))\n      .then(() => {\n        // Mark these as notified so a Nitro restart doesn't re-fire them.\n        markNotified(missionId, batch.map(t => t.id))\n      })\n      .catch",
+          "lineNumber": 325
+        },
+        {
+          "caller": "scheduleNudge",
+          "callee": "withMissionLock(missionId, () => runNudgeTurn(missionId, batch))\n      .then",
+          "lineNumber": 325
+        },
+        {
+          "caller": "scheduleNudge",
+          "callee": "withMissionLock",
+          "lineNumber": 325
+        },
+        {
+          "caller": "scheduleNudge",
+          "callee": "runNudgeTurn",
+          "lineNumber": 325
+        },
+        {
+          "caller": "scheduleNudge",
+          "callee": "markNotified",
+          "lineNumber": 328
+        },
+        {
+          "caller": "scheduleNudge",
+          "callee": "batch.map",
+          "lineNumber": 328
+        },
+        {
+          "caller": "scheduleNudge",
+          "callee": "console.error",
+          "lineNumber": 330
+        },
+        {
+          "caller": "checkAll",
+          "callee": "getKanbanDb",
+          "lineNumber": 340
+        },
+        {
+          "caller": "checkAll",
+          "callee": "s.watched.keys",
+          "lineNumber": 345
+        },
+        {
+          "caller": "checkAll",
+          "callee": "ids.map(() => '?').join",
+          "lineNumber": 346
+        },
+        {
+          "caller": "checkAll",
+          "callee": "ids.map",
+          "lineNumber": 346
+        },
+        {
+          "caller": "checkAll",
+          "callee": "db.prepare(\n      `SELECT id, title, body, assignee, status, priority,\n              worker_pid, started_at, claim_expires, last_heartbeat_at, created_at\n       FROM tasks WHERE id IN (${placeholders})`\n    ).all",
+          "lineNumber": 347
+        },
+        {
+          "caller": "checkAll",
+          "callee": "db.prepare",
+          "lineNumber": 347
+        },
+        {
+          "caller": "checkAll",
+          "callee": "s.watched.get",
+          "lineNumber": 367
+        },
+        {
+          "caller": "checkAll",
+          "callee": "TERMINAL_STATUSES.has",
+          "lineNumber": 369
+        },
+        {
+          "caller": "checkAll",
+          "callee": "justCompleted.push",
+          "lineNumber": 372
+        },
+        {
+          "caller": "checkAll",
+          "callee": "s.watched.delete",
+          "lineNumber": 386
+        },
+        {
+          "caller": "checkAll",
+          "callee": "console.log",
+          "lineNumber": 391
+        },
+        {
+          "caller": "checkAll",
+          "callee": "scheduleNudge",
+          "lineNumber": 392
+        },
+        {
+          "caller": "startAutoNudge",
+          "callee": "checkAll",
+          "lineNumber": 404
+        },
+        {
+          "caller": "startAutoNudge",
+          "callee": "setInterval",
+          "lineNumber": 405
+        },
+        {
+          "caller": "startAutoNudge",
+          "callee": "console.log",
+          "lineNumber": 406
+        },
+        {
+          "caller": "stopAutoNudge",
+          "callee": "clearInterval",
+          "lineNumber": 410
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 6,
+        "functionCount": 13,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/utils/mission-bus.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 89,
+      "functions": [
+        {
+          "name": "getMissionBus",
+          "startLine": 85,
+          "endLine": 93,
+          "params": [
+            "missionId"
+          ]
+        },
+        {
+          "name": "dropMissionBus",
+          "startLine": 95,
+          "endLine": 97,
+          "params": [
+            "missionId"
+          ]
+        },
+        {
+          "name": "emit",
+          "startLine": 99,
+          "endLine": 102,
+          "params": [
+            "missionId",
+            "event"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getMissionBus",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "dropMissionBus",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "emit",
+          "line": 99,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getMissionBus",
+          "callee": "buses.get",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getMissionBus",
+          "callee": "bus.setMaxListeners",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getMissionBus",
+          "callee": "buses.set",
+          "lineNumber": 90
+        },
+        {
+          "caller": "dropMissionBus",
+          "callee": "buses.delete",
+          "lineNumber": 96
+        },
+        {
+          "caller": "emit",
+          "callee": "buses.get",
+          "lineNumber": 100
+        },
+        {
+          "caller": "emit",
+          "callee": "bus.emit",
+          "lineNumber": 101
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/utils/mission-flight.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 30,
+      "functions": [
+        {
+          "name": "startFlight",
+          "startLine": 20,
+          "endLine": 24,
+          "params": [
+            "missionId",
+            "assistantMsgId"
+          ]
+        },
+        {
+          "name": "endFlight",
+          "startLine": 26,
+          "endLine": 28,
+          "params": [
+            "missionId"
+          ]
+        },
+        {
+          "name": "getFlight",
+          "startLine": 30,
+          "endLine": 32,
+          "params": [
+            "missionId"
+          ]
+        },
+        {
+          "name": "isInFlight",
+          "startLine": 34,
+          "endLine": 36,
+          "params": [
+            "missionId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "startFlight",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "endFlight",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "getFlight",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "isInFlight",
+          "line": 34,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "startFlight",
+          "callee": "Date.now",
+          "lineNumber": 21
+        },
+        {
+          "caller": "startFlight",
+          "callee": "inFlight.set",
+          "lineNumber": 22
+        },
+        {
+          "caller": "endFlight",
+          "callee": "inFlight.delete",
+          "lineNumber": 27
+        },
+        {
+          "caller": "getFlight",
+          "callee": "inFlight.get",
+          "lineNumber": 31
+        },
+        {
+          "caller": "isInFlight",
+          "callee": "inFlight.has",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/utils/mission-lock.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 20,
+      "functions": [
+        {
+          "name": "withMissionLock",
+          "startLine": 17,
+          "endLine": 22,
+          "params": [
+            "missionId",
+            "fn"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "withMissionLock",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "withMissionLock",
+          "callee": "queues.get",
+          "lineNumber": 18
+        },
+        {
+          "caller": "withMissionLock",
+          "callee": "Promise.resolve",
+          "lineNumber": 18
+        },
+        {
+          "caller": "withMissionLock",
+          "callee": "prev.then",
+          "lineNumber": 19
+        },
+        {
+          "caller": "withMissionLock",
+          "callee": "fn",
+          "lineNumber": 19
+        },
+        {
+          "caller": "withMissionLock",
+          "callee": "fn",
+          "lineNumber": 19
+        },
+        {
+          "caller": "withMissionLock",
+          "callee": "queues.set",
+          "lineNumber": 20
+        },
+        {
+          "caller": "withMissionLock",
+          "callee": "next.catch",
+          "lineNumber": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/utils/mission-turn.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 446,
+      "nonEmptyLines": 414,
+      "functions": [
+        {
+          "name": "looksLikeDelegationClaim",
+          "startLine": 37,
+          "endLine": 39,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "extractToolText",
+          "startLine": 62,
+          "endLine": 79,
+          "params": [
+            "tool"
+          ]
+        },
+        {
+          "name": "extractText",
+          "startLine": 81,
+          "endLine": 91,
+          "params": [
+            "update"
+          ]
+        },
+        {
+          "name": "isThought",
+          "startLine": 93,
+          "endLine": 95,
+          "params": [
+            "update"
+          ]
+        },
+        {
+          "name": "asToolCall",
+          "startLine": 97,
+          "endLine": 101,
+          "params": [
+            "update"
+          ]
+        },
+        {
+          "name": "buildOrchestratorPreambleRefine",
+          "startLine": 109,
+          "endLine": 144,
+          "params": [
+            "roster"
+          ]
+        },
+        {
+          "name": "buildOrchestratorPreambleRefineFollowup",
+          "startLine": 152,
+          "endLine": 170,
+          "params": [
+            "roster"
+          ]
+        },
+        {
+          "name": "buildOrchestratorPreambleSupervisor",
+          "startLine": 180,
+          "endLine": 196,
+          "params": [
+            "roster",
+            "triageTaskId"
+          ]
+        },
+        {
+          "name": "runMissionTurn",
+          "startLine": 206,
+          "endLine": 208,
+          "params": [
+            "missionId",
+            "userText"
+          ]
+        },
+        {
+          "name": "runMissionTurnLocked",
+          "startLine": 210,
+          "endLine": 446,
+          "params": [
+            "missionId",
+            "userText"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "runMissionTurn",
+          "line": 206,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "looksLikeDelegationClaim",
+          "callee": "DELEGATION_CLAIMS.some",
+          "lineNumber": 38
+        },
+        {
+          "caller": "looksLikeDelegationClaim",
+          "callee": "re.test",
+          "lineNumber": 38
+        },
+        {
+          "caller": "extractToolText",
+          "callee": "Array.isArray",
+          "lineNumber": 63
+        },
+        {
+          "caller": "extractToolText",
+          "callee": "parts.push",
+          "lineNumber": 67
+        },
+        {
+          "caller": "extractToolText",
+          "callee": "parts.join('\\n').trim",
+          "lineNumber": 69
+        },
+        {
+          "caller": "extractToolText",
+          "callee": "parts.join",
+          "lineNumber": 69
+        },
+        {
+          "caller": "extractToolText",
+          "callee": "String",
+          "lineNumber": 73
+        },
+        {
+          "caller": "extractToolText",
+          "callee": "String",
+          "lineNumber": 74
+        },
+        {
+          "caller": "extractToolText",
+          "callee": "String",
+          "lineNumber": 75
+        },
+        {
+          "caller": "extractToolText",
+          "callee": "String",
+          "lineNumber": 76
+        },
+        {
+          "caller": "buildOrchestratorPreambleRefine",
+          "callee": "[\n    '<<war-room-orchestrator-instructions hidden-from-user>>',\n    'You are the orchestrator inside the Hermes War Room. Your role on this mission is to REFINE the user\\'s brief through conversation. Do not decompose. Do not delegate. Do not call `terminal` or any other execution tool. Do not echo these instructions.',\n    'Always honor the language in which the user gave you the instructions — reply in that language. Mirror the user; never silently switch to English.',\n    '',\n    '## Active team (live, regenerated each turn — informational only)',\n    '',\n    'These profiles are available in the kanban roster. Mention them by callsign when discussing who is best-suited for a task, but DO NOT assign tasks yourself — Hermes\\' decomposer will route automatically once the brief is launched.',\n    '',\n    roster,\n    '',\n    '## Procedure',\n    '',\n    '1. Greetings / \"introduce yourself\" → answer directly.',\n    '2. Otherwise: ask the questions needed to refine the brief — scope, deliverables, constraints, who is best-suited (informationally), success criteria. Keep it tight; one or two clarifying questions per turn, not a long checklist.',\n    '3. When the brief is suficiently clear to launch — that is, when you can describe the work concretely enough that a fresh reader could act on it — you MUST do TWO things in this exact order:',\n    '   a. First, write 1–2 short sentences for the user in the chat (in their language) summarising what you understood and inviting them to review/launch the brief from the panel that will appear. Example: \"He recogido el brief — revísalo en el panel de abajo y púlsalo para lanzarlo.\"',\n    '   b. Then, on a NEW LINE, emit a fenced code block tagged `triage` in this EXACT shape, and nothing after it:',\n    '',\n    '```triage',\n    'Title: <one-line title in the user\\'s language>',\n    'Body:',\n    '<multi-line description in the user\\'s language: goal, scope, constraints, success criteria>',\n    '```',\n    '',\n    '   The opening fence MUST be exactly three backticks immediately followed by the word `triage` on the same line. The closing fence MUST be three backticks alone on their own line. Do NOT wrap the block in angle brackets, HTML tags, or any other delimiter — use the fence literally.',\n    '   NEVER emit the block alone — without the leading sentence the user sees an empty chat bubble. The sentence is non-negotiable.',\n    '4. If the user reacts to a previous brief with changes (\"simplifícalo\", \"añade X\", \"quita Y\"), re-emit the WHOLE updated ```triage block — never partial edits. ALSO write the short user-facing sentence before re-emitting (e.g. \"Actualizado — revisa el nuevo brief en el panel.\"). The war-room shows the user a panel built from this block with title + body editable, and a button \"Launch as triage\". When the user clicks it, the war-room spawns the triage task + decomposer from its backend, so DO NOT call `hermes kanban create` yourself.',\n    '5. Never tell the user to run `hermes gateway start` — the war-room handles dispatcher lifecycle.',\n    '<<end-of-instructions>>',\n    '',\n    'User mission:',\n    ''\n  ].join",
+          "lineNumber": 110
+        },
+        {
+          "caller": "buildOrchestratorPreambleRefineFollowup",
+          "callee": "[\n    '<<war-room-orchestrator-followup hidden-from-user>>',\n    'You are continuing to refine an in-progress brief. Full instructions are loaded earlier in this session — do not restate them.',\n    'Treat the user input below as the next conversational turn.',\n    'If the user confirms a draft you already proposed (replies like \"sí\", \"ok\", \"dale\", \"adelante\", \"yes\", \"go\"), DO NOT re-emit the ```triage block — the panel is already showing it and the user only needs to click \"Launch as triage\". Just acknowledge briefly in the user\\'s language.',\n    'If the user asks for changes, FIRST write 1–2 short sentences acknowledging the change in the user\\'s language (\"Actualizado — revisa el nuevo brief abajo.\"), THEN on a new line re-emit the COMPLETE updated ```triage block as your final lines (opening fence: three backticks + the word `triage`; closing fence: three backticks alone). NEVER emit the block alone — the user would see an empty bubble. Never wrap the fence in angle brackets or HTML tags.',\n    'Honor the language the user originally used.',\n    '',\n    '## Active team (live, may have changed since turn 1)',\n    '',\n    roster,\n    '',\n    '<<end-of-followup>>',\n    '',\n    'User reply:',\n    ''\n  ].join",
+          "lineNumber": 153
+        },
+        {
+          "caller": "buildOrchestratorPreambleSupervisor",
+          "callee": "[\n    '<<war-room-orchestrator-supervisor hidden-from-user>>',\n    `This mission has been launched as triage task \\`${triageTaskId}\\`. Hermes' decomposer has fanned it out into specialist subtasks (visible to you via the war-room task-update nudges that arrive between user turns).`,\n    'Your role now is SUPERVISOR. Watch progress, comment on subtask completions in plain language for the user, and propose adjustments when something goes wrong. DO NOT emit TRIAGE_DRAFT blocks anymore. DO NOT call `hermes kanban create` or any other execution tool yourself — the war-room owns those operations.',\n    'Honor the language the user originally used. Mirror the user; never silently switch to English.',\n    '',\n    '## Active team (informational)',\n    '',\n    roster,\n    '',\n    '<<end-of-supervisor>>',\n    '',\n    'User reply:',\n    ''\n  ].join",
+          "lineNumber": 181
+        },
+        {
+          "caller": "runMissionTurn",
+          "callee": "withMissionLock",
+          "lineNumber": 207
+        },
+        {
+          "caller": "runMissionTurn",
+          "callee": "runMissionTurnLocked",
+          "lineNumber": 207
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "getMission",
+          "lineNumber": 211
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "listMessages",
+          "lineNumber": 219
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "priorMessages.some",
+          "lineNumber": 220
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "appendMessage",
+          "lineNumber": 223
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "emit",
+          "lineNumber": 224
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "useDb()\n    .prepare('SELECT hermes_dir FROM profiles WHERE slug = ?')\n    .get",
+          "lineNumber": 230
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "useDb()\n    .prepare",
+          "lineNumber": 230
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "useDb",
+          "lineNumber": 230
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "newSession",
+          "lineNumber": 238
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "setAcpSessionId",
+          "lineNumber": 239
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "loadSession",
+          "lineNumber": 243
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "console.error",
+          "lineNumber": 246
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "newSession",
+          "lineNumber": 247
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "setAcpSessionId",
+          "lineNumber": 248
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "appendMessage",
+          "lineNumber": 253
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "Math.floor",
+          "lineNumber": 256
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "Date.now",
+          "lineNumber": 256
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "startFlight",
+          "lineNumber": 265
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "buildRosterMarkdown",
+          "lineNumber": 267
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "buildOrchestratorPreambleSupervisor",
+          "lineNumber": 273
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "buildOrchestratorPreambleRefine",
+          "lineNumber": 275
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "buildOrchestratorPreambleRefineFollowup",
+          "lineNumber": 277
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "startPrompt",
+          "lineNumber": 279
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "handle.emitter.on",
+          "lineNumber": 285
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "extractText",
+          "lineNumber": 286
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "isThought",
+          "lineNumber": 288
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "emit",
+          "lineNumber": 293
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "asToolCall",
+          "lineNumber": 296
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "`${tool.title ?? ''} ${tool.kind ?? ''}`.toLowerCase",
+          "lineNumber": 298
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "blob.includes",
+          "lineNumber": 299
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "blob.includes",
+          "lineNumber": 300
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "blob.includes",
+          "lineNumber": 301
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "blob.includes",
+          "lineNumber": 302
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "toolInputs.has",
+          "lineNumber": 308
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "toolInputs.set",
+          "lineNumber": 309
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "toolInputs.get",
+          "lineNumber": 318
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "JSON.stringify",
+          "lineNumber": 322
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "extractToolText",
+          "lineNumber": 323
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "out.slice",
+          "lineNumber": 324
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "log",
+          "lineNumber": 326
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "head.replace",
+          "lineNumber": 329
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "toolInputs.get",
+          "lineNumber": 340
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "registerCreatedTaskFromTool",
+          "lineNumber": 341
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "emit",
+          "lineNumber": 349
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "looksLikeDelegationClaim",
+          "lineNumber": 367
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "tasksCreatedSince",
+          "lineNumber": 368
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "[\n          '',\n          '',\n          '---',\n          '',\n          `> ⚠️ **Orchestration War Room verification failed.** The orchestrator claimed delegation but the kanban DB shows **0 new tasks** were created during this turn. ${reason}`,\n          ''\n        ].join",
+          "lineNumber": 373
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "Array.from(buffer.matchAll(/\\bt_[0-9a-f]{6,}\\b/gi)).map",
+          "lineNumber": 385
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "Array.from",
+          "lineNumber": 385
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "buffer.matchAll",
+          "lineNumber": 385
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "created.map",
+          "lineNumber": 386
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "claimedIds.filter",
+          "lineNumber": 387
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "realIds.has",
+          "lineNumber": 387
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "[\n            '',\n            '',\n            '---',\n            '',\n            `> ⚠️ **Orchestration War Room verification:** the kanban DB created **${created.length}** new task(s) during this turn (real ids: ${created.map(t => `\\`${t.id}\\``).join(', ')}), but the reply above mentions ids that do not exist (${fake.map(id => `\\`${id}\\``).join(', ')}). Use the real ids on next reply.`,\n            ''\n          ].join",
+          "lineNumber": 389
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "created.map(t => `\\`${t.id}\\``).join",
+          "lineNumber": 394
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "created.map",
+          "lineNumber": 394
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "fake.map(id => `\\`${id}\\``).join",
+          "lineNumber": 394
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "fake.map",
+          "lineNumber": 394
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "updateMessage",
+          "lineNumber": 401
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "extractTriageDraft",
+          "lineNumber": 408
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "setLatestTriageDraft",
+          "lineNumber": 410
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "emit",
+          "lineNumber": 415
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "emit",
+          "lineNumber": 422
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "tasksCreatedSince",
+          "lineNumber": 434
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "addWatchedTasks",
+          "lineNumber": 436
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "created.map",
+          "lineNumber": 436
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "updateMessage",
+          "lineNumber": 440
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "emit",
+          "lineNumber": 441
+        },
+        {
+          "caller": "runMissionTurnLocked",
+          "callee": "endFlight",
+          "lineNumber": 444
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 1,
+        "functionCount": 10,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/utils/mission.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 218,
+      "nonEmptyLines": 200,
+      "functions": [
+        {
+          "name": "serializeMission",
+          "startLine": 12,
+          "endLine": 42,
+          "params": [
+            "m"
+          ]
+        },
+        {
+          "name": "summarizeTitle",
+          "startLine": 44,
+          "endLine": 47,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "getActiveMission",
+          "startLine": 49,
+          "endLine": 58,
+          "params": [
+            "orchestratorSlug"
+          ]
+        },
+        {
+          "name": "getMission",
+          "startLine": 60,
+          "endLine": 64,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "listMessages",
+          "startLine": 66,
+          "endLine": 71,
+          "params": [
+            "missionId"
+          ]
+        },
+        {
+          "name": "createMission",
+          "startLine": 75,
+          "endLine": 113,
+          "params": [
+            "orchestratorSlug",
+            "firstMessage",
+            "opts"
+          ]
+        },
+        {
+          "name": "setAcpSessionId",
+          "startLine": 115,
+          "endLine": 118,
+          "params": [
+            "id",
+            "acpSessionId"
+          ]
+        },
+        {
+          "name": "setLatestTriageDraft",
+          "startLine": 125,
+          "endLine": 132,
+          "params": [
+            "missionId",
+            "draft"
+          ]
+        },
+        {
+          "name": "setTriageTaskId",
+          "startLine": 135,
+          "endLine": 139,
+          "params": [
+            "missionId",
+            "triageTaskId"
+          ]
+        },
+        {
+          "name": "appendMessage",
+          "startLine": 141,
+          "endLine": 157,
+          "params": [
+            "missionId",
+            "role",
+            "content"
+          ]
+        },
+        {
+          "name": "updateMessage",
+          "startLine": 159,
+          "endLine": 162,
+          "params": [
+            "messageId",
+            "content"
+          ]
+        },
+        {
+          "name": "archiveMission",
+          "startLine": 164,
+          "endLine": 167,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "listMissions",
+          "startLine": 173,
+          "endLine": 198,
+          "params": [
+            "opts"
+          ]
+        },
+        {
+          "name": "countMissions",
+          "startLine": 201,
+          "endLine": 218,
+          "params": [
+            "opts"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "serializeMission",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "summarizeTitle",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "getActiveMission",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "getMission",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "listMessages",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "createMission",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "setAcpSessionId",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "setLatestTriageDraft",
+          "line": 125,
+          "isDefault": false
+        },
+        {
+          "name": "setTriageTaskId",
+          "line": 135,
+          "isDefault": false
+        },
+        {
+          "name": "appendMessage",
+          "line": 141,
+          "isDefault": false
+        },
+        {
+          "name": "updateMessage",
+          "line": 159,
+          "isDefault": false
+        },
+        {
+          "name": "archiveMission",
+          "line": 164,
+          "isDefault": false
+        },
+        {
+          "name": "listMissions",
+          "line": 173,
+          "isDefault": false
+        },
+        {
+          "name": "countMissions",
+          "line": 201,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "serializeMission",
+          "callee": "JSON.parse",
+          "lineNumber": 27
+        },
+        {
+          "caller": "summarizeTitle",
+          "callee": "text.replace(/\\s+/g, ' ').trim",
+          "lineNumber": 45
+        },
+        {
+          "caller": "summarizeTitle",
+          "callee": "text.replace",
+          "lineNumber": 45
+        },
+        {
+          "caller": "summarizeTitle",
+          "callee": "trimmed.slice",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getActiveMission",
+          "callee": "useDb",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getActiveMission",
+          "callee": "db.prepare(\n    `SELECT * FROM missions\n     WHERE orchestrator_slug = ? AND status = 'open'\n     ORDER BY last_message_at DESC\n     LIMIT 1`\n  ).get",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getActiveMission",
+          "callee": "db.prepare",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getMission",
+          "callee": "useDb",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getMission",
+          "callee": "db.prepare('SELECT * FROM missions WHERE id = ?').get",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getMission",
+          "callee": "db.prepare",
+          "lineNumber": 62
+        },
+        {
+          "caller": "listMessages",
+          "callee": "useDb",
+          "lineNumber": 67
+        },
+        {
+          "caller": "listMessages",
+          "callee": "db.prepare(\n    'SELECT * FROM mission_messages WHERE mission_id = ? ORDER BY id ASC'\n  ).all",
+          "lineNumber": 68
+        },
+        {
+          "caller": "listMessages",
+          "callee": "db.prepare",
+          "lineNumber": 68
+        },
+        {
+          "caller": "createMission",
+          "callee": "useDb",
+          "lineNumber": 80
+        },
+        {
+          "caller": "createMission",
+          "callee": "randomUUID",
+          "lineNumber": 81
+        },
+        {
+          "caller": "createMission",
+          "callee": "new Date().toISOString",
+          "lineNumber": 82
+        },
+        {
+          "caller": "createMission",
+          "callee": "summarizeTitle",
+          "lineNumber": 83
+        },
+        {
+          "caller": "createMission",
+          "callee": "db\n    .prepare(`SELECT id FROM missions WHERE orchestrator_slug = ? AND status = 'open'`)\n    .all",
+          "lineNumber": 92
+        },
+        {
+          "caller": "createMission",
+          "callee": "db\n    .prepare",
+          "lineNumber": 92
+        },
+        {
+          "caller": "createMission",
+          "callee": "db.prepare(\n      `UPDATE missions SET status = 'archived' WHERE orchestrator_slug = ? AND status = 'open'`\n    ).run",
+          "lineNumber": 96
+        },
+        {
+          "caller": "createMission",
+          "callee": "db.prepare",
+          "lineNumber": 96
+        },
+        {
+          "caller": "createMission",
+          "callee": "orphans.map",
+          "lineNumber": 101
+        },
+        {
+          "caller": "createMission",
+          "callee": "ids.map(() => '?').join",
+          "lineNumber": 102
+        },
+        {
+          "caller": "createMission",
+          "callee": "ids.map",
+          "lineNumber": 102
+        },
+        {
+          "caller": "createMission",
+          "callee": "db.prepare(\n      `DELETE FROM mission_watched_tasks WHERE mission_id IN (${placeholders})`\n    ).run",
+          "lineNumber": 103
+        },
+        {
+          "caller": "createMission",
+          "callee": "db.prepare",
+          "lineNumber": 103
+        },
+        {
+          "caller": "createMission",
+          "callee": "db.prepare(\n    `INSERT INTO missions (id, orchestrator_slug, title, status, mode, created_at, last_message_at)\n     VALUES (?, ?, ?, 'open', ?, ?, ?)`\n  ).run",
+          "lineNumber": 108
+        },
+        {
+          "caller": "createMission",
+          "callee": "db.prepare",
+          "lineNumber": 108
+        },
+        {
+          "caller": "createMission",
+          "callee": "getMission",
+          "lineNumber": 112
+        },
+        {
+          "caller": "setAcpSessionId",
+          "callee": "useDb",
+          "lineNumber": 116
+        },
+        {
+          "caller": "setAcpSessionId",
+          "callee": "db.prepare('UPDATE missions SET acp_session_id = ? WHERE id = ?').run",
+          "lineNumber": 117
+        },
+        {
+          "caller": "setAcpSessionId",
+          "callee": "db.prepare",
+          "lineNumber": 117
+        },
+        {
+          "caller": "setLatestTriageDraft",
+          "callee": "useDb",
+          "lineNumber": 129
+        },
+        {
+          "caller": "setLatestTriageDraft",
+          "callee": "db.prepare('UPDATE missions SET latest_triage_draft = ? WHERE id = ?')\n    .run",
+          "lineNumber": 130
+        },
+        {
+          "caller": "setLatestTriageDraft",
+          "callee": "db.prepare",
+          "lineNumber": 130
+        },
+        {
+          "caller": "setLatestTriageDraft",
+          "callee": "JSON.stringify",
+          "lineNumber": 131
+        },
+        {
+          "caller": "setTriageTaskId",
+          "callee": "useDb",
+          "lineNumber": 136
+        },
+        {
+          "caller": "setTriageTaskId",
+          "callee": "db.prepare('UPDATE missions SET triage_task_id = ? WHERE id = ?')\n    .run",
+          "lineNumber": 137
+        },
+        {
+          "caller": "setTriageTaskId",
+          "callee": "db.prepare",
+          "lineNumber": 137
+        },
+        {
+          "caller": "appendMessage",
+          "callee": "useDb",
+          "lineNumber": 142
+        },
+        {
+          "caller": "appendMessage",
+          "callee": "new Date().toISOString",
+          "lineNumber": 143
+        },
+        {
+          "caller": "appendMessage",
+          "callee": "db.prepare(\n    `INSERT INTO mission_messages (mission_id, role, content, created_at)\n     VALUES (?, ?, ?, ?)`\n  ).run",
+          "lineNumber": 144
+        },
+        {
+          "caller": "appendMessage",
+          "callee": "db.prepare",
+          "lineNumber": 144
+        },
+        {
+          "caller": "appendMessage",
+          "callee": "db.prepare('UPDATE missions SET last_message_at = ? WHERE id = ?').run",
+          "lineNumber": 148
+        },
+        {
+          "caller": "appendMessage",
+          "callee": "db.prepare",
+          "lineNumber": 148
+        },
+        {
+          "caller": "appendMessage",
+          "callee": "Number",
+          "lineNumber": 149
+        },
+        {
+          "caller": "updateMessage",
+          "callee": "useDb",
+          "lineNumber": 160
+        },
+        {
+          "caller": "updateMessage",
+          "callee": "db.prepare('UPDATE mission_messages SET content = ? WHERE id = ?').run",
+          "lineNumber": 161
+        },
+        {
+          "caller": "updateMessage",
+          "callee": "db.prepare",
+          "lineNumber": 161
+        },
+        {
+          "caller": "archiveMission",
+          "callee": "useDb",
+          "lineNumber": 165
+        },
+        {
+          "caller": "archiveMission",
+          "callee": "db.prepare(`UPDATE missions SET status = 'archived' WHERE id = ?`).run",
+          "lineNumber": 166
+        },
+        {
+          "caller": "archiveMission",
+          "callee": "db.prepare",
+          "lineNumber": 166
+        },
+        {
+          "caller": "listMissions",
+          "callee": "useDb",
+          "lineNumber": 179
+        },
+        {
+          "caller": "listMissions",
+          "callee": "conds.push",
+          "lineNumber": 183
+        },
+        {
+          "caller": "listMissions",
+          "callee": "params.push",
+          "lineNumber": 184
+        },
+        {
+          "caller": "listMissions",
+          "callee": "conds.push",
+          "lineNumber": 187
+        },
+        {
+          "caller": "listMissions",
+          "callee": "params.push",
+          "lineNumber": 188
+        },
+        {
+          "caller": "listMissions",
+          "callee": "conds.join",
+          "lineNumber": 190
+        },
+        {
+          "caller": "listMissions",
+          "callee": "Math.max",
+          "lineNumber": 191
+        },
+        {
+          "caller": "listMissions",
+          "callee": "Math.min",
+          "lineNumber": 191
+        },
+        {
+          "caller": "listMissions",
+          "callee": "Math.max",
+          "lineNumber": 192
+        },
+        {
+          "caller": "listMissions",
+          "callee": "db.prepare(\n    `SELECT * FROM missions ${where}\n     ORDER BY last_message_at DESC\n     LIMIT ? OFFSET ?`\n  ).all",
+          "lineNumber": 193
+        },
+        {
+          "caller": "listMissions",
+          "callee": "db.prepare",
+          "lineNumber": 193
+        },
+        {
+          "caller": "countMissions",
+          "callee": "useDb",
+          "lineNumber": 205
+        },
+        {
+          "caller": "countMissions",
+          "callee": "conds.push",
+          "lineNumber": 209
+        },
+        {
+          "caller": "countMissions",
+          "callee": "params.push",
+          "lineNumber": 210
+        },
+        {
+          "caller": "countMissions",
+          "callee": "conds.push",
+          "lineNumber": 213
+        },
+        {
+          "caller": "countMissions",
+          "callee": "params.push",
+          "lineNumber": 214
+        },
+        {
+          "caller": "countMissions",
+          "callee": "conds.join",
+          "lineNumber": 216
+        },
+        {
+          "caller": "countMissions",
+          "callee": "db.prepare(`SELECT COUNT(*) as c FROM missions ${where}`).get",
+          "lineNumber": 217
+        },
+        {
+          "caller": "countMissions",
+          "callee": "db.prepare",
+          "lineNumber": 217
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 14,
+        "functionCount": 14,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/utils/triage.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 394,
+      "nonEmptyLines": 355,
+      "functions": [
+        {
+          "name": "runHermes",
+          "startLine": 17,
+          "endLine": 33,
+          "params": [
+            "args"
+          ]
+        },
+        {
+          "name": "parseKanbanJson",
+          "startLine": 40,
+          "endLine": 49,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "normalizeTaskIds",
+          "startLine": 76,
+          "endLine": 85,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "extractChildIdsFromDecomposedEvent",
+          "startLine": 87,
+          "endLine": 95,
+          "params": [
+            "payload"
+          ]
+        },
+        {
+          "name": "decomposeResultFromParsed",
+          "startLine": 97,
+          "endLine": 118,
+          "params": [
+            "taskId",
+            "parsed"
+          ]
+        },
+        {
+          "name": "recoverDecomposeFromKanbanState",
+          "startLine": 128,
+          "endLine": 174,
+          "params": [
+            "taskId"
+          ]
+        },
+        {
+          "name": "createTriageTask",
+          "startLine": 189,
+          "endLine": 216,
+          "params": [
+            "opts"
+          ]
+        },
+        {
+          "name": "decomposeTask",
+          "startLine": 222,
+          "endLine": 246,
+          "params": [
+            "taskId"
+          ]
+        },
+        {
+          "name": "specifyTask",
+          "startLine": 252,
+          "endLine": 272,
+          "params": [
+            "taskId"
+          ]
+        },
+        {
+          "name": "launchTriage",
+          "startLine": 279,
+          "endLine": 303,
+          "params": [
+            "opts"
+          ]
+        },
+        {
+          "name": "persistTriageTaskId",
+          "startLine": 305,
+          "endLine": 309,
+          "params": [
+            "missionId",
+            "triageTaskId"
+          ]
+        },
+        {
+          "name": "extractTriageDraft",
+          "startLine": 356,
+          "endLine": 394,
+          "params": [
+            "text"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "runHermes",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "parseKanbanJson",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "decomposeResultFromParsed",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "recoverDecomposeFromKanbanState",
+          "line": 128,
+          "isDefault": false
+        },
+        {
+          "name": "createTriageTask",
+          "line": 189,
+          "isDefault": false
+        },
+        {
+          "name": "decomposeTask",
+          "line": 222,
+          "isDefault": false
+        },
+        {
+          "name": "specifyTask",
+          "line": 252,
+          "isDefault": false
+        },
+        {
+          "name": "launchTriage",
+          "line": 279,
+          "isDefault": false
+        },
+        {
+          "name": "TRIAGE_DRAFT_BLOCK_RE",
+          "line": 346,
+          "isDefault": false
+        },
+        {
+          "name": "extractTriageDraft",
+          "line": 356,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "runHermes",
+          "callee": "spawn",
+          "lineNumber": 19
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.stdout.setEncoding",
+          "lineNumber": 20
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.stderr.setEncoding",
+          "lineNumber": 21
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.stdout.on",
+          "lineNumber": 24
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.stderr.on",
+          "lineNumber": 27
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.on",
+          "lineNumber": 30
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.on",
+          "lineNumber": 31
+        },
+        {
+          "caller": "runHermes",
+          "callee": "resolve",
+          "lineNumber": 31
+        },
+        {
+          "caller": "parseKanbanJson",
+          "callee": "text.indexOf",
+          "lineNumber": 42
+        },
+        {
+          "caller": "parseKanbanJson",
+          "callee": "JSON.parse",
+          "lineNumber": 45
+        },
+        {
+          "caller": "parseKanbanJson",
+          "callee": "text.slice",
+          "lineNumber": 45
+        },
+        {
+          "caller": "normalizeTaskIds",
+          "callee": "Array.isArray",
+          "lineNumber": 77
+        },
+        {
+          "caller": "normalizeTaskIds",
+          "callee": "value\n    .map(c => typeof c === 'string'\n      ? c\n      : (typeof c === 'object' && c && typeof (c as { id?: unknown }).id === 'string'\n          ? (c as { id: string }).id\n          : null))\n    .filter",
+          "lineNumber": 78
+        },
+        {
+          "caller": "normalizeTaskIds",
+          "callee": "value\n    .map",
+          "lineNumber": 78
+        },
+        {
+          "caller": "normalizeTaskIds",
+          "callee": "/^t_/.test",
+          "lineNumber": 84
+        },
+        {
+          "caller": "extractChildIdsFromDecomposedEvent",
+          "callee": "JSON.parse",
+          "lineNumber": 90
+        },
+        {
+          "caller": "extractChildIdsFromDecomposedEvent",
+          "callee": "normalizeTaskIds",
+          "lineNumber": 91
+        },
+        {
+          "caller": "decomposeResultFromParsed",
+          "callee": "Array.isArray",
+          "lineNumber": 108
+        },
+        {
+          "caller": "decomposeResultFromParsed",
+          "callee": "Array.isArray",
+          "lineNumber": 110
+        },
+        {
+          "caller": "decomposeResultFromParsed",
+          "callee": "normalizeTaskIds",
+          "lineNumber": 113
+        },
+        {
+          "caller": "recoverDecomposeFromKanbanState",
+          "callee": "getKanbanDb",
+          "lineNumber": 129
+        },
+        {
+          "caller": "recoverDecomposeFromKanbanState",
+          "callee": "db.prepare(\n    'SELECT id, title, status FROM tasks WHERE id = ?'\n  ).get",
+          "lineNumber": 132
+        },
+        {
+          "caller": "recoverDecomposeFromKanbanState",
+          "callee": "db.prepare",
+          "lineNumber": 132
+        },
+        {
+          "caller": "recoverDecomposeFromKanbanState",
+          "callee": "db.prepare(\n    `SELECT kind, payload, created_at FROM task_events\n     WHERE task_id = ?\n     ORDER BY created_at DESC, id DESC\n     LIMIT 20`\n  ).all",
+          "lineNumber": 137
+        },
+        {
+          "caller": "recoverDecomposeFromKanbanState",
+          "callee": "db.prepare",
+          "lineNumber": 137
+        },
+        {
+          "caller": "recoverDecomposeFromKanbanState",
+          "callee": "extractChildIdsFromDecomposedEvent",
+          "lineNumber": 147
+        },
+        {
+          "caller": "recoverDecomposeFromKanbanState",
+          "callee": "db.prepare(\n      'SELECT parent_id FROM task_links WHERE child_id = ? ORDER BY parent_id'\n    ).all",
+          "lineNumber": 152
+        },
+        {
+          "caller": "recoverDecomposeFromKanbanState",
+          "callee": "db.prepare",
+          "lineNumber": 152
+        },
+        {
+          "caller": "recoverDecomposeFromKanbanState",
+          "callee": "normalizeTaskIds",
+          "lineNumber": 155
+        },
+        {
+          "caller": "recoverDecomposeFromKanbanState",
+          "callee": "links.map",
+          "lineNumber": 155
+        },
+        {
+          "caller": "createTriageTask",
+          "callee": "opts.title.trim",
+          "lineNumber": 194
+        },
+        {
+          "caller": "createTriageTask",
+          "callee": "opts.body.trim",
+          "lineNumber": 198
+        },
+        {
+          "caller": "createTriageTask",
+          "callee": "args.push",
+          "lineNumber": 199
+        },
+        {
+          "caller": "createTriageTask",
+          "callee": "args.push",
+          "lineNumber": 202
+        },
+        {
+          "caller": "createTriageTask",
+          "callee": "runHermes",
+          "lineNumber": 205
+        },
+        {
+          "caller": "createTriageTask",
+          "callee": "stderr.trim",
+          "lineNumber": 207
+        },
+        {
+          "caller": "createTriageTask",
+          "callee": "parseKanbanJson",
+          "lineNumber": 210
+        },
+        {
+          "caller": "createTriageTask",
+          "callee": "/^t_/.test",
+          "lineNumber": 212
+        },
+        {
+          "caller": "createTriageTask",
+          "callee": "stdout.slice",
+          "lineNumber": 213
+        },
+        {
+          "caller": "decomposeTask",
+          "callee": "runHermes",
+          "lineNumber": 224
+        },
+        {
+          "caller": "decomposeTask",
+          "callee": "stderr.trim",
+          "lineNumber": 226
+        },
+        {
+          "caller": "decomposeTask",
+          "callee": "parseKanbanJson",
+          "lineNumber": 228
+        },
+        {
+          "caller": "decomposeTask",
+          "callee": "decomposeResultFromParsed",
+          "lineNumber": 236
+        },
+        {
+          "caller": "decomposeTask",
+          "callee": "recoverDecomposeFromKanbanState",
+          "lineNumber": 238
+        },
+        {
+          "caller": "decomposeTask",
+          "callee": "console.warn",
+          "lineNumber": 240
+        },
+        {
+          "caller": "decomposeTask",
+          "callee": "stderr.trim",
+          "lineNumber": 244
+        },
+        {
+          "caller": "decomposeTask",
+          "callee": "stderr.slice",
+          "lineNumber": 244
+        },
+        {
+          "caller": "decomposeTask",
+          "callee": "stdout.slice",
+          "lineNumber": 245
+        },
+        {
+          "caller": "specifyTask",
+          "callee": "runHermes",
+          "lineNumber": 254
+        },
+        {
+          "caller": "specifyTask",
+          "callee": "stderr.trim",
+          "lineNumber": 256
+        },
+        {
+          "caller": "specifyTask",
+          "callee": "parseKanbanJson",
+          "lineNumber": 258
+        },
+        {
+          "caller": "specifyTask",
+          "callee": "stdout.slice",
+          "lineNumber": 264
+        },
+        {
+          "caller": "launchTriage",
+          "callee": "createTriageTask",
+          "lineNumber": 284
+        },
+        {
+          "caller": "launchTriage",
+          "callee": "decomposeTask",
+          "lineNumber": 292
+        },
+        {
+          "caller": "launchTriage",
+          "callee": "persistTriageTaskId",
+          "lineNumber": 297
+        },
+        {
+          "caller": "launchTriage",
+          "callee": "persistTriageTaskId",
+          "lineNumber": 301
+        },
+        {
+          "caller": "persistTriageTaskId",
+          "callee": "useDb()\n    .prepare('UPDATE missions SET triage_task_id = ?, latest_triage_draft = NULL WHERE id = ?')\n    .run",
+          "lineNumber": 306
+        },
+        {
+          "caller": "persistTriageTaskId",
+          "callee": "useDb()\n    .prepare",
+          "lineNumber": 306
+        },
+        {
+          "caller": "persistTriageTaskId",
+          "callee": "useDb",
+          "lineNumber": 306
+        },
+        {
+          "caller": "extractTriageDraft",
+          "callee": "text.matchAll",
+          "lineNumber": 364
+        },
+        {
+          "caller": "extractTriageDraft",
+          "callee": "(m[1] ?? m[2] ?? '').trim",
+          "lineNumber": 367
+        },
+        {
+          "caller": "extractTriageDraft",
+          "callee": "lastInner.split",
+          "lineNumber": 374
+        },
+        {
+          "caller": "extractTriageDraft",
+          "callee": "rawLine.replace",
+          "lineNumber": 375
+        },
+        {
+          "caller": "extractTriageDraft",
+          "callee": "/^\\s*Title:\\s*(.*)$/i.exec",
+          "lineNumber": 376
+        },
+        {
+          "caller": "extractTriageDraft",
+          "callee": "titleMatch[1]!.trim",
+          "lineNumber": 378
+        },
+        {
+          "caller": "extractTriageDraft",
+          "callee": "/^\\s*Body:\\s*(.*)$/i.test",
+          "lineNumber": 381
+        },
+        {
+          "caller": "extractTriageDraft",
+          "callee": "line.replace",
+          "lineNumber": 383
+        },
+        {
+          "caller": "extractTriageDraft",
+          "callee": "after.trim",
+          "lineNumber": 384
+        },
+        {
+          "caller": "extractTriageDraft",
+          "callee": "bodyLines.push",
+          "lineNumber": 384
+        },
+        {
+          "caller": "extractTriageDraft",
+          "callee": "bodyLines.push",
+          "lineNumber": 388
+        },
+        {
+          "caller": "extractTriageDraft",
+          "callee": "bodyLines.join('\\n').trim",
+          "lineNumber": 391
+        },
+        {
+          "caller": "extractTriageDraft",
+          "callee": "bodyLines.join",
+          "lineNumber": 391
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 10,
+        "functionCount": 12,
+        "classCount": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,345 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 3,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "i18n/locales/en.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 468,
+      "nonEmptyLines": 468,
+      "sections": [
+        {
+          "heading": "app",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "nav",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "common",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "update",
+          "level": 1,
+          "line": 22
+        },
+        {
+          "heading": "warRoom",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "mission",
+          "level": 1,
+          "line": 110
+        },
+        {
+          "heading": "team",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "hire",
+          "level": 1,
+          "line": 218
+        },
+        {
+          "heading": "presets",
+          "level": 1,
+          "line": 239
+        },
+        {
+          "heading": "skills",
+          "level": 1,
+          "line": 289
+        },
+        {
+          "heading": "tools",
+          "level": 1,
+          "line": 303
+        },
+        {
+          "heading": "soul",
+          "level": 1,
+          "line": 313
+        },
+        {
+          "heading": "mcp",
+          "level": 1,
+          "line": 319
+        },
+        {
+          "heading": "retrain",
+          "level": 1,
+          "line": 337
+        },
+        {
+          "heading": "rename",
+          "level": 1,
+          "line": 348
+        },
+        {
+          "heading": "fire",
+          "level": 1,
+          "line": 357
+        },
+        {
+          "heading": "profileConfig",
+          "level": 1,
+          "line": 367
+        },
+        {
+          "heading": "agents",
+          "level": 1,
+          "line": 389
+        },
+        {
+          "heading": "badge",
+          "level": 1,
+          "line": 155
+        },
+        {
+          "heading": "whatsNew",
+          "level": 1,
+          "line": 443
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 20
+      }
+    },
+    {
+      "path": "i18n/locales/es.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 468,
+      "nonEmptyLines": 468,
+      "sections": [
+        {
+          "heading": "app",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "nav",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "common",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "update",
+          "level": 1,
+          "line": 22
+        },
+        {
+          "heading": "warRoom",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "mission",
+          "level": 1,
+          "line": 110
+        },
+        {
+          "heading": "team",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "hire",
+          "level": 1,
+          "line": 218
+        },
+        {
+          "heading": "presets",
+          "level": 1,
+          "line": 239
+        },
+        {
+          "heading": "skills",
+          "level": 1,
+          "line": 289
+        },
+        {
+          "heading": "tools",
+          "level": 1,
+          "line": 303
+        },
+        {
+          "heading": "soul",
+          "level": 1,
+          "line": 313
+        },
+        {
+          "heading": "mcp",
+          "level": 1,
+          "line": 319
+        },
+        {
+          "heading": "retrain",
+          "level": 1,
+          "line": 337
+        },
+        {
+          "heading": "rename",
+          "level": 1,
+          "line": 348
+        },
+        {
+          "heading": "fire",
+          "level": 1,
+          "line": 357
+        },
+        {
+          "heading": "profileConfig",
+          "level": 1,
+          "line": 367
+        },
+        {
+          "heading": "agents",
+          "level": 1,
+          "line": 389
+        },
+        {
+          "heading": "badge",
+          "level": 1,
+          "line": 155
+        },
+        {
+          "heading": "whatsNew",
+          "level": 1,
+          "line": 443
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 20
+      }
+    },
+    {
+      "path": "i18n/locales/id.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 383,
+      "nonEmptyLines": 383,
+      "sections": [
+        {
+          "heading": "app",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "nav",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "common",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "warRoom",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "mission",
+          "level": 1,
+          "line": 105
+        },
+        {
+          "heading": "team",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "hire",
+          "level": 1,
+          "line": 173
+        },
+        {
+          "heading": "presets",
+          "level": 1,
+          "line": 194
+        },
+        {
+          "heading": "skills",
+          "level": 1,
+          "line": 244
+        },
+        {
+          "heading": "tools",
+          "level": 1,
+          "line": 258
+        },
+        {
+          "heading": "soul",
+          "level": 1,
+          "line": 268
+        },
+        {
+          "heading": "mcp",
+          "level": 1,
+          "line": 274
+        },
+        {
+          "heading": "retrain",
+          "level": 1,
+          "line": 292
+        },
+        {
+          "heading": "rename",
+          "level": 1,
+          "line": 303
+        },
+        {
+          "heading": "fire",
+          "level": 1,
+          "line": 312
+        },
+        {
+          "heading": "profileConfig",
+          "level": 1,
+          "line": 322
+        },
+        {
+          "heading": "agents",
+          "level": 1,
+          "line": 344
+        },
+        {
+          "heading": "badge",
+          "level": 1,
+          "line": 353
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 18
+      }
+    }
+  ]
+}

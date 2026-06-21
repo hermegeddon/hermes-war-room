@@ -1,0 +1,250 @@
+{
+  "nodes": [
+    {
+      "id": "service:.dockerignore",
+      "type": "service",
+      "name": ".dockerignore",
+      "filePath": ".dockerignore",
+      "summary": ".dockerignore project file in the Hermes War Room project.",
+      "tags": [
+        "infrastructure",
+        "automation",
+        "unknown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.releaserc.json",
+      "type": "config",
+      "name": ".releaserc.json",
+      "filePath": ".releaserc.json",
+      "summary": "Json configuration with 3 documented sections/keys.",
+      "tags": [
+        "configuration",
+        "build-system",
+        "json"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:CHANGELOG.md",
+      "type": "document",
+      "name": "CHANGELOG.md",
+      "filePath": "CHANGELOG.md",
+      "summary": "Changelog.md project file with 21 documented sections/keys.",
+      "tags": [
+        "documentation",
+        "overview",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "Project documentation for Orchestration War Room, a multilingual browser dashboard over Hermes multi-profile delegation and kanban workflows.",
+      "tags": [
+        "documentation",
+        "overview",
+        "entry-point",
+        "markdown"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "config:mise.toml",
+      "type": "config",
+      "name": "mise.toml",
+      "filePath": "mise.toml",
+      "summary": "Toml configuration with 2 documented sections/keys.",
+      "tags": [
+        "configuration",
+        "build-system",
+        "toml"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "package.json",
+      "summary": "Node package manifest defining nuxt dependencies and scripts with 7 documented sections/keys.",
+      "tags": [
+        "configuration",
+        "build-system",
+        "json"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:pnpm-workspace.yaml",
+      "type": "config",
+      "name": "pnpm-workspace.yaml",
+      "filePath": "pnpm-workspace.yaml",
+      "summary": "Yaml configuration with 1 documented sections/keys.",
+      "tags": [
+        "configuration",
+        "build-system",
+        "yaml"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:renovate.json",
+      "type": "config",
+      "name": "renovate.json",
+      "filePath": "renovate.json",
+      "summary": "Json configuration with 4 documented sections/keys.",
+      "tags": [
+        "configuration",
+        "build-system",
+        "json"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:tsconfig.json",
+      "type": "config",
+      "name": "tsconfig.json",
+      "filePath": "tsconfig.json",
+      "summary": "Typescript compiler configuration with 2 documented sections/keys.",
+      "tags": [
+        "configuration",
+        "build-system",
+        "json"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "service:.dockerignore",
+      "target": "config:package.json",
+      "type": "deploys",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "service:.dockerignore",
+      "target": "file:nuxt.config.ts",
+      "type": "deploys",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:.releaserc.json",
+      "target": "config:package.json",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:.releaserc.json",
+      "target": "file:nuxt.config.ts",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "document:CHANGELOG.md",
+      "target": "config:package.json",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:CHANGELOG.md",
+      "target": "file:nuxt.config.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:README.md",
+      "target": "config:package.json",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:README.md",
+      "target": "file:nuxt.config.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:mise.toml",
+      "target": "config:package.json",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:mise.toml",
+      "target": "file:nuxt.config.ts",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:package.json",
+      "target": "file:nuxt.config.ts",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:package.json",
+      "target": "file:app/app.vue",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:pnpm-workspace.yaml",
+      "target": "config:package.json",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:pnpm-workspace.yaml",
+      "target": "file:nuxt.config.ts",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:renovate.json",
+      "target": "config:package.json",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:renovate.json",
+      "target": "file:nuxt.config.ts",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:tsconfig.json",
+      "target": "config:package.json",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:tsconfig.json",
+      "target": "file:nuxt.config.ts",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

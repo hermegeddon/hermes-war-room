@@ -1,0 +1,1109 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 15,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "server/api/profiles/[slug]/agents.get.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 12,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/profiles/[slug]/agents.put.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 24,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/profiles/[slug]/mcp.get.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 12,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/profiles/[slug]/mcp/[name].delete.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 23,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/profiles/[slug]/tools.get.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 12,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/profiles/[slug]/tools.put.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 36,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/tools.get.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/api/usage.get.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 13,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/plugins/mission-cleanup.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 39,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/utils/agents.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 116,
+      "nonEmptyLines": 98,
+      "functions": [
+        {
+          "name": "profilePath",
+          "startLine": 12,
+          "endLine": 14,
+          "params": [
+            "profileDir"
+          ]
+        },
+        {
+          "name": "readAgents",
+          "startLine": 27,
+          "endLine": 36,
+          "params": [
+            "profileDir"
+          ]
+        },
+        {
+          "name": "writeAgents",
+          "startLine": 38,
+          "endLine": 53,
+          "params": [
+            "profileDir",
+            "contents"
+          ]
+        },
+        {
+          "name": "syncManagedAgentsBlock",
+          "startLine": 85,
+          "endLine": 116,
+          "params": [
+            "profileDir"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "readAgents",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "writeAgents",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "syncManagedAgentsBlock",
+          "line": 85,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "profilePath",
+          "callee": "join",
+          "lineNumber": 13
+        },
+        {
+          "caller": "readAgents",
+          "callee": "profilePath",
+          "lineNumber": 28
+        },
+        {
+          "caller": "readAgents",
+          "callee": "existsSync",
+          "lineNumber": 29
+        },
+        {
+          "caller": "readAgents",
+          "callee": "readFileSync",
+          "lineNumber": 30
+        },
+        {
+          "caller": "readAgents",
+          "callee": "existsSync",
+          "lineNumber": 32
+        },
+        {
+          "caller": "readAgents",
+          "callee": "readFileSync",
+          "lineNumber": 33
+        },
+        {
+          "caller": "writeAgents",
+          "callee": "Buffer.byteLength",
+          "lineNumber": 39
+        },
+        {
+          "caller": "writeAgents",
+          "callee": "profilePath",
+          "lineNumber": 42
+        },
+        {
+          "caller": "writeAgents",
+          "callee": "Date.now",
+          "lineNumber": 43
+        },
+        {
+          "caller": "writeAgents",
+          "callee": "writeFileSync",
+          "lineNumber": 45
+        },
+        {
+          "caller": "writeAgents",
+          "callee": "renameSync",
+          "lineNumber": 46
+        },
+        {
+          "caller": "writeAgents",
+          "callee": "unlinkSync",
+          "lineNumber": 49
+        },
+        {
+          "caller": "syncManagedAgentsBlock",
+          "callee": "profilePath",
+          "lineNumber": 86
+        },
+        {
+          "caller": "syncManagedAgentsBlock",
+          "callee": "existsSync",
+          "lineNumber": 87
+        },
+        {
+          "caller": "syncManagedAgentsBlock",
+          "callee": "readFileSync",
+          "lineNumber": 87
+        },
+        {
+          "caller": "syncManagedAgentsBlock",
+          "callee": "MANAGED_BLOCK_RE.test",
+          "lineNumber": 90
+        },
+        {
+          "caller": "syncManagedAgentsBlock",
+          "callee": "existing.replace",
+          "lineNumber": 92
+        },
+        {
+          "caller": "syncManagedAgentsBlock",
+          "callee": "existing.trim",
+          "lineNumber": 93
+        },
+        {
+          "caller": "syncManagedAgentsBlock",
+          "callee": "existing.endsWith",
+          "lineNumber": 96
+        },
+        {
+          "caller": "syncManagedAgentsBlock",
+          "callee": "Buffer.byteLength",
+          "lineNumber": 102
+        },
+        {
+          "caller": "syncManagedAgentsBlock",
+          "callee": "Date.now",
+          "lineNumber": 106
+        },
+        {
+          "caller": "syncManagedAgentsBlock",
+          "callee": "writeFileSync",
+          "lineNumber": 108
+        },
+        {
+          "caller": "syncManagedAgentsBlock",
+          "callee": "renameSync",
+          "lineNumber": 109
+        },
+        {
+          "caller": "syncManagedAgentsBlock",
+          "callee": "unlinkSync",
+          "lineNumber": 112
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/utils/db.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 143,
+      "nonEmptyLines": 131,
+      "functions": [
+        {
+          "name": "useDb",
+          "startLine": 7,
+          "endLine": 107,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "useDb",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "useDb",
+          "callee": "resolve",
+          "lineNumber": 10
+        },
+        {
+          "caller": "useDb",
+          "callee": "process.cwd",
+          "lineNumber": 10
+        },
+        {
+          "caller": "useDb",
+          "callee": "mkdirSync",
+          "lineNumber": 11
+        },
+        {
+          "caller": "useDb",
+          "callee": "dirname",
+          "lineNumber": 11
+        },
+        {
+          "caller": "useDb",
+          "callee": "db.exec",
+          "lineNumber": 14
+        },
+        {
+          "caller": "useDb",
+          "callee": "db.exec",
+          "lineNumber": 15
+        },
+        {
+          "caller": "useDb",
+          "callee": "db.prepare('PRAGMA table_info(profiles)').all",
+          "lineNumber": 29
+        },
+        {
+          "caller": "useDb",
+          "callee": "db.prepare",
+          "lineNumber": 29
+        },
+        {
+          "caller": "useDb",
+          "callee": "cols.map",
+          "lineNumber": 30
+        },
+        {
+          "caller": "useDb",
+          "callee": "colNames.has",
+          "lineNumber": 31
+        },
+        {
+          "caller": "useDb",
+          "callee": "db.exec",
+          "lineNumber": 32
+        },
+        {
+          "caller": "useDb",
+          "callee": "colNames.has",
+          "lineNumber": 34
+        },
+        {
+          "caller": "useDb",
+          "callee": "db.exec",
+          "lineNumber": 35
+        },
+        {
+          "caller": "useDb",
+          "callee": "colNames.has",
+          "lineNumber": 37
+        },
+        {
+          "caller": "useDb",
+          "callee": "db.exec",
+          "lineNumber": 38
+        },
+        {
+          "caller": "useDb",
+          "callee": "db.exec",
+          "lineNumber": 41
+        },
+        {
+          "caller": "useDb",
+          "callee": "db.prepare('PRAGMA table_info(missions)').all",
+          "lineNumber": 53
+        },
+        {
+          "caller": "useDb",
+          "callee": "db.prepare",
+          "lineNumber": 53
+        },
+        {
+          "caller": "useDb",
+          "callee": "missionCols.map",
+          "lineNumber": 54
+        },
+        {
+          "caller": "useDb",
+          "callee": "missionColNames.has",
+          "lineNumber": 55
+        },
+        {
+          "caller": "useDb",
+          "callee": "db.exec",
+          "lineNumber": 56
+        },
+        {
+          "caller": "useDb",
+          "callee": "missionColNames.has",
+          "lineNumber": 58
+        },
+        {
+          "caller": "useDb",
+          "callee": "db.exec",
+          "lineNumber": 59
+        },
+        {
+          "caller": "useDb",
+          "callee": "missionColNames.has",
+          "lineNumber": 61
+        },
+        {
+          "caller": "useDb",
+          "callee": "db.exec",
+          "lineNumber": 66
+        },
+        {
+          "caller": "useDb",
+          "callee": "db.exec",
+          "lineNumber": 68
+        },
+        {
+          "caller": "useDb",
+          "callee": "db.exec",
+          "lineNumber": 77
+        },
+        {
+          "caller": "useDb",
+          "callee": "db.exec",
+          "lineNumber": 81
+        },
+        {
+          "caller": "useDb",
+          "callee": "db.exec",
+          "lineNumber": 90
+        },
+        {
+          "caller": "useDb",
+          "callee": "db.exec",
+          "lineNumber": 100
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/utils/kanban-symlinks.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 91,
+      "nonEmptyLines": 86,
+      "functions": [
+        {
+          "name": "realPathOrSelf",
+          "startLine": 9,
+          "endLine": 15,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "ensureSymlink",
+          "startLine": 28,
+          "endLine": 61,
+          "params": [
+            "profileDir"
+          ]
+        },
+        {
+          "name": "ensureKanbanSymlinks",
+          "startLine": 72,
+          "endLine": 91,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ensureKanbanSymlinks",
+          "line": 72,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "realPathOrSelf",
+          "callee": "realpathSync",
+          "lineNumber": 11
+        },
+        {
+          "caller": "realPathOrSelf",
+          "callee": "resolve",
+          "lineNumber": 13
+        },
+        {
+          "caller": "ensureSymlink",
+          "callee": "realPathOrSelf",
+          "lineNumber": 31
+        },
+        {
+          "caller": "ensureSymlink",
+          "callee": "join",
+          "lineNumber": 35
+        },
+        {
+          "caller": "ensureSymlink",
+          "callee": "resolve",
+          "lineNumber": 36
+        },
+        {
+          "caller": "ensureSymlink",
+          "callee": "resolve",
+          "lineNumber": 36
+        },
+        {
+          "caller": "ensureSymlink",
+          "callee": "existsSync",
+          "lineNumber": 38
+        },
+        {
+          "caller": "ensureSymlink",
+          "callee": "lstatSync",
+          "lineNumber": 39
+        },
+        {
+          "caller": "ensureSymlink",
+          "callee": "st.isSymbolicLink",
+          "lineNumber": 40
+        },
+        {
+          "caller": "ensureSymlink",
+          "callee": "readlinkSync",
+          "lineNumber": 42
+        },
+        {
+          "caller": "ensureSymlink",
+          "callee": "unlinkSync",
+          "lineNumber": 45
+        },
+        {
+          "caller": "ensureSymlink",
+          "callee": "symlinkSync",
+          "lineNumber": 47
+        },
+        {
+          "caller": "ensureSymlink",
+          "callee": "console.error",
+          "lineNumber": 53
+        },
+        {
+          "caller": "ensureKanbanSymlinks",
+          "callee": "existsSync",
+          "lineNumber": 73
+        },
+        {
+          "caller": "ensureKanbanSymlinks",
+          "callee": "useDb",
+          "lineNumber": 74
+        },
+        {
+          "caller": "ensureKanbanSymlinks",
+          "callee": "db\n    .prepare('SELECT slug, hermes_dir FROM profiles WHERE present = 1')\n    .all",
+          "lineNumber": 75
+        },
+        {
+          "caller": "ensureKanbanSymlinks",
+          "callee": "db\n    .prepare",
+          "lineNumber": 75
+        },
+        {
+          "caller": "ensureKanbanSymlinks",
+          "callee": "realPathOrSelf",
+          "lineNumber": 83
+        },
+        {
+          "caller": "ensureKanbanSymlinks",
+          "callee": "skipped.push",
+          "lineNumber": 85
+        },
+        {
+          "caller": "ensureKanbanSymlinks",
+          "callee": "ensureSymlink",
+          "lineNumber": 88
+        },
+        {
+          "caller": "ensureKanbanSymlinks",
+          "callee": "updated.push",
+          "lineNumber": 88
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/utils/mcp.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 93,
+      "nonEmptyLines": 85,
+      "functions": [
+        {
+          "name": "profileConfigPath",
+          "startLine": 27,
+          "endLine": 29,
+          "params": [
+            "profileDir"
+          ]
+        },
+        {
+          "name": "readMcpMap",
+          "startLine": 31,
+          "endLine": 41,
+          "params": [
+            "profileDir"
+          ]
+        },
+        {
+          "name": "listMcpServers",
+          "startLine": 43,
+          "endLine": 68,
+          "params": [
+            "profileDir"
+          ]
+        },
+        {
+          "name": "removeMcpServer",
+          "startLine": 70,
+          "endLine": 93,
+          "params": [
+            "profileDir",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "listMcpServers",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "removeMcpServer",
+          "line": 70,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "profileConfigPath",
+          "callee": "join",
+          "lineNumber": 28
+        },
+        {
+          "caller": "readMcpMap",
+          "callee": "profileConfigPath",
+          "lineNumber": 32
+        },
+        {
+          "caller": "readMcpMap",
+          "callee": "existsSync",
+          "lineNumber": 33
+        },
+        {
+          "caller": "readMcpMap",
+          "callee": "readFileSync",
+          "lineNumber": 35
+        },
+        {
+          "caller": "readMcpMap",
+          "callee": "parseYaml",
+          "lineNumber": 36
+        },
+        {
+          "caller": "listMcpServers",
+          "callee": "readMcpMap",
+          "lineNumber": 44
+        },
+        {
+          "caller": "listMcpServers",
+          "callee": "Object.entries",
+          "lineNumber": 47
+        },
+        {
+          "caller": "listMcpServers",
+          "callee": "Array.isArray",
+          "lineNumber": 56
+        },
+        {
+          "caller": "listMcpServers",
+          "callee": "entry.args.join",
+          "lineNumber": 56
+        },
+        {
+          "caller": "listMcpServers",
+          "callee": "out.push",
+          "lineNumber": 59
+        },
+        {
+          "caller": "listMcpServers",
+          "callee": "Object.keys",
+          "lineNumber": 64
+        },
+        {
+          "caller": "listMcpServers",
+          "callee": "out.sort",
+          "lineNumber": 67
+        },
+        {
+          "caller": "listMcpServers",
+          "callee": "a.name.localeCompare",
+          "lineNumber": 67
+        },
+        {
+          "caller": "removeMcpServer",
+          "callee": "profileConfigPath",
+          "lineNumber": 71
+        },
+        {
+          "caller": "removeMcpServer",
+          "callee": "existsSync",
+          "lineNumber": 72
+        },
+        {
+          "caller": "removeMcpServer",
+          "callee": "readFileSync",
+          "lineNumber": 75
+        },
+        {
+          "caller": "removeMcpServer",
+          "callee": "parseYamlDocument",
+          "lineNumber": 76
+        },
+        {
+          "caller": "removeMcpServer",
+          "callee": "doc.has",
+          "lineNumber": 77
+        },
+        {
+          "caller": "removeMcpServer",
+          "callee": "doc.getIn",
+          "lineNumber": 78
+        },
+        {
+          "caller": "removeMcpServer",
+          "callee": "doc.deleteIn",
+          "lineNumber": 80
+        },
+        {
+          "caller": "removeMcpServer",
+          "callee": "Date.now",
+          "lineNumber": 82
+        },
+        {
+          "caller": "removeMcpServer",
+          "callee": "writeFileSync",
+          "lineNumber": 84
+        },
+        {
+          "caller": "removeMcpServer",
+          "callee": "doc.toString",
+          "lineNumber": 84
+        },
+        {
+          "caller": "removeMcpServer",
+          "callee": "renameSync",
+          "lineNumber": 85
+        },
+        {
+          "caller": "removeMcpServer",
+          "callee": "unlinkSync",
+          "lineNumber": 88
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/utils/tokens.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 122,
+      "nonEmptyLines": 112,
+      "functions": [
+        {
+          "name": "getDb",
+          "startLine": 49,
+          "endLine": 61,
+          "params": [
+            "profileDir"
+          ]
+        },
+        {
+          "name": "readTokenUsage",
+          "startLine": 65,
+          "endLine": 122,
+          "params": [
+            "profileDir"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "readTokenUsage",
+          "line": 65,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getDb",
+          "callee": "join",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getDb",
+          "callee": "existsSync",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getDb",
+          "callee": "handles.get",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getDb",
+          "callee": "handles.set",
+          "lineNumber": 56
+        },
+        {
+          "caller": "readTokenUsage",
+          "callee": "getDb",
+          "lineNumber": 66
+        },
+        {
+          "caller": "readTokenUsage",
+          "callee": "db.prepare(`\n      SELECT\n        COALESCE(SUM(input_tokens), 0)        AS totalIn,\n        COALESCE(SUM(output_tokens), 0)       AS totalOut,\n        COALESCE(SUM(cache_read_tokens), 0)\n          + COALESCE(SUM(cache_write_tokens), 0) AS totalCache,\n        COALESCE(SUM(estimated_cost_usd), 0)  AS totalCostUsd,\n        MAX(COALESCE(ended_at, started_at))   AS lastActivityAt\n      FROM sessions\n    `).get",
+          "lineNumber": 70
+        },
+        {
+          "caller": "readTokenUsage",
+          "callee": "db.prepare",
+          "lineNumber": 70
+        },
+        {
+          "caller": "readTokenUsage",
+          "callee": "db.prepare(`\n      SELECT\n        COALESCE(input_tokens, 0)  AS sessionIn,\n        COALESCE(output_tokens, 0) AS sessionOut\n      FROM sessions\n      ORDER BY started_at DESC\n      LIMIT 1\n    `).get",
+          "lineNumber": 87
+        },
+        {
+          "caller": "readTokenUsage",
+          "callee": "db.prepare",
+          "lineNumber": 87
+        },
+        {
+          "caller": "readTokenUsage",
+          "callee": "Math.floor",
+          "lineNumber": 96
+        },
+        {
+          "caller": "readTokenUsage",
+          "callee": "Date.now",
+          "lineNumber": 96
+        },
+        {
+          "caller": "readTokenUsage",
+          "callee": "db.prepare(`\n      SELECT\n        COALESCE(SUM(input_tokens), 0)  AS recentIn,\n        COALESCE(SUM(output_tokens), 0) AS recentOut\n      FROM sessions\n      WHERE started_at > ?\n    `).get",
+          "lineNumber": 97
+        },
+        {
+          "caller": "readTokenUsage",
+          "callee": "db.prepare",
+          "lineNumber": 97
+        },
+        {
+          "caller": "readTokenUsage",
+          "callee": "console.error",
+          "lineNumber": 119
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server/utils/tools.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 90,
+      "nonEmptyLines": 81,
+      "functions": [
+        {
+          "name": "runHermes",
+          "startLine": 15,
+          "endLine": 27,
+          "params": [
+            "args"
+          ]
+        },
+        {
+          "name": "listTools",
+          "startLine": 38,
+          "endLine": 75,
+          "params": [
+            "profileSlug"
+          ]
+        },
+        {
+          "name": "applyToolState",
+          "startLine": 77,
+          "endLine": 90,
+          "params": [
+            "profileSlug",
+            "toEnable",
+            "toDisable"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "listTools",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "applyToolState",
+          "line": 77,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "runHermes",
+          "callee": "spawn",
+          "lineNumber": 17
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.stdout.setEncoding",
+          "lineNumber": 18
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.stderr.setEncoding",
+          "lineNumber": 19
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.stdout.on",
+          "lineNumber": 22
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.stderr.on",
+          "lineNumber": 23
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.on",
+          "lineNumber": 24
+        },
+        {
+          "caller": "runHermes",
+          "callee": "child.on",
+          "lineNumber": 25
+        },
+        {
+          "caller": "runHermes",
+          "callee": "resolve",
+          "lineNumber": 25
+        },
+        {
+          "caller": "listTools",
+          "callee": "args.push",
+          "lineNumber": 40
+        },
+        {
+          "caller": "listTools",
+          "callee": "args.push",
+          "lineNumber": 41
+        },
+        {
+          "caller": "listTools",
+          "callee": "runHermes",
+          "lineNumber": 43
+        },
+        {
+          "caller": "listTools",
+          "callee": "stderr.trim",
+          "lineNumber": 45
+        },
+        {
+          "caller": "listTools",
+          "callee": "stdout.split",
+          "lineNumber": 50
+        },
+        {
+          "caller": "listTools",
+          "callee": "rawLine.replace",
+          "lineNumber": 51
+        },
+        {
+          "caller": "listTools",
+          "callee": "line.startsWith",
+          "lineNumber": 52
+        },
+        {
+          "caller": "listTools",
+          "callee": "line.startsWith",
+          "lineNumber": 56
+        },
+        {
+          "caller": "listTools",
+          "callee": "line.trim",
+          "lineNumber": 56
+        },
+        {
+          "caller": "listTools",
+          "callee": "line.startsWith",
+          "lineNumber": 58
+        },
+        {
+          "caller": "listTools",
+          "callee": "line.match",
+          "lineNumber": 64
+        },
+        {
+          "caller": "listTools",
+          "callee": "out.push",
+          "lineNumber": 66
+        },
+        {
+          "caller": "listTools",
+          "callee": "m[4]!.trim",
+          "lineNumber": 68
+        },
+        {
+          "caller": "applyToolState",
+          "callee": "runHermes",
+          "lineNumber": 85
+        },
+        {
+          "caller": "applyToolState",
+          "callee": "stderr.trim",
+          "lineNumber": 87
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    }
+  ]
+}

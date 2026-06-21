@@ -1,0 +1,316 @@
+{
+  "nodes": [
+    {
+      "id": "file:server/api/profiles/[slug]/skills.get.ts",
+      "type": "file",
+      "name": "skills.get.ts",
+      "filePath": "server/api/profiles/[slug]/skills.get.ts",
+      "summary": "Nitro api route handler for profiles/[slug]/skills.get with 3 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/api/profiles/[slug]/skills.put.ts",
+      "type": "file",
+      "name": "skills.put.ts",
+      "filePath": "server/api/profiles/[slug]/skills.put.ts",
+      "summary": "Nitro api route handler for profiles/[slug]/skills.put with 2 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/api/skills.get.ts",
+      "type": "file",
+      "name": "skills.get.ts",
+      "filePath": "server/api/skills.get.ts",
+      "summary": "Nitro api route handler for skills.get with 1 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/plugins/skills-repair.ts",
+      "type": "file",
+      "name": "skills-repair.ts",
+      "filePath": "server/plugins/skills-repair.ts",
+      "summary": "Nuxt/nitro server plugin skills-repair with 2 imports.",
+      "tags": [
+        "plugin",
+        "server",
+        "lifecycle",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/utils/skills.ts",
+      "type": "file",
+      "name": "skills.ts",
+      "filePath": "server/utils/skills.ts",
+      "summary": "Server-side utility module skills with 7 extracted functions.",
+      "tags": [
+        "utility",
+        "server",
+        "service",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/utils/skills.ts:readFrontmatter",
+      "type": "function",
+      "name": "readFrontmatter",
+      "filePath": "server/utils/skills.ts",
+      "lineRange": [
+        24,
+        34
+      ],
+      "summary": "Implements readFrontmatter behavior inside server-side utility module skills.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/skills.ts:walkSkills",
+      "type": "function",
+      "name": "walkSkills",
+      "filePath": "server/utils/skills.ts",
+      "lineRange": [
+        36,
+        75
+      ],
+      "summary": "Implements walkSkills behavior inside server-side utility module skills.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/skills.ts:listGlobalSkills",
+      "type": "function",
+      "name": "listGlobalSkills",
+      "filePath": "server/utils/skills.ts",
+      "lineRange": [
+        77,
+        82
+      ],
+      "summary": "Lists GlobalSkills for server-side utility module skills.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/skills.ts:listProfileSkills",
+      "type": "function",
+      "name": "listProfileSkills",
+      "filePath": "server/utils/skills.ts",
+      "lineRange": [
+        84,
+        86
+      ],
+      "summary": "Lists ProfileSkills for server-side utility module skills.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/skills.ts:getDisabledSkills",
+      "type": "function",
+      "name": "getDisabledSkills",
+      "filePath": "server/utils/skills.ts",
+      "lineRange": [
+        92,
+        104
+      ],
+      "summary": "Retrieves or derives DisabledSkills for server-side utility module skills.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/skills.ts:setDisabledSkills",
+      "type": "function",
+      "name": "setDisabledSkills",
+      "filePath": "server/utils/skills.ts",
+      "lineRange": [
+        116,
+        145
+      ],
+      "summary": "Implements setDisabledSkills behavior inside server-side utility module skills.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:server/utils/skills.ts",
+      "target": "function:server/utils/skills.ts:readFrontmatter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/skills.ts",
+      "target": "function:server/utils/skills.ts:walkSkills",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/skills.ts",
+      "target": "function:server/utils/skills.ts:listGlobalSkills",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/skills.ts",
+      "target": "function:server/utils/skills.ts:listGlobalSkills",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/skills.ts",
+      "target": "function:server/utils/skills.ts:listProfileSkills",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/skills.ts",
+      "target": "function:server/utils/skills.ts:listProfileSkills",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/skills.ts",
+      "target": "function:server/utils/skills.ts:getDisabledSkills",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/skills.ts",
+      "target": "function:server/utils/skills.ts:getDisabledSkills",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/skills.ts",
+      "target": "function:server/utils/skills.ts:setDisabledSkills",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/skills.ts",
+      "target": "function:server/utils/skills.ts:setDisabledSkills",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/api/profiles/[slug]/skills.get.ts",
+      "target": "file:server/api/skills.get.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/profiles/[slug]/skills.get.ts",
+      "target": "file:server/utils/db.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/profiles/[slug]/skills.get.ts",
+      "target": "file:server/utils/skills.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/profiles/[slug]/skills.put.ts",
+      "target": "file:server/utils/db.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/profiles/[slug]/skills.put.ts",
+      "target": "file:server/utils/skills.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/skills.get.ts",
+      "target": "file:server/utils/skills.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/plugins/skills-repair.ts",
+      "target": "file:server/utils/hermes.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/plugins/skills-repair.ts",
+      "target": "file:server/utils/skills.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:server/utils/skills.ts:listGlobalSkills",
+      "target": "function:server/utils/skills.ts:walkSkills",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/skills.ts:listProfileSkills",
+      "target": "function:server/utils/skills.ts:walkSkills",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

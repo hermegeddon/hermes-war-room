@@ -1,0 +1,182 @@
+{
+  "projectRoot": "/home/openclaw/hermes-war-room",
+  "batchFiles": [
+    {
+      "path": ".claude/settings.json",
+      "language": "json",
+      "sizeLines": 5,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".understand-anything/.understandignore",
+      "language": "unknown",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".understand-anything/config.json",
+      "language": "json",
+      "sizeLines": 1,
+      "fileCategory": "config"
+    },
+    {
+      "path": "app/app.config.ts",
+      "language": "typescript",
+      "sizeLines": 8,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/app.vue",
+      "language": "vue",
+      "sizeLines": 380,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/assets/css/main.css",
+      "language": "css",
+      "sizeLines": 57,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "app/components/CapabilityCard.vue",
+      "language": "vue",
+      "sizeLines": 185,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/CapabilityModal.vue",
+      "language": "vue",
+      "sizeLines": 183,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/DelegationOverlay.vue",
+      "language": "vue",
+      "sizeLines": 176,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/HireProfileModal.vue",
+      "language": "vue",
+      "sizeLines": 1219,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/McpPicker.vue",
+      "language": "vue",
+      "sizeLines": 133,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/MissionKanban.vue",
+      "language": "vue",
+      "sizeLines": 809,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/MissionPanel.vue",
+      "language": "vue",
+      "sizeLines": 1050,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/PageHeader.vue",
+      "language": "vue",
+      "sizeLines": 92,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/ProfileBadge.vue",
+      "language": "vue",
+      "sizeLines": 654,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/RetrainProfileModal.vue",
+      "language": "vue",
+      "sizeLines": 1366,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/SkillsPicker.vue",
+      "language": "vue",
+      "sizeLines": 165,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/SlashCommandPicker.vue",
+      "language": "vue",
+      "sizeLines": 196,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/ToolsPicker.vue",
+      "language": "vue",
+      "sizeLines": 117,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/TriageDraftPanel.vue",
+      "language": "vue",
+      "sizeLines": 210,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/UpdateBanner.vue",
+      "language": "vue",
+      "sizeLines": 171,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/WhatsNewModal.vue",
+      "language": "vue",
+      "sizeLines": 272,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/Workstation.vue",
+      "language": "vue",
+      "sizeLines": 766,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/components/WorkstationDetailSlide.vue",
+      "language": "vue",
+      "sizeLines": 2349,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/composables/useKanbanHistory.ts",
+      "language": "typescript",
+      "sizeLines": 132,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    ".claude/settings.json": [],
+    ".understand-anything/.understandignore": [],
+    ".understand-anything/config.json": [],
+    "app/app.config.ts": [],
+    "app/app.vue": [],
+    "app/assets/css/main.css": [],
+    "app/components/CapabilityCard.vue": [],
+    "app/components/CapabilityModal.vue": [],
+    "app/components/DelegationOverlay.vue": [],
+    "app/components/HireProfileModal.vue": [],
+    "app/components/McpPicker.vue": [],
+    "app/components/MissionKanban.vue": [],
+    "app/components/MissionPanel.vue": [],
+    "app/components/PageHeader.vue": [],
+    "app/components/ProfileBadge.vue": [],
+    "app/components/RetrainProfileModal.vue": [],
+    "app/components/SkillsPicker.vue": [],
+    "app/components/SlashCommandPicker.vue": [],
+    "app/components/ToolsPicker.vue": [],
+    "app/components/TriageDraftPanel.vue": [],
+    "app/components/UpdateBanner.vue": [],
+    "app/components/WhatsNewModal.vue": [],
+    "app/components/Workstation.vue": [],
+    "app/components/WorkstationDetailSlide.vue": [],
+    "app/composables/useKanbanHistory.ts": []
+  }
+}

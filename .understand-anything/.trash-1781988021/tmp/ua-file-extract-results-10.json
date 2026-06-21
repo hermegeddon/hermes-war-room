@@ -1,0 +1,427 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": ".claude/settings.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 5,
+      "nonEmptyLines": 5,
+      "sections": [
+        {
+          "heading": "enabledPlugins",
+          "level": 1,
+          "line": 2
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".understand-anything/.understandignore",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 26,
+      "metrics": {}
+    },
+    {
+      "path": ".understand-anything/config.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "sections": [
+        {
+          "heading": "outputLanguage",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "app/app.config.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 8,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "app/app.vue",
+      "language": "vue",
+      "fileCategory": "code",
+      "totalLines": 380,
+      "nonEmptyLines": 363,
+      "metrics": {}
+    },
+    {
+      "path": "app/assets/css/main.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 57,
+      "nonEmptyLines": 53,
+      "metrics": {}
+    },
+    {
+      "path": "app/components/CapabilityCard.vue",
+      "language": "vue",
+      "fileCategory": "code",
+      "totalLines": 185,
+      "nonEmptyLines": 178,
+      "metrics": {}
+    },
+    {
+      "path": "app/components/CapabilityModal.vue",
+      "language": "vue",
+      "fileCategory": "code",
+      "totalLines": 183,
+      "nonEmptyLines": 177,
+      "metrics": {}
+    },
+    {
+      "path": "app/components/DelegationOverlay.vue",
+      "language": "vue",
+      "fileCategory": "code",
+      "totalLines": 176,
+      "nonEmptyLines": 162,
+      "metrics": {}
+    },
+    {
+      "path": "app/components/HireProfileModal.vue",
+      "language": "vue",
+      "fileCategory": "code",
+      "totalLines": 1219,
+      "nonEmptyLines": 1145,
+      "metrics": {}
+    },
+    {
+      "path": "app/components/McpPicker.vue",
+      "language": "vue",
+      "fileCategory": "code",
+      "totalLines": 133,
+      "nonEmptyLines": 121,
+      "metrics": {}
+    },
+    {
+      "path": "app/components/MissionKanban.vue",
+      "language": "vue",
+      "fileCategory": "code",
+      "totalLines": 809,
+      "nonEmptyLines": 768,
+      "metrics": {}
+    },
+    {
+      "path": "app/components/MissionPanel.vue",
+      "language": "vue",
+      "fileCategory": "code",
+      "totalLines": 1050,
+      "nonEmptyLines": 990,
+      "metrics": {}
+    },
+    {
+      "path": "app/components/PageHeader.vue",
+      "language": "vue",
+      "fileCategory": "code",
+      "totalLines": 92,
+      "nonEmptyLines": 87,
+      "metrics": {}
+    },
+    {
+      "path": "app/components/ProfileBadge.vue",
+      "language": "vue",
+      "fileCategory": "code",
+      "totalLines": 654,
+      "nonEmptyLines": 617,
+      "metrics": {}
+    },
+    {
+      "path": "app/components/RetrainProfileModal.vue",
+      "language": "vue",
+      "fileCategory": "code",
+      "totalLines": 1366,
+      "nonEmptyLines": 1294,
+      "metrics": {}
+    },
+    {
+      "path": "app/components/SkillsPicker.vue",
+      "language": "vue",
+      "fileCategory": "code",
+      "totalLines": 165,
+      "nonEmptyLines": 150,
+      "metrics": {}
+    },
+    {
+      "path": "app/components/SlashCommandPicker.vue",
+      "language": "vue",
+      "fileCategory": "code",
+      "totalLines": 196,
+      "nonEmptyLines": 178,
+      "metrics": {}
+    },
+    {
+      "path": "app/components/ToolsPicker.vue",
+      "language": "vue",
+      "fileCategory": "code",
+      "totalLines": 117,
+      "nonEmptyLines": 104,
+      "metrics": {}
+    },
+    {
+      "path": "app/components/TriageDraftPanel.vue",
+      "language": "vue",
+      "fileCategory": "code",
+      "totalLines": 210,
+      "nonEmptyLines": 188,
+      "metrics": {}
+    },
+    {
+      "path": "app/components/UpdateBanner.vue",
+      "language": "vue",
+      "fileCategory": "code",
+      "totalLines": 171,
+      "nonEmptyLines": 156,
+      "metrics": {}
+    },
+    {
+      "path": "app/components/WhatsNewModal.vue",
+      "language": "vue",
+      "fileCategory": "code",
+      "totalLines": 272,
+      "nonEmptyLines": 251,
+      "metrics": {}
+    },
+    {
+      "path": "app/components/Workstation.vue",
+      "language": "vue",
+      "fileCategory": "code",
+      "totalLines": 766,
+      "nonEmptyLines": 726,
+      "metrics": {}
+    },
+    {
+      "path": "app/components/WorkstationDetailSlide.vue",
+      "language": "vue",
+      "fileCategory": "code",
+      "totalLines": 2349,
+      "nonEmptyLines": 2260,
+      "metrics": {}
+    },
+    {
+      "path": "app/composables/useKanbanHistory.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 132,
+      "nonEmptyLines": 118,
+      "functions": [
+        {
+          "name": "useKanbanHistory",
+          "startLine": 23,
+          "endLine": 132,
+          "params": [
+            "missionIdRef"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "useKanbanHistory",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "useKanbanHistory",
+          "callee": "ref",
+          "lineNumber": 24
+        },
+        {
+          "caller": "useKanbanHistory",
+          "callee": "ref",
+          "lineNumber": 25
+        },
+        {
+          "caller": "useKanbanHistory",
+          "callee": "ref",
+          "lineNumber": 26
+        },
+        {
+          "caller": "useKanbanHistory",
+          "callee": "ref",
+          "lineNumber": 27
+        },
+        {
+          "caller": "useKanbanHistory",
+          "callee": "ref",
+          "lineNumber": 28
+        },
+        {
+          "caller": "useKanbanHistory",
+          "callee": "ref",
+          "lineNumber": 29
+        },
+        {
+          "caller": "useKanbanHistory",
+          "callee": "ref",
+          "lineNumber": 30
+        },
+        {
+          "caller": "url",
+          "callee": "params.set",
+          "lineNumber": 38
+        },
+        {
+          "caller": "url",
+          "callee": "params.set",
+          "lineNumber": 39
+        },
+        {
+          "caller": "url",
+          "callee": "String",
+          "lineNumber": 39
+        },
+        {
+          "caller": "url",
+          "callee": "params.set",
+          "lineNumber": 40
+        },
+        {
+          "caller": "url",
+          "callee": "String",
+          "lineNumber": 40
+        },
+        {
+          "caller": "url",
+          "callee": "params.toString",
+          "lineNumber": 41
+        },
+        {
+          "caller": "fetchFirstPage",
+          "callee": "await $fetch",
+          "lineNumber": 47
+        },
+        {
+          "caller": "fetchFirstPage",
+          "callee": "url",
+          "lineNumber": 47
+        },
+        {
+          "caller": "loadMore",
+          "callee": "await $fetch",
+          "lineNumber": 63
+        },
+        {
+          "caller": "loadMore",
+          "callee": "url",
+          "lineNumber": 63
+        },
+        {
+          "caller": "refreshHead",
+          "callee": "await $fetch",
+          "lineNumber": 81
+        },
+        {
+          "caller": "refreshHead",
+          "callee": "url",
+          "lineNumber": 81
+        },
+        {
+          "caller": "refreshHead",
+          "callee": "tasks.value.map",
+          "lineNumber": 82
+        },
+        {
+          "caller": "refreshHead",
+          "callee": "res.tasks.filter",
+          "lineNumber": 83
+        },
+        {
+          "caller": "refreshHead",
+          "callee": "known.has",
+          "lineNumber": 83
+        },
+        {
+          "caller": "schedulePoll",
+          "callee": "clearTimeout",
+          "lineNumber": 94
+        },
+        {
+          "caller": "schedulePoll",
+          "callee": "setTimeout",
+          "lineNumber": 95
+        },
+        {
+          "caller": "schedulePoll",
+          "callee": "refreshHead",
+          "lineNumber": 97
+        },
+        {
+          "caller": "schedulePoll",
+          "callee": "schedulePoll",
+          "lineNumber": 98
+        },
+        {
+          "caller": "enable",
+          "callee": "fetchFirstPage",
+          "lineNumber": 105
+        },
+        {
+          "caller": "enable",
+          "callee": "schedulePoll",
+          "lineNumber": 106
+        },
+        {
+          "caller": "disable",
+          "callee": "clearTimeout",
+          "lineNumber": 111
+        },
+        {
+          "caller": "useKanbanHistory",
+          "callee": "watch",
+          "lineNumber": 118
+        },
+        {
+          "caller": "useKanbanHistory",
+          "callee": "fetchFirstPage",
+          "lineNumber": 122
+        },
+        {
+          "caller": "useKanbanHistory",
+          "callee": "onBeforeUnmount",
+          "lineNumber": 126
+        },
+        {
+          "caller": "useKanbanHistory",
+          "callee": "clearTimeout",
+          "lineNumber": 128
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

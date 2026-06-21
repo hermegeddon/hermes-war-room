@@ -1,0 +1,498 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 9,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": ".dockerignore",
+      "language": "unknown",
+      "fileCategory": "infra",
+      "totalLines": 37,
+      "nonEmptyLines": 30,
+      "metrics": {}
+    },
+    {
+      "path": ".releaserc.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 58,
+      "nonEmptyLines": 58,
+      "sections": [
+        {
+          "heading": "branches",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "tagFormat",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "plugins",
+          "level": 1,
+          "line": 4
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "CHANGELOG.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 71,
+      "nonEmptyLines": 38,
+      "sections": [
+        {
+          "heading": "[1.5.0](https://github.com/Naroh091/hermes-war-room/compare/v1.4.1...v1.5.0) (2026-05-18)",
+          "level": 2,
+          "line": 1
+        },
+        {
+          "heading": "Features",
+          "level": 3,
+          "line": 3
+        },
+        {
+          "heading": "[1.4.1](https://github.com/Naroh091/hermes-war-room/compare/v1.4.0...v1.4.1) (2026-05-11)",
+          "level": 2,
+          "line": 8
+        },
+        {
+          "heading": "Bug Fixes",
+          "level": 3,
+          "line": 10
+        },
+        {
+          "heading": "[1.4.0](https://github.com/Naroh091/hermes-war-room/compare/v1.3.0...v1.4.0) (2026-05-09)",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Features",
+          "level": 3,
+          "line": 16
+        },
+        {
+          "heading": "[1.3.0](https://github.com/Naroh091/hermes-war-room/compare/v1.2.0...v1.3.0) (2026-05-04)",
+          "level": 2,
+          "line": 20
+        },
+        {
+          "heading": "Features",
+          "level": 3,
+          "line": 22
+        },
+        {
+          "heading": "[1.2.0](https://github.com/Naroh091/hermes-war-room/compare/v1.1.1...v1.2.0) (2026-05-04)",
+          "level": 2,
+          "line": 26
+        },
+        {
+          "heading": "Features",
+          "level": 3,
+          "line": 28
+        },
+        {
+          "heading": "Bug Fixes",
+          "level": 3,
+          "line": 32
+        },
+        {
+          "heading": "Refactoring",
+          "level": 3,
+          "line": 36
+        },
+        {
+          "heading": "[1.1.1](https://github.com/Naroh091/hermes-war-room/compare/v1.1.0...v1.1.1) (2026-05-03)",
+          "level": 2,
+          "line": 40
+        },
+        {
+          "heading": "Bug Fixes",
+          "level": 3,
+          "line": 42
+        },
+        {
+          "heading": "[1.1.0](https://github.com/Naroh091/hermes-war-room/compare/v1.0.0...v1.1.0) (2026-05-03)",
+          "level": 2,
+          "line": 46
+        },
+        {
+          "heading": "Features",
+          "level": 3,
+          "line": 48
+        },
+        {
+          "heading": "Bug Fixes",
+          "level": 3,
+          "line": 55
+        },
+        {
+          "heading": "Refactoring",
+          "level": 3,
+          "line": 59
+        },
+        {
+          "heading": "1.0.0 (2026-05-03)",
+          "level": 2,
+          "line": 63
+        },
+        {
+          "heading": "⚠ BREAKING CHANGES",
+          "level": 3,
+          "line": 65
+        },
+        {
+          "heading": "Features",
+          "level": 3,
+          "line": 69
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 21
+      }
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 679,
+      "nonEmptyLines": 560,
+      "sections": [
+        {
+          "heading": "Orchestration War Room",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Quickstart",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "Why does this exist?",
+          "level": 2,
+          "line": 45
+        },
+        {
+          "heading": "What you see",
+          "level": 2,
+          "line": 72
+        },
+        {
+          "heading": "1. War Room (`/`) — the live operations floor",
+          "level": 3,
+          "line": 76
+        },
+        {
+          "heading": "2. The Team (`/team`) — the roster",
+          "level": 3,
+          "line": 117
+        },
+        {
+          "heading": "3. Missions (`/missions`) — the archive",
+          "level": 3,
+          "line": 126
+        },
+        {
+          "heading": "How it actually works",
+          "level": 2,
+          "line": 133
+        },
+        {
+          "heading": "Concepts",
+          "level": 3,
+          "line": 135
+        },
+        {
+          "heading": "Mission lifecycle",
+          "level": 3,
+          "line": 156
+        },
+        {
+          "heading": "Hire & fire",
+          "level": 3,
+          "line": 213
+        },
+        {
+          "heading": "Tech under the hood",
+          "level": 3,
+          "line": 231
+        },
+        {
+          "heading": "Quick start",
+          "level": 2,
+          "line": 253
+        },
+        {
+          "heading": "Production install (no `pnpm`, no source checkout)",
+          "level": 2,
+          "line": 281
+        },
+        {
+          "heading": "Why a release, not `pnpm dev`?",
+          "level": 3,
+          "line": 309
+        },
+        {
+          "heading": "Keeping it running across terminal sessions",
+          "level": 3,
+          "line": 322
+        },
+        {
+          "heading": "Sala de Operaciones de Orquestación",
+          "level": 1,
+          "line": 348
+        },
+        {
+          "heading": "¿Por qué existe?",
+          "level": 2,
+          "line": 365
+        },
+        {
+          "heading": "Lo que ves",
+          "level": 2,
+          "line": 393
+        },
+        {
+          "heading": "1. Sala de Guerra (`/`) — la planta de operaciones en directo",
+          "level": 3,
+          "line": 397
+        },
+        {
+          "heading": "2. El Equipo (`/team`) — la plantilla",
+          "level": 3,
+          "line": 444
+        },
+        {
+          "heading": "3. Misiones (`/missions`) — el archivo",
+          "level": 3,
+          "line": 454
+        },
+        {
+          "heading": "Cómo funciona realmente",
+          "level": 2,
+          "line": 462
+        },
+        {
+          "heading": "Conceptos",
+          "level": 3,
+          "line": 464
+        },
+        {
+          "heading": "Ciclo de vida de una misión",
+          "level": 3,
+          "line": 485
+        },
+        {
+          "heading": "Contratar y despedir",
+          "level": 3,
+          "line": 545
+        },
+        {
+          "heading": "Tecnología por debajo",
+          "level": 3,
+          "line": 564
+        },
+        {
+          "heading": "Inicio rápido",
+          "level": 2,
+          "line": 586
+        },
+        {
+          "heading": "Instalación en producción (sin `pnpm`, sin clonar el repo)",
+          "level": 2,
+          "line": 614
+        },
+        {
+          "heading": "¿Por qué un release y no `pnpm dev`?",
+          "level": 3,
+          "line": 643
+        },
+        {
+          "heading": "Mantenerlo corriendo entre sesiones de terminal",
+          "level": 3,
+          "line": 656
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 31
+      }
+    },
+    {
+      "path": "mise.toml",
+      "language": "toml",
+      "fileCategory": "config",
+      "totalLines": 8,
+      "nonEmptyLines": 7,
+      "sections": [
+        {
+          "heading": "tools",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "deps",
+          "level": 1,
+          "line": 6
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    },
+    {
+      "path": "package.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 41,
+      "nonEmptyLines": 41,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "private",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "type",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "scripts",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "dependencies",
+          "level": 1,
+          "line": 13
+        },
+        {
+          "heading": "devDependencies",
+          "level": 1,
+          "line": 26
+        },
+        {
+          "heading": "packageManager",
+          "level": 1,
+          "line": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "sections": [
+        {
+          "heading": "ignoredBuiltDependencies",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "renovate.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 13,
+      "nonEmptyLines": 13,
+      "sections": [
+        {
+          "heading": "extends",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "lockFileMaintenance",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "packageRules",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "postUpdateOptions",
+          "level": 1,
+          "line": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "tsconfig.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "files",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "references",
+          "level": 1,
+          "line": 4
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    }
+  ]
+}

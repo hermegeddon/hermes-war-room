@@ -1,0 +1,151 @@
+{
+  "projectRoot": "/home/openclaw/hermes-war-room",
+  "batchFiles": [
+    {
+      "path": "server/api/profiles.get.ts",
+      "language": "typescript",
+      "sizeLines": 102,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles.post.ts",
+      "language": "typescript",
+      "sizeLines": 221,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug].delete.ts",
+      "language": "typescript",
+      "sizeLines": 57,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug].patch.ts",
+      "language": "typescript",
+      "sizeLines": 88,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/description-auto.post.ts",
+      "language": "typescript",
+      "sizeLines": 17,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/description.patch.ts",
+      "language": "typescript",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/rename.post.ts",
+      "language": "typescript",
+      "sizeLines": 101,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/soul.get.ts",
+      "language": "typescript",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/api/profiles/[slug]/soul.put.ts",
+      "language": "typescript",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/avatar.ts",
+      "language": "typescript",
+      "sizeLines": 62,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/hermes.ts",
+      "language": "typescript",
+      "sizeLines": 41,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/profile-description.ts",
+      "language": "typescript",
+      "sizeLines": 52,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/roster.ts",
+      "language": "typescript",
+      "sizeLines": 160,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server/utils/soul.ts",
+      "language": "typescript",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "server/api/profiles.get.ts": [
+      "server/utils/avatar.ts",
+      "server/utils/db.ts",
+      "server/utils/hermes.ts",
+      "server/utils/profile-config.ts",
+      "server/utils/profile-description.ts",
+      "server/utils/roster.ts"
+    ],
+    "server/api/profiles.post.ts": [
+      "server/utils/agents.ts",
+      "server/utils/avatar.ts",
+      "server/utils/db.ts",
+      "server/utils/hermes.ts",
+      "server/utils/profile-config.ts",
+      "server/utils/roster.ts",
+      "server/utils/skills.ts",
+      "server/utils/soul.ts",
+      "server/utils/tools.ts"
+    ],
+    "server/api/profiles/[slug].delete.ts": [
+      "server/utils/db.ts",
+      "server/utils/roster.ts"
+    ],
+    "server/api/profiles/[slug].patch.ts": [
+      "server/utils/avatar.ts",
+      "server/utils/db.ts",
+      "server/utils/roster.ts"
+    ],
+    "server/api/profiles/[slug]/description-auto.post.ts": [
+      "server/utils/profile-description.ts"
+    ],
+    "server/api/profiles/[slug]/description.patch.ts": [
+      "server/utils/profile-description.ts"
+    ],
+    "server/api/profiles/[slug]/rename.post.ts": [
+      "server/utils/avatar.ts",
+      "server/utils/db.ts",
+      "server/utils/hermes.ts",
+      "server/utils/roster.ts"
+    ],
+    "server/api/profiles/[slug]/soul.get.ts": [
+      "server/utils/db.ts",
+      "server/utils/soul.ts"
+    ],
+    "server/api/profiles/[slug]/soul.put.ts": [
+      "server/utils/db.ts",
+      "server/utils/roster.ts",
+      "server/utils/soul.ts"
+    ],
+    "server/utils/avatar.ts": [],
+    "server/utils/hermes.ts": [],
+    "server/utils/profile-description.ts": [
+      "server/utils/triage.ts"
+    ],
+    "server/utils/roster.ts": [
+      "server/utils/agents.ts",
+      "server/utils/db.ts",
+      "server/utils/soul.ts"
+    ],
+    "server/utils/soul.ts": []
+  }
+}

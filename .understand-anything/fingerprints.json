@@ -1,0 +1,4416 @@
+{
+  "version": "1.0.0",
+  "gitCommitHash": "ace973c3c1bf04e589f2800e4f20790decafd3ae",
+  "generatedAt": "2026-06-20T20:39:56.512Z",
+  "files": {
+    ".claude/settings.json": {
+      "filePath": ".claude/settings.json",
+      "contentHash": "a83eed836ad7be19e465c0369570e9cc30918c537a3fafc09aa19ddedc024d38",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 6,
+      "hasStructuralAnalysis": true
+    },
+    ".dockerignore": {
+      "filePath": ".dockerignore",
+      "contentHash": "fab2cecc5b0537a41d5d4f8eefdab9e7b2db41c33d3d48ec2e3ac7785ac75656",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 38,
+      "hasStructuralAnalysis": false
+    },
+    ".github/workflows/ci.yml": {
+      "filePath": ".github/workflows/ci.yml",
+      "contentHash": "a1ce76ab1c40d31b952269b48baca6fcf9cb9f95bbb448868d8aba5f85d453e0",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 35,
+      "hasStructuralAnalysis": true
+    },
+    ".github/workflows/release.yml": {
+      "filePath": ".github/workflows/release.yml",
+      "contentHash": "9bf1beac13d054feb62bedbad29becb74c644d1183d1a2f74e5b73c52f30dd96",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 73,
+      "hasStructuralAnalysis": true
+    },
+    ".releaserc.json": {
+      "filePath": ".releaserc.json",
+      "contentHash": "d877f4f1300762060e7c60eafd0dc1c2bb3e4c6154f341fbc33f9f720261a3f2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 59,
+      "hasStructuralAnalysis": true
+    },
+    ".understand-anything/.understandignore": {
+      "filePath": ".understand-anything/.understandignore",
+      "contentHash": "6c903ec4172f7bf7689e657d41527829a00366e6c77de5a852368be9e7b6d1c2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 32,
+      "hasStructuralAnalysis": false
+    },
+    ".understand-anything/config.json": {
+      "filePath": ".understand-anything/config.json",
+      "contentHash": "4b66f98f8a815dfeb2d3a29eeb73418e07c40ed020a1498c07e908b2254f0c8c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2,
+      "hasStructuralAnalysis": true
+    },
+    "app/app.config.ts": {
+      "filePath": "app/app.config.ts",
+      "contentHash": "9653e97d94413953673d43cbdb1f8ed9a62855b9c78b17af2c5f3be288e36e71",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 9,
+      "hasStructuralAnalysis": true
+    },
+    "app/app.vue": {
+      "filePath": "app/app.vue",
+      "contentHash": "5eb018ef7eacbe65d0a292f8cf3c890ad84532f58b2cdf8c838f4a10d11e323b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 381,
+      "hasStructuralAnalysis": false
+    },
+    "app/assets/css/main.css": {
+      "filePath": "app/assets/css/main.css",
+      "contentHash": "9d43aca1b3f75e2c2cafd870cfa893e781bbc64c79b9dce48a4629ce7e181eb9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 58,
+      "hasStructuralAnalysis": false
+    },
+    "app/components/CapabilityCard.vue": {
+      "filePath": "app/components/CapabilityCard.vue",
+      "contentHash": "319af9a83b8b24c5750ecaaa9f336a9dab2c306699930d2f04e88d8ad62885e9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 186,
+      "hasStructuralAnalysis": false
+    },
+    "app/components/CapabilityModal.vue": {
+      "filePath": "app/components/CapabilityModal.vue",
+      "contentHash": "fc68a61f1fb1d1cebb583a9dbe5278d3a0861436aef3aa3dffc5246c430804e6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 184,
+      "hasStructuralAnalysis": false
+    },
+    "app/components/DelegationOverlay.vue": {
+      "filePath": "app/components/DelegationOverlay.vue",
+      "contentHash": "8e1941d3e089dfd2255b5513004b03f90fbe6a8ff7fad4e03c5cbeb91d9ccf4c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 177,
+      "hasStructuralAnalysis": false
+    },
+    "app/components/HireProfileModal.vue": {
+      "filePath": "app/components/HireProfileModal.vue",
+      "contentHash": "aff7b23ce3c99497d82eef3957901c565e42f8f65dbc4d32b4c6cf2c4ab96329",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1220,
+      "hasStructuralAnalysis": false
+    },
+    "app/components/McpPicker.vue": {
+      "filePath": "app/components/McpPicker.vue",
+      "contentHash": "6418aaf4831665ac23905d65084d49112a13e56bbcc0839d86baeb6e12078fd3",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 134,
+      "hasStructuralAnalysis": false
+    },
+    "app/components/MissionKanban.vue": {
+      "filePath": "app/components/MissionKanban.vue",
+      "contentHash": "50fd70df037334ccb5e5c4cbb474d78f8033b024bf53b94312ee4d1ffc83b40c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 810,
+      "hasStructuralAnalysis": false
+    },
+    "app/components/MissionPanel.vue": {
+      "filePath": "app/components/MissionPanel.vue",
+      "contentHash": "ac3f32ed7dafb2617ce31ef453f216ee453a2c3fe80553683f5e442ab28c6016",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1051,
+      "hasStructuralAnalysis": false
+    },
+    "app/components/PageHeader.vue": {
+      "filePath": "app/components/PageHeader.vue",
+      "contentHash": "a7d804b094d58efd5632804fc35b88616de7016d6cebe466f6ccd07149e2fd28",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 93,
+      "hasStructuralAnalysis": false
+    },
+    "app/components/ProfileBadge.vue": {
+      "filePath": "app/components/ProfileBadge.vue",
+      "contentHash": "1d23b0ee0a633291e6cca6613642e885937976d4685b667125bcb887a7eb59d3",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 655,
+      "hasStructuralAnalysis": false
+    },
+    "app/components/RetrainProfileModal.vue": {
+      "filePath": "app/components/RetrainProfileModal.vue",
+      "contentHash": "32fc479a6a80ceae9aefa214f2e3b336cd1bc61a0ca09687e9e9a5868aa4c436",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1367,
+      "hasStructuralAnalysis": false
+    },
+    "app/components/SkillsPicker.vue": {
+      "filePath": "app/components/SkillsPicker.vue",
+      "contentHash": "b9e982fded17d36a19e044a4bb3bc7e3723e05a5c46543011c88f395265fcd99",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 166,
+      "hasStructuralAnalysis": false
+    },
+    "app/components/SlashCommandPicker.vue": {
+      "filePath": "app/components/SlashCommandPicker.vue",
+      "contentHash": "570c5ddb32bf524f64c673c7f2c4902b3b1d31e642d04ceab94bcd98826d3ec7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 197,
+      "hasStructuralAnalysis": false
+    },
+    "app/components/ToolsPicker.vue": {
+      "filePath": "app/components/ToolsPicker.vue",
+      "contentHash": "26ff2787829a41574135a71c137c387664e3a90045716aada1e17d5fff6ad17f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 118,
+      "hasStructuralAnalysis": false
+    },
+    "app/components/TriageDraftPanel.vue": {
+      "filePath": "app/components/TriageDraftPanel.vue",
+      "contentHash": "81260a74570fe8915e22cc04c0c4f9b9501a15cd72811e8999df95a21fa6117f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 211,
+      "hasStructuralAnalysis": false
+    },
+    "app/components/UpdateBanner.vue": {
+      "filePath": "app/components/UpdateBanner.vue",
+      "contentHash": "76f7d9ae3fd18b2f7288a9a197c32909e04095786125abe52c708483bfc1ed29",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 172,
+      "hasStructuralAnalysis": false
+    },
+    "app/components/WhatsNewModal.vue": {
+      "filePath": "app/components/WhatsNewModal.vue",
+      "contentHash": "be7e64e9fa10ea0a65c26294f862db419357ab2109de240d69bdebec4bb09338",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 273,
+      "hasStructuralAnalysis": false
+    },
+    "app/components/Workstation.vue": {
+      "filePath": "app/components/Workstation.vue",
+      "contentHash": "4e75568510554fef8c47b008fb137d57d279a3b53649c99706997a2534061014",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 767,
+      "hasStructuralAnalysis": false
+    },
+    "app/components/WorkstationDetailSlide.vue": {
+      "filePath": "app/components/WorkstationDetailSlide.vue",
+      "contentHash": "1271994524ac9051fa933648418fd266dac12b0ac4bc289aee820c8d6934b142",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2350,
+      "hasStructuralAnalysis": false
+    },
+    "app/composables/useKanbanHistory.ts": {
+      "filePath": "app/composables/useKanbanHistory.ts",
+      "contentHash": "ceea6ed2519c54da1798fdb2657544062a45ca80eb8e161edf37b04b8fbd476b",
+      "functions": [
+        {
+          "name": "useKanbanHistory",
+          "params": [
+            "missionIdRef"
+          ],
+          "exported": true,
+          "lineCount": 110
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "~/types/mission",
+          "specifiers": [
+            "CompletedTask"
+          ]
+        }
+      ],
+      "exports": [
+        "useKanbanHistory"
+      ],
+      "totalLines": 133,
+      "hasStructuralAnalysis": true
+    },
+    "app/composables/useKanbanTasks.ts": {
+      "filePath": "app/composables/useKanbanTasks.ts",
+      "contentHash": "a868aa8f86530c9bbe8b83dce60a80b3e3c9c2da17541d5ee30fa51a14067a8e",
+      "functions": [
+        {
+          "name": "useKanbanTasks",
+          "params": [
+            "missionIdRef"
+          ],
+          "exported": true,
+          "lineCount": 55
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "~/types/mission",
+          "specifiers": [
+            "CurrentTask"
+          ]
+        }
+      ],
+      "exports": [
+        "useKanbanTasks"
+      ],
+      "totalLines": 65,
+      "hasStructuralAnalysis": true
+    },
+    "app/composables/useMarkdown.ts": {
+      "filePath": "app/composables/useMarkdown.ts",
+      "contentHash": "9527f11f119914dc4d5916d99b31151af18f6406f17038594cca715749a9a3c2",
+      "functions": [
+        {
+          "name": "renderMarkdown",
+          "params": [
+            "input"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "escapeHtml",
+          "params": [
+            "s"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "stripHarmonyTags",
+          "params": [
+            "input"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 24
+        },
+        {
+          "name": "decorateTaskRefs",
+          "params": [
+            "html",
+            "lookup"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 92
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "marked",
+          "specifiers": [
+            "marked"
+          ]
+        },
+        {
+          "source": "dompurify",
+          "specifiers": [
+            "DOMPurify"
+          ]
+        }
+      ],
+      "exports": [
+        "renderMarkdown",
+        "stripHarmonyTags",
+        "decorateTaskRefs"
+      ],
+      "totalLines": 199,
+      "hasStructuralAnalysis": true
+    },
+    "app/composables/useMissionStream.ts": {
+      "filePath": "app/composables/useMissionStream.ts",
+      "contentHash": "8743ae6cf170f5974c16fdcf779528d3ddbf3e3dd683087de67c2fa573da7d92",
+      "functions": [
+        {
+          "name": "lastThoughtSnippet",
+          "params": [
+            "buf"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 10
+        },
+        {
+          "name": "toolLabel",
+          "params": [
+            "evt"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 6
+        },
+        {
+          "name": "toolKind",
+          "params": [
+            "raw"
+          ],
+          "returnType": "string | undefined",
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "extractToolDetail",
+          "params": [
+            "raw"
+          ],
+          "returnType": "string | undefined",
+          "exported": false,
+          "lineCount": 26
+        },
+        {
+          "name": "useMissionStream",
+          "params": [],
+          "returnType": "UseMissionStream",
+          "exported": true,
+          "lineCount": 315
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "~/types/mission",
+          "specifiers": [
+            "Mission",
+            "MissionMessage",
+            "MissionEvent",
+            "MissionMode",
+            "TriageDraft"
+          ]
+        }
+      ],
+      "exports": [
+        "useMissionStream"
+      ],
+      "totalLines": 439,
+      "hasStructuralAnalysis": true
+    },
+    "app/composables/useStationRegistry.ts": {
+      "filePath": "app/composables/useStationRegistry.ts",
+      "contentHash": "2bdc7ae003ffd59b69cac389d7f274279fcf24c1b473ed9641874e99e695cc20",
+      "functions": [
+        {
+          "name": "provideStationRegistry",
+          "params": [],
+          "returnType": "StationRegistry",
+          "exported": true,
+          "lineCount": 79
+        },
+        {
+          "name": "useStationRegistry",
+          "params": [],
+          "returnType": "StationRegistry | null",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "provideStationRegistry",
+        "useStationRegistry"
+      ],
+      "totalLines": 118,
+      "hasStructuralAnalysis": true
+    },
+    "app/composables/useTaskFeed.ts": {
+      "filePath": "app/composables/useTaskFeed.ts",
+      "contentHash": "da0f81cfdb482611d2d3d3ccc9df1b9b4ed589b616c04ff4c405d3427c90d1a6",
+      "functions": [
+        {
+          "name": "useTaskFeed",
+          "params": [
+            "taskIdRef",
+            "liveRef"
+          ],
+          "exported": true,
+          "lineCount": 55
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "useTaskFeed"
+      ],
+      "totalLines": 96,
+      "hasStructuralAnalysis": true
+    },
+    "app/composables/useTokenUsage.ts": {
+      "filePath": "app/composables/useTokenUsage.ts",
+      "contentHash": "c6c83d02e7075af5ccf34afbf8c888d380159300631422bcd0ee690f5f86c02d",
+      "functions": [
+        {
+          "name": "useTokenUsage",
+          "params": [],
+          "exported": true,
+          "lineCount": 33
+        },
+        {
+          "name": "compactNumber",
+          "params": [
+            "n"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 12
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "useTokenUsage",
+        "compactNumber"
+      ],
+      "totalLines": 65,
+      "hasStructuralAnalysis": true
+    },
+    "app/pages/index.vue": {
+      "filePath": "app/pages/index.vue",
+      "contentHash": "517ee71f168f50a09de605a58614bce452ff42deedf3036fbeed08ccfd36ae18",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 632,
+      "hasStructuralAnalysis": false
+    },
+    "app/pages/missions.vue": {
+      "filePath": "app/pages/missions.vue",
+      "contentHash": "813669bad9f61cb8aaa1aef45fe028e6537ff763eddb37222d168de896c87bee",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 684,
+      "hasStructuralAnalysis": false
+    },
+    "app/pages/team.vue": {
+      "filePath": "app/pages/team.vue",
+      "contentHash": "ae5300b14ec8340704e70d0e7e593655fa231c709f531c71b9c4539c86375b47",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 138,
+      "hasStructuralAnalysis": false
+    },
+    "app/types/mission.ts": {
+      "filePath": "app/types/mission.ts",
+      "contentHash": "de7689acc6766b591ccb4d67f23f501c3c378cfc3ceeffaf8b06c90053e02881",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 91,
+      "hasStructuralAnalysis": true
+    },
+    "app/types/profile.ts": {
+      "filePath": "app/types/profile.ts",
+      "contentHash": "f75a1f21467a8d74b797c104090a00d682525e44655d2d5706b70fd5f7bea6a7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 19,
+      "hasStructuralAnalysis": true
+    },
+    "app/utils/avatar.ts": {
+      "filePath": "app/utils/avatar.ts",
+      "contentHash": "8b1e8dc7e27f057439578fbf0199de261c6e08afc10ea4562140f0b79fb48a94",
+      "functions": [
+        {
+          "name": "buildAvatarUrl",
+          "params": [
+            "opts"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 23
+        },
+        {
+          "name": "fnv1a",
+          "params": [
+            "s"
+          ],
+          "returnType": "number",
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "pickActiveGesture",
+          "params": [
+            "key"
+          ],
+          "returnType": "Gesture",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "randomActiveGesture",
+          "params": [],
+          "returnType": "Gesture",
+          "exported": true,
+          "lineCount": 4
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "ACTIVE_GESTURES",
+        "buildAvatarUrl",
+        "pickActiveGesture",
+        "randomActiveGesture"
+      ],
+      "totalLines": 102,
+      "hasStructuralAnalysis": true
+    },
+    "CHANGELOG.md": {
+      "filePath": "CHANGELOG.md",
+      "contentHash": "2927f33a11a40888777d651e7d35030818e5a7c48072eac16db046d31170a7a7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 72,
+      "hasStructuralAnalysis": true
+    },
+    "eslint.config.mjs": {
+      "filePath": "eslint.config.mjs",
+      "contentHash": "2b39cc0f5197e32b83e6671cb4a10bd353d54a52db04e31624824848ee15b533",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./.nuxt/eslint.config.mjs",
+          "specifiers": [
+            "withNuxt"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 7,
+      "hasStructuralAnalysis": true
+    },
+    "i18n/locales/en.json": {
+      "filePath": "i18n/locales/en.json",
+      "contentHash": "c282685b13fed9cd43c3004e5a1b83a95c8fe370ec8c86ac4d340fce33115d08",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 469,
+      "hasStructuralAnalysis": true
+    },
+    "i18n/locales/es.json": {
+      "filePath": "i18n/locales/es.json",
+      "contentHash": "89a410a196a69b44ec54fe60b46a89a708dd821ac634e9803387d51b7bba6033",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 469,
+      "hasStructuralAnalysis": true
+    },
+    "i18n/locales/id.json": {
+      "filePath": "i18n/locales/id.json",
+      "contentHash": "4fb9ed5d8094d58a6663e36b9060e9c9339e808b93ef55c666a2d160376185af",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 384,
+      "hasStructuralAnalysis": true
+    },
+    "mise.toml": {
+      "filePath": "mise.toml",
+      "contentHash": "ed69dfde2542e70cf4744e3587c8415df87c33d3bef37ab017912ad85c754b8d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 9,
+      "hasStructuralAnalysis": true
+    },
+    "nuxt.config.ts": {
+      "filePath": "nuxt.config.ts",
+      "contentHash": "2317bc6b610d9392b4d3de5e61516a4567a0f13c2cfc7fd2ca773dec32ca32ff",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 51,
+      "hasStructuralAnalysis": true
+    },
+    "package.json": {
+      "filePath": "package.json",
+      "contentHash": "c223d23e83e4a03eb09c121a02514f82b38c0906bcf59cc626b27c88ea80ef7c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 42,
+      "hasStructuralAnalysis": true
+    },
+    "pnpm-workspace.yaml": {
+      "filePath": "pnpm-workspace.yaml",
+      "contentHash": "77930e9e510917c4ea884d3784129664443fc9041280b02d7db2bf1cc318912f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 7,
+      "hasStructuralAnalysis": true
+    },
+    "README.md": {
+      "filePath": "README.md",
+      "contentHash": "c27fbe03fc91b1b3746d40d2471f8b0b6f828f2b12f9cca61935fb1599b9028e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 680,
+      "hasStructuralAnalysis": true
+    },
+    "renovate.json": {
+      "filePath": "renovate.json",
+      "contentHash": "7dfec8d95bfcc8dc3d28fe414945636f2788ffbc6fc27ed554b1a01f094b9470",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 14,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/config.get.ts": {
+      "filePath": "server/api/config.get.ts",
+      "contentHash": "5c7089b4d77b43dc94720b0ffb88fca21e488fed8689464563eda8cbee2baf55",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 6,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/kanban/dispatch.post.ts": {
+      "filePath": "server/api/kanban/dispatch.post.ts",
+      "contentHash": "8ad72b101b4ec2ef2b76cc0b23970a11b3ffcccaf2db4f279ea8bb58cd028ef1",
+      "functions": [
+        {
+          "name": "runHermes",
+          "params": [
+            "args"
+          ],
+          "returnType": "Promise<{ code: number, stdout: string, stderr: string }>",
+          "exported": false,
+          "lineCount": 13
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:child_process",
+          "specifiers": [
+            "spawn"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 35,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/kanban/tasks.get.ts": {
+      "filePath": "server/api/kanban/tasks.get.ts",
+      "contentHash": "716d03bb635099a9418301118c8941d1e47ca1a3d85b395a3b621052cb40f2bd",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../utils/kanban",
+          "specifiers": [
+            "listActiveTasks",
+            "dispatcherLikelyStale"
+          ]
+        },
+        {
+          "source": "../../utils/db",
+          "specifiers": [
+            "useDb"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 28,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/kanban/tasks/[id]/approve-and-retry.post.ts": {
+      "filePath": "server/api/kanban/tasks/[id]/approve-and-retry.post.ts",
+      "contentHash": "5adc80a3a447c1fc55a740c1b89cc4ab6e1edcee166b95529d41385944d4c386",
+      "functions": [
+        {
+          "name": "runHermes",
+          "params": [
+            "args"
+          ],
+          "returnType": "Promise<{ code: number, stdout: string, stderr: string }>",
+          "exported": false,
+          "lineCount": 13
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:child_process",
+          "specifiers": [
+            "spawn"
+          ]
+        },
+        {
+          "source": "../../../../utils/db",
+          "specifiers": [
+            "useDb",
+            "ProfileRow"
+          ]
+        },
+        {
+          "source": "../../../../utils/kanban",
+          "specifiers": [
+            "getKanbanDb"
+          ]
+        },
+        {
+          "source": "../../../../utils/profile-config",
+          "specifiers": [
+            "readProfileConfig",
+            "writeProfileConfig"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 127,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/kanban/tasks/[id]/decompose.post.ts": {
+      "filePath": "server/api/kanban/tasks/[id]/decompose.post.ts",
+      "contentHash": "887546a9c0128c46e4807b81eadfb04ac7dd87c1010614f65483b33cc1aef59c",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../../../utils/triage",
+          "specifiers": [
+            "decomposeTask"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 23,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/kanban/tasks/[id]/failure.get.ts": {
+      "filePath": "server/api/kanban/tasks/[id]/failure.get.ts",
+      "contentHash": "250a211313a394089b67f8ca562865fa7d1b4a288c49693c1aa380a7d50500f1",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../../../utils/kanban",
+          "specifiers": [
+            "getKanbanDb"
+          ]
+        },
+        {
+          "source": "../../../../utils/task-failure",
+          "specifiers": [
+            "getFailureContext",
+            "distillReason"
+          ]
+        },
+        {
+          "source": "../../../../utils/permission-extract",
+          "specifiers": [
+            "extractPermissionLabel",
+            "looksLikePermissionDenial"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 60,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/kanban/tasks/[id]/feed.get.ts": {
+      "filePath": "server/api/kanban/tasks/[id]/feed.get.ts",
+      "contentHash": "e09bdff01d90ba676471067e9b064ef9c1fcc2249b8f04ddfd4ded58ed54cab5",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../../../utils/task-feed",
+          "specifiers": [
+            "getTaskFeed"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 8,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/kanban/tasks/[id]/kill.post.ts": {
+      "filePath": "server/api/kanban/tasks/[id]/kill.post.ts",
+      "contentHash": "7dc78da14d5f605b30d40de1d5ca637dc0d61e4498fcf54d0573c19566c5f2f2",
+      "functions": [
+        {
+          "name": "runHermes",
+          "params": [
+            "args"
+          ],
+          "returnType": "Promise<{ code: number, stdout: string, stderr: string }>",
+          "exported": false,
+          "lineCount": 13
+        },
+        {
+          "name": "killPid",
+          "params": [
+            "pid",
+            "signal"
+          ],
+          "returnType": "{ ok: boolean, error?: string }",
+          "exported": false,
+          "lineCount": 11
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:child_process",
+          "specifiers": [
+            "spawn"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 119,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/kanban/tasks/[id]/log.get.ts": {
+      "filePath": "server/api/kanban/tasks/[id]/log.get.ts",
+      "contentHash": "f72dfab37b69bbc832286125b17ab9d3826ada4c075932bc1b49ab06b54ba900",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "existsSync",
+            "readFileSync",
+            "statSync"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "join"
+          ]
+        },
+        {
+          "source": "node:os",
+          "specifiers": [
+            "homedir"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 67,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/kanban/tasks/[id]/specify.post.ts": {
+      "filePath": "server/api/kanban/tasks/[id]/specify.post.ts",
+      "contentHash": "b3649872f8c8c1ab336b315e6eb6c0569ce1de177248ce3646ed079c8925a3bf",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../../../utils/triage",
+          "specifiers": [
+            "specifyTask"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 22,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/kanban/tasks/history.get.ts": {
+      "filePath": "server/api/kanban/tasks/history.get.ts",
+      "contentHash": "0eed70c185a7074007398a444b3dd6068fa650eb68ad2cf1e6963a4bf2e7d870",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../../utils/kanban",
+          "specifiers": [
+            "listCompletedTasks",
+            "CompletedTask"
+          ]
+        },
+        {
+          "source": "../../../utils/db",
+          "specifiers": [
+            "useDb"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 53,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/missions.post.ts": {
+      "filePath": "server/api/missions.post.ts",
+      "contentHash": "9b20403e9f5bc789ff7dc31de0115c0db7da7461d33bb13881428fc039f9914f",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../utils/db",
+          "specifiers": [
+            "useDb"
+          ]
+        },
+        {
+          "source": "../utils/mission",
+          "specifiers": [
+            "appendMessage",
+            "createMission",
+            "summarizeTitle",
+            "MissionMode"
+          ]
+        },
+        {
+          "source": "../utils/mission-turn",
+          "specifiers": [
+            "runMissionTurn"
+          ]
+        },
+        {
+          "source": "../utils/triage",
+          "specifiers": [
+            "launchTriage"
+          ]
+        },
+        {
+          "source": "../utils/mission-bus",
+          "specifiers": [
+            "emit"
+          ]
+        },
+        {
+          "source": "../utils/auto-nudge",
+          "specifiers": [
+            "addWatchedTasks"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 102,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/missions/[id]/archive.post.ts": {
+      "filePath": "server/api/missions/[id]/archive.post.ts",
+      "contentHash": "23bfffa0ec1633af5ce45d5491b15b748c956be44a52a98da6fc41bca2cd9c1b",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../../utils/mission",
+          "specifiers": [
+            "archiveMission",
+            "getMission"
+          ]
+        },
+        {
+          "source": "../../../utils/auto-nudge",
+          "specifiers": [
+            "stopWatchingMission"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/missions/[id]/index.get.ts": {
+      "filePath": "server/api/missions/[id]/index.get.ts",
+      "contentHash": "562b83eb0a22dadddb4a38dcfe147f3e167c856c416fb9f0aa6b20777e647c1e",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../../utils/mission",
+          "specifiers": [
+            "getMission",
+            "listMessages",
+            "serializeMission"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 21,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/missions/[id]/launch-triage.post.ts": {
+      "filePath": "server/api/missions/[id]/launch-triage.post.ts",
+      "contentHash": "e63f721e55304447a11676d5258acb1b6fc2d1e55b8805d5cbcac92022011d72",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../../utils/mission",
+          "specifiers": [
+            "getMission",
+            "setLatestTriageDraft",
+            "summarizeTitle"
+          ]
+        },
+        {
+          "source": "../../../utils/triage",
+          "specifiers": [
+            "launchTriage"
+          ]
+        },
+        {
+          "source": "../../../utils/auto-nudge",
+          "specifiers": [
+            "addWatchedTasks"
+          ]
+        },
+        {
+          "source": "../../../utils/mission-bus",
+          "specifiers": [
+            "emit"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 60,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/missions/[id]/messages.post.ts": {
+      "filePath": "server/api/missions/[id]/messages.post.ts",
+      "contentHash": "d2b373d1bdcb03670a8fabf4ab9ab15d730ca2eab1306c3458c6af93f0429383",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../../utils/mission",
+          "specifiers": [
+            "getMission"
+          ]
+        },
+        {
+          "source": "../../../utils/mission-turn",
+          "specifiers": [
+            "runMissionTurn"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 26,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/missions/[id]/stream.get.ts": {
+      "filePath": "server/api/missions/[id]/stream.get.ts",
+      "contentHash": "43b99b09db8ff3505673bd8255f63a2aa3c6ccf5f81fb5d9be2a113d31a1b63e",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../../utils/mission",
+          "specifiers": [
+            "getMission"
+          ]
+        },
+        {
+          "source": "../../../utils/mission-bus",
+          "specifiers": [
+            "getMissionBus",
+            "MissionEvent"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 35,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/missions/active.get.ts": {
+      "filePath": "server/api/missions/active.get.ts",
+      "contentHash": "7f6b5608695b44767ff6b0a284f5049adc0dcc2adc1427d50d67279b79df8d01",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../utils/mission",
+          "specifiers": [
+            "getActiveMission",
+            "listMessages",
+            "serializeMission"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 23,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/missions/index.get.ts": {
+      "filePath": "server/api/missions/index.get.ts",
+      "contentHash": "f127c521b9d4b4b49d1303427b70978351e971f8add1bf541e3d770ed29ff57a",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../utils/mission",
+          "specifiers": [
+            "listMissions",
+            "countMissions",
+            "serializeMission"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 36,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/models.get.ts": {
+      "filePath": "server/api/models.get.ts",
+      "contentHash": "2a3a680d15f30434d121ad2c25d6da19c89ce27d24f5ef6e993db16b7edadb57",
+      "functions": [
+        {
+          "name": "loadCatalog",
+          "params": [],
+          "returnType": "Catalog | null",
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "loadHermesConfig",
+          "params": [],
+          "returnType": "HermesConfig | null",
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "extractModelIds",
+          "params": [
+            "raw"
+          ],
+          "returnType": "string[]",
+          "exported": false,
+          "lineCount": 15
+        },
+        {
+          "name": "build",
+          "params": [
+            "catalog",
+            "config"
+          ],
+          "returnType": "ModelCatalogResponse",
+          "exported": false,
+          "lineCount": 102
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "readFileSync",
+            "existsSync",
+            "statSync"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "join"
+          ]
+        },
+        {
+          "source": "node:os",
+          "specifiers": [
+            "homedir"
+          ]
+        },
+        {
+          "source": "yaml",
+          "specifiers": [
+            "parseYaml"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 220,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/orchestrators/[slug]/warmup.post.ts": {
+      "filePath": "server/api/orchestrators/[slug]/warmup.post.ts",
+      "contentHash": "f68bcd4701db9139b9144a074cd76ce6c16cbe3c24c1f03edebe5198266325fc",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../../utils/db",
+          "specifiers": [
+            "useDb"
+          ]
+        },
+        {
+          "source": "../../../utils/orchestrator-acp",
+          "specifiers": [
+            "warmup"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 27,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/presets.get.ts": {
+      "filePath": "server/api/presets.get.ts",
+      "contentHash": "cfb8e178bcc2340eaf16528b37e5f3eced3e4da53bc5d3acced80d392e26dca2",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../utils/presets",
+          "specifiers": [
+            "PRESETS"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 6,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/profiles.get.ts": {
+      "filePath": "server/api/profiles.get.ts",
+      "contentHash": "5273a86b1d3c5d3297543f8c90751d7b942e25a0da8ae5afc631c7f2830d4f34",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../utils/db",
+          "specifiers": [
+            "useDb",
+            "ProfileRow"
+          ]
+        },
+        {
+          "source": "../utils/hermes",
+          "specifiers": [
+            "discoverProfiles"
+          ]
+        },
+        {
+          "source": "../utils/avatar",
+          "specifiers": [
+            "avatarUrl",
+            "defaultSeed",
+            "pickColor",
+            "Gesture"
+          ]
+        },
+        {
+          "source": "../utils/roster",
+          "specifiers": [
+            "syncRoster"
+          ]
+        },
+        {
+          "source": "../utils/profile-config",
+          "specifiers": [
+            "readProfileConfig"
+          ]
+        },
+        {
+          "source": "../utils/profile-description",
+          "specifiers": [
+            "readProfileDescription"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 103,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/profiles.post.ts": {
+      "filePath": "server/api/profiles.post.ts",
+      "contentHash": "e40d766399c5b57d1b944da93e07bdf5e136ebfe7c18ba862f23c091f0215fc5",
+      "functions": [
+        {
+          "name": "runHermes",
+          "params": [
+            "args"
+          ],
+          "returnType": "Promise<{ code: number, stdout: string, stderr: string }>",
+          "exported": false,
+          "lineCount": 13
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:child_process",
+          "specifiers": [
+            "spawn"
+          ]
+        },
+        {
+          "source": "../utils/db",
+          "specifiers": [
+            "useDb",
+            "ProfileRow"
+          ]
+        },
+        {
+          "source": "../utils/hermes",
+          "specifiers": [
+            "discoverProfiles"
+          ]
+        },
+        {
+          "source": "../utils/avatar",
+          "specifiers": [
+            "avatarUrl",
+            "defaultSeed",
+            "pickColor",
+            "Gesture"
+          ]
+        },
+        {
+          "source": "../utils/skills",
+          "specifiers": [
+            "setDisabledSkills"
+          ]
+        },
+        {
+          "source": "../utils/tools",
+          "specifiers": [
+            "applyToolState",
+            "listTools"
+          ]
+        },
+        {
+          "source": "../utils/soul",
+          "specifiers": [
+            "writeSoul"
+          ]
+        },
+        {
+          "source": "../utils/agents",
+          "specifiers": [
+            "writeAgents"
+          ]
+        },
+        {
+          "source": "../utils/profile-config",
+          "specifiers": [
+            "writeProfileConfig"
+          ]
+        },
+        {
+          "source": "../utils/roster",
+          "specifiers": [
+            "syncRoster"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 222,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/profiles/[slug].delete.ts": {
+      "filePath": "server/api/profiles/[slug].delete.ts",
+      "contentHash": "6a99fdbe5b0dbafb131788951dd18811edeef286d0f67cafdb339759a1e96c7d",
+      "functions": [
+        {
+          "name": "runHermes",
+          "params": [
+            "args"
+          ],
+          "returnType": "Promise<{ code: number, stdout: string, stderr: string }>",
+          "exported": false,
+          "lineCount": 13
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:child_process",
+          "specifiers": [
+            "spawn"
+          ]
+        },
+        {
+          "source": "../../utils/db",
+          "specifiers": [
+            "useDb",
+            "ProfileRow"
+          ]
+        },
+        {
+          "source": "../../utils/roster",
+          "specifiers": [
+            "syncRoster"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 58,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/profiles/[slug].patch.ts": {
+      "filePath": "server/api/profiles/[slug].patch.ts",
+      "contentHash": "7754dd3fbe63804d0c50db893d0401876d203d74a37bba8722cce83d1b2ad1ea",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:crypto",
+          "specifiers": [
+            "randomUUID"
+          ]
+        },
+        {
+          "source": "../../utils/db",
+          "specifiers": [
+            "useDb",
+            "ProfileRow"
+          ]
+        },
+        {
+          "source": "../../utils/avatar",
+          "specifiers": [
+            "avatarUrl",
+            "Gesture"
+          ]
+        },
+        {
+          "source": "../../utils/roster",
+          "specifiers": [
+            "syncRoster"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 89,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/profiles/[slug]/agents.get.ts": {
+      "filePath": "server/api/profiles/[slug]/agents.get.ts",
+      "contentHash": "296a467be51fdff02a76f0369144299747742e2968eb89b961a92287f00adfa4",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../../utils/db",
+          "specifiers": [
+            "useDb",
+            "ProfileRow"
+          ]
+        },
+        {
+          "source": "../../../utils/agents",
+          "specifiers": [
+            "readAgents"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 16,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/profiles/[slug]/agents.put.ts": {
+      "filePath": "server/api/profiles/[slug]/agents.put.ts",
+      "contentHash": "db6ba04c673126ef9326a672a8987a027cf49fde799b425bd362ce9a136b6b07",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../../utils/db",
+          "specifiers": [
+            "useDb",
+            "ProfileRow"
+          ]
+        },
+        {
+          "source": "../../../utils/agents",
+          "specifiers": [
+            "writeAgents"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 31,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/profiles/[slug]/config.get.ts": {
+      "filePath": "server/api/profiles/[slug]/config.get.ts",
+      "contentHash": "582b07cf7463cabb0dbda565cf59b3226867807ca98f8665c115f465428636ad",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../../utils/db",
+          "specifiers": [
+            "useDb",
+            "ProfileRow"
+          ]
+        },
+        {
+          "source": "../../../utils/profile-config",
+          "specifiers": [
+            "readProfileConfig"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 16,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/profiles/[slug]/config.put.ts": {
+      "filePath": "server/api/profiles/[slug]/config.put.ts",
+      "contentHash": "0a90280548f92a16e084bd9d259ac72f241d55bb3d50c1f9a7bb460dca90e95d",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../../utils/db",
+          "specifiers": [
+            "useDb",
+            "ProfileRow"
+          ]
+        },
+        {
+          "source": "../../../utils/profile-config",
+          "specifiers": [
+            "writeProfileConfig",
+            "readProfileConfig"
+          ]
+        },
+        {
+          "source": "../../../utils/orchestrator-acp",
+          "specifiers": [
+            "restartAcp"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 67,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/profiles/[slug]/description-auto.post.ts": {
+      "filePath": "server/api/profiles/[slug]/description-auto.post.ts",
+      "contentHash": "53629f1a2ceb5175437611c8aafa1fa42691af421587787ed49590edd0832280",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../../utils/profile-description",
+          "specifiers": [
+            "autoProfileDescription"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 18,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/profiles/[slug]/description.patch.ts": {
+      "filePath": "server/api/profiles/[slug]/description.patch.ts",
+      "contentHash": "4391a06dc36e6adf16b78966935609328c49fdfd0e2f8883c69b7cc49c5a863e",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../../utils/profile-description",
+          "specifiers": [
+            "readProfileDescription",
+            "setProfileDescription"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 17,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/profiles/[slug]/mcp.get.ts": {
+      "filePath": "server/api/profiles/[slug]/mcp.get.ts",
+      "contentHash": "80eccf78401f4a1224d7753ee8e3548f3e750084bbf565456b32a6129c0556c9",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../../utils/db",
+          "specifiers": [
+            "useDb",
+            "ProfileRow"
+          ]
+        },
+        {
+          "source": "../../../utils/mcp",
+          "specifiers": [
+            "listMcpServers"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 16,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/profiles/[slug]/mcp/[name].delete.ts": {
+      "filePath": "server/api/profiles/[slug]/mcp/[name].delete.ts",
+      "contentHash": "17a4776a689b88b5bdf5f9bc27faf586d55c3058100f2cb357c07c85248bf90f",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../../../utils/db",
+          "specifiers": [
+            "useDb",
+            "ProfileRow"
+          ]
+        },
+        {
+          "source": "../../../../utils/mcp",
+          "specifiers": [
+            "removeMcpServer"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 29,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/profiles/[slug]/rename.post.ts": {
+      "filePath": "server/api/profiles/[slug]/rename.post.ts",
+      "contentHash": "5c863c5f595169ebbf1c95e90472ec3369a6872e78b983167d7320e9276b000d",
+      "functions": [
+        {
+          "name": "runHermes",
+          "params": [
+            "args"
+          ],
+          "returnType": "Promise<{ code: number, stdout: string, stderr: string }>",
+          "exported": false,
+          "lineCount": 13
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:child_process",
+          "specifiers": [
+            "spawn"
+          ]
+        },
+        {
+          "source": "../../../utils/db",
+          "specifiers": [
+            "useDb",
+            "ProfileRow"
+          ]
+        },
+        {
+          "source": "../../../utils/hermes",
+          "specifiers": [
+            "discoverProfiles"
+          ]
+        },
+        {
+          "source": "../../../utils/roster",
+          "specifiers": [
+            "syncRoster"
+          ]
+        },
+        {
+          "source": "../../../utils/avatar",
+          "specifiers": [
+            "avatarUrl",
+            "Gesture"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 102,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/profiles/[slug]/skills.get.ts": {
+      "filePath": "server/api/profiles/[slug]/skills.get.ts",
+      "contentHash": "b70931447de7cc8304d03ec91668a87214ff342070e2ea1c4c0e24958f5fb20e",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../../utils/db",
+          "specifiers": [
+            "useDb",
+            "ProfileRow"
+          ]
+        },
+        {
+          "source": "../../../utils/skills",
+          "specifiers": [
+            "listGlobalSkills",
+            "listProfileSkills",
+            "getDisabledSkills",
+            "SkillEntry"
+          ]
+        },
+        {
+          "source": "../../skills.get",
+          "specifiers": [
+            "SkillView"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 48,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/profiles/[slug]/skills.put.ts": {
+      "filePath": "server/api/profiles/[slug]/skills.put.ts",
+      "contentHash": "9c24808ee9aa9805978c5b87fc3b419e2f5786ab87f3c7ad99acaefba4e03cd9",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../../utils/db",
+          "specifiers": [
+            "useDb",
+            "ProfileRow"
+          ]
+        },
+        {
+          "source": "../../../utils/skills",
+          "specifiers": [
+            "setDisabledSkills"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 32,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/profiles/[slug]/soul.get.ts": {
+      "filePath": "server/api/profiles/[slug]/soul.get.ts",
+      "contentHash": "bcf530b66d3114913d988bb34e2d31bd366cc879d6cb1e151be876d74d5f69c9",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../../utils/db",
+          "specifiers": [
+            "useDb",
+            "ProfileRow"
+          ]
+        },
+        {
+          "source": "../../../utils/soul",
+          "specifiers": [
+            "readSoul"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 16,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/profiles/[slug]/soul.put.ts": {
+      "filePath": "server/api/profiles/[slug]/soul.put.ts",
+      "contentHash": "86b0c36affcbd6ff5112f09336c77af140c49b71dedea73afb70a0a83bcbfe22",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../../utils/db",
+          "specifiers": [
+            "useDb",
+            "ProfileRow"
+          ]
+        },
+        {
+          "source": "../../../utils/soul",
+          "specifiers": [
+            "writeSoul"
+          ]
+        },
+        {
+          "source": "../../../utils/roster",
+          "specifiers": [
+            "syncRoster"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 38,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/profiles/[slug]/tools.get.ts": {
+      "filePath": "server/api/profiles/[slug]/tools.get.ts",
+      "contentHash": "6daf8389bbfacf4b3bac52c467f9b949f56f43374951cc1f243aaca0834f4020",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../../utils/db",
+          "specifiers": [
+            "useDb"
+          ]
+        },
+        {
+          "source": "../../../utils/tools",
+          "specifiers": [
+            "listTools"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 16,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/profiles/[slug]/tools.put.ts": {
+      "filePath": "server/api/profiles/[slug]/tools.put.ts",
+      "contentHash": "b94d3167302c287e55a0944d5af471a600c593b6c84e28e542dc2281020c442c",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../../utils/db",
+          "specifiers": [
+            "useDb"
+          ]
+        },
+        {
+          "source": "../../../utils/tools",
+          "specifiers": [
+            "applyToolState",
+            "listTools"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 46,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/skills.get.ts": {
+      "filePath": "server/api/skills.get.ts",
+      "contentHash": "9a6bc9c4bb694cf471ea95dbae6eeebcd03b21cf6762ab4d07ee607a724255d5",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../utils/skills",
+          "specifiers": [
+            "listGlobalSkills",
+            "SkillEntry"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 28,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/tools.get.ts": {
+      "filePath": "server/api/tools.get.ts",
+      "contentHash": "572259285765a49161b8a9c724abd54a6a1e863f99b631301ff7d3a78343a2e3",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../utils/tools",
+          "specifiers": [
+            "listTools"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 6,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/usage.get.ts": {
+      "filePath": "server/api/usage.get.ts",
+      "contentHash": "9dc63178f0373dc704923b850f7fc652ed826f41432ea104337c3ebabea9532c",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../utils/db",
+          "specifiers": [
+            "useDb",
+            "ProfileRow"
+          ]
+        },
+        {
+          "source": "../utils/tokens",
+          "specifiers": [
+            "readTokenUsage",
+            "TokenUsage"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 16,
+      "hasStructuralAnalysis": true
+    },
+    "server/api/version.get.ts": {
+      "filePath": "server/api/version.get.ts",
+      "contentHash": "6de1a5c34323bc48f1808d4889c5cb56871b46d74443ab0acecb8ce8e83946e9",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../utils/version",
+          "specifiers": [
+            "getVersionInfo"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 13,
+      "hasStructuralAnalysis": true
+    },
+    "server/plugins/auto-nudge.ts": {
+      "filePath": "server/plugins/auto-nudge.ts",
+      "contentHash": "109f134a040401130316e9df739b0e7767e46d0f5d27dbd25232cb2ffa9b25c3",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../utils/auto-nudge",
+          "specifiers": [
+            "loadWatchedFromDb",
+            "startAutoNudge"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "server/plugins/mission-cleanup.ts": {
+      "filePath": "server/plugins/mission-cleanup.ts",
+      "contentHash": "b01d65653b57979b1447a80cedd975f47984bb80846d5b458f849e9d3606b91d",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../utils/db",
+          "specifiers": [
+            "useDb"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 45,
+      "hasStructuralAnalysis": true
+    },
+    "server/plugins/skills-repair.ts": {
+      "filePath": "server/plugins/skills-repair.ts",
+      "contentHash": "42ea238a1e4533f45db2ce84429857bad66e5fe1fa8d771664465dda993267e1",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../utils/hermes",
+          "specifiers": [
+            "discoverProfiles"
+          ]
+        },
+        {
+          "source": "../utils/skills",
+          "specifiers": [
+            "getDisabledSkills",
+            "setDisabledSkills"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 38,
+      "hasStructuralAnalysis": true
+    },
+    "server/utils/agents.ts": {
+      "filePath": "server/utils/agents.ts",
+      "contentHash": "c171885c7b07971ac9e68e9d2d45e3728853678228a837c77263ffef7549622b",
+      "functions": [
+        {
+          "name": "profilePath",
+          "params": [
+            "profileDir"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "readAgents",
+          "params": [
+            "profileDir"
+          ],
+          "returnType": "ReadAgentsResult",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "writeAgents",
+          "params": [
+            "profileDir",
+            "contents"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "syncManagedAgentsBlock",
+          "params": [
+            "profileDir"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 32
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "readFileSync",
+            "writeFileSync",
+            "renameSync",
+            "unlinkSync",
+            "existsSync"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "join"
+          ]
+        },
+        {
+          "source": "node:os",
+          "specifiers": [
+            "homedir"
+          ]
+        }
+      ],
+      "exports": [
+        "readAgents",
+        "writeAgents",
+        "syncManagedAgentsBlock"
+      ],
+      "totalLines": 117,
+      "hasStructuralAnalysis": true
+    },
+    "server/utils/auto-nudge.ts": {
+      "filePath": "server/utils/auto-nudge.ts",
+      "contentHash": "4558df98cb79a23d4a908551a64043a0a74bb4e0c504dda382548b8abb9b18c4",
+      "functions": [
+        {
+          "name": "ensureState",
+          "params": [
+            "missionId"
+          ],
+          "returnType": "MissionState",
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "addWatchedTasks",
+          "params": [
+            "missionId",
+            "taskIds"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 27
+        },
+        {
+          "name": "removeMission",
+          "params": [
+            "missionId"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "loadWatchedFromDb",
+          "params": [],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "registerCreatedTaskFromTool",
+          "params": [
+            "missionId",
+            "tool"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 30
+        },
+        {
+          "name": "markNotified",
+          "params": [
+            "missionId",
+            "taskIds"
+          ],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "buildNudgeText",
+          "params": [
+            "completed"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 30
+        },
+        {
+          "name": "buildVisibleNudge",
+          "params": [
+            "completed"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 24
+        },
+        {
+          "name": "runNudgeTurn",
+          "params": [
+            "missionId",
+            "completed"
+          ],
+          "returnType": "Promise<void>",
+          "exported": false,
+          "lineCount": 68
+        },
+        {
+          "name": "scheduleNudge",
+          "params": [
+            "missionId",
+            "completed"
+          ],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 19
+        },
+        {
+          "name": "checkAll",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 58
+        },
+        {
+          "name": "startAutoNudge",
+          "params": [],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "stopAutoNudge",
+          "params": [],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 4
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./kanban",
+          "specifiers": [
+            "getKanbanDb",
+            "KanbanTask"
+          ]
+        },
+        {
+          "source": "./mission",
+          "specifiers": [
+            "getMission",
+            "appendMessage",
+            "updateMessage"
+          ]
+        },
+        {
+          "source": "./mission-lock",
+          "specifiers": [
+            "withMissionLock"
+          ]
+        },
+        {
+          "source": "./orchestrator-acp",
+          "specifiers": [
+            "startPrompt"
+          ]
+        },
+        {
+          "source": "./mission-bus",
+          "specifiers": [
+            "emit"
+          ]
+        },
+        {
+          "source": "./mission-flight",
+          "specifiers": [
+            "startFlight",
+            "endFlight"
+          ]
+        },
+        {
+          "source": "./db",
+          "specifiers": [
+            "useDb"
+          ]
+        },
+        {
+          "source": "./task-failure",
+          "specifiers": [
+            "getFailureContext",
+            "distillReason"
+          ]
+        },
+        {
+          "source": "./triage",
+          "specifiers": [
+            "parseKanbanJson"
+          ]
+        }
+      ],
+      "exports": [
+        "addWatchedTasks",
+        "removeMission",
+        "loadWatchedFromDb",
+        "registerCreatedTaskFromTool",
+        "startAutoNudge",
+        "stopAutoNudge"
+      ],
+      "totalLines": 413,
+      "hasStructuralAnalysis": true
+    },
+    "server/utils/avatar.ts": {
+      "filePath": "server/utils/avatar.ts",
+      "contentHash": "2fb7aca22174543b30e1be4f5c42ecaa21c43bdd912d81a6e5bd7c2dd10e4c02",
+      "functions": [
+        {
+          "name": "hashStr",
+          "params": [
+            "s"
+          ],
+          "returnType": "number",
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "pickColor",
+          "params": [
+            "slug"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "defaultSeed",
+          "params": [
+            "slug"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "avatarUrl",
+          "params": [
+            "opts"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 17
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "GESTURES",
+        "pickColor",
+        "defaultSeed",
+        "avatarUrl"
+      ],
+      "totalLines": 63,
+      "hasStructuralAnalysis": true
+    },
+    "server/utils/db.ts": {
+      "filePath": "server/utils/db.ts",
+      "contentHash": "53734d1b566ec4c68bf4789f37c93fa601c8500ed5e2b4d575b152765258f05f",
+      "functions": [
+        {
+          "name": "useDb",
+          "params": [],
+          "returnType": "DatabaseSync",
+          "exported": true,
+          "lineCount": 101
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:sqlite",
+          "specifiers": [
+            "DatabaseSync"
+          ]
+        },
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "mkdirSync"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "dirname",
+            "resolve"
+          ]
+        }
+      ],
+      "exports": [
+        "useDb"
+      ],
+      "totalLines": 144,
+      "hasStructuralAnalysis": true
+    },
+    "server/utils/hermes.ts": {
+      "filePath": "server/utils/hermes.ts",
+      "contentHash": "4b8adbd506d8ab6bacdd0dae3b37b0f3f7c5b963f5d2a7b70282864ec820e05e",
+      "functions": [
+        {
+          "name": "discoverProfiles",
+          "params": [],
+          "returnType": "DiscoveredProfile[]",
+          "exported": true,
+          "lineCount": 29
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "readdirSync",
+            "statSync"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "join"
+          ]
+        },
+        {
+          "source": "node:os",
+          "specifiers": [
+            "homedir"
+          ]
+        }
+      ],
+      "exports": [
+        "discoverProfiles"
+      ],
+      "totalLines": 42,
+      "hasStructuralAnalysis": true
+    },
+    "server/utils/kanban-symlinks.ts": {
+      "filePath": "server/utils/kanban-symlinks.ts",
+      "contentHash": "848196a688208bb01cbb60d01d3a6bdc1a395bee68548b956302ecbe967bdbe0",
+      "functions": [
+        {
+          "name": "realPathOrSelf",
+          "params": [
+            "path"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "ensureSymlink",
+          "params": [
+            "profileDir"
+          ],
+          "returnType": "boolean",
+          "exported": false,
+          "lineCount": 34
+        },
+        {
+          "name": "ensureKanbanSymlinks",
+          "params": [],
+          "returnType": "{ updated: string[], skipped: string[] }",
+          "exported": true,
+          "lineCount": 20
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "existsSync",
+            "lstatSync",
+            "readlinkSync",
+            "realpathSync",
+            "unlinkSync",
+            "symlinkSync"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "join",
+            "resolve"
+          ]
+        },
+        {
+          "source": "node:os",
+          "specifiers": [
+            "homedir"
+          ]
+        },
+        {
+          "source": "./db",
+          "specifiers": [
+            "useDb"
+          ]
+        }
+      ],
+      "exports": [
+        "ensureKanbanSymlinks"
+      ],
+      "totalLines": 92,
+      "hasStructuralAnalysis": true
+    },
+    "server/utils/kanban.ts": {
+      "filePath": "server/utils/kanban.ts",
+      "contentHash": "891e3284adaf60529166c679b957d07c4e3b84403181d467d9342e27efc1666e",
+      "functions": [
+        {
+          "name": "getKanbanDb",
+          "params": [],
+          "returnType": "DatabaseSync | null",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "rowToTask",
+          "params": [
+            "r"
+          ],
+          "returnType": "KanbanTask",
+          "exported": false,
+          "lineCount": 16
+        },
+        {
+          "name": "listActiveTasks",
+          "params": [
+            "assignee"
+          ],
+          "returnType": "KanbanTask[]",
+          "exported": true,
+          "lineCount": 62
+        },
+        {
+          "name": "currentTaskByAssignee",
+          "params": [
+            "assignee"
+          ],
+          "returnType": "KanbanTask | null",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "totalTaskCount",
+          "params": [],
+          "returnType": "number",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "tasksCreatedSince",
+          "params": [
+            "unixSec"
+          ],
+          "returnType": "KanbanTask[]",
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "listCompletedTasks",
+          "params": [
+            "opts"
+          ],
+          "returnType": "CompletedTask[]",
+          "exported": true,
+          "lineCount": 38
+        },
+        {
+          "name": "dispatcherLikelyStale",
+          "params": [],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 11
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:sqlite",
+          "specifiers": [
+            "DatabaseSync"
+          ]
+        },
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "existsSync"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "join"
+          ]
+        },
+        {
+          "source": "node:os",
+          "specifiers": [
+            "homedir"
+          ]
+        },
+        {
+          "source": "./task-failure",
+          "specifiers": [
+            "getFailureContext",
+            "distillReason"
+          ]
+        },
+        {
+          "source": "./permission-extract",
+          "specifiers": [
+            "looksLikePermissionDenial"
+          ]
+        }
+      ],
+      "exports": [
+        "getKanbanDb",
+        "listActiveTasks",
+        "currentTaskByAssignee",
+        "totalTaskCount",
+        "tasksCreatedSince",
+        "listCompletedTasks",
+        "dispatcherLikelyStale"
+      ],
+      "totalLines": 285,
+      "hasStructuralAnalysis": true
+    },
+    "server/utils/mcp.ts": {
+      "filePath": "server/utils/mcp.ts",
+      "contentHash": "42733dac1764f42032e42b7c99af4b52fcf88f4b9527c3a644939b408fcb7949",
+      "functions": [
+        {
+          "name": "profileConfigPath",
+          "params": [
+            "profileDir"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "readMcpMap",
+          "params": [
+            "profileDir"
+          ],
+          "returnType": "Record<string, RawMcpEntry> | null",
+          "exported": false,
+          "lineCount": 11
+        },
+        {
+          "name": "listMcpServers",
+          "params": [
+            "profileDir"
+          ],
+          "returnType": "McpServer[]",
+          "exported": true,
+          "lineCount": 26
+        },
+        {
+          "name": "removeMcpServer",
+          "params": [
+            "profileDir",
+            "name"
+          ],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 24
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "readFileSync",
+            "writeFileSync",
+            "renameSync",
+            "unlinkSync",
+            "existsSync"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "join"
+          ]
+        },
+        {
+          "source": "yaml",
+          "specifiers": [
+            "parseYaml",
+            "parseYamlDocument"
+          ]
+        }
+      ],
+      "exports": [
+        "listMcpServers",
+        "removeMcpServer"
+      ],
+      "totalLines": 94,
+      "hasStructuralAnalysis": true
+    },
+    "server/utils/mission-bus.ts": {
+      "filePath": "server/utils/mission-bus.ts",
+      "contentHash": "79c74275b3a1965b84eb29659543b5334c82578052415302bc9ebe852ef3699a",
+      "functions": [
+        {
+          "name": "getMissionBus",
+          "params": [
+            "missionId"
+          ],
+          "returnType": "EventEmitter",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "dropMissionBus",
+          "params": [
+            "missionId"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "emit",
+          "params": [
+            "missionId",
+            "event"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 4
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:events",
+          "specifiers": [
+            "EventEmitter"
+          ]
+        }
+      ],
+      "exports": [
+        "getMissionBus",
+        "dropMissionBus",
+        "emit"
+      ],
+      "totalLines": 103,
+      "hasStructuralAnalysis": true
+    },
+    "server/utils/mission-flight.ts": {
+      "filePath": "server/utils/mission-flight.ts",
+      "contentHash": "60fa80192162173fbe46abd3e68932f4b2659d82d1bb03548be9266f598b53b9",
+      "functions": [
+        {
+          "name": "startFlight",
+          "params": [
+            "missionId",
+            "assistantMsgId"
+          ],
+          "returnType": "InFlightState",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "endFlight",
+          "params": [
+            "missionId"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "getFlight",
+          "params": [
+            "missionId"
+          ],
+          "returnType": "InFlightState | null",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "isInFlight",
+          "params": [
+            "missionId"
+          ],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "startFlight",
+        "endFlight",
+        "getFlight",
+        "isInFlight"
+      ],
+      "totalLines": 37,
+      "hasStructuralAnalysis": true
+    },
+    "server/utils/mission-lock.ts": {
+      "filePath": "server/utils/mission-lock.ts",
+      "contentHash": "3e49b1b6fb2053fc84fe0891820b80cf29efa9608e51ffcc0c41126c44103748",
+      "functions": [
+        {
+          "name": "withMissionLock",
+          "params": [
+            "missionId",
+            "fn"
+          ],
+          "returnType": "Promise<T>",
+          "exported": true,
+          "lineCount": 6
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "withMissionLock"
+      ],
+      "totalLines": 23,
+      "hasStructuralAnalysis": true
+    },
+    "server/utils/mission-turn.ts": {
+      "filePath": "server/utils/mission-turn.ts",
+      "contentHash": "fccfe2cefc0e9b750b0069fc62eb887906fb8b4db9d875b4befeb757eedec226",
+      "functions": [
+        {
+          "name": "looksLikeDelegationClaim",
+          "params": [
+            "text"
+          ],
+          "returnType": "boolean",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "extractToolText",
+          "params": [
+            "tool"
+          ],
+          "returnType": "string | null",
+          "exported": false,
+          "lineCount": 18
+        },
+        {
+          "name": "extractText",
+          "params": [
+            "update"
+          ],
+          "returnType": "string | null",
+          "exported": false,
+          "lineCount": 11
+        },
+        {
+          "name": "isThought",
+          "params": [
+            "update"
+          ],
+          "returnType": "boolean",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "asToolCall",
+          "params": [
+            "update"
+          ],
+          "returnType": "AcpToolCall | null",
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "buildOrchestratorPreambleRefine",
+          "params": [
+            "roster"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 36
+        },
+        {
+          "name": "buildOrchestratorPreambleRefineFollowup",
+          "params": [
+            "roster"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 19
+        },
+        {
+          "name": "buildOrchestratorPreambleSupervisor",
+          "params": [
+            "roster",
+            "triageTaskId"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 17
+        },
+        {
+          "name": "runMissionTurn",
+          "params": [
+            "missionId",
+            "userText"
+          ],
+          "returnType": "Promise<void>",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "runMissionTurnLocked",
+          "params": [
+            "missionId",
+            "userText"
+          ],
+          "returnType": "Promise<void>",
+          "exported": false,
+          "lineCount": 237
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./mission",
+          "specifiers": [
+            "appendMessage",
+            "getMission",
+            "listMessages",
+            "setAcpSessionId",
+            "setLatestTriageDraft",
+            "updateMessage"
+          ]
+        },
+        {
+          "source": "./orchestrator-acp",
+          "specifiers": [
+            "newSession",
+            "loadSession",
+            "startPrompt"
+          ]
+        },
+        {
+          "source": "./mission-bus",
+          "specifiers": [
+            "emit"
+          ]
+        },
+        {
+          "source": "./kanban",
+          "specifiers": [
+            "tasksCreatedSince"
+          ]
+        },
+        {
+          "source": "./mission-lock",
+          "specifiers": [
+            "withMissionLock"
+          ]
+        },
+        {
+          "source": "./auto-nudge",
+          "specifiers": [
+            "addWatchedTasks",
+            "registerCreatedTaskFromTool"
+          ]
+        },
+        {
+          "source": "./mission-flight",
+          "specifiers": [
+            "startFlight",
+            "endFlight"
+          ]
+        },
+        {
+          "source": "./db",
+          "specifiers": [
+            "useDb"
+          ]
+        },
+        {
+          "source": "./roster",
+          "specifiers": [
+            "buildRosterMarkdown"
+          ]
+        },
+        {
+          "source": "./triage",
+          "specifiers": [
+            "extractTriageDraft"
+          ]
+        },
+        {
+          "source": "@zed-industries/agent-client-protocol",
+          "specifiers": [
+            "SessionNotification"
+          ]
+        }
+      ],
+      "exports": [
+        "runMissionTurn"
+      ],
+      "totalLines": 447,
+      "hasStructuralAnalysis": true
+    },
+    "server/utils/mission.ts": {
+      "filePath": "server/utils/mission.ts",
+      "contentHash": "b247f22c6877c99161c36777b17c9e53705a4015c9695f665cb46928ed3846f6",
+      "functions": [
+        {
+          "name": "serializeMission",
+          "params": [
+            "m"
+          ],
+          "returnType": "{\n  id: string\n  orchestratorSlug: string\n  acpSessionId: string | null\n  title: string | null\n  status: string\n  createdAt: string\n  lastMessageAt: string\n  mode: string\n  triageTaskId: string | null\n  latestTriageDraft: { title: string, body: string, messageId: number | null } | null\n}",
+          "exported": true,
+          "lineCount": 31
+        },
+        {
+          "name": "summarizeTitle",
+          "params": [
+            "text"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "getActiveMission",
+          "params": [
+            "orchestratorSlug"
+          ],
+          "returnType": "MissionRow | null",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "getMission",
+          "params": [
+            "id"
+          ],
+          "returnType": "MissionRow | null",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "listMessages",
+          "params": [
+            "missionId"
+          ],
+          "returnType": "MissionMessageRow[]",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "createMission",
+          "params": [
+            "orchestratorSlug",
+            "firstMessage",
+            "opts"
+          ],
+          "returnType": "MissionRow",
+          "exported": true,
+          "lineCount": 39
+        },
+        {
+          "name": "setAcpSessionId",
+          "params": [
+            "id",
+            "acpSessionId"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "setLatestTriageDraft",
+          "params": [
+            "missionId",
+            "draft"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "setTriageTaskId",
+          "params": [
+            "missionId",
+            "triageTaskId"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "appendMessage",
+          "params": [
+            "missionId",
+            "role",
+            "content"
+          ],
+          "returnType": "MissionMessageRow",
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "updateMessage",
+          "params": [
+            "messageId",
+            "content"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "archiveMission",
+          "params": [
+            "id"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "listMissions",
+          "params": [
+            "opts"
+          ],
+          "returnType": "MissionRow[]",
+          "exported": true,
+          "lineCount": 26
+        },
+        {
+          "name": "countMissions",
+          "params": [
+            "opts"
+          ],
+          "returnType": "number",
+          "exported": true,
+          "lineCount": 18
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:crypto",
+          "specifiers": [
+            "randomUUID"
+          ]
+        },
+        {
+          "source": "./db",
+          "specifiers": [
+            "useDb",
+            "MissionRow",
+            "MissionMessageRow"
+          ]
+        }
+      ],
+      "exports": [
+        "serializeMission",
+        "summarizeTitle",
+        "getActiveMission",
+        "getMission",
+        "listMessages",
+        "createMission",
+        "setAcpSessionId",
+        "setLatestTriageDraft",
+        "setTriageTaskId",
+        "appendMessage",
+        "updateMessage",
+        "archiveMission",
+        "listMissions",
+        "countMissions"
+      ],
+      "totalLines": 219,
+      "hasStructuralAnalysis": true
+    },
+    "server/utils/orchestrator-acp.ts": {
+      "filePath": "server/utils/orchestrator-acp.ts",
+      "contentHash": "fc87fe4ed03aa2351c07a18af922d02fff41d7446bc7a36e1299e5d912a178c0",
+      "functions": [
+        {
+          "name": "normalizeAcpStdoutLine",
+          "params": [
+            "line"
+          ],
+          "returnType": "string | null",
+          "exported": true,
+          "lineCount": 31
+        },
+        {
+          "name": "fixupAcpStdout",
+          "params": [],
+          "returnType": "Transform",
+          "exported": false,
+          "lineCount": 24
+        },
+        {
+          "name": "spawnEntry",
+          "params": [
+            "slug"
+          ],
+          "returnType": "Promise<PoolEntry>",
+          "exported": false,
+          "lineCount": 94
+        },
+        {
+          "name": "getEntry",
+          "params": [
+            "slug"
+          ],
+          "returnType": "Promise<PoolEntry>",
+          "exported": false,
+          "lineCount": 9
+        },
+        {
+          "name": "defaultCwd",
+          "params": [],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "restart",
+          "params": [
+            "slug"
+          ],
+          "returnType": "{ killed: boolean }",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "warmup",
+          "params": [
+            "slug"
+          ],
+          "returnType": "Promise<{ alreadyWarm: boolean }>",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "newSession",
+          "params": [
+            "slug",
+            "cwd"
+          ],
+          "returnType": "Promise<string>",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "loadSession",
+          "params": [
+            "slug",
+            "sessionId",
+            "cwd"
+          ],
+          "returnType": "Promise<void>",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "startPrompt",
+          "params": [
+            "opts"
+          ],
+          "returnType": "PromptHandle",
+          "exported": true,
+          "lineCount": 43
+        },
+        {
+          "name": "ensureReaper",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 18
+        },
+        {
+          "name": "shutdownAll",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 8
+        }
+      ],
+      "classes": [
+        {
+          "name": "WarRoomClient",
+          "methods": [
+            "constructor",
+            "sessionUpdate",
+            "requestPermission"
+          ],
+          "properties": [],
+          "exported": false,
+          "lineCount": 18
+        }
+      ],
+      "imports": [
+        {
+          "source": "node:child_process",
+          "specifiers": [
+            "spawn",
+            "ChildProcess"
+          ]
+        },
+        {
+          "source": "node:stream",
+          "specifiers": [
+            "Readable",
+            "Writable",
+            "Transform"
+          ]
+        },
+        {
+          "source": "node:events",
+          "specifiers": [
+            "EventEmitter"
+          ]
+        },
+        {
+          "source": "node:os",
+          "specifiers": [
+            "homedir"
+          ]
+        },
+        {
+          "source": "@zed-industries/agent-client-protocol",
+          "specifiers": [
+            "ClientSideConnection",
+            "ndJsonStream",
+            "PROTOCOL_VERSION",
+            "Client",
+            "SessionNotification",
+            "RequestPermissionRequest",
+            "RequestPermissionResponse",
+            "ContentBlock"
+          ]
+        }
+      ],
+      "exports": [
+        "normalizeAcpStdoutLine",
+        "restart",
+        "warmup",
+        "newSession",
+        "loadSession",
+        "startPrompt"
+      ],
+      "totalLines": 408,
+      "hasStructuralAnalysis": true
+    },
+    "server/utils/permission-extract.ts": {
+      "filePath": "server/utils/permission-extract.ts",
+      "contentHash": "1c99aab9f8c14be987d000dd4a07c188f24075e76689659ed5d5a242910c83ca",
+      "functions": [
+        {
+          "name": "looksLikePermissionDenial",
+          "params": [
+            "reason"
+          ],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "extractPermissionLabel",
+          "params": [
+            "reason"
+          ],
+          "returnType": "string | null",
+          "exported": true,
+          "lineCount": 27
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "looksLikePermissionDenial",
+        "extractPermissionLabel"
+      ],
+      "totalLines": 51,
+      "hasStructuralAnalysis": true
+    },
+    "server/utils/presets.ts": {
+      "filePath": "server/utils/presets.ts",
+      "contentHash": "e6af057e06f7f389cb2fef93a06669b8fe7c55743ac8a8c2d9f7d06ec70140d9",
+      "functions": [
+        {
+          "name": "getPreset",
+          "params": [
+            "id"
+          ],
+          "returnType": "ProfilePreset | undefined",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "PRESETS",
+        "getPreset"
+      ],
+      "totalLines": 454,
+      "hasStructuralAnalysis": true
+    },
+    "server/utils/profile-config.ts": {
+      "filePath": "server/utils/profile-config.ts",
+      "contentHash": "cf41820d3721e9328d9a9404946c1ae3a9081be63f9c65c89598300f1a3716af",
+      "functions": [
+        {
+          "name": "readGlobalModelConfig",
+          "params": [],
+          "returnType": "{ model: string | null, provider: string | null }",
+          "exported": false,
+          "lineCount": 14
+        },
+        {
+          "name": "readGlobalModelBlock",
+          "params": [],
+          "returnType": "GlobalModelBlock | null",
+          "exported": true,
+          "lineCount": 23
+        },
+        {
+          "name": "configPath",
+          "params": [
+            "profileDir"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "readProfileConfig",
+          "params": [
+            "profileDir"
+          ],
+          "returnType": "ProfileConfigSlice",
+          "exported": true,
+          "lineCount": 24
+        },
+        {
+          "name": "writeProfileConfig",
+          "params": [
+            "profileDir",
+            "patch"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 101
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "readFileSync",
+            "writeFileSync",
+            "renameSync",
+            "unlinkSync",
+            "existsSync"
+          ]
+        },
+        {
+          "source": "node:os",
+          "specifiers": [
+            "homedir"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "join"
+          ]
+        },
+        {
+          "source": "yaml",
+          "specifiers": [
+            "parseYaml",
+            "parseYamlDocument",
+            "isMap",
+            "isScalar"
+          ]
+        },
+        {
+          "source": "yaml",
+          "specifiers": [
+            "YAMLMap"
+          ]
+        }
+      ],
+      "exports": [
+        "readGlobalModelBlock",
+        "readProfileConfig",
+        "writeProfileConfig"
+      ],
+      "totalLines": 234,
+      "hasStructuralAnalysis": true
+    },
+    "server/utils/profile-description.ts": {
+      "filePath": "server/utils/profile-description.ts",
+      "contentHash": "d28314a2bd76e369e3d2e42fcca77d7a95f8bb6dd20f4ef88927b2051e51144d",
+      "functions": [
+        {
+          "name": "readProfileDescription",
+          "params": [
+            "slug"
+          ],
+          "returnType": "Promise<string | null>",
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "invalidateProfileDescription",
+          "params": [
+            "slug"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "setProfileDescription",
+          "params": [
+            "slug",
+            "text"
+          ],
+          "returnType": "Promise<void>",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "autoProfileDescription",
+          "params": [
+            "slug"
+          ],
+          "returnType": "Promise<string | null>",
+          "exported": true,
+          "lineCount": 8
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./triage",
+          "specifiers": [
+            "runHermes"
+          ]
+        }
+      ],
+      "exports": [
+        "readProfileDescription",
+        "invalidateProfileDescription",
+        "setProfileDescription",
+        "autoProfileDescription"
+      ],
+      "totalLines": 53,
+      "hasStructuralAnalysis": true
+    },
+    "server/utils/roster.ts": {
+      "filePath": "server/utils/roster.ts",
+      "contentHash": "ad4f9228e8790457e123e19253065d20210eeb057ea97f07addc3ea7ae77c547",
+      "functions": [
+        {
+          "name": "extractRole",
+          "params": [
+            "soul"
+          ],
+          "returnType": "string | null",
+          "exported": true,
+          "lineCount": 26
+        },
+        {
+          "name": "buildRosterMarkdown",
+          "params": [],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 20
+        },
+        {
+          "name": "safeUnlink",
+          "params": [
+            "path"
+          ],
+          "returnType": "boolean",
+          "exported": false,
+          "lineCount": 11
+        },
+        {
+          "name": "safeRmdir",
+          "params": [
+            "path"
+          ],
+          "returnType": "boolean",
+          "exported": false,
+          "lineCount": 11
+        },
+        {
+          "name": "cleanupLegacyRosterArtefacts",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 19
+        },
+        {
+          "name": "syncRoster",
+          "params": [],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 29
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "unlinkSync",
+            "rmdirSync",
+            "existsSync",
+            "readdirSync",
+            "statSync"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "join"
+          ]
+        },
+        {
+          "source": "node:os",
+          "specifiers": [
+            "homedir"
+          ]
+        },
+        {
+          "source": "./db",
+          "specifiers": [
+            "useDb",
+            "ProfileRow"
+          ]
+        },
+        {
+          "source": "./soul",
+          "specifiers": [
+            "readSoul"
+          ]
+        },
+        {
+          "source": "./agents",
+          "specifiers": [
+            "syncManagedAgentsBlock"
+          ]
+        }
+      ],
+      "exports": [
+        "extractRole",
+        "buildRosterMarkdown",
+        "syncRoster"
+      ],
+      "totalLines": 161,
+      "hasStructuralAnalysis": true
+    },
+    "server/utils/skills.ts": {
+      "filePath": "server/utils/skills.ts",
+      "contentHash": "d85b937b7e7841586deb55f9cf1f4f3dd8e2d6b16bb2e5c06837d12d4ccb7ef5",
+      "functions": [
+        {
+          "name": "readFrontmatter",
+          "params": [
+            "file"
+          ],
+          "returnType": "RawFrontmatter | null",
+          "exported": false,
+          "lineCount": 11
+        },
+        {
+          "name": "walkSkills",
+          "params": [
+            "root",
+            "source"
+          ],
+          "returnType": "SkillEntry[]",
+          "exported": false,
+          "lineCount": 40
+        },
+        {
+          "name": "listGlobalSkills",
+          "params": [],
+          "returnType": "SkillEntry[]",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "listProfileSkills",
+          "params": [
+            "profileDir"
+          ],
+          "returnType": "SkillEntry[]",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "profileConfigPath",
+          "params": [
+            "profileDir"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "getDisabledSkills",
+          "params": [
+            "profileDir"
+          ],
+          "returnType": "string[]",
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "setDisabledSkills",
+          "params": [
+            "profileDir",
+            "disabled"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 30
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "readdirSync",
+            "readFileSync",
+            "writeFileSync",
+            "renameSync",
+            "unlinkSync",
+            "statSync",
+            "existsSync"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "join",
+            "relative"
+          ]
+        },
+        {
+          "source": "node:os",
+          "specifiers": [
+            "homedir"
+          ]
+        },
+        {
+          "source": "yaml",
+          "specifiers": [
+            "parseYaml",
+            "parseYamlDocument"
+          ]
+        }
+      ],
+      "exports": [
+        "listGlobalSkills",
+        "listProfileSkills",
+        "getDisabledSkills",
+        "setDisabledSkills"
+      ],
+      "totalLines": 146,
+      "hasStructuralAnalysis": true
+    },
+    "server/utils/soul.ts": {
+      "filePath": "server/utils/soul.ts",
+      "contentHash": "d7120e8fb11d56820c796c845f1d3183019c77d813e697491462367de92991e6",
+      "functions": [
+        {
+          "name": "soulPath",
+          "params": [
+            "profileDir"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "readSoul",
+          "params": [
+            "profileDir"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "writeSoul",
+          "params": [
+            "profileDir",
+            "contents"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 16
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "readFileSync",
+            "writeFileSync",
+            "renameSync",
+            "unlinkSync",
+            "existsSync"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "join"
+          ]
+        }
+      ],
+      "exports": [
+        "readSoul",
+        "writeSoul"
+      ],
+      "totalLines": 34,
+      "hasStructuralAnalysis": true
+    },
+    "server/utils/task-failure.ts": {
+      "filePath": "server/utils/task-failure.ts",
+      "contentHash": "8d96dfe42e9ffe4d65b19282c57f5b71210ababb57b1afc2c913b17ca6d4a3dd",
+      "functions": [
+        {
+          "name": "getFailureContext",
+          "params": [
+            "taskId"
+          ],
+          "returnType": "FailureContext",
+          "exported": true,
+          "lineCount": 36
+        },
+        {
+          "name": "distillReason",
+          "params": [
+            "ctx"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 15
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./kanban",
+          "specifiers": [
+            "getKanbanDb"
+          ]
+        }
+      ],
+      "exports": [
+        "getFailureContext",
+        "distillReason"
+      ],
+      "totalLines": 74,
+      "hasStructuralAnalysis": true
+    },
+    "server/utils/task-feed.ts": {
+      "filePath": "server/utils/task-feed.ts",
+      "contentHash": "73b89ba1574611c6498545ce08f6f8b5d8f629886d086e8bbcd8599fc1cbac89",
+      "functions": [
+        {
+          "name": "readLogTail",
+          "params": [
+            "taskId"
+          ],
+          "returnType": "{ tail: string | null, bytes: number | null, startedAt: number | null }",
+          "exported": false,
+          "lineCount": 20
+        },
+        {
+          "name": "logPath",
+          "params": [
+            "taskId"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "readLogHead",
+          "params": [
+            "taskId"
+          ],
+          "returnType": "string | null",
+          "exported": false,
+          "lineCount": 10
+        },
+        {
+          "name": "findSessionIdInLog",
+          "params": [
+            "taskId"
+          ],
+          "returnType": "string | null",
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "findProfileInLog",
+          "params": [
+            "taskId"
+          ],
+          "returnType": "string | null",
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "findTaskAssignee",
+          "params": [
+            "taskId"
+          ],
+          "returnType": "string | null",
+          "exported": false,
+          "lineCount": 20
+        },
+        {
+          "name": "parseToolCalls",
+          "params": [
+            "raw"
+          ],
+          "returnType": "unknown",
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "combineReasoning",
+          "params": [
+            "row"
+          ],
+          "returnType": "string | null",
+          "exported": false,
+          "lineCount": 10
+        },
+        {
+          "name": "getTaskFeed",
+          "params": [
+            "taskId",
+            "opts"
+          ],
+          "returnType": "TaskFeed",
+          "exported": true,
+          "lineCount": 99
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:sqlite",
+          "specifiers": [
+            "DatabaseSync"
+          ]
+        },
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "existsSync",
+            "readFileSync",
+            "statSync"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "join"
+          ]
+        },
+        {
+          "source": "node:os",
+          "specifiers": [
+            "homedir"
+          ]
+        }
+      ],
+      "exports": [
+        "getTaskFeed"
+      ],
+      "totalLines": 260,
+      "hasStructuralAnalysis": true
+    },
+    "server/utils/tokens.ts": {
+      "filePath": "server/utils/tokens.ts",
+      "contentHash": "1079b481f77babe42fb5c38938968ea685eaed502d13c05e57303c4bb580c612",
+      "functions": [
+        {
+          "name": "getDb",
+          "params": [
+            "profileDir"
+          ],
+          "returnType": "DatabaseSync | null",
+          "exported": false,
+          "lineCount": 13
+        },
+        {
+          "name": "readTokenUsage",
+          "params": [
+            "profileDir"
+          ],
+          "returnType": "TokenUsage",
+          "exported": true,
+          "lineCount": 58
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:sqlite",
+          "specifiers": [
+            "DatabaseSync"
+          ]
+        },
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "existsSync"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "join"
+          ]
+        }
+      ],
+      "exports": [
+        "readTokenUsage"
+      ],
+      "totalLines": 123,
+      "hasStructuralAnalysis": true
+    },
+    "server/utils/tools.ts": {
+      "filePath": "server/utils/tools.ts",
+      "contentHash": "dc5e308ca45cd55e8d030b97ac394395f14fb74ef8319ccfb30d743676eadde4",
+      "functions": [
+        {
+          "name": "runHermes",
+          "params": [
+            "args"
+          ],
+          "returnType": "Promise<RunResult>",
+          "exported": false,
+          "lineCount": 13
+        },
+        {
+          "name": "listTools",
+          "params": [
+            "profileSlug"
+          ],
+          "returnType": "Promise<ToolEntry[]>",
+          "exported": true,
+          "lineCount": 38
+        },
+        {
+          "name": "applyToolState",
+          "params": [
+            "profileSlug",
+            "toEnable",
+            "toDisable"
+          ],
+          "returnType": "Promise<void>",
+          "exported": true,
+          "lineCount": 14
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:child_process",
+          "specifiers": [
+            "spawn"
+          ]
+        }
+      ],
+      "exports": [
+        "listTools",
+        "applyToolState"
+      ],
+      "totalLines": 91,
+      "hasStructuralAnalysis": true
+    },
+    "server/utils/triage.ts": {
+      "filePath": "server/utils/triage.ts",
+      "contentHash": "897561bf4e33d2759cdb535094fb87b775e7a084411838f866761e7ba5ad4ea0",
+      "functions": [
+        {
+          "name": "runHermes",
+          "params": [
+            "args"
+          ],
+          "returnType": "Promise<RunResult>",
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "parseKanbanJson",
+          "params": [
+            "text"
+          ],
+          "returnType": "T | null",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "normalizeTaskIds",
+          "params": [
+            "value"
+          ],
+          "returnType": "string[]",
+          "exported": false,
+          "lineCount": 10
+        },
+        {
+          "name": "extractChildIdsFromDecomposedEvent",
+          "params": [
+            "payload"
+          ],
+          "returnType": "string[]",
+          "exported": false,
+          "lineCount": 9
+        },
+        {
+          "name": "decomposeResultFromParsed",
+          "params": [
+            "taskId",
+            "parsed"
+          ],
+          "returnType": "DecomposeResult",
+          "exported": true,
+          "lineCount": 22
+        },
+        {
+          "name": "recoverDecomposeFromKanbanState",
+          "params": [
+            "taskId"
+          ],
+          "returnType": "DecomposeResult | null",
+          "exported": true,
+          "lineCount": 47
+        },
+        {
+          "name": "createTriageTask",
+          "params": [
+            "opts"
+          ],
+          "returnType": "Promise<TriageCreateResult>",
+          "exported": true,
+          "lineCount": 28
+        },
+        {
+          "name": "decomposeTask",
+          "params": [
+            "taskId"
+          ],
+          "returnType": "Promise<DecomposeResult>",
+          "exported": true,
+          "lineCount": 25
+        },
+        {
+          "name": "specifyTask",
+          "params": [
+            "taskId"
+          ],
+          "returnType": "Promise<SpecifyResult>",
+          "exported": true,
+          "lineCount": 21
+        },
+        {
+          "name": "launchTriage",
+          "params": [
+            "opts"
+          ],
+          "returnType": "Promise<{ triageTaskId: string, decompose: DecomposeResult }>",
+          "exported": true,
+          "lineCount": 25
+        },
+        {
+          "name": "persistTriageTaskId",
+          "params": [
+            "missionId",
+            "triageTaskId"
+          ],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "extractTriageDraft",
+          "params": [
+            "text"
+          ],
+          "returnType": "TriageDraft | null",
+          "exported": true,
+          "lineCount": 39
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:child_process",
+          "specifiers": [
+            "spawn"
+          ]
+        },
+        {
+          "source": "./db",
+          "specifiers": [
+            "useDb"
+          ]
+        },
+        {
+          "source": "./kanban",
+          "specifiers": [
+            "getKanbanDb"
+          ]
+        }
+      ],
+      "exports": [
+        "runHermes",
+        "parseKanbanJson",
+        "decomposeResultFromParsed",
+        "recoverDecomposeFromKanbanState",
+        "createTriageTask",
+        "decomposeTask",
+        "specifyTask",
+        "launchTriage",
+        "TRIAGE_DRAFT_BLOCK_RE",
+        "extractTriageDraft"
+      ],
+      "totalLines": 395,
+      "hasStructuralAnalysis": true
+    },
+    "server/utils/version.ts": {
+      "filePath": "server/utils/version.ts",
+      "contentHash": "a613abb3805c72549298c93e07ea85a9e0f2f5b14f16b491a3e39a8d78a73b8d",
+      "functions": [
+        {
+          "name": "readLocalVersion",
+          "params": [],
+          "returnType": "Promise<string | null>",
+          "exported": false,
+          "lineCount": 10
+        },
+        {
+          "name": "versionLessThan",
+          "params": [
+            "a",
+            "b"
+          ],
+          "returnType": "boolean",
+          "exported": false,
+          "lineCount": 12
+        },
+        {
+          "name": "fetchLatestRelease",
+          "params": [],
+          "returnType": "Promise<GithubRelease | null>",
+          "exported": false,
+          "lineCount": 18
+        },
+        {
+          "name": "getVersionInfo",
+          "params": [
+            "force"
+          ],
+          "returnType": "Promise<VersionInfo>",
+          "exported": true,
+          "lineCount": 38
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:fs/promises",
+          "specifiers": [
+            "readFile"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "resolve"
+          ]
+        }
+      ],
+      "exports": [
+        "getVersionInfo"
+      ],
+      "totalLines": 149,
+      "hasStructuralAnalysis": true
+    },
+    "tsconfig.json": {
+      "filePath": "tsconfig.json",
+      "contentHash": "e7cf6cc47eea873f00a0e5ba627a594988f66c4dfbdc11ab7990905f46690266",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 11,
+      "hasStructuralAnalysis": true
+    }
+  }
+}

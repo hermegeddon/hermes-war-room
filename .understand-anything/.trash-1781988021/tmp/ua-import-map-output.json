@@ -1,0 +1,317 @@
+{
+  "scriptCompleted": true,
+  "stats": {
+    "filesScanned": 128,
+    "filesWithImports": 52,
+    "totalEdges": 127
+  },
+  "importMap": {
+    ".claude/settings.json": [],
+    ".dockerignore": [],
+    ".github/workflows/ci.yml": [],
+    ".github/workflows/release.yml": [],
+    ".releaserc.json": [],
+    ".understand-anything/.understandignore": [],
+    ".understand-anything/config.json": [],
+    "app/app.config.ts": [],
+    "app/app.vue": [],
+    "app/assets/css/main.css": [],
+    "app/components/CapabilityCard.vue": [],
+    "app/components/CapabilityModal.vue": [],
+    "app/components/DelegationOverlay.vue": [],
+    "app/components/HireProfileModal.vue": [],
+    "app/components/McpPicker.vue": [],
+    "app/components/MissionKanban.vue": [],
+    "app/components/MissionPanel.vue": [],
+    "app/components/PageHeader.vue": [],
+    "app/components/ProfileBadge.vue": [],
+    "app/components/RetrainProfileModal.vue": [],
+    "app/components/SkillsPicker.vue": [],
+    "app/components/SlashCommandPicker.vue": [],
+    "app/components/ToolsPicker.vue": [],
+    "app/components/TriageDraftPanel.vue": [],
+    "app/components/UpdateBanner.vue": [],
+    "app/components/WhatsNewModal.vue": [],
+    "app/components/Workstation.vue": [],
+    "app/components/WorkstationDetailSlide.vue": [],
+    "app/composables/useKanbanHistory.ts": [],
+    "app/composables/useKanbanTasks.ts": [],
+    "app/composables/useMarkdown.ts": [],
+    "app/composables/useMissionStream.ts": [],
+    "app/composables/useStationRegistry.ts": [],
+    "app/composables/useTaskFeed.ts": [],
+    "app/composables/useTokenUsage.ts": [],
+    "app/pages/index.vue": [],
+    "app/pages/missions.vue": [],
+    "app/pages/team.vue": [],
+    "app/types/mission.ts": [],
+    "app/types/profile.ts": [],
+    "app/utils/avatar.ts": [],
+    "CHANGELOG.md": [],
+    "eslint.config.mjs": [],
+    "i18n/locales/en.json": [],
+    "i18n/locales/es.json": [],
+    "i18n/locales/id.json": [],
+    "mise.toml": [],
+    "nuxt.config.ts": [],
+    "package.json": [],
+    "pnpm-workspace.yaml": [],
+    "README.md": [],
+    "renovate.json": [],
+    "server/api/config.get.ts": [],
+    "server/api/kanban/dispatch.post.ts": [],
+    "server/api/kanban/tasks.get.ts": [
+      "server/utils/db.ts",
+      "server/utils/kanban.ts"
+    ],
+    "server/api/kanban/tasks/[id]/approve-and-retry.post.ts": [
+      "server/utils/db.ts",
+      "server/utils/kanban.ts",
+      "server/utils/profile-config.ts"
+    ],
+    "server/api/kanban/tasks/[id]/decompose.post.ts": [
+      "server/utils/triage.ts"
+    ],
+    "server/api/kanban/tasks/[id]/failure.get.ts": [
+      "server/utils/kanban.ts",
+      "server/utils/permission-extract.ts",
+      "server/utils/task-failure.ts"
+    ],
+    "server/api/kanban/tasks/[id]/feed.get.ts": [
+      "server/utils/task-feed.ts"
+    ],
+    "server/api/kanban/tasks/[id]/kill.post.ts": [],
+    "server/api/kanban/tasks/[id]/log.get.ts": [],
+    "server/api/kanban/tasks/[id]/specify.post.ts": [
+      "server/utils/triage.ts"
+    ],
+    "server/api/kanban/tasks/history.get.ts": [
+      "server/utils/db.ts",
+      "server/utils/kanban.ts"
+    ],
+    "server/api/missions.post.ts": [
+      "server/utils/auto-nudge.ts",
+      "server/utils/db.ts",
+      "server/utils/mission-bus.ts",
+      "server/utils/mission-turn.ts",
+      "server/utils/mission.ts",
+      "server/utils/triage.ts"
+    ],
+    "server/api/missions/[id]/archive.post.ts": [
+      "server/utils/auto-nudge.ts",
+      "server/utils/mission.ts"
+    ],
+    "server/api/missions/[id]/index.get.ts": [
+      "server/utils/mission.ts"
+    ],
+    "server/api/missions/[id]/launch-triage.post.ts": [
+      "server/utils/auto-nudge.ts",
+      "server/utils/mission-bus.ts",
+      "server/utils/mission.ts",
+      "server/utils/triage.ts"
+    ],
+    "server/api/missions/[id]/messages.post.ts": [
+      "server/utils/mission-turn.ts",
+      "server/utils/mission.ts"
+    ],
+    "server/api/missions/[id]/stream.get.ts": [
+      "server/utils/mission-bus.ts",
+      "server/utils/mission.ts"
+    ],
+    "server/api/missions/active.get.ts": [
+      "server/utils/mission.ts"
+    ],
+    "server/api/missions/index.get.ts": [
+      "server/utils/mission.ts"
+    ],
+    "server/api/models.get.ts": [],
+    "server/api/orchestrators/[slug]/warmup.post.ts": [
+      "server/utils/db.ts",
+      "server/utils/orchestrator-acp.ts"
+    ],
+    "server/api/presets.get.ts": [
+      "server/utils/presets.ts"
+    ],
+    "server/api/profiles.get.ts": [
+      "server/utils/avatar.ts",
+      "server/utils/db.ts",
+      "server/utils/hermes.ts",
+      "server/utils/profile-config.ts",
+      "server/utils/profile-description.ts",
+      "server/utils/roster.ts"
+    ],
+    "server/api/profiles.post.ts": [
+      "server/utils/agents.ts",
+      "server/utils/avatar.ts",
+      "server/utils/db.ts",
+      "server/utils/hermes.ts",
+      "server/utils/profile-config.ts",
+      "server/utils/roster.ts",
+      "server/utils/skills.ts",
+      "server/utils/soul.ts",
+      "server/utils/tools.ts"
+    ],
+    "server/api/profiles/[slug].delete.ts": [
+      "server/utils/db.ts",
+      "server/utils/roster.ts"
+    ],
+    "server/api/profiles/[slug].patch.ts": [
+      "server/utils/avatar.ts",
+      "server/utils/db.ts",
+      "server/utils/roster.ts"
+    ],
+    "server/api/profiles/[slug]/agents.get.ts": [
+      "server/utils/agents.ts",
+      "server/utils/db.ts"
+    ],
+    "server/api/profiles/[slug]/agents.put.ts": [
+      "server/utils/agents.ts",
+      "server/utils/db.ts"
+    ],
+    "server/api/profiles/[slug]/config.get.ts": [
+      "server/utils/db.ts",
+      "server/utils/profile-config.ts"
+    ],
+    "server/api/profiles/[slug]/config.put.ts": [
+      "server/utils/db.ts",
+      "server/utils/orchestrator-acp.ts",
+      "server/utils/profile-config.ts"
+    ],
+    "server/api/profiles/[slug]/description-auto.post.ts": [
+      "server/utils/profile-description.ts"
+    ],
+    "server/api/profiles/[slug]/description.patch.ts": [
+      "server/utils/profile-description.ts"
+    ],
+    "server/api/profiles/[slug]/mcp.get.ts": [
+      "server/utils/db.ts",
+      "server/utils/mcp.ts"
+    ],
+    "server/api/profiles/[slug]/mcp/[name].delete.ts": [
+      "server/utils/db.ts",
+      "server/utils/mcp.ts"
+    ],
+    "server/api/profiles/[slug]/rename.post.ts": [
+      "server/utils/avatar.ts",
+      "server/utils/db.ts",
+      "server/utils/hermes.ts",
+      "server/utils/roster.ts"
+    ],
+    "server/api/profiles/[slug]/skills.get.ts": [
+      "server/api/skills.get.ts",
+      "server/utils/db.ts",
+      "server/utils/skills.ts"
+    ],
+    "server/api/profiles/[slug]/skills.put.ts": [
+      "server/utils/db.ts",
+      "server/utils/skills.ts"
+    ],
+    "server/api/profiles/[slug]/soul.get.ts": [
+      "server/utils/db.ts",
+      "server/utils/soul.ts"
+    ],
+    "server/api/profiles/[slug]/soul.put.ts": [
+      "server/utils/db.ts",
+      "server/utils/roster.ts",
+      "server/utils/soul.ts"
+    ],
+    "server/api/profiles/[slug]/tools.get.ts": [
+      "server/utils/db.ts",
+      "server/utils/tools.ts"
+    ],
+    "server/api/profiles/[slug]/tools.put.ts": [
+      "server/utils/db.ts",
+      "server/utils/tools.ts"
+    ],
+    "server/api/skills.get.ts": [
+      "server/utils/skills.ts"
+    ],
+    "server/api/tools.get.ts": [
+      "server/utils/tools.ts"
+    ],
+    "server/api/usage.get.ts": [
+      "server/utils/db.ts",
+      "server/utils/tokens.ts"
+    ],
+    "server/api/version.get.ts": [
+      "server/utils/version.ts"
+    ],
+    "server/plugins/auto-nudge.ts": [
+      "server/utils/auto-nudge.ts"
+    ],
+    "server/plugins/mission-cleanup.ts": [
+      "server/utils/db.ts"
+    ],
+    "server/plugins/skills-repair.ts": [
+      "server/utils/hermes.ts",
+      "server/utils/skills.ts"
+    ],
+    "server/utils/agents.ts": [],
+    "server/utils/auto-nudge.ts": [
+      "server/utils/db.ts",
+      "server/utils/kanban.ts",
+      "server/utils/mission-bus.ts",
+      "server/utils/mission-flight.ts",
+      "server/utils/mission-lock.ts",
+      "server/utils/mission.ts",
+      "server/utils/orchestrator-acp.ts",
+      "server/utils/task-failure.ts",
+      "server/utils/triage.ts"
+    ],
+    "server/utils/avatar.ts": [],
+    "server/utils/db.ts": [],
+    "server/utils/hermes.ts": [],
+    "server/utils/kanban-symlinks.ts": [
+      "server/utils/db.ts"
+    ],
+    "server/utils/kanban.ts": [
+      "server/utils/permission-extract.ts",
+      "server/utils/task-failure.ts"
+    ],
+    "server/utils/mcp.ts": [],
+    "server/utils/mission-bus.ts": [],
+    "server/utils/mission-flight.ts": [],
+    "server/utils/mission-lock.ts": [],
+    "server/utils/mission-turn.ts": [
+      "server/utils/auto-nudge.ts",
+      "server/utils/db.ts",
+      "server/utils/kanban.ts",
+      "server/utils/mission-bus.ts",
+      "server/utils/mission-flight.ts",
+      "server/utils/mission-lock.ts",
+      "server/utils/mission.ts",
+      "server/utils/orchestrator-acp.ts",
+      "server/utils/roster.ts",
+      "server/utils/triage.ts"
+    ],
+    "server/utils/mission.ts": [
+      "server/utils/db.ts"
+    ],
+    "server/utils/orchestrator-acp.ts": [],
+    "server/utils/permission-extract.ts": [],
+    "server/utils/presets.ts": [],
+    "server/utils/profile-config.ts": [],
+    "server/utils/profile-description.ts": [
+      "server/utils/triage.ts"
+    ],
+    "server/utils/roster.ts": [
+      "server/utils/agents.ts",
+      "server/utils/db.ts",
+      "server/utils/soul.ts"
+    ],
+    "server/utils/skills.ts": [],
+    "server/utils/soul.ts": [],
+    "server/utils/task-failure.ts": [
+      "server/utils/kanban.ts"
+    ],
+    "server/utils/task-feed.ts": [],
+    "server/utils/tokens.ts": [],
+    "server/utils/tools.ts": [],
+    "server/utils/triage.ts": [
+      "server/utils/db.ts",
+      "server/utils/kanban.ts"
+    ],
+    "server/utils/version.ts": [],
+    "tsconfig.json": []
+  }
+}

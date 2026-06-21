@@ -1,0 +1,2083 @@
+{
+  "schemaVersion": 1,
+  "algorithm": "louvain",
+  "totalFiles": 128,
+  "totalBatches": 11,
+  "exportsByPath": {
+    ".understand-anything/.understandignore": [],
+    "app/app.config.ts": [],
+    "app/app.vue": [],
+    "app/components/CapabilityCard.vue": [],
+    "app/components/CapabilityModal.vue": [],
+    "app/components/DelegationOverlay.vue": [],
+    "app/components/HireProfileModal.vue": [],
+    "app/components/McpPicker.vue": [],
+    "app/components/MissionKanban.vue": [],
+    "app/components/MissionPanel.vue": [],
+    "app/components/PageHeader.vue": [],
+    "app/components/ProfileBadge.vue": [],
+    "app/components/RetrainProfileModal.vue": [],
+    "app/components/SkillsPicker.vue": [],
+    "app/components/SlashCommandPicker.vue": [],
+    "app/components/ToolsPicker.vue": [],
+    "app/components/TriageDraftPanel.vue": [],
+    "app/components/UpdateBanner.vue": [],
+    "app/components/WhatsNewModal.vue": [],
+    "app/components/Workstation.vue": [],
+    "app/components/WorkstationDetailSlide.vue": [],
+    "app/composables/useKanbanHistory.ts": [
+      "useKanbanHistory"
+    ],
+    "app/composables/useKanbanTasks.ts": [
+      "useKanbanTasks"
+    ],
+    "app/composables/useMarkdown.ts": [
+      "renderMarkdown",
+      "stripHarmonyTags",
+      "decorateTaskRefs"
+    ],
+    "app/composables/useMissionStream.ts": [
+      "useMissionStream"
+    ],
+    "app/composables/useStationRegistry.ts": [
+      "provideStationRegistry",
+      "useStationRegistry"
+    ],
+    "app/composables/useTaskFeed.ts": [
+      "useTaskFeed"
+    ],
+    "app/composables/useTokenUsage.ts": [
+      "useTokenUsage",
+      "compactNumber"
+    ],
+    "app/pages/index.vue": [],
+    "app/pages/missions.vue": [],
+    "app/pages/team.vue": [],
+    "app/types/mission.ts": [],
+    "app/types/profile.ts": [],
+    "app/utils/avatar.ts": [
+      "ACTIVE_GESTURES",
+      "buildAvatarUrl",
+      "pickActiveGesture",
+      "randomActiveGesture"
+    ],
+    "eslint.config.mjs": [],
+    "nuxt.config.ts": [],
+    "server/api/config.get.ts": [],
+    "server/api/kanban/dispatch.post.ts": [],
+    "server/api/kanban/tasks.get.ts": [],
+    "server/api/kanban/tasks/[id]/approve-and-retry.post.ts": [],
+    "server/api/kanban/tasks/[id]/decompose.post.ts": [],
+    "server/api/kanban/tasks/[id]/failure.get.ts": [],
+    "server/api/kanban/tasks/[id]/feed.get.ts": [],
+    "server/api/kanban/tasks/[id]/kill.post.ts": [],
+    "server/api/kanban/tasks/[id]/log.get.ts": [],
+    "server/api/kanban/tasks/[id]/specify.post.ts": [],
+    "server/api/kanban/tasks/history.get.ts": [],
+    "server/api/missions.post.ts": [],
+    "server/api/missions/[id]/archive.post.ts": [],
+    "server/api/missions/[id]/index.get.ts": [],
+    "server/api/missions/[id]/launch-triage.post.ts": [],
+    "server/api/missions/[id]/messages.post.ts": [],
+    "server/api/missions/[id]/stream.get.ts": [],
+    "server/api/missions/active.get.ts": [],
+    "server/api/missions/index.get.ts": [],
+    "server/api/models.get.ts": [],
+    "server/api/orchestrators/[slug]/warmup.post.ts": [],
+    "server/api/presets.get.ts": [],
+    "server/api/profiles.get.ts": [],
+    "server/api/profiles.post.ts": [],
+    "server/api/profiles/[slug].delete.ts": [],
+    "server/api/profiles/[slug].patch.ts": [],
+    "server/api/profiles/[slug]/agents.get.ts": [],
+    "server/api/profiles/[slug]/agents.put.ts": [],
+    "server/api/profiles/[slug]/config.get.ts": [],
+    "server/api/profiles/[slug]/config.put.ts": [],
+    "server/api/profiles/[slug]/description-auto.post.ts": [],
+    "server/api/profiles/[slug]/description.patch.ts": [],
+    "server/api/profiles/[slug]/mcp.get.ts": [],
+    "server/api/profiles/[slug]/mcp/[name].delete.ts": [],
+    "server/api/profiles/[slug]/rename.post.ts": [],
+    "server/api/profiles/[slug]/skills.get.ts": [],
+    "server/api/profiles/[slug]/skills.put.ts": [],
+    "server/api/profiles/[slug]/soul.get.ts": [],
+    "server/api/profiles/[slug]/soul.put.ts": [],
+    "server/api/profiles/[slug]/tools.get.ts": [],
+    "server/api/profiles/[slug]/tools.put.ts": [],
+    "server/api/skills.get.ts": [],
+    "server/api/tools.get.ts": [],
+    "server/api/usage.get.ts": [],
+    "server/api/version.get.ts": [],
+    "server/plugins/auto-nudge.ts": [],
+    "server/plugins/mission-cleanup.ts": [],
+    "server/plugins/skills-repair.ts": [],
+    "server/utils/agents.ts": [
+      "readAgents",
+      "writeAgents",
+      "syncManagedAgentsBlock"
+    ],
+    "server/utils/auto-nudge.ts": [
+      "addWatchedTasks",
+      "removeMission",
+      "loadWatchedFromDb",
+      "registerCreatedTaskFromTool",
+      "startAutoNudge",
+      "stopAutoNudge"
+    ],
+    "server/utils/avatar.ts": [
+      "GESTURES",
+      "pickColor",
+      "defaultSeed",
+      "avatarUrl"
+    ],
+    "server/utils/db.ts": [
+      "useDb"
+    ],
+    "server/utils/hermes.ts": [
+      "discoverProfiles"
+    ],
+    "server/utils/kanban-symlinks.ts": [
+      "ensureKanbanSymlinks"
+    ],
+    "server/utils/kanban.ts": [
+      "getKanbanDb",
+      "listActiveTasks",
+      "currentTaskByAssignee",
+      "totalTaskCount",
+      "tasksCreatedSince",
+      "listCompletedTasks",
+      "dispatcherLikelyStale"
+    ],
+    "server/utils/mcp.ts": [
+      "listMcpServers",
+      "removeMcpServer"
+    ],
+    "server/utils/mission-bus.ts": [
+      "getMissionBus",
+      "dropMissionBus",
+      "emit"
+    ],
+    "server/utils/mission-flight.ts": [
+      "startFlight",
+      "endFlight",
+      "getFlight",
+      "isInFlight"
+    ],
+    "server/utils/mission-lock.ts": [
+      "withMissionLock"
+    ],
+    "server/utils/mission-turn.ts": [
+      "runMissionTurn"
+    ],
+    "server/utils/mission.ts": [
+      "serializeMission",
+      "summarizeTitle",
+      "getActiveMission",
+      "getMission",
+      "listMessages",
+      "createMission",
+      "setAcpSessionId",
+      "setLatestTriageDraft",
+      "setTriageTaskId",
+      "appendMessage",
+      "updateMessage",
+      "archiveMission",
+      "listMissions",
+      "countMissions"
+    ],
+    "server/utils/orchestrator-acp.ts": [
+      "normalizeAcpStdoutLine",
+      "restart",
+      "warmup",
+      "newSession",
+      "loadSession",
+      "startPrompt"
+    ],
+    "server/utils/permission-extract.ts": [
+      "looksLikePermissionDenial",
+      "extractPermissionLabel"
+    ],
+    "server/utils/presets.ts": [
+      "PRESETS",
+      "getPreset"
+    ],
+    "server/utils/profile-config.ts": [
+      "readGlobalModelBlock",
+      "readProfileConfig",
+      "writeProfileConfig"
+    ],
+    "server/utils/profile-description.ts": [
+      "readProfileDescription",
+      "invalidateProfileDescription",
+      "setProfileDescription",
+      "autoProfileDescription"
+    ],
+    "server/utils/roster.ts": [
+      "extractRole",
+      "buildRosterMarkdown",
+      "syncRoster"
+    ],
+    "server/utils/skills.ts": [
+      "listGlobalSkills",
+      "listProfileSkills",
+      "getDisabledSkills",
+      "setDisabledSkills"
+    ],
+    "server/utils/soul.ts": [
+      "readSoul",
+      "writeSoul"
+    ],
+    "server/utils/task-failure.ts": [
+      "getFailureContext",
+      "distillReason"
+    ],
+    "server/utils/task-feed.ts": [
+      "getTaskFeed"
+    ],
+    "server/utils/tokens.ts": [
+      "readTokenUsage"
+    ],
+    "server/utils/tools.ts": [
+      "listTools",
+      "applyToolState"
+    ],
+    "server/utils/triage.ts": [
+      "runHermes",
+      "parseKanbanJson",
+      "decomposeResultFromParsed",
+      "recoverDecomposeFromKanbanState",
+      "createTriageTask",
+      "decomposeTask",
+      "specifyTask",
+      "launchTriage",
+      "TRIAGE_DRAFT_BLOCK_RE",
+      "extractTriageDraft"
+    ],
+    "server/utils/version.ts": [
+      "getVersionInfo"
+    ]
+  },
+  "batches": [
+    {
+      "batchIndex": 1,
+      "files": [
+        {
+          "path": "server/api/kanban/tasks/[id]/decompose.post.ts",
+          "language": "typescript",
+          "sizeLines": 22,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/kanban/tasks/[id]/specify.post.ts",
+          "language": "typescript",
+          "sizeLines": 21,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/missions.post.ts",
+          "language": "typescript",
+          "sizeLines": 101,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/missions/[id]/archive.post.ts",
+          "language": "typescript",
+          "sizeLines": 14,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/missions/[id]/index.get.ts",
+          "language": "typescript",
+          "sizeLines": 20,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/missions/[id]/launch-triage.post.ts",
+          "language": "typescript",
+          "sizeLines": 59,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/missions/[id]/messages.post.ts",
+          "language": "typescript",
+          "sizeLines": 25,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/missions/[id]/stream.get.ts",
+          "language": "typescript",
+          "sizeLines": 34,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/missions/active.get.ts",
+          "language": "typescript",
+          "sizeLines": 22,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/missions/index.get.ts",
+          "language": "typescript",
+          "sizeLines": 35,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/plugins/auto-nudge.ts",
+          "language": "typescript",
+          "sizeLines": 14,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/utils/auto-nudge.ts",
+          "language": "typescript",
+          "sizeLines": 412,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/utils/mission-bus.ts",
+          "language": "typescript",
+          "sizeLines": 102,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/utils/mission-flight.ts",
+          "language": "typescript",
+          "sizeLines": 36,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/utils/mission-lock.ts",
+          "language": "typescript",
+          "sizeLines": 22,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/utils/mission-turn.ts",
+          "language": "typescript",
+          "sizeLines": 446,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/utils/mission.ts",
+          "language": "typescript",
+          "sizeLines": 218,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/utils/triage.ts",
+          "language": "typescript",
+          "sizeLines": 394,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "server/api/kanban/tasks/[id]/decompose.post.ts": [
+          "server/utils/triage.ts"
+        ],
+        "server/api/kanban/tasks/[id]/specify.post.ts": [
+          "server/utils/triage.ts"
+        ],
+        "server/api/missions.post.ts": [
+          "server/utils/auto-nudge.ts",
+          "server/utils/db.ts",
+          "server/utils/mission-bus.ts",
+          "server/utils/mission-turn.ts",
+          "server/utils/mission.ts",
+          "server/utils/triage.ts"
+        ],
+        "server/api/missions/[id]/archive.post.ts": [
+          "server/utils/auto-nudge.ts",
+          "server/utils/mission.ts"
+        ],
+        "server/api/missions/[id]/index.get.ts": [
+          "server/utils/mission.ts"
+        ],
+        "server/api/missions/[id]/launch-triage.post.ts": [
+          "server/utils/auto-nudge.ts",
+          "server/utils/mission-bus.ts",
+          "server/utils/mission.ts",
+          "server/utils/triage.ts"
+        ],
+        "server/api/missions/[id]/messages.post.ts": [
+          "server/utils/mission-turn.ts",
+          "server/utils/mission.ts"
+        ],
+        "server/api/missions/[id]/stream.get.ts": [
+          "server/utils/mission-bus.ts",
+          "server/utils/mission.ts"
+        ],
+        "server/api/missions/active.get.ts": [
+          "server/utils/mission.ts"
+        ],
+        "server/api/missions/index.get.ts": [
+          "server/utils/mission.ts"
+        ],
+        "server/plugins/auto-nudge.ts": [
+          "server/utils/auto-nudge.ts"
+        ],
+        "server/utils/auto-nudge.ts": [
+          "server/utils/db.ts",
+          "server/utils/kanban.ts",
+          "server/utils/mission-bus.ts",
+          "server/utils/mission-flight.ts",
+          "server/utils/mission-lock.ts",
+          "server/utils/mission.ts",
+          "server/utils/orchestrator-acp.ts",
+          "server/utils/task-failure.ts",
+          "server/utils/triage.ts"
+        ],
+        "server/utils/mission-bus.ts": [],
+        "server/utils/mission-flight.ts": [],
+        "server/utils/mission-lock.ts": [],
+        "server/utils/mission-turn.ts": [
+          "server/utils/auto-nudge.ts",
+          "server/utils/db.ts",
+          "server/utils/kanban.ts",
+          "server/utils/mission-bus.ts",
+          "server/utils/mission-flight.ts",
+          "server/utils/mission-lock.ts",
+          "server/utils/mission.ts",
+          "server/utils/orchestrator-acp.ts",
+          "server/utils/roster.ts",
+          "server/utils/triage.ts"
+        ],
+        "server/utils/mission.ts": [
+          "server/utils/db.ts"
+        ],
+        "server/utils/triage.ts": [
+          "server/utils/db.ts",
+          "server/utils/kanban.ts"
+        ]
+      },
+      "neighborMap": {
+        "server/api/missions.post.ts": [
+          {
+            "path": "server/utils/db.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "useDb"
+            ]
+          }
+        ],
+        "server/utils/auto-nudge.ts": [
+          {
+            "path": "server/utils/db.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "useDb"
+            ]
+          },
+          {
+            "path": "server/utils/kanban.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "getKanbanDb",
+              "listActiveTasks",
+              "currentTaskByAssignee",
+              "totalTaskCount",
+              "tasksCreatedSince",
+              "listCompletedTasks",
+              "dispatcherLikelyStale"
+            ]
+          },
+          {
+            "path": "server/utils/orchestrator-acp.ts",
+            "batchIndex": 5,
+            "symbols": [
+              "normalizeAcpStdoutLine",
+              "restart",
+              "warmup",
+              "newSession",
+              "loadSession",
+              "startPrompt"
+            ]
+          },
+          {
+            "path": "server/utils/task-failure.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "getFailureContext",
+              "distillReason"
+            ]
+          }
+        ],
+        "server/utils/mission-turn.ts": [
+          {
+            "path": "server/utils/db.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "useDb"
+            ]
+          },
+          {
+            "path": "server/utils/kanban.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "getKanbanDb",
+              "listActiveTasks",
+              "currentTaskByAssignee",
+              "totalTaskCount",
+              "tasksCreatedSince",
+              "listCompletedTasks",
+              "dispatcherLikelyStale"
+            ]
+          },
+          {
+            "path": "server/utils/orchestrator-acp.ts",
+            "batchIndex": 5,
+            "symbols": [
+              "normalizeAcpStdoutLine",
+              "restart",
+              "warmup",
+              "newSession",
+              "loadSession",
+              "startPrompt"
+            ]
+          },
+          {
+            "path": "server/utils/roster.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "extractRole",
+              "buildRosterMarkdown",
+              "syncRoster"
+            ]
+          }
+        ],
+        "server/utils/mission.ts": [
+          {
+            "path": "server/utils/db.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "useDb"
+            ]
+          }
+        ],
+        "server/utils/triage.ts": [
+          {
+            "path": "server/utils/db.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "useDb"
+            ]
+          },
+          {
+            "path": "server/utils/kanban.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "getKanbanDb",
+              "listActiveTasks",
+              "currentTaskByAssignee",
+              "totalTaskCount",
+              "tasksCreatedSince",
+              "listCompletedTasks",
+              "dispatcherLikelyStale"
+            ]
+          },
+          {
+            "path": "server/utils/profile-description.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "readProfileDescription",
+              "invalidateProfileDescription",
+              "setProfileDescription",
+              "autoProfileDescription"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 2,
+      "files": [
+        {
+          "path": "server/api/profiles/[slug]/agents.get.ts",
+          "language": "typescript",
+          "sizeLines": 15,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/profiles/[slug]/agents.put.ts",
+          "language": "typescript",
+          "sizeLines": 30,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/profiles/[slug]/mcp.get.ts",
+          "language": "typescript",
+          "sizeLines": 15,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/profiles/[slug]/mcp/[name].delete.ts",
+          "language": "typescript",
+          "sizeLines": 28,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/profiles/[slug]/tools.get.ts",
+          "language": "typescript",
+          "sizeLines": 15,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/profiles/[slug]/tools.put.ts",
+          "language": "typescript",
+          "sizeLines": 45,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/tools.get.ts",
+          "language": "typescript",
+          "sizeLines": 5,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/usage.get.ts",
+          "language": "typescript",
+          "sizeLines": 15,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/plugins/mission-cleanup.ts",
+          "language": "typescript",
+          "sizeLines": 44,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/utils/agents.ts",
+          "language": "typescript",
+          "sizeLines": 116,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/utils/db.ts",
+          "language": "typescript",
+          "sizeLines": 143,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/utils/kanban-symlinks.ts",
+          "language": "typescript",
+          "sizeLines": 91,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/utils/mcp.ts",
+          "language": "typescript",
+          "sizeLines": 93,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/utils/tokens.ts",
+          "language": "typescript",
+          "sizeLines": 122,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/utils/tools.ts",
+          "language": "typescript",
+          "sizeLines": 90,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "server/api/profiles/[slug]/agents.get.ts": [
+          "server/utils/agents.ts",
+          "server/utils/db.ts"
+        ],
+        "server/api/profiles/[slug]/agents.put.ts": [
+          "server/utils/agents.ts",
+          "server/utils/db.ts"
+        ],
+        "server/api/profiles/[slug]/mcp.get.ts": [
+          "server/utils/db.ts",
+          "server/utils/mcp.ts"
+        ],
+        "server/api/profiles/[slug]/mcp/[name].delete.ts": [
+          "server/utils/db.ts",
+          "server/utils/mcp.ts"
+        ],
+        "server/api/profiles/[slug]/tools.get.ts": [
+          "server/utils/db.ts",
+          "server/utils/tools.ts"
+        ],
+        "server/api/profiles/[slug]/tools.put.ts": [
+          "server/utils/db.ts",
+          "server/utils/tools.ts"
+        ],
+        "server/api/tools.get.ts": [
+          "server/utils/tools.ts"
+        ],
+        "server/api/usage.get.ts": [
+          "server/utils/db.ts",
+          "server/utils/tokens.ts"
+        ],
+        "server/plugins/mission-cleanup.ts": [
+          "server/utils/db.ts"
+        ],
+        "server/utils/agents.ts": [],
+        "server/utils/db.ts": [],
+        "server/utils/kanban-symlinks.ts": [
+          "server/utils/db.ts"
+        ],
+        "server/utils/mcp.ts": [],
+        "server/utils/tokens.ts": [],
+        "server/utils/tools.ts": []
+      },
+      "neighborMap": {
+        "server/utils/agents.ts": [
+          {
+            "path": "server/api/profiles.post.ts",
+            "batchIndex": 3,
+            "symbols": []
+          },
+          {
+            "path": "server/utils/roster.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "extractRole",
+              "buildRosterMarkdown",
+              "syncRoster"
+            ]
+          }
+        ],
+        "server/utils/db.ts": [
+          {
+            "path": "server/api/kanban/tasks.get.ts",
+            "batchIndex": 4,
+            "symbols": []
+          },
+          {
+            "path": "server/api/kanban/tasks/[id]/approve-and-retry.post.ts",
+            "batchIndex": 5,
+            "symbols": []
+          },
+          {
+            "path": "server/api/kanban/tasks/history.get.ts",
+            "batchIndex": 4,
+            "symbols": []
+          },
+          {
+            "path": "server/api/missions.post.ts",
+            "batchIndex": 1,
+            "symbols": []
+          },
+          {
+            "path": "server/api/orchestrators/[slug]/warmup.post.ts",
+            "batchIndex": 5,
+            "symbols": []
+          },
+          {
+            "path": "server/api/profiles.get.ts",
+            "batchIndex": 3,
+            "symbols": []
+          },
+          {
+            "path": "server/api/profiles.post.ts",
+            "batchIndex": 3,
+            "symbols": []
+          },
+          {
+            "path": "server/api/profiles/[slug].delete.ts",
+            "batchIndex": 3,
+            "symbols": []
+          },
+          {
+            "path": "server/api/profiles/[slug].patch.ts",
+            "batchIndex": 3,
+            "symbols": []
+          },
+          {
+            "path": "server/api/profiles/[slug]/config.get.ts",
+            "batchIndex": 5,
+            "symbols": []
+          },
+          {
+            "path": "server/api/profiles/[slug]/config.put.ts",
+            "batchIndex": 5,
+            "symbols": []
+          },
+          {
+            "path": "server/api/profiles/[slug]/rename.post.ts",
+            "batchIndex": 3,
+            "symbols": []
+          },
+          {
+            "path": "server/api/profiles/[slug]/skills.get.ts",
+            "batchIndex": 6,
+            "symbols": []
+          },
+          {
+            "path": "server/api/profiles/[slug]/skills.put.ts",
+            "batchIndex": 6,
+            "symbols": []
+          },
+          {
+            "path": "server/api/profiles/[slug]/soul.get.ts",
+            "batchIndex": 3,
+            "symbols": []
+          },
+          {
+            "path": "server/api/profiles/[slug]/soul.put.ts",
+            "batchIndex": 3,
+            "symbols": []
+          },
+          {
+            "path": "server/utils/auto-nudge.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "addWatchedTasks",
+              "removeMission",
+              "loadWatchedFromDb",
+              "registerCreatedTaskFromTool",
+              "startAutoNudge",
+              "stopAutoNudge"
+            ]
+          },
+          {
+            "path": "server/utils/mission-turn.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "runMissionTurn"
+            ]
+          },
+          {
+            "path": "server/utils/mission.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "serializeMission",
+              "summarizeTitle",
+              "getActiveMission",
+              "getMission",
+              "listMessages",
+              "createMission",
+              "setAcpSessionId",
+              "setLatestTriageDraft",
+              "setTriageTaskId",
+              "appendMessage",
+              "updateMessage",
+              "archiveMission",
+              "listMissions",
+              "countMissions"
+            ]
+          },
+          {
+            "path": "server/utils/roster.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "extractRole",
+              "buildRosterMarkdown",
+              "syncRoster"
+            ]
+          },
+          {
+            "path": "server/utils/triage.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "runHermes",
+              "parseKanbanJson",
+              "decomposeResultFromParsed",
+              "recoverDecomposeFromKanbanState",
+              "createTriageTask",
+              "decomposeTask",
+              "specifyTask",
+              "launchTriage",
+              "TRIAGE_DRAFT_BLOCK_RE",
+              "extractTriageDraft"
+            ]
+          }
+        ],
+        "server/utils/tools.ts": [
+          {
+            "path": "server/api/profiles.post.ts",
+            "batchIndex": 3,
+            "symbols": []
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 3,
+      "files": [
+        {
+          "path": "server/api/profiles.get.ts",
+          "language": "typescript",
+          "sizeLines": 102,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/profiles.post.ts",
+          "language": "typescript",
+          "sizeLines": 221,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/profiles/[slug].delete.ts",
+          "language": "typescript",
+          "sizeLines": 57,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/profiles/[slug].patch.ts",
+          "language": "typescript",
+          "sizeLines": 88,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/profiles/[slug]/description-auto.post.ts",
+          "language": "typescript",
+          "sizeLines": 17,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/profiles/[slug]/description.patch.ts",
+          "language": "typescript",
+          "sizeLines": 16,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/profiles/[slug]/rename.post.ts",
+          "language": "typescript",
+          "sizeLines": 101,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/profiles/[slug]/soul.get.ts",
+          "language": "typescript",
+          "sizeLines": 15,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/profiles/[slug]/soul.put.ts",
+          "language": "typescript",
+          "sizeLines": 37,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/utils/avatar.ts",
+          "language": "typescript",
+          "sizeLines": 62,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/utils/hermes.ts",
+          "language": "typescript",
+          "sizeLines": 41,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/utils/profile-description.ts",
+          "language": "typescript",
+          "sizeLines": 52,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/utils/roster.ts",
+          "language": "typescript",
+          "sizeLines": 160,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/utils/soul.ts",
+          "language": "typescript",
+          "sizeLines": 33,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "server/api/profiles.get.ts": [
+          "server/utils/avatar.ts",
+          "server/utils/db.ts",
+          "server/utils/hermes.ts",
+          "server/utils/profile-config.ts",
+          "server/utils/profile-description.ts",
+          "server/utils/roster.ts"
+        ],
+        "server/api/profiles.post.ts": [
+          "server/utils/agents.ts",
+          "server/utils/avatar.ts",
+          "server/utils/db.ts",
+          "server/utils/hermes.ts",
+          "server/utils/profile-config.ts",
+          "server/utils/roster.ts",
+          "server/utils/skills.ts",
+          "server/utils/soul.ts",
+          "server/utils/tools.ts"
+        ],
+        "server/api/profiles/[slug].delete.ts": [
+          "server/utils/db.ts",
+          "server/utils/roster.ts"
+        ],
+        "server/api/profiles/[slug].patch.ts": [
+          "server/utils/avatar.ts",
+          "server/utils/db.ts",
+          "server/utils/roster.ts"
+        ],
+        "server/api/profiles/[slug]/description-auto.post.ts": [
+          "server/utils/profile-description.ts"
+        ],
+        "server/api/profiles/[slug]/description.patch.ts": [
+          "server/utils/profile-description.ts"
+        ],
+        "server/api/profiles/[slug]/rename.post.ts": [
+          "server/utils/avatar.ts",
+          "server/utils/db.ts",
+          "server/utils/hermes.ts",
+          "server/utils/roster.ts"
+        ],
+        "server/api/profiles/[slug]/soul.get.ts": [
+          "server/utils/db.ts",
+          "server/utils/soul.ts"
+        ],
+        "server/api/profiles/[slug]/soul.put.ts": [
+          "server/utils/db.ts",
+          "server/utils/roster.ts",
+          "server/utils/soul.ts"
+        ],
+        "server/utils/avatar.ts": [],
+        "server/utils/hermes.ts": [],
+        "server/utils/profile-description.ts": [
+          "server/utils/triage.ts"
+        ],
+        "server/utils/roster.ts": [
+          "server/utils/agents.ts",
+          "server/utils/db.ts",
+          "server/utils/soul.ts"
+        ],
+        "server/utils/soul.ts": []
+      },
+      "neighborMap": {
+        "server/api/profiles.get.ts": [
+          {
+            "path": "server/utils/db.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "useDb"
+            ]
+          },
+          {
+            "path": "server/utils/profile-config.ts",
+            "batchIndex": 5,
+            "symbols": [
+              "readGlobalModelBlock",
+              "readProfileConfig",
+              "writeProfileConfig"
+            ]
+          }
+        ],
+        "server/api/profiles.post.ts": [
+          {
+            "path": "server/utils/agents.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "readAgents",
+              "writeAgents",
+              "syncManagedAgentsBlock"
+            ]
+          },
+          {
+            "path": "server/utils/db.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "useDb"
+            ]
+          },
+          {
+            "path": "server/utils/profile-config.ts",
+            "batchIndex": 5,
+            "symbols": [
+              "readGlobalModelBlock",
+              "readProfileConfig",
+              "writeProfileConfig"
+            ]
+          },
+          {
+            "path": "server/utils/skills.ts",
+            "batchIndex": 6,
+            "symbols": [
+              "listGlobalSkills",
+              "listProfileSkills",
+              "getDisabledSkills",
+              "setDisabledSkills"
+            ]
+          },
+          {
+            "path": "server/utils/tools.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "listTools",
+              "applyToolState"
+            ]
+          }
+        ],
+        "server/api/profiles/[slug].delete.ts": [
+          {
+            "path": "server/utils/db.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "useDb"
+            ]
+          }
+        ],
+        "server/api/profiles/[slug].patch.ts": [
+          {
+            "path": "server/utils/db.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "useDb"
+            ]
+          }
+        ],
+        "server/api/profiles/[slug]/rename.post.ts": [
+          {
+            "path": "server/utils/db.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "useDb"
+            ]
+          }
+        ],
+        "server/api/profiles/[slug]/soul.get.ts": [
+          {
+            "path": "server/utils/db.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "useDb"
+            ]
+          }
+        ],
+        "server/api/profiles/[slug]/soul.put.ts": [
+          {
+            "path": "server/utils/db.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "useDb"
+            ]
+          }
+        ],
+        "server/utils/hermes.ts": [
+          {
+            "path": "server/plugins/skills-repair.ts",
+            "batchIndex": 6,
+            "symbols": []
+          }
+        ],
+        "server/utils/profile-description.ts": [
+          {
+            "path": "server/utils/triage.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "runHermes",
+              "parseKanbanJson",
+              "decomposeResultFromParsed",
+              "recoverDecomposeFromKanbanState",
+              "createTriageTask",
+              "decomposeTask",
+              "specifyTask",
+              "launchTriage",
+              "TRIAGE_DRAFT_BLOCK_RE",
+              "extractTriageDraft"
+            ]
+          }
+        ],
+        "server/utils/roster.ts": [
+          {
+            "path": "server/utils/agents.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "readAgents",
+              "writeAgents",
+              "syncManagedAgentsBlock"
+            ]
+          },
+          {
+            "path": "server/utils/db.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "useDb"
+            ]
+          },
+          {
+            "path": "server/utils/mission-turn.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "runMissionTurn"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 4,
+      "files": [
+        {
+          "path": "server/api/kanban/tasks.get.ts",
+          "language": "typescript",
+          "sizeLines": 27,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/kanban/tasks/[id]/failure.get.ts",
+          "language": "typescript",
+          "sizeLines": 59,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/kanban/tasks/history.get.ts",
+          "language": "typescript",
+          "sizeLines": 52,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/utils/kanban.ts",
+          "language": "typescript",
+          "sizeLines": 284,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/utils/permission-extract.ts",
+          "language": "typescript",
+          "sizeLines": 50,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/utils/task-failure.ts",
+          "language": "typescript",
+          "sizeLines": 73,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "server/api/kanban/tasks.get.ts": [
+          "server/utils/db.ts",
+          "server/utils/kanban.ts"
+        ],
+        "server/api/kanban/tasks/[id]/failure.get.ts": [
+          "server/utils/kanban.ts",
+          "server/utils/permission-extract.ts",
+          "server/utils/task-failure.ts"
+        ],
+        "server/api/kanban/tasks/history.get.ts": [
+          "server/utils/db.ts",
+          "server/utils/kanban.ts"
+        ],
+        "server/utils/kanban.ts": [
+          "server/utils/permission-extract.ts",
+          "server/utils/task-failure.ts"
+        ],
+        "server/utils/permission-extract.ts": [],
+        "server/utils/task-failure.ts": [
+          "server/utils/kanban.ts"
+        ]
+      },
+      "neighborMap": {
+        "server/api/kanban/tasks.get.ts": [
+          {
+            "path": "server/utils/db.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "useDb"
+            ]
+          }
+        ],
+        "server/api/kanban/tasks/history.get.ts": [
+          {
+            "path": "server/utils/db.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "useDb"
+            ]
+          }
+        ],
+        "server/utils/kanban.ts": [
+          {
+            "path": "server/api/kanban/tasks/[id]/approve-and-retry.post.ts",
+            "batchIndex": 5,
+            "symbols": []
+          },
+          {
+            "path": "server/utils/auto-nudge.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "addWatchedTasks",
+              "removeMission",
+              "loadWatchedFromDb",
+              "registerCreatedTaskFromTool",
+              "startAutoNudge",
+              "stopAutoNudge"
+            ]
+          },
+          {
+            "path": "server/utils/mission-turn.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "runMissionTurn"
+            ]
+          },
+          {
+            "path": "server/utils/triage.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "runHermes",
+              "parseKanbanJson",
+              "decomposeResultFromParsed",
+              "recoverDecomposeFromKanbanState",
+              "createTriageTask",
+              "decomposeTask",
+              "specifyTask",
+              "launchTriage",
+              "TRIAGE_DRAFT_BLOCK_RE",
+              "extractTriageDraft"
+            ]
+          }
+        ],
+        "server/utils/task-failure.ts": [
+          {
+            "path": "server/utils/auto-nudge.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "addWatchedTasks",
+              "removeMission",
+              "loadWatchedFromDb",
+              "registerCreatedTaskFromTool",
+              "startAutoNudge",
+              "stopAutoNudge"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 5,
+      "files": [
+        {
+          "path": "server/api/kanban/tasks/[id]/approve-and-retry.post.ts",
+          "language": "typescript",
+          "sizeLines": 126,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/orchestrators/[slug]/warmup.post.ts",
+          "language": "typescript",
+          "sizeLines": 26,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/profiles/[slug]/config.get.ts",
+          "language": "typescript",
+          "sizeLines": 15,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/profiles/[slug]/config.put.ts",
+          "language": "typescript",
+          "sizeLines": 66,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/utils/orchestrator-acp.ts",
+          "language": "typescript",
+          "sizeLines": 407,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/utils/profile-config.ts",
+          "language": "typescript",
+          "sizeLines": 233,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "server/api/kanban/tasks/[id]/approve-and-retry.post.ts": [
+          "server/utils/db.ts",
+          "server/utils/kanban.ts",
+          "server/utils/profile-config.ts"
+        ],
+        "server/api/orchestrators/[slug]/warmup.post.ts": [
+          "server/utils/db.ts",
+          "server/utils/orchestrator-acp.ts"
+        ],
+        "server/api/profiles/[slug]/config.get.ts": [
+          "server/utils/db.ts",
+          "server/utils/profile-config.ts"
+        ],
+        "server/api/profiles/[slug]/config.put.ts": [
+          "server/utils/db.ts",
+          "server/utils/orchestrator-acp.ts",
+          "server/utils/profile-config.ts"
+        ],
+        "server/utils/orchestrator-acp.ts": [],
+        "server/utils/profile-config.ts": []
+      },
+      "neighborMap": {
+        "server/api/kanban/tasks/[id]/approve-and-retry.post.ts": [
+          {
+            "path": "server/utils/db.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "useDb"
+            ]
+          },
+          {
+            "path": "server/utils/kanban.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "getKanbanDb",
+              "listActiveTasks",
+              "currentTaskByAssignee",
+              "totalTaskCount",
+              "tasksCreatedSince",
+              "listCompletedTasks",
+              "dispatcherLikelyStale"
+            ]
+          }
+        ],
+        "server/api/orchestrators/[slug]/warmup.post.ts": [
+          {
+            "path": "server/utils/db.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "useDb"
+            ]
+          }
+        ],
+        "server/api/profiles/[slug]/config.get.ts": [
+          {
+            "path": "server/utils/db.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "useDb"
+            ]
+          }
+        ],
+        "server/api/profiles/[slug]/config.put.ts": [
+          {
+            "path": "server/utils/db.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "useDb"
+            ]
+          }
+        ],
+        "server/utils/orchestrator-acp.ts": [
+          {
+            "path": "server/utils/auto-nudge.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "addWatchedTasks",
+              "removeMission",
+              "loadWatchedFromDb",
+              "registerCreatedTaskFromTool",
+              "startAutoNudge",
+              "stopAutoNudge"
+            ]
+          },
+          {
+            "path": "server/utils/mission-turn.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "runMissionTurn"
+            ]
+          }
+        ],
+        "server/utils/profile-config.ts": [
+          {
+            "path": "server/api/profiles.get.ts",
+            "batchIndex": 3,
+            "symbols": []
+          },
+          {
+            "path": "server/api/profiles.post.ts",
+            "batchIndex": 3,
+            "symbols": []
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 6,
+      "files": [
+        {
+          "path": "server/api/profiles/[slug]/skills.get.ts",
+          "language": "typescript",
+          "sizeLines": 47,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/profiles/[slug]/skills.put.ts",
+          "language": "typescript",
+          "sizeLines": 31,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/skills.get.ts",
+          "language": "typescript",
+          "sizeLines": 27,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/plugins/skills-repair.ts",
+          "language": "typescript",
+          "sizeLines": 37,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/utils/skills.ts",
+          "language": "typescript",
+          "sizeLines": 145,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "server/api/profiles/[slug]/skills.get.ts": [
+          "server/api/skills.get.ts",
+          "server/utils/db.ts",
+          "server/utils/skills.ts"
+        ],
+        "server/api/profiles/[slug]/skills.put.ts": [
+          "server/utils/db.ts",
+          "server/utils/skills.ts"
+        ],
+        "server/api/skills.get.ts": [
+          "server/utils/skills.ts"
+        ],
+        "server/plugins/skills-repair.ts": [
+          "server/utils/hermes.ts",
+          "server/utils/skills.ts"
+        ],
+        "server/utils/skills.ts": []
+      },
+      "neighborMap": {
+        "server/api/profiles/[slug]/skills.get.ts": [
+          {
+            "path": "server/utils/db.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "useDb"
+            ]
+          }
+        ],
+        "server/api/profiles/[slug]/skills.put.ts": [
+          {
+            "path": "server/utils/db.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "useDb"
+            ]
+          }
+        ],
+        "server/plugins/skills-repair.ts": [
+          {
+            "path": "server/utils/hermes.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "discoverProfiles"
+            ]
+          }
+        ],
+        "server/utils/skills.ts": [
+          {
+            "path": "server/api/profiles.post.ts",
+            "batchIndex": 3,
+            "symbols": []
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 7,
+      "files": [
+        {
+          "path": ".github/workflows/ci.yml",
+          "language": "yaml",
+          "sizeLines": 34,
+          "fileCategory": "infra"
+        },
+        {
+          "path": ".github/workflows/release.yml",
+          "language": "yaml",
+          "sizeLines": 72,
+          "fileCategory": "infra"
+        }
+      ],
+      "batchImportData": {
+        ".github/workflows/ci.yml": [],
+        ".github/workflows/release.yml": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 8,
+      "files": [
+        {
+          "path": ".dockerignore",
+          "language": "unknown",
+          "sizeLines": 37,
+          "fileCategory": "infra"
+        },
+        {
+          "path": ".releaserc.json",
+          "language": "json",
+          "sizeLines": 58,
+          "fileCategory": "config"
+        },
+        {
+          "path": "CHANGELOG.md",
+          "language": "markdown",
+          "sizeLines": 71,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "README.md",
+          "language": "markdown",
+          "sizeLines": 679,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "mise.toml",
+          "language": "toml",
+          "sizeLines": 8,
+          "fileCategory": "config"
+        },
+        {
+          "path": "package.json",
+          "language": "json",
+          "sizeLines": 41,
+          "fileCategory": "config"
+        },
+        {
+          "path": "pnpm-workspace.yaml",
+          "language": "yaml",
+          "sizeLines": 6,
+          "fileCategory": "config"
+        },
+        {
+          "path": "renovate.json",
+          "language": "json",
+          "sizeLines": 13,
+          "fileCategory": "config"
+        },
+        {
+          "path": "tsconfig.json",
+          "language": "json",
+          "sizeLines": 10,
+          "fileCategory": "config"
+        }
+      ],
+      "batchImportData": {
+        ".dockerignore": [],
+        ".releaserc.json": [],
+        "CHANGELOG.md": [],
+        "README.md": [],
+        "mise.toml": [],
+        "package.json": [],
+        "pnpm-workspace.yaml": [],
+        "renovate.json": [],
+        "tsconfig.json": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 9,
+      "files": [
+        {
+          "path": "i18n/locales/en.json",
+          "language": "json",
+          "sizeLines": 468,
+          "fileCategory": "config"
+        },
+        {
+          "path": "i18n/locales/es.json",
+          "language": "json",
+          "sizeLines": 468,
+          "fileCategory": "config"
+        },
+        {
+          "path": "i18n/locales/id.json",
+          "language": "json",
+          "sizeLines": 383,
+          "fileCategory": "config"
+        }
+      ],
+      "batchImportData": {
+        "i18n/locales/en.json": [],
+        "i18n/locales/es.json": [],
+        "i18n/locales/id.json": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 10,
+      "files": [
+        {
+          "path": ".claude/settings.json",
+          "language": "json",
+          "sizeLines": 5,
+          "fileCategory": "config"
+        },
+        {
+          "path": ".understand-anything/.understandignore",
+          "language": "unknown",
+          "sizeLines": 31,
+          "fileCategory": "code"
+        },
+        {
+          "path": ".understand-anything/config.json",
+          "language": "json",
+          "sizeLines": 1,
+          "fileCategory": "config"
+        },
+        {
+          "path": "app/app.config.ts",
+          "language": "typescript",
+          "sizeLines": 8,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/app.vue",
+          "language": "vue",
+          "sizeLines": 380,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/assets/css/main.css",
+          "language": "css",
+          "sizeLines": 57,
+          "fileCategory": "markup"
+        },
+        {
+          "path": "app/components/CapabilityCard.vue",
+          "language": "vue",
+          "sizeLines": 185,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/components/CapabilityModal.vue",
+          "language": "vue",
+          "sizeLines": 183,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/components/DelegationOverlay.vue",
+          "language": "vue",
+          "sizeLines": 176,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/components/HireProfileModal.vue",
+          "language": "vue",
+          "sizeLines": 1219,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/components/McpPicker.vue",
+          "language": "vue",
+          "sizeLines": 133,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/components/MissionKanban.vue",
+          "language": "vue",
+          "sizeLines": 809,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/components/MissionPanel.vue",
+          "language": "vue",
+          "sizeLines": 1050,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/components/PageHeader.vue",
+          "language": "vue",
+          "sizeLines": 92,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/components/ProfileBadge.vue",
+          "language": "vue",
+          "sizeLines": 654,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/components/RetrainProfileModal.vue",
+          "language": "vue",
+          "sizeLines": 1366,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/components/SkillsPicker.vue",
+          "language": "vue",
+          "sizeLines": 165,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/components/SlashCommandPicker.vue",
+          "language": "vue",
+          "sizeLines": 196,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/components/ToolsPicker.vue",
+          "language": "vue",
+          "sizeLines": 117,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/components/TriageDraftPanel.vue",
+          "language": "vue",
+          "sizeLines": 210,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/components/UpdateBanner.vue",
+          "language": "vue",
+          "sizeLines": 171,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/components/WhatsNewModal.vue",
+          "language": "vue",
+          "sizeLines": 272,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/components/Workstation.vue",
+          "language": "vue",
+          "sizeLines": 766,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/components/WorkstationDetailSlide.vue",
+          "language": "vue",
+          "sizeLines": 2349,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/composables/useKanbanHistory.ts",
+          "language": "typescript",
+          "sizeLines": 132,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        ".claude/settings.json": [],
+        ".understand-anything/.understandignore": [],
+        ".understand-anything/config.json": [],
+        "app/app.config.ts": [],
+        "app/app.vue": [],
+        "app/assets/css/main.css": [],
+        "app/components/CapabilityCard.vue": [],
+        "app/components/CapabilityModal.vue": [],
+        "app/components/DelegationOverlay.vue": [],
+        "app/components/HireProfileModal.vue": [],
+        "app/components/McpPicker.vue": [],
+        "app/components/MissionKanban.vue": [],
+        "app/components/MissionPanel.vue": [],
+        "app/components/PageHeader.vue": [],
+        "app/components/ProfileBadge.vue": [],
+        "app/components/RetrainProfileModal.vue": [],
+        "app/components/SkillsPicker.vue": [],
+        "app/components/SlashCommandPicker.vue": [],
+        "app/components/ToolsPicker.vue": [],
+        "app/components/TriageDraftPanel.vue": [],
+        "app/components/UpdateBanner.vue": [],
+        "app/components/WhatsNewModal.vue": [],
+        "app/components/Workstation.vue": [],
+        "app/components/WorkstationDetailSlide.vue": [],
+        "app/composables/useKanbanHistory.ts": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 11,
+      "files": [
+        {
+          "path": "app/composables/useKanbanTasks.ts",
+          "language": "typescript",
+          "sizeLines": 64,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/composables/useMarkdown.ts",
+          "language": "typescript",
+          "sizeLines": 198,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/composables/useMissionStream.ts",
+          "language": "typescript",
+          "sizeLines": 438,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/composables/useStationRegistry.ts",
+          "language": "typescript",
+          "sizeLines": 117,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/composables/useTaskFeed.ts",
+          "language": "typescript",
+          "sizeLines": 95,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/composables/useTokenUsage.ts",
+          "language": "typescript",
+          "sizeLines": 64,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/pages/index.vue",
+          "language": "vue",
+          "sizeLines": 631,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/pages/missions.vue",
+          "language": "vue",
+          "sizeLines": 683,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/pages/team.vue",
+          "language": "vue",
+          "sizeLines": 137,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/types/mission.ts",
+          "language": "typescript",
+          "sizeLines": 90,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/types/profile.ts",
+          "language": "typescript",
+          "sizeLines": 18,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/utils/avatar.ts",
+          "language": "typescript",
+          "sizeLines": 101,
+          "fileCategory": "code"
+        },
+        {
+          "path": "eslint.config.mjs",
+          "language": "javascript",
+          "sizeLines": 6,
+          "fileCategory": "code"
+        },
+        {
+          "path": "nuxt.config.ts",
+          "language": "typescript",
+          "sizeLines": 50,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/config.get.ts",
+          "language": "typescript",
+          "sizeLines": 5,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/kanban/dispatch.post.ts",
+          "language": "typescript",
+          "sizeLines": 34,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/kanban/tasks/[id]/feed.get.ts",
+          "language": "typescript",
+          "sizeLines": 7,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/kanban/tasks/[id]/kill.post.ts",
+          "language": "typescript",
+          "sizeLines": 118,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/kanban/tasks/[id]/log.get.ts",
+          "language": "typescript",
+          "sizeLines": 66,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/models.get.ts",
+          "language": "typescript",
+          "sizeLines": 219,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/presets.get.ts",
+          "language": "typescript",
+          "sizeLines": 5,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/api/version.get.ts",
+          "language": "typescript",
+          "sizeLines": 12,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/utils/presets.ts",
+          "language": "typescript",
+          "sizeLines": 453,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/utils/task-feed.ts",
+          "language": "typescript",
+          "sizeLines": 259,
+          "fileCategory": "code"
+        },
+        {
+          "path": "server/utils/version.ts",
+          "language": "typescript",
+          "sizeLines": 148,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "app/composables/useKanbanTasks.ts": [],
+        "app/composables/useMarkdown.ts": [],
+        "app/composables/useMissionStream.ts": [],
+        "app/composables/useStationRegistry.ts": [],
+        "app/composables/useTaskFeed.ts": [],
+        "app/composables/useTokenUsage.ts": [],
+        "app/pages/index.vue": [],
+        "app/pages/missions.vue": [],
+        "app/pages/team.vue": [],
+        "app/types/mission.ts": [],
+        "app/types/profile.ts": [],
+        "app/utils/avatar.ts": [],
+        "eslint.config.mjs": [],
+        "nuxt.config.ts": [],
+        "server/api/config.get.ts": [],
+        "server/api/kanban/dispatch.post.ts": [],
+        "server/api/kanban/tasks/[id]/feed.get.ts": [
+          "server/utils/task-feed.ts"
+        ],
+        "server/api/kanban/tasks/[id]/kill.post.ts": [],
+        "server/api/kanban/tasks/[id]/log.get.ts": [],
+        "server/api/models.get.ts": [],
+        "server/api/presets.get.ts": [
+          "server/utils/presets.ts"
+        ],
+        "server/api/version.get.ts": [
+          "server/utils/version.ts"
+        ],
+        "server/utils/presets.ts": [],
+        "server/utils/task-feed.ts": [],
+        "server/utils/version.ts": []
+      },
+      "neighborMap": {}
+    }
+  ]
+}

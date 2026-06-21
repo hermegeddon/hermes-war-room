@@ -1,0 +1,598 @@
+{
+  "nodes": [
+    {
+      "id": "file:server/api/kanban/tasks/[id]/approve-and-retry.post.ts",
+      "type": "file",
+      "name": "approve-and-retry.post.ts",
+      "filePath": "server/api/kanban/tasks/[id]/approve-and-retry.post.ts",
+      "summary": "Nitro api route handler for kanban/tasks/[id]/approve-and-retry.post with 1 extracted functions, 3 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/api/kanban/tasks/[id]/approve-and-retry.post.ts:runHermes",
+      "type": "function",
+      "name": "runHermes",
+      "filePath": "server/api/kanban/tasks/[id]/approve-and-retry.post.ts",
+      "lineRange": [
+        30,
+        42
+      ],
+      "summary": "Implements runHermes behavior inside Nitro API route handler for kanban/tasks/[id]/approve-and-retry.post.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/api/orchestrators/[slug]/warmup.post.ts",
+      "type": "file",
+      "name": "warmup.post.ts",
+      "filePath": "server/api/orchestrators/[slug]/warmup.post.ts",
+      "summary": "Nitro api route handler for orchestrators/[slug]/warmup.post with 2 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/api/profiles/[slug]/config.get.ts",
+      "type": "file",
+      "name": "config.get.ts",
+      "filePath": "server/api/profiles/[slug]/config.get.ts",
+      "summary": "Nitro api route handler for profiles/[slug]/config.get with 2 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/api/profiles/[slug]/config.put.ts",
+      "type": "file",
+      "name": "config.put.ts",
+      "filePath": "server/api/profiles/[slug]/config.put.ts",
+      "summary": "Nitro api route handler for profiles/[slug]/config.put with 3 imports.",
+      "tags": [
+        "api-handler",
+        "server",
+        "nitro",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/utils/orchestrator-acp.ts",
+      "type": "file",
+      "name": "orchestrator-acp.ts",
+      "filePath": "server/utils/orchestrator-acp.ts",
+      "summary": "Server-side utility module orchestrator-acp with 12 extracted functions, 1 classes.",
+      "tags": [
+        "utility",
+        "server",
+        "service",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:server/utils/orchestrator-acp.ts:normalizeAcpStdoutLine",
+      "type": "function",
+      "name": "normalizeAcpStdoutLine",
+      "filePath": "server/utils/orchestrator-acp.ts",
+      "lineRange": [
+        57,
+        87
+      ],
+      "summary": "Implements normalizeAcpStdoutLine behavior inside server-side utility module orchestrator-acp.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/orchestrator-acp.ts:fixupAcpStdout",
+      "type": "function",
+      "name": "fixupAcpStdout",
+      "filePath": "server/utils/orchestrator-acp.ts",
+      "lineRange": [
+        89,
+        112
+      ],
+      "summary": "Implements fixupAcpStdout behavior inside server-side utility module orchestrator-acp.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/orchestrator-acp.ts:spawnEntry",
+      "type": "function",
+      "name": "spawnEntry",
+      "filePath": "server/utils/orchestrator-acp.ts",
+      "lineRange": [
+        150,
+        243
+      ],
+      "summary": "Implements spawnEntry behavior inside server-side utility module orchestrator-acp.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/utils/orchestrator-acp.ts:restart",
+      "type": "function",
+      "name": "restart",
+      "filePath": "server/utils/orchestrator-acp.ts",
+      "lineRange": [
+        268,
+        276
+      ],
+      "summary": "Implements restart behavior inside server-side utility module orchestrator-acp.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/orchestrator-acp.ts:warmup",
+      "type": "function",
+      "name": "warmup",
+      "filePath": "server/utils/orchestrator-acp.ts",
+      "lineRange": [
+        283,
+        291
+      ],
+      "summary": "Implements warmup behavior inside server-side utility module orchestrator-acp.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/orchestrator-acp.ts:newSession",
+      "type": "function",
+      "name": "newSession",
+      "filePath": "server/utils/orchestrator-acp.ts",
+      "lineRange": [
+        293,
+        300
+      ],
+      "summary": "Implements newSession behavior inside server-side utility module orchestrator-acp.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/orchestrator-acp.ts:loadSession",
+      "type": "function",
+      "name": "loadSession",
+      "filePath": "server/utils/orchestrator-acp.ts",
+      "lineRange": [
+        302,
+        309
+      ],
+      "summary": "Implements loadSession behavior inside server-side utility module orchestrator-acp.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/orchestrator-acp.ts:startPrompt",
+      "type": "function",
+      "name": "startPrompt",
+      "filePath": "server/utils/orchestrator-acp.ts",
+      "lineRange": [
+        332,
+        374
+      ],
+      "summary": "Implements startPrompt behavior inside server-side utility module orchestrator-acp.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/orchestrator-acp.ts:ensureReaper",
+      "type": "function",
+      "name": "ensureReaper",
+      "filePath": "server/utils/orchestrator-acp.ts",
+      "lineRange": [
+        377,
+        394
+      ],
+      "summary": "Implements ensureReaper behavior inside server-side utility module orchestrator-acp.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:server/utils/orchestrator-acp.ts:WarRoomClient",
+      "type": "class",
+      "name": "WarRoomClient",
+      "filePath": "server/utils/orchestrator-acp.ts",
+      "lineRange": [
+        131,
+        148
+      ],
+      "summary": "Defines the WarRoomClient class/interface used by server-side utility module orchestrator-acp.",
+      "tags": [
+        "class",
+        "model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/utils/profile-config.ts",
+      "type": "file",
+      "name": "profile-config.ts",
+      "filePath": "server/utils/profile-config.ts",
+      "summary": "Server-side utility module profile-config with 5 extracted functions.",
+      "tags": [
+        "utility",
+        "server",
+        "service",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:server/utils/profile-config.ts:readGlobalModelConfig",
+      "type": "function",
+      "name": "readGlobalModelConfig",
+      "filePath": "server/utils/profile-config.ts",
+      "lineRange": [
+        24,
+        37
+      ],
+      "summary": "Implements readGlobalModelConfig behavior inside server-side utility module profile-config.",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/profile-config.ts:readGlobalModelBlock",
+      "type": "function",
+      "name": "readGlobalModelBlock",
+      "filePath": "server/utils/profile-config.ts",
+      "lineRange": [
+        51,
+        73
+      ],
+      "summary": "Implements readGlobalModelBlock behavior inside server-side utility module profile-config.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/profile-config.ts:readProfileConfig",
+      "type": "function",
+      "name": "readProfileConfig",
+      "filePath": "server/utils/profile-config.ts",
+      "lineRange": [
+        90,
+        113
+      ],
+      "summary": "Implements readProfileConfig behavior inside server-side utility module profile-config.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server/utils/profile-config.ts:writeProfileConfig",
+      "type": "function",
+      "name": "writeProfileConfig",
+      "filePath": "server/utils/profile-config.ts",
+      "lineRange": [
+        133,
+        233
+      ],
+      "summary": "Implements writeProfileConfig behavior inside server-side utility module profile-config.",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:server/api/kanban/tasks/[id]/approve-and-retry.post.ts",
+      "target": "function:server/api/kanban/tasks/[id]/approve-and-retry.post.ts:runHermes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/orchestrator-acp.ts",
+      "target": "function:server/utils/orchestrator-acp.ts:normalizeAcpStdoutLine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/orchestrator-acp.ts",
+      "target": "function:server/utils/orchestrator-acp.ts:normalizeAcpStdoutLine",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/orchestrator-acp.ts",
+      "target": "function:server/utils/orchestrator-acp.ts:fixupAcpStdout",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/orchestrator-acp.ts",
+      "target": "function:server/utils/orchestrator-acp.ts:spawnEntry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/orchestrator-acp.ts",
+      "target": "function:server/utils/orchestrator-acp.ts:restart",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/orchestrator-acp.ts",
+      "target": "function:server/utils/orchestrator-acp.ts:restart",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/orchestrator-acp.ts",
+      "target": "function:server/utils/orchestrator-acp.ts:warmup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/orchestrator-acp.ts",
+      "target": "function:server/utils/orchestrator-acp.ts:warmup",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/orchestrator-acp.ts",
+      "target": "function:server/utils/orchestrator-acp.ts:newSession",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/orchestrator-acp.ts",
+      "target": "function:server/utils/orchestrator-acp.ts:newSession",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/orchestrator-acp.ts",
+      "target": "function:server/utils/orchestrator-acp.ts:loadSession",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/orchestrator-acp.ts",
+      "target": "function:server/utils/orchestrator-acp.ts:loadSession",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/orchestrator-acp.ts",
+      "target": "function:server/utils/orchestrator-acp.ts:startPrompt",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/orchestrator-acp.ts",
+      "target": "function:server/utils/orchestrator-acp.ts:startPrompt",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/orchestrator-acp.ts",
+      "target": "function:server/utils/orchestrator-acp.ts:ensureReaper",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/orchestrator-acp.ts",
+      "target": "class:server/utils/orchestrator-acp.ts:WarRoomClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/profile-config.ts",
+      "target": "function:server/utils/profile-config.ts:readGlobalModelConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/profile-config.ts",
+      "target": "function:server/utils/profile-config.ts:readGlobalModelBlock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/profile-config.ts",
+      "target": "function:server/utils/profile-config.ts:readGlobalModelBlock",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/profile-config.ts",
+      "target": "function:server/utils/profile-config.ts:readProfileConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/profile-config.ts",
+      "target": "function:server/utils/profile-config.ts:readProfileConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/utils/profile-config.ts",
+      "target": "function:server/utils/profile-config.ts:writeProfileConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/utils/profile-config.ts",
+      "target": "function:server/utils/profile-config.ts:writeProfileConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/api/kanban/tasks/[id]/approve-and-retry.post.ts",
+      "target": "file:server/utils/db.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/kanban/tasks/[id]/approve-and-retry.post.ts",
+      "target": "file:server/utils/kanban.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/kanban/tasks/[id]/approve-and-retry.post.ts",
+      "target": "file:server/utils/profile-config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/orchestrators/[slug]/warmup.post.ts",
+      "target": "file:server/utils/db.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/orchestrators/[slug]/warmup.post.ts",
+      "target": "file:server/utils/orchestrator-acp.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/profiles/[slug]/config.get.ts",
+      "target": "file:server/utils/db.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/profiles/[slug]/config.get.ts",
+      "target": "file:server/utils/profile-config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/profiles/[slug]/config.put.ts",
+      "target": "file:server/utils/db.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/profiles/[slug]/config.put.ts",
+      "target": "file:server/utils/orchestrator-acp.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/api/profiles/[slug]/config.put.ts",
+      "target": "file:server/utils/profile-config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:server/utils/orchestrator-acp.ts:spawnEntry",
+      "target": "function:server/utils/orchestrator-acp.ts:fixupAcpStdout",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/profile-config.ts:writeProfileConfig",
+      "target": "function:server/utils/profile-config.ts:readGlobalModelBlock",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:server/utils/profile-config.ts:writeProfileConfig",
+      "target": "function:server/utils/profile-config.ts:readGlobalModelConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}
