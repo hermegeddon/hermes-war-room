@@ -1,0 +1,11 @@
+{
+    "schema_version": 1,
+    "commit": "33b6461a5ad76c48cfc3a9bd2e570930846744c3",
+    "indexed_at": "2026-06-23T04:25:04Z",
+    "project": "home-openclaw-hermes-war-room",
+    "nodes": 2389,
+    "edges": 3254,
+    "original_size": 5701632,
+    "compressed_size": 822379,
+    "compression_level": 3
+}
